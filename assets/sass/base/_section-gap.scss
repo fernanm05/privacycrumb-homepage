@@ -1,0 +1,107 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+
+//  section padding gap start here
+.section-padding-top-bottom {
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  @include breakpoint(max-lg) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+.section-padding-top {
+  padding-top: 120px;
+
+  @include breakpoint(max-lg) {
+    padding-top: 60px;
+  }
+}
+.section-padding-bottom {
+  padding-bottom: 120px;
+
+  @include breakpoint(max-lg) {
+    padding-bottom: 60px;
+  }
+}
+
+//  section padding gap end here
+
+//  section margin gap start here
+.section-margin-top-bottom {
+  margin-top: 120px;
+  margin-bottom: 120px;
+
+  @include breakpoint(max-lg) {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+.section-margin-top {
+  margin-top: 120px;
+
+  @include breakpoint(max-lg) {
+    margin-top: 60px;
+  }
+}
+.section-margin-bottom {
+  margin-bottom: 120px;
+
+  @include breakpoint(max-lg) {
+    margin-bottom: 60px;
+  }
+}
+
+//  section margin gap end here
+
+//  section row-gap start here
+.row-padding-top-bottom {
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  @include breakpoint(max-lg) {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+}
+.row-padding-top {
+  padding-top: 70px;
+
+  @include breakpoint(max-lg) {
+    padding-top: 35px;
+  }
+}
+.row-padding-bottom {
+  padding-bottom: 70px;
+
+  @include breakpoint(max-lg) {
+    padding-bottom: 35px;
+  }
+}
+
+.row-margin-top-bottom {
+  margin-top: 70px;
+  margin-bottom: 70px;
+
+  @include breakpoint(max-lg) {
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+}
+.row-margin-top {
+  margin-top: 70px;
+
+  @include breakpoint(max-lg) {
+    margin-top: 35px;
+  }
+}
+.row-margin-bottom {
+  margin-bottom: 70px;
+
+  @include breakpoint(max-lg) {
+    margin-bottom: 35px;
+  }
+}
+//  section row-gap end here

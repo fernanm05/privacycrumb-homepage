@@ -1,0 +1,381 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+
+.faq {
+  &.section {
+    background-color: var(--bg-color-1);
+    .section-header {
+      p {
+        max-width: 391px;
+        color: rgba(var(--text-color-main-rgb), 0.72);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        margin-left: auto;
+
+        @include breakpoint(max-md) {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  &__accordion {
+    @extend %p-relative;
+    max-width: 1148px;
+    margin-inline: auto;
+    z-index: 2;
+
+    &::before {
+      @extend %p-absolute;
+      inset: 0;
+      opacity: 0.15;
+      background: var(--text-color-main);
+      filter: blur(27px);
+      z-index: -1;
+      border: 8px solid var(--primary-color);
+    }
+
+    .accordion-item {
+      border-radius: 16px;
+      background: var(--bg-color-2);
+      border: 1px solid rgba(255, 255, 255, 0.32);
+
+      &:not(:last-of-type) {
+        margin-bottom: 8px;
+      }
+
+      .accordion-header {
+        border-bottom: none;
+        overflow: hidden;
+        background-color: transparent;
+        .accordion-button {
+          background-color: transparent;
+          transition-delay: 0.5s;
+          font: inherit;
+          color: var(--text-color-main);
+          padding: 28px 32px;
+          @include transition($transition);
+
+          &::after {
+            display: inline-grid;
+            place-content: center;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            background-image: unset;
+            font: var(--fa-font-thin);
+            content: "\f056";
+            transform-origin: center center;
+            width: 28px;
+            height: 28px;
+            line-height: 0;
+          }
+          @include breakpoint(max-md) {
+            padding: 20px 25px;
+          }
+
+          &:not(.collapsed) {
+            color: var(--text-color-main);
+            box-shadow: none;
+            border-bottom: none;
+            padding: 28px 32px 18px 32px;
+            @include breakpoint(max-md) {
+              padding: 20px 25px 15px 25px;
+            }
+          }
+          &.collapsed {
+            border-radius: 16px;
+            &::after {
+              content: "\f055";
+            }
+          }
+
+          &:focus,
+          &:active,
+          &:hover {
+            box-shadow: none;
+          }
+        }
+      }
+      .accordion-body {
+        color: rgba(var(--text-color-main-rgb), 0.72);
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 133.333%;
+        padding: 28px 32px;
+        padding-top: 0px;
+        max-width: 90%;
+
+        @include breakpoint(max-md) {
+          padding: 20px 25px;
+          padding-top: 0px;
+        }
+      }
+      .accordion-collapse {
+        border: none;
+      }
+    }
+  }
+}
+
+.faq-2 {
+  &.section {
+    .section-header-2 {
+      &.left {
+        max-width: 510px;
+      }
+      &.right {
+        p {
+          color: #797979;
+          font-weight: 500;
+          line-height: 141.946%;
+          max-width: 435px;
+        }
+      }
+    }
+  }
+  &__accordion {
+    .accordion-item {
+      border: none;
+      border-radius: 16px;
+      @include transition($transition);
+
+      &:not(:last-of-type) {
+        margin-bottom: 16px;
+        &:has(.accordion-button:not(.collapsed)) {
+          margin-bottom: 24px;
+        }
+      }
+
+      &:has(.accordion-button:not(.collapsed)) {
+        border: 1px solid rgba(var(--color-black-rgb), 0.3);
+        background: #eceaff;
+      }
+      .accordion-header {
+        overflow: hidden;
+        color: var(--bg-color-2);
+        font-size: 18px;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: -1.08px;
+
+        .accordion-button {
+          gap: 20px;
+          border-radius: 16px;
+          font: inherit;
+          padding: 29px 32px;
+          @include transition($transition);
+
+          &::after {
+            @extend %d-inline-flex, %justify-center, %item-center;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 7' fill='none'><path d='M12.5 0.750047C12.5 0.750047 8.44934 6.25 7 6.25C5.55057 6.25 1.5 0.75 1.5 0.75' stroke='%23040A10' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+            background-position: center;
+          }
+
+          @include breakpoint(max-lg) {
+            padding: 20px;
+          }
+
+          &.collapsed {
+            border-radius: 16px;
+            border: 1px solid rgba(var(--color-black-rgb), 0.04);
+            background: #f5fbff;
+          }
+
+          &:not(.collapsed) {
+            background: transparent;
+            box-shadow: none;
+            padding-bottom: 14px;
+            color: inherit;
+            @include breakpoint(max-lg) {
+              padding-bottom: 10px;
+            }
+          }
+          &:focus,
+          &:active,
+          &:focus-visible {
+            box-shadow: none;
+          }
+        }
+      }
+    }
+    .accordion-collapse {
+      .accordion-body {
+        padding: 29px 32px;
+        padding-top: 0;
+        color: #373737;
+        font-family: $ff-inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 159.689%;
+        opacity: 0.6;
+        @include breakpoint(max-lg) {
+          padding: 20px;
+          padding-top: 0;
+        }
+      }
+    }
+  }
+  &__content {
+    @extend %p-relative, %text-center, %d-flex, %flex-col, %justify-between;
+    width: 100%;
+    border-radius: 32px;
+    overflow: hidden;
+    padding: 42px;
+    z-index: 2;
+    gap: 30px;
+
+    @include breakpoint(max-sm) {
+      padding: 25px 20px;
+      gap: 20px;
+    }
+
+    &::before {
+      @extend %p-absolute;
+      z-index: -1;
+      width: 482px;
+      height: 482px;
+      border-radius: 50%;
+      background: rgba(188, 232, 255, 0.64);
+      filter: blur(110px);
+      top: -132px;
+      left: -156px;
+    }
+    &::after {
+      @extend %p-absolute;
+      z-index: -1;
+      width: 418px;
+      height: 418px;
+      border-radius: 418px;
+      opacity: 0.6;
+      background: #b9affe;
+      filter: blur(110px);
+      top: 48px;
+      left: 170px;
+    }
+
+    .content-header {
+      .title {
+        color: var(--color-black);
+        font-size: 24px;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: -1.44px;
+        margin-bottom: 10px;
+      }
+      p {
+        color: #373737;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 157.333%;
+        letter-spacing: -0.45px;
+        opacity: 0.6;
+      }
+    }
+    .content-body {
+      margin-top: 20px;
+    }
+  }
+}
+
+.faq-3 {
+  &.section {
+    @extend %p-relative;
+    z-index: 2;
+    background: #0a0808;
+
+    .bg-shape {
+      @extend %p-absolute;
+      z-index: -1;
+      top: 150px;
+      left: 100px;
+      animation: updown-float 3s ease-in-out infinite;
+      transform-origin: center center;
+
+      @include breakpoint(max-lg) {
+        display: none;
+      }
+    }
+  }
+  &__bg-shape {
+    @extend %p-absolute;
+    z-index: -1;
+    top: -100px;
+    left: -10px;
+    width: 655px;
+    height: 655px;
+    border-radius: 654px;
+    opacity: 0.27;
+    background: linear-gradient(135deg, #4642fc 0%, #adbbfe 100%);
+    filter: blur(301.412841796875px);
+  }
+  &__accordion {
+    .accordion-item {
+      border-radius: 0;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+      &:first-of-type > {
+        .accordion-header {
+          .accordion-button {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+          }
+        }
+      }
+      &:last-of-type > {
+        .accordion-collapse {
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+
+      .accordion-header {
+        font-family: $ff-urbanist;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 130%;
+        letter-spacing: -0.4px;
+        color: #c1c1c1;
+
+        .accordion-button {
+          background-color: transparent;
+          box-shadow: none;
+          font: inherit;
+          color: inherit;
+          padding-block: 24px;
+          padding-inline: 0px;
+          gap: 15px;
+          &::after {
+            @extend %d-grid, %place-center;
+            content: "\f055";
+            font: var(--fa-font-light);
+            background: unset;
+          }
+          &:not(.collapsed) {
+            background-color: transparent;
+            box-shadow: none;
+            color: var(--color-white);
+            padding-block-end: 14px;
+            &::after {
+              content: "\f056";
+            }
+          }
+        }
+      }
+      .accordion-body {
+        color: rgba(255, 255, 255, 0.7);
+        font-family: $ff-urbanist;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 150%;
+        letter-spacing: -0.32px;
+        padding-block: 24px;
+        padding-block-start: 0px;
+        padding-inline: 0px;
+        padding-inline-end: 24px;
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+
+.pagination-area {
+  &.section {
+  }
+  &__nav {
+    .pagination {
+      @extend %justify-center, %flex-wrap;
+      gap: 10px;
+
+      @include breakpoint(max-md) {
+        gap: 6px;
+      }
+
+      .page-item {
+        @include transition($transition);
+        &:first-of-type {
+          margin-right: 14px;
+          @include breakpoint(max-md) {
+            margin-right: 8px;
+          }
+        }
+        &:last-of-type {
+          margin-left: 14px;
+          @include breakpoint(max-md) {
+            margin-left: 8px;
+          }
+        }
+        &:first-of-type,
+        &:last-of-type {
+          .page-link {
+            @extend %p-relative;
+            z-index: 2;
+
+            &::before {
+              @extend %p-absolute;
+              z-index: -1;
+              inset: 0;
+              background-color: transparent;
+              background: linear-gradient(
+                180deg,
+                #7397e9 0%,
+                #d1d7f5 48.08%,
+                #eff7fb 100%
+              );
+              color: var(--color-black);
+              opacity: 0;
+              @include transition($transition);
+            }
+            &:hover {
+              border-color: transparent;
+              &::before {
+                opacity: 1;
+              }
+            }
+          }
+        }
+
+        .page-link {
+          border-radius: 10px;
+          border: 1px solid rgba(var(--color-white-rgb), 0.24);
+          overflow: hidden;
+          background-color: transparent;
+          color: var(--color-white);
+          text-align: center;
+          font-family: $ff-urbanist;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 1;
+          letter-spacing: -0.48px;
+          padding: 16px;
+          @include transition($transition);
+
+          @include breakpoint(max-md) {
+            font-size: 14px;
+          }
+          @include breakpoint(max-sm) {
+            padding: 10px;
+          }
+
+          &:hover {
+            background-color: var(--color-white);
+            color: var(--color-black);
+            border-color: var(--color-white);
+          }
+        }
+        &.active {
+          .page-link {
+            background-color: var(--color-white);
+            color: var(--color-black);
+            border-color: var(--color-white);
+          }
+        }
+      }
+    }
+  }
+}

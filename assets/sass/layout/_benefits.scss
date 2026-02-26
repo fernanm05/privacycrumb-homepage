@@ -1,0 +1,121 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+@use "sass:math";
+
+.benefits {
+  &.section {
+    @extend %p-relative;
+    z-index: 2;
+    .benefits-shape {
+      @extend %p-absolute;
+      top: 178px;
+      left: 38px;
+      color: var(--primary-color-2);
+      z-index: -1;
+
+      @include breakpoint(max-lg) {
+        top: 80px;
+        left: 10px;
+      }
+      @include breakpoint(max-sm) {
+        display: none;
+      }
+
+      .animated-path {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+      }
+      .animate-on-view {
+        animation: draw 3s ease-in-out forwards;
+      }
+    }
+  }
+
+  .benefits {
+    &__item-row {
+      > [class*="col-"]:nth-child(even) {
+        .benefits__item {
+          @include breakpoint(lg) {
+            margin-top: 60px;
+          }
+        }
+      }
+    }
+  }
+
+  &__item {
+    @extend %p-relative;
+    border-radius: 24px;
+    border: 1px solid #e2e2ff;
+    background: var(--color-white);
+    padding: 32px;
+    overflow: hidden;
+    z-index: 2;
+    @include transition($transition);
+
+    @include breakpoint(max-xl) {
+      padding: 20px;
+    }
+
+    .item-bg {
+      @extend %p-absolute;
+      inset: 0;
+      z-index: -1;
+      
+      img {
+        object-fit: fill;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .item-icon {
+      @extend %d-grid, %place-center;
+      width: 76px;
+      height: 76px;
+      flex-shrink: 0;
+      border: 1px solid #eaeaff;
+      border-radius: 50%;
+      padding: 15px;
+      margin-bottom: 75px;
+      color: var(--color-black);
+      @include transition($transition);
+      @include breakpoint(max-xl) {
+        margin-bottom: 40px;
+      }
+      @include breakpoint(max-md) {
+        margin-bottom: 50px;
+      }
+    }
+    .item-content {
+      .title {
+        color: #141414;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: -1.2px;
+        margin-bottom: 10px;
+      }
+      p {
+        color: #848484;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 133.333%;
+        letter-spacing: -0.9px;
+        max-width: 200px;
+        @include breakpoint(max-md) {
+          max-width: 100%;
+        }
+      }
+    }
+    &:hover {
+      background-color: #e2e2ff;
+      .item-icon {
+        background-color: var(--primary-color-2);
+        border-color: var(--primary-color-2);
+        color: var(--color-white);
+      }
+    }
+  }
+}

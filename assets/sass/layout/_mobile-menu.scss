@@ -1,0 +1,150 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+
+// Start Mobile Menu
+.mobile-menu-contact-info {
+  margin-top: 30px;
+}
+
+.mobile-menu-social-media {
+  @extend %d-flex, %item-center;
+  gap: 10px;
+
+  a {
+    @extend %d-inline-block, %text-center;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--text-color-main);
+    border: 1px solid rgba(var(--text-color-main-rgb), 0.1);
+    font-size: 16px;
+
+    &:hover {
+      color: var(--color-white);
+      background-color: var(--text-color-main);
+      border-color: var(--text-color-main);
+    }
+  }
+}
+
+.saaslyn__mobile-menu-copyright {
+  .saaslyn__mobile-menu-copyright-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(var(--text-color-main-rgb), 0.6);
+
+    a {
+      font-weight: 700;
+      color: rgba(var(--text-color-main-rgb), 0.6);
+    }
+
+    &:hover a {
+      color: rgba(var(--text-color-main-rgb), 0.6);
+    }
+  }
+}
+
+.saaslyn__nav-item {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.saaslyn__nav-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  color: var(--text-color-main);
+  text-decoration: none;
+  padding: 5px 0;
+  font-weight: 500;
+  transition: linear 0.4s;
+
+  &:hover {
+    color: var(--text-color-main);
+
+    .saaslyn__toggle-btn::after,
+    .saaslyn__toggle-btn::before {
+      background-color: var(--text-color-main);
+    }
+  }
+}
+.saaslyn__nav-item {
+  > .saaslyn__nav-link {
+    padding: 12px 0;
+  }
+}
+
+.saaslyn__toggle-btn {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    @extend %p-absolute;
+    background: var(--text-color-main);
+    @include transition($transition-3-ease-in-out);
+  }
+
+  &::before {
+    width: 2px;
+    height: 12px;
+    top: 6px;
+    left: 11px;
+  }
+
+  &::after {
+    width: 12px;
+    height: 2px;
+    top: 11px;
+    left: 6px;
+  }
+
+  &.saaslyn__active::before {
+    @include transform(rotate(90deg));
+  }
+
+  &.saaslyn__active::after {
+    @include transform(rotate(180deg));
+  }
+}
+.saaslyn__submenu {
+  @extend %d-none;
+  padding-left: 20px;
+  margin-top: 10px;
+
+  &.saaslyn__active {
+    @extend %d-block;
+
+    .saaslyn__submenu-item {
+      opacity: 1;
+      @include transform(translateY(0));
+    }
+  }
+
+  .saaslyn__submenu-item {
+    margin-bottom: 10px;
+    opacity: 0;
+    @include transform(translateY(-10px));
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .saaslyn__submenu-link {
+    color: var(--text-color-main);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: linear 0.4s;
+
+    &:hover {
+      color: var(--text-color-main);
+    }
+  }
+}
+// End Mobile Menu

@@ -1,0 +1,461 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+
+@keyframes moveX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(8px);
+  }
+}
+@keyframes moveY {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes banner-one-btn-shape {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(20px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes bar_anim {
+  0%,
+  100% {
+    -webkit-clip-path: inset(-2px 0);
+    clip-path: inset(-2px 0);
+  }
+  42% {
+    -webkit-clip-path: inset(-2px 0 -2px 100%);
+    clip-path: inset(-2px 0 -2px 100%);
+  }
+  43% {
+    -webkit-clip-path: inset(-2px 100% -2px 0);
+    clip-path: inset(-2px 100% -2px 0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes circle-rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(405deg);
+  }
+}
+@keyframes img-rotate {
+  0% {
+    transform: rotate(-45deg);
+  }
+
+  to {
+    transform: rotate(-405deg);
+  }
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+// Enhanced keyframe animations for each author with smooth, natural movements
+@keyframes float-1 {
+  0% {
+    @include transform(translateY(0px) translateX(0px) rotate(0deg) scale(1));
+  }
+  25% {
+    @include transform(
+      translateY(-15px) translateX(5px) rotate(1deg) scale(1.02)
+    );
+  }
+  50% {
+    @include transform(translateY(-30px) translateX(0px) rotate(0deg) scale(1));
+  }
+  75% {
+    @include transform(
+      translateY(-15px) translateX(-5px) rotate(-1deg) scale(0.98)
+    );
+  }
+  100% {
+    @include transform(translateY(0px) translateX(0px) rotate(0deg) scale(1));
+  }
+}
+
+@keyframes float-2 {
+  0% {
+    @include transform(translateY(0px) translateX(0px) rotate(0deg) scale(1));
+  }
+  30% {
+    @include transform(
+      translateY(-20px) translateX(-8px) rotate(-1.5deg) scale(1.03)
+    );
+  }
+  60% {
+    @include transform(
+      translateY(-35px) translateX(3px) rotate(0.5deg) scale(1)
+    );
+  }
+  90% {
+    @include transform(
+      translateY(-10px) translateX(6px) rotate(1deg) scale(0.97)
+    );
+  }
+  100% {
+    @include transform(translateY(0px) translateX(0px) rotate(0deg) scale(1));
+  }
+}
+
+@keyframes float-3 {
+  0% {
+    @include transform(translateY(0px) translateX(0px) rotate(0deg) scale(1));
+  }
+  20% {
+    @include transform(
+      translateY(-25px) translateX(7px) rotate(2deg) scale(1.01)
+    );
+  }
+  40% {
+    @include transform(
+      translateY(-40px) translateX(-4px) rotate(-0.5deg) scale(1.04)
+    );
+  }
+  70% {
+    @include transform(
+      translateY(-20px) translateX(-10px) rotate(-2deg) scale(0.99)
+    );
+  }
+  100% {
+    @include transform(translateY(0px) translateX(0px) rotate(0deg) scale(1));
+  }
+}
+
+@keyframes float-4 {
+  0% {
+    @include transform(translateY(0px) translateX(0px) rotate(0deg) scale(1));
+  }
+  35% {
+    @include transform(
+      translateY(-18px) translateX(-6px) rotate(-1deg) scale(1.02)
+    );
+  }
+  65% {
+    @include transform(
+      translateY(-32px) translateX(8px) rotate(1.5deg) scale(0.98)
+    );
+  }
+  85% {
+    @include transform(
+      translateY(-12px) translateX(-3px) rotate(-0.5deg) scale(1.01)
+    );
+  }
+  100% {
+    @include transform(translateY(0px) translateX(0px) rotate(0deg) scale(1));
+  }
+}
+
+@keyframes spin {
+  from {
+    @include transform(rotate(0deg));
+  }
+  to {
+    @include transform(rotate(360deg));
+  }
+}
+
+@keyframes rippleEffect {
+  0% {
+    opacity: 0.5;
+    @include transform(scale(0.9));
+  }
+  100% {
+    opacity: 1;
+    @include transform(scale(1.01));
+  }
+}
+
+@keyframes handUpDown {
+  0% {
+    @include transform(translateY(0px));
+  }
+  8% {
+    @include transform(translateY(-25px));
+  }
+  16% {
+    @include transform(translateY(15px));
+  }
+  22% {
+    @include transform(translateY(-12px));
+  }
+  28% {
+    @include transform(translateY(8px));
+  }
+  32% {
+    @include transform(translateY(-7px));
+  }
+  36% {
+    @include transform(translateY(0px));
+  }
+  38% {
+    @include transform(translateY(-4px));
+  }
+  40% {
+    @include transform(translateY(0px));
+  }
+  40.1%,
+  100% {
+    @include transform(translateY(0px));
+  }
+}
+
+@keyframes floatCircle1 {
+  0% {
+    @include transform(translateX(0px) translateY(0px));
+  }
+  25% {
+    @include transform(translateX(80px) translateY(-60px));
+  }
+  50% {
+    @include transform(translateX(0px) translateY(-120px));
+  }
+  75% {
+    @include transform(translateX(-80px) translateY(-60px));
+  }
+  100% {
+    @include transform(translateX(0px) translateY(0px));
+  }
+}
+
+@keyframes floatCircle2 {
+  0% {
+    @include transform(translateX(0px) translateY(0px));
+  }
+  30% {
+    @include transform(translateX(-100px) translateY(80px));
+  }
+  60% {
+    @include transform(translateX(60px) translateY(140px));
+  }
+  90% {
+    @include transform(translateX(40px) translateY(-40px));
+  }
+  100% {
+    @include transform(translateX(0px) translateY(0px));
+  }
+}
+
+@keyframes hoverSkew {
+  0% {
+    @include transform(skewX(0deg));
+  }
+  50% {
+    @include transform(skewX(-1.5deg));
+  }
+  100% {
+    @include transform(skewX(0deg));
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes drawSegment {
+  from {
+    stroke-dashoffset: 1000;
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes updown-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+@keyframes updown-float-v2 {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  30% {
+    transform: translateY(-50px) translateX(50px) rotate(-20deg);
+  }
+  70% {
+    transform: translateY(-80px) translateX(-80px) rotate(10deg);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    @include transform(translateY(30px));
+  }
+  to {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes floatImage {
+  0%,
+  100% {
+    @include transform(translateY(0px));
+  }
+  50% {
+    @include transform(translateY(-20px));
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    filter: blur(20px);
+  }
+  50% {
+    opacity: 0.6;
+    filter: blur(25px);
+  }
+}
+
+@keyframes morphOrb1 {
+  0%,
+  100% {
+    @include transform(translate(0, 0) scale(1));
+    border-radius: 50% 45% 55% 50%;
+  }
+  25% {
+    @include transform(translate(50px, 30px) scale(1.1));
+    border-radius: 45% 50% 50% 55%;
+  }
+  50% {
+    @include transform(translate(30px, 60px) scale(0.95));
+    border-radius: 50% 55% 45% 50%;
+  }
+  75% {
+    @include transform(translate(-20px, 40px) scale(1.05));
+    border-radius: 55% 50% 50% 45%;
+  }
+}
+
+@keyframes morphOrb2 {
+  0%,
+  100% {
+    @include transform(translate(0, 0) scale(1) rotate(0deg));
+    border-radius: 50% 50% 45% 55%;
+  }
+  33% {
+    @include transform(translate(-40px, -30px) scale(1.08) rotate(120deg));
+    border-radius: 45% 55% 50% 50%;
+  }
+  66% {
+    @include transform(translate(-60px, 20px) scale(0.92) rotate(240deg));
+    border-radius: 55% 45% 55% 45%;
+  }
+}
+@keyframes animate_border {
+  from {transform: translate(-50%, -50%) rotateZ(0deg)}
+  to {transform: translate(-50%, -50%) rotateZ(360deg)}
+}
+
+
+@keyframes rotate-loading{
+	0%{
+		transform: rotate(0deg);
+	}
+
+	100%{
+		transform: rotate(360deg);
+	}
+}

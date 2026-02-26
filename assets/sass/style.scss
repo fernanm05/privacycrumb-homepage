@@ -1,0 +1,89 @@
+/*! 
+Template Name: SaasLyn
+Template Url: http://saaslyn-html.netlify.app/
+Developer: Sakebul islam
+Description: SaasLyn - SaaS, AI & Tech Startup HTML Template
+Version: 1.0.0
+Text Domain: SaasLyn
+Tags: SaasLyn, SaaS template, AI startup, tech startup, technology, business, software, HTML5, CSS3, Bootstrap, responsive design, multipurpose, Sakebul Islam
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Fonts
+# Configuration
+# Normalize
+# Typography
+# Global CSS
+# Layout CSS
+# Components CSS
+# Helper CSS
+--------------------------------------------------------------*/
+
+@charset "UTF-8";
+
+// 1.Fonts
+@use "base/fonts" as *;
+
+// 2.Configuration and helpers
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+@use "abstracts/container" as *;
+@use "abstracts/extend" as *;
+
+//3.Normalize
+@use "vendors/normalize" as *;
+
+//4.Typography
+@use "base/typography" as *;
+@use "base/common" as *;
+@use "base/animation" as *;
+@use "base/section-gap" as *;
+
+// 5.layout-related section
+@use "layout/mobile-menu" as *;
+@use "layout/header" as *;
+@use "layout/offcanvas" as *;
+@use "layout/breadcrumb" as *;
+@use "layout/banner" as *;
+@use "layout/footer" as *;
+@use "layout/features" as *;
+@use "layout/report-customize" as *;
+@use "layout/reports" as *;
+@use "layout/testimonial" as *;
+@use "layout/faq" as *;
+@use "layout/pricing" as *;
+@use "layout/blog" as *;
+@use "layout/blog-details" as *;
+@use "layout/cta" as *;
+@use "layout/brand" as *;
+@use "layout/integration" as *;
+@use "layout/workflow" as *;
+@use "layout/benefits" as *;
+@use "layout/work" as *;
+@use "layout/process" as *;
+@use "layout/awesome-features" as *;
+@use "layout/contact" as *;
+@use "layout/pagination" as *;
+@use "layout/appreciation" as *;
+@use "layout/widget" as *;
+@use "layout/error" as *;
+@use "layout/team-main" as *;
+@use "layout/team-details" as *;
+@use "layout/service-main" as *;
+@use "layout/service-details" as *;
+@use "layout/choose-us" as *;
+@use "layout/privacy-policy" as *;
+
+// 6.components
+@use "components/button" as *;
+@use "components/backToTop" as *;
+
+//7.Helpers CSS
+@use "base/helpers" as *;
+
+//8.Pages CSS
+@use "pages/login" as *;
+@use "pages/sign-up" as *;
+

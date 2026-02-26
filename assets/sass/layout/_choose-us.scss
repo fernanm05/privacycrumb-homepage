@@ -1,0 +1,46 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+
+.choose-us {
+  &.section {
+    background-color: var(--bg-color-2);
+  }
+  &__thumb {
+    border-radius: 35px;
+    overflow: hidden;
+    img {
+      -webkit-filter: brightness(90%) contrast(110%) saturate(80%);
+      filter: brightness(90%) contrast(110%) saturate(80%);
+      min-height: 250px;
+      object-fit: cover;
+    }
+  }
+  &__item {
+    @extend %text-center;
+
+    .item-icon {
+      @extend %d-flex, %justify-center, %item-center, %text-center;
+      background: #0c0d25;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(var(--color-white-rgb), 0.25);
+      @include breakpoint(max-md) {
+        margin: 0 auto 16px;
+      }
+    }
+    .item-content {
+      .item-title {
+        font-weight: 500;
+        line-height: 1.6;
+        margin-bottom: 6px;
+      }
+      p {
+        font-family: $ff-urbanist;
+        opacity: 0.7;
+      }
+    }
+  }
+}

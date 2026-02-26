@@ -1,0 +1,422 @@
+@use "sass:list";
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+
+.testimonial {
+  &.section {
+  }
+  &__slider {
+    .swiper-slide {
+    }
+  }
+  &__item {
+    @extend %d-flex;
+    border-radius: 40px;
+    overflow: hidden;
+    padding-inline: 60px 40px;
+    padding-block-start: 50px;
+    user-select: none;
+
+    @include breakpoint(max-lg) {
+      padding-inline: 30px;
+      padding-block-start: 30px;
+    }
+    .item-thumb {
+      @extend %shrink-0, %d-flex, %item-end;
+
+      @include breakpoint(max-xxxxl) {
+        max-width: 260px;
+      }
+      @include breakpoint(max-lg) {
+        width: auto;
+        display: none;
+      }
+    }
+    .item-content {
+      @extend %d-flex, %flex-col;
+      row-gap: 120px;
+      padding-block-end: 50px;
+      @include breakpoint(max-xxxl) {
+        row-gap: 40px;
+      }
+
+      .item-header {
+        .brand {
+          margin-bottom: 52px;
+          @include breakpoint(max-xxxl) {
+            margin-bottom: 20px;
+          }
+        }
+        .text {
+          font-weight: 600;
+          line-height: 135.714%;
+          letter-spacing: -0.84px;
+        }
+      }
+      .author {
+        &-name {
+          font-weight: 600;
+          line-height: 118.75%;
+          letter-spacing: -0.96px;
+        }
+        &-designation {
+          color: rgba(var(--text-color-main-rgb), 0.6);
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%;
+          letter-spacing: -0.6px;
+        }
+      }
+    }
+  }
+  &__navigation {
+    @extend %d-flex, %justify-end, %item-center;
+    gap: 16px;
+
+    @include breakpoint(max-md) {
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+    .prev-testimonial,
+    .next-testimonial {
+      @extend %d-grid, %place-center;
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      background-color: rgba(var(--text-color-main-rgb), 0.06);
+      font-size: $fs-20;
+      @include transition($transition);
+
+      @include breakpoint(max-lg) {
+        width: 45px;
+        height: 45px;
+        font-size: $fs-18;
+      }
+
+      &:hover,
+      &.active {
+        background-color: var(--text-color-main);
+        color: var(--bg-color-2);
+      }
+    }
+    .slide-counter {
+      @extend %d-inline-flex, %justify-center, %item-center;
+      color: rgba(var(--text-color-main-rgb), 0.8);
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 135.714%;
+      letter-spacing: -0.84px;
+      width: 80px;
+
+      @include breakpoint(max-lg) {
+        font-size: 22px;
+        width: 65px;
+      }
+    }
+  }
+}
+
+.testimonials-2 {
+  &.section {
+    @extend %p-relative;
+    z-index: 2;
+    overflow: hidden;
+
+    &::before {
+      @extend %p-absolute;
+      width: 1920px;
+      height: 1690px;
+      left: 50%;
+      top: 50%;
+      z-index: -1;
+      border-radius: 1920px;
+      background: #e7f5ff;
+      filter: blur(250px);
+      @include transform(translateX(-50%));
+    }
+  }
+  &__testimonials-2 {
+  }
+  &__slider-wrapper {
+    @extend %p-relative;
+    z-index: 2;
+
+    .test-author {
+      position: absolute;
+      border-radius: 50%;
+      overflow: hidden;
+      pointer-events: none;
+      will-change: transform;
+    }
+
+    // Dynamic avatar placements and animations via loop
+    $author-pos-props: (left bottom), (left top), (right top), (right bottom);
+    $author-pos-values: (-280px 50%), (-180px -10%), (-180px, -10%),
+      (-280px 50%);
+    $author-durations: 12s, 14s, 16s, 18s;
+    $author-delays: 0s, 0.5s, 1s, 1.5s;
+
+    @for $i from 1 through list.length($author-durations) {
+      $props: list.nth($author-pos-props, $i);
+      $vals: list.nth($author-pos-values, $i);
+      $p1: list.nth($props, 1);
+      $p2: list.nth($props, 2);
+      $v1: list.nth($vals, 1);
+      $v2: list.nth($vals, 2);
+      $duration: list.nth($author-durations, $i);
+      $delay: list.nth($author-delays, $i);
+
+      .test-author-#{$i} {
+        @extend %p-absolute;
+        #{$p1}: $v1;
+        #{$p2}: $v2;
+
+        // Add floating animation with unique duration and delay for each author
+        animation: float-#{$i} $duration ease-in-out infinite;
+        animation-delay: $delay;
+        @include transition($transition);
+
+        @include breakpoint(max-xxl) {
+          $author-pos-props-responsive: (left bottom), (left top), (right top),
+            (right bottom);
+          $author-pos-values-responsive: (-140px 45%), (-80px 10%), (-80px 10%),
+            (-150px 40%);
+
+          $props-responsive: list.nth($author-pos-props-responsive, $i);
+          $vals-responsive: list.nth($author-pos-values-responsive, $i);
+          $p1-responsive: list.nth($props-responsive, 1);
+          $p2-responsive: list.nth($props-responsive, 2);
+          $v1-responsive: list.nth($vals-responsive, 1);
+          $v2-responsive: list.nth($vals-responsive, 2);
+
+          #{$p1-responsive}: $v1-responsive;
+          #{$p2-responsive}: $v2-responsive;
+        }
+
+        @include breakpoint(max-lg) {
+          display: none;
+        }
+      }
+    }
+  }
+  &__slider {
+    max-width: 750px;
+    margin-inline: auto;
+  }
+  &__item {
+    .testimonials-quote {
+      color: #040a10;
+      text-align: center;
+      font-weight: 400;
+      line-height: 150%;
+      letter-spacing: -1.68px;
+      margin-bottom: 66px;
+    }
+    .author {
+      @extend %text-center;
+      margin-inline: auto;
+      width: max-content;
+      .author-thumb {
+        @extend %shrink-0;
+        width: 95px;
+        height: 95px;
+        border-radius: 100%;
+        margin-inline: auto;
+        overflow: hidden;
+        margin-bottom: 10px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .author-name {
+        color: #040a10;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 210%;
+        letter-spacing: -1.2px;
+        margin-bottom: 0px;
+      }
+      .author-designation {
+        color: rgba(4, 10, 16, 0.8);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -0.96px;
+      }
+    }
+  }
+  &__navigation {
+    @extend %d-flex, %justify-between, %item-center, %p-absolute;
+    left: 50%;
+    bottom: 90px;
+    z-index: 1;
+    width: 100%;
+    pointer-events: none;
+    @include transform(translateX(-50%));
+
+    .prev-testimonial,
+    .next-testimonial {
+      @extend %shrink-0, %d-grid, %place-center;
+      width: 56px;
+      height: 56px;
+      border-radius: 100%;
+      background-color: var(--color-white);
+      color: var(--color-black);
+      pointer-events: auto;
+      @include transition($transition);
+
+      &:hover {
+        background-color: var(--primary-color-2);
+        color: var(--color-white);
+      }
+    }
+  }
+}
+
+.testimonial-3 {
+  &.section {
+  }
+  &__info {
+    p {
+      color: rgba(var(--color-white-rgb), 0.75);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 150%;
+      letter-spacing: -0.36px;
+      opacity: 0.7;
+    }
+  }
+
+  &__slider {
+    padding-left: 40px;
+    @include breakpoint(max-md) {
+      padding-left: 0px;
+    }
+  }
+  &__item {
+    @extend %p-relative;
+    border-radius: 24px;
+    border: 1px solid rgba(var(--color-white-rgb), 0.1);
+    background: #0f1313;
+    padding: 42px 42px 42px 82px;
+    z-index: 2;
+
+    @include breakpoint(max-md) {
+      padding: 30px;
+    }
+
+    .triangle {
+      @extend %p-absolute;
+      width: 73px;
+      height: 150px;
+      top: 50%;
+      left: 0;
+      color: var(--color-white);
+      @include transform(translateY(-50%));
+
+      @include breakpoint(max-md) {
+        display: none;
+      }
+    }
+
+    &::after {
+      @extend %p-absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      background: linear-gradient(135deg, #4642fc 0%, #adbbfe 100%);
+      opacity: 0.4;
+      filter: blur(25px);
+      left: -40px;
+      top: 50%;
+      @include transform(translateY(-50%));
+      border-radius: 80px;
+      z-index: -1;
+
+      @include breakpoint(max-md) {
+        display: none;
+      }
+    }
+
+    .item-content {
+      .item-header {
+        @extend %d-flex, %justify-between, %item-start;
+        margin-bottom: 5px;
+
+        .rating-stars {
+          ul {
+            @extend %d-flex;
+            gap: 4px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            li {
+              color: #ffc107;
+              font-size: 16px;
+            }
+          }
+        }
+
+        .icon {
+          color: var(--color-white);
+        }
+      }
+
+      .item-author {
+        margin-bottom: 23px;
+
+        .author-avatar {
+          @extend %p-absolute;
+          width: 80px;
+          height: 80px;
+          aspect-ratio: 1/1;
+          border: 1px solid rgba(255, 255, 255, 0.4);
+          left: -40px;
+          top: 50%;
+          overflow: hidden;
+          border-radius: 100%;
+          @include transform(translateY(-50%));
+          @include breakpoint(max-md) {
+            display: none;
+          }
+        }
+
+        .author-title {
+          color: var(--color-white);
+          font-size: 22px;
+          font-weight: 600;
+          line-height: 122.727%;
+          letter-spacing: -0.44px;
+          margin-bottom: 6px;
+          @include breakpoint(max-md) {
+            font-size: calc(22px - 5px);
+          }
+        }
+
+        .author-designation {
+          color: rgba(var(--color-white-rgb), 0.7);
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 168.75%;
+          letter-spacing: -0.32px;
+        }
+      }
+
+      p {
+        color: rgba(var(--color-white-rgb), 0.7);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 168.75%;
+        letter-spacing: -0.32px;
+      }
+    }
+  }
+}

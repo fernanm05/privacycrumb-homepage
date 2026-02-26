@@ -1,0 +1,56 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+
+.privacy-policy {
+  &.section {
+    background-color: var(--bg-color-1);
+  }
+
+  .terms-title {
+    margin-bottom: 15px;
+    font-family: $ff-urbanist;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
+  }
+  .table-content {
+    @include breakpoint(xxl) {
+      padding-left: 30px;
+    }
+    ul {
+      li {
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+
+        a {
+          font-family: $ff-urbanist;
+          font-size: 22px;
+          line-height: 150%;
+          transition: 0.3s;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+.condition-content {
+  .terms-inner-desc {
+    margin-top: 10px;
+  }
+  .terms-desc {
+    color: var(--text-color-main);
+    font-size: 16px;
+    font-family: $ff-inter;
+    font-weight: 500;
+    line-height: 137.5%;
+    letter-spacing: -0.32px;
+    opacity: 0.72;
+    margin-top: 12px;
+    margin-bottom: 10px;
+  }
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}

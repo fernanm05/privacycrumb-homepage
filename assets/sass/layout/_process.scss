@@ -1,0 +1,104 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+
+.process {
+  &.section {
+    counter-reset: process-counter;
+  }
+
+  &__item {
+    @extend %d-flex, %flex-col, %item-center;
+    text-align: center;
+    gap: 60px;
+    @include breakpoint(max-md) {
+      gap: 50px;
+    }
+    .item-icon {
+      @extend %d-grid, %place-center, %p-relative;
+      width: 155px;
+      height: 155px;
+      border-radius: 100%;
+      background-color: #f1f2ff;
+      color: var(--color-black-2);
+      margin-block-start: 24px;
+      @include transition($transition);
+
+      @include breakpoint(max-xl) {
+        width: 140px;
+        height: 140px;
+      }
+      @include breakpoint(max-md) {
+        width: 120px;
+        height: 120px;
+      }
+      &::after {
+        @extend %p-absolute;
+        inset: -24px;
+        background-color: transparent;
+        z-index: -2;
+        border-radius: 100%;
+        border: 2px solid rgba(var(--color-white-rgb), 0.13);
+        @include transition($transition);
+      }
+
+      &::before {
+        @extend %p-absolute, %d-grid, %place-center;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        top: -24px;
+        right: -24px;
+        counter-increment: process-counter;
+        content: counter(process-counter, decimal-leading-zero);
+        background-color: #716eff;
+        color: var(--color-white);
+        font-size: $fs-20;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: -0.4px;
+        @include transition($transition);
+
+        @include breakpoint(max-xl) {
+          width: 40px;
+          height: 40px;
+          top: -20px;
+          right: -20px;
+          font-size: $fs-18;
+        }
+        @include breakpoint(max-md) {
+          width: 35px;
+          height: 35px;
+          top: -18px;
+          right: -18px;
+          font-size: $fs-16;
+        }
+      }
+    }
+
+    .item-content {
+      .item-title {
+        line-height: normal;
+        letter-spacing: -0.48px;
+        margin-bottom: 10px;
+      }
+      p {
+        color: rgba(var(--color-white-rgb), 0.75);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 168.75%;
+        letter-spacing: -0.32px;
+      }
+    }
+
+    &:hover {
+      .item-icon {
+        color: #716eff;
+        &::after {
+          background-color: rgba(112, 110, 255, 0.25);
+          border-color: #716eff;
+        }
+      }
+    }
+  }
+}

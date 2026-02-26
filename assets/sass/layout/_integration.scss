@@ -1,0 +1,306 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+@use "sass:math";
+
+.integration {
+  &.section {
+    overflow: hidden;
+    .section-header-2 {
+      max-width: 652px;
+    }
+  }
+  &__content {
+    @extend %p-relative;
+    z-index: 5;
+
+    .ellipse-1,
+    .ellipse-2 {
+      @extend %p-absolute;
+      width: 784px;
+      height: 784px;
+      border-radius: 100%;
+      pointer-events: none;
+      @include breakpoint(max-md) {
+        opacity: 0.3 !important;
+      }
+    }
+    .ellipse-1 {
+      top: -160px;
+      left: -200px;
+      border-radius: 50%;
+      opacity: 0.5;
+      background: #bce8ff;
+      filter: blur(110px);
+      z-index: -4;
+
+    }
+    .ellipse-2 {
+      right: -68px;
+      bottom: 20px;
+      border-radius: 50%;
+      opacity: 0.7;
+      background: #b9affe;
+      filter: blur(110px);
+      z-index: -5;
+
+    }
+    .circle-one {
+      @extend %d-grid, %place-center, %p-relative;
+      width: 849px;
+      height: 849px;
+      border-radius: 100%;
+      border: 2px solid rgba(0, 0, 0, 0.03);
+      backdrop-filter: blur(12px);
+      z-index: 10;
+      pointer-events: none;
+      
+      @include breakpoint(max-xxl) {
+        width: 720px;
+        height: 720px;
+      }
+      @include breakpoint(max-lg) {
+        width: 600px;
+        height: 600px;
+      }
+      @include breakpoint(max-md) {
+        width: 450px;
+        height: 450px;
+      }
+      @include breakpoint(max-sm) {
+        width: 270px;
+        height: 270px;
+      }
+
+      .circle-one-inset {
+        @extend %p-absolute;
+        left: 50%;
+        top: 50%;
+        @include transform(translate(-50%, -50%));
+        animation: circle-rotate 20s linear infinite;
+        -webkit-animation: circle-rotate 20s linear infinite;
+        .icon-block {
+          @extend %p-absolute, %shrink-0, %d-grid, %place-center;
+          width: 100px;
+          height: 100px;
+          aspect-ratio: 1/1;
+          background-color: var(--color-white);
+          border-radius: 50%;
+          z-index: 10;
+          $parent-size: 849px;
+          $item-size: 100px;
+          $radius: math.div($parent-size, 2);
+
+          @include transition($transition-2-ease-in-out);
+          @for $i from 1 through 8 {
+            $angle: math.div(360deg, 8) * ($i - 1);
+            &:nth-of-type(#{$i}) {
+              left: 50%;
+              top: 50%;
+              @include transform(
+                translate(-50%, -50%) rotate($angle) translate(0, -$radius)
+                  rotate(-$angle)
+              );
+            }
+          }
+
+          // Responsive: recompute parent size and radius and re-emit transforms
+          @include breakpoint(max-xxl) {
+            width: 70px;
+            height: 70px;
+            $parent-size: 720px;
+            $item-size: 70px;
+            $radius: math.div($parent-size, 2);
+
+            @for $i from 1 through 8 {
+              $angle: math.div(360deg, 8) * ($i - 1);
+              &:nth-of-type(#{$i}) {
+                left: 50%;
+                top: 50%;
+                @include transform(
+                  translate(-50%, -50%) rotate($angle) translate(0, -$radius)
+                    rotate(-$angle)
+                );
+              }
+            }
+          }
+          @include breakpoint(max-lg) {
+            width: 70px;
+            height: 70px;
+            $parent-size: 600px;
+            $item-size: 70px;
+            $radius: math.div($parent-size, 2);
+
+            @for $i from 1 through 8 {
+              $angle: math.div(360deg, 8) * ($i - 1);
+              &:nth-of-type(#{$i}) {
+                left: 50%;
+                top: 50%;
+                @include transform(
+                  translate(-50%, -50%) rotate($angle) translate(0, -$radius)
+                    rotate(-$angle)
+                );
+              }
+            }
+          }
+          @include breakpoint(max-md) {
+            width: 40px;
+            height: 40px;
+            $parent-size: 450px;
+            $item-size: 40px;
+            $radius: math.div($parent-size, 2);
+
+            @for $i from 1 through 8 {
+              $angle: math.div(360deg, 8) * ($i - 1);
+              &:nth-of-type(#{$i}) {
+                left: 50%;
+                top: 50%;
+                @include transform(
+                  translate(-50%, -50%) rotate($angle) translate(0, -$radius)
+                    rotate(-$angle)
+                );
+              }
+            }
+          }
+          @include breakpoint(max-sm) {
+            width: 35px;
+            height: 35px;
+            $parent-size: 270px;
+            $item-size: 35px;
+            $radius: math.div($parent-size, 2);
+
+            @for $i from 1 through 8 {
+              $angle: math.div(360deg, 8) * ($i - 1);
+              &:nth-of-type(#{$i}) {
+                left: 50%;
+                top: 50%;
+                @include transform(
+                  translate(-50%, -50%) rotate($angle) translate(0, -$radius)
+                    rotate(-$angle)
+                );
+              }
+            }
+          }
+
+          &:hover {
+            background-color: var(--secondary-color);
+            backdrop-filter: blur(5px);
+          }
+          img {
+            animation: img-rotate 20s linear infinite;
+            -webkit-animation: img-rotate 20s linear infinite;
+            margin-inline: auto;
+
+            @include breakpoint(max-xxl) {
+              max-width: 60%;
+            }
+            @include breakpoint(max-md) {
+              max-width: 40%;
+            }
+          }
+        }
+      }
+
+      .circle-two {
+        @extend %d-grid, %place-center, %shrink-0;
+        width: 622px;
+        height: 622px;
+        border-radius: 100%;
+        border: 3px solid rgba(var(--color-white-rgb), 0.3);
+        backdrop-filter: blur(12px);
+        background: rgba(var(--color-white-rgb), 0.32);
+
+        @include breakpoint(max-xxl) {
+          width: 570px;
+          height: 570px;
+        }
+        @include breakpoint(max-lg) {
+          width: 470px;
+          height: 470px;
+        }
+        @include breakpoint(max-md) {
+          width: 370px;
+          height: 370px;
+        }
+        @include breakpoint(max-sm) {
+          width: 220px;
+          height: 220px;
+        }
+
+        .circle-three {
+          @extend %d-grid, %place-center, %shrink-0;
+          width: 520px;
+          height: 520px;
+          border-radius: 100%;
+          border: 3px solid rgba(var(--color-white-rgb), 0.3);
+          backdrop-filter: blur(12px);
+          background: rgba(var(--color-white-rgb), 0.32);
+
+          @include breakpoint(max-xxl) {
+            width: 480px;
+            height: 480px;
+          }
+          @include breakpoint(max-lg) {
+            width: 380px;
+            height: 380px;
+          }
+          @include breakpoint(max-md) {
+            width: 280px;
+            height: 280px;
+          }
+          @include breakpoint(max-sm) {
+            width: 180px;
+            height: 180px;
+          }
+
+          .circle-four {
+            @extend %d-grid, %place-center, %shrink-0;
+            width: 408px;
+            height: 408px;
+            border-radius: 100%;
+            border: 3px solid rgba(var(--color-white-rgb), 0.3);
+            backdrop-filter: blur(12px);
+            background: rgba(var(--color-white-rgb), 0.32);
+
+            @include breakpoint(max-xxl) {
+              width: 350px;
+              height: 350px;
+            }
+            @include breakpoint(max-lg) {
+              width: 250px;
+              height: 250px;
+            }
+            @include breakpoint(max-md) {
+              width: 200px;
+              height: 200px;
+            }
+            @include breakpoint(max-sm) {
+              width: 150px;
+              height: 150px;
+            }
+          }
+        }
+      }
+    }
+    .main-logo {
+      color: #4642fc;
+      svg {
+        @include breakpoint(max-lg) {
+          width: 120px;
+          height: 120px;
+        }
+        @include breakpoint(max-md) {
+          width: 100px;
+          height: 100px;
+        }
+        @include breakpoint(max-sm) {
+          width: 80px;
+          height: 80px;
+        }
+        stop:last-child {
+          stop-color: #adbbfe;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,199 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+
+.blog {
+  &.section {
+  }
+  &__item-wrapper {
+    @extend %p-relative, %d-grid;
+    border-radius: 30px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    padding: 8px;
+    z-index: 2;
+    overflow: hidden;
+
+    @include breakpoint(max-lg) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @include breakpoint(max-md) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      border-radius: 20px;
+    }
+
+    &::before {
+      @extend %p-absolute;
+      z-index: -1;
+      inset: 0;
+      opacity: 0.08;
+      background: linear-gradient(
+        180deg,
+        var(--primary-color) 0%,
+        var(--secondary-color) 48.08%,
+        var(--third-color) 100%
+      );
+    }
+  }
+
+  &__item {
+    .blog-thumb {
+      @extend %d-block;
+      border-radius: 24px;
+      overflow: hidden;
+
+      @include breakpoint(max-md) {
+        border-radius: 15px;
+      }
+    }
+    .blog-content {
+      padding: 24px;
+
+      @include breakpoint(max-md) {
+        padding: 20px 15px;
+      }
+      .meta {
+        margin-bottom: 24px;
+        ul {
+          @extend %d-flex, %item-center;
+          gap: 16px;
+          li {
+            .category,
+            .date {
+              color: var(--text-color-main);
+              text-align: center;
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 128.571%;
+              letter-spacing: -0.56px;
+              padding: 6.5px 14px;
+            }
+            .category {
+              border-radius: 40px;
+              background: rgba(var(--text-color-main-rgb), 0.16);
+            }
+            .date {
+            }
+          }
+        }
+      }
+      .blog-title {
+        color: var(--text-color-main);
+        font-weight: 600;
+        line-height: 133.333%;
+        letter-spacing: -1.2px;
+      }
+      p {
+        color: var(--text-color-main);
+        font-size: $fs-16;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 137.5%;
+        letter-spacing: -0.32px;
+        opacity: 0.72;
+        margin-top: 12px;
+        margin-bottom: 25px;
+
+        @include breakpoint(max-md) {
+          margin-top: 8px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    &.v2 {
+      overflow: hidden;
+      border-radius: 30px;
+
+      background: linear-gradient(
+        180deg,
+        rgba(var(--primary-color-rgb), 0.08) 0%,
+        rgba(var(--secondary-color-rgb), 0.08) 48.08%,
+        rgba(var(--third-color-rgb), 0.08) 100%
+      );
+      @include breakpoint(max-md) {
+        border-radius: 20px;
+      }
+    }
+  }
+}
+.blog-3 {
+  &.section {
+    @extend %p-relative;
+    z-index: 2;
+
+    .bg-shape {
+      @extend %p-absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+
+      @include breakpoint(max-md) {
+        display: none;
+      }
+    }
+
+    .section-header-3 {
+      a {
+        margin-top: 70px;
+      }
+    }
+  }
+  &__item {
+    .item-thumb {
+      @extend %d-block;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    .item-content {
+      padding-inline: 24px;
+      padding-block-start: 24px;
+      @include breakpoint(max-xl) {
+        padding: 20px 10px 0 10px;
+      }
+      @include breakpoint(max-lg) {
+        padding-inline: 24px;
+        padding-block-start: 24px;
+      }
+      .item-tags {
+        @extend %d-flex, %item-center;
+        gap: 16px;
+        margin-bottom: 20px;
+        span {
+          @extend %d-inline-block;
+          color: rgba(var(--color-white-rgb), 0.72);
+          text-align: center;
+          font-size: 15px;
+          font-weight: 500;
+          line-height: normal;
+          letter-spacing: -0.3px;
+          padding: 8px 18px;
+          border-radius: 50px;
+          border: 1px solid rgba(var(--color-white-rgb), 0.1);
+        }
+      }
+      .item-title {
+        color: var(--color-white);
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: -0.48px;
+        margin-bottom: 20px;
+
+        a {
+          color: inherit;
+          font: inherit;
+        }
+      }
+      p {
+        color: rgba(var(--color-white-rgb), 0.75);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 164.286%;
+        letter-spacing: -0.28px;
+        opacity: 0.7;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+

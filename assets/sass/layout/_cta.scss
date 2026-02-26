@@ -1,0 +1,297 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+
+.cta {
+  &.section {
+  }
+
+  &__content-wrapper {
+    @extend %text-center;
+    border-radius: 42px;
+    border: 2px solid rgba(var(--primary-color-rgb), 0.5);
+    background: var(--bg-color-2);
+    overflow: hidden;
+    padding: 120px;
+
+    @include breakpoint(max-lg) {
+      padding: 60px;
+    }
+    @include breakpoint(max-md) {
+      padding: 40px;
+    }
+    @include breakpoint(max-sm) {
+      padding: 30px;
+    }
+  }
+  &__content {
+    .section-title {
+      max-width: 782px;
+      margin-inline: auto;
+    }
+    p {
+      max-width: 508px;
+      margin-inline: auto;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 130%;
+      letter-spacing: -0.8px;
+      opacity: 0.69;
+      margin-top: 12px;
+      margin-bottom: 32px;
+
+      @include breakpoint(max-md) {
+        font-size: 16px;
+        margin-bottom: 22px;
+      }
+    }
+  }
+}
+
+.cta-2 {
+  &.section {
+    background-color: #5a5afc;
+  }
+  &__wrapper {
+    border-radius: 42px;
+    background: linear-gradient(270deg, #b1e4ff 0.38%, #f8f7ff 132.43%);
+    padding-inline: 80px;
+    padding-block-start: 70px;
+    overflow: hidden;
+
+    @include breakpoint(max-xl) {
+      padding-inline: 50px;
+      padding-block-start: 40px;
+    }
+    @include breakpoint(max-lg) {
+      padding-inline: 40px;
+      padding-block-start: 30px;
+    }
+    @include breakpoint(max-sm) {
+      padding-inline: 30px;
+    }
+  }
+  &__content {
+    @extend %d-flex, %flex-col, %justify-between;
+    padding-block-end: 70px;
+    height: 100%;
+    gap: 30px;
+    @include breakpoint(max-xl) {
+      padding-block-end: 40px;
+      padding-inline-end: 40px;
+    }
+    @include breakpoint(max-lg) {
+      padding-block-end: 30px;
+      padding-inline-end: 0px;
+    }
+    .section-header-2 {
+      p {
+        max-width: 537px;
+        color: rgba(4, 10, 16, 0.5);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 150%;
+      }
+    }
+    .buttons {
+      @extend %d-flex, %item-center;
+      gap: 16px;
+
+      @include breakpoint(max-lg) {
+        flex-direction: column;
+
+        a {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__thumb {
+    @extend %p-relative, %d-flex, %flex-col, %justify-end;
+    padding-inline: 10px;
+    padding-block-start: 10px;
+    border-radius: 56px 56px 0 0;
+    border: 0.5px solid rgba(245, 251, 255, 0.4);
+    backdrop-filter: blur(5.808218955993652px);
+    margin-bottom: -3px;
+    margin-right: 60px;
+
+    @include breakpoint(max-xl) {
+      margin-right: 20px;
+    }
+    @include breakpoint(max-lg) {
+      margin-right: 0px;
+      padding-inline: 5px;
+      padding-block-start: 5px;
+    }
+
+    .star-one,
+    .star-two {
+      @extend %p-absolute;
+      @include breakpoint(max-lg) {
+        display: none;
+      }
+    }
+    .star-one {
+      top: 90px;
+      left: -70px;
+      color: var(--color-white);
+      animation: spin 7s infinite linear;
+    }
+    .star-two {
+      bottom: 73px;
+      right: -53px;
+      color: var(--primary-color-2);
+      animation: spin 7s infinite linear reverse;
+    }
+
+    .thumb-wrapper {
+      background-color: var(--color-white);
+      padding-inline: 10px;
+      padding-block-start: 10px;
+      border-radius: 46px 46px 0 0;
+      backdrop-filter: blur(5.808218955993652px);
+      overflow: hidden;
+      @include breakpoint(max-lg) {
+        padding-inline: 5px;
+        padding-block-start: 5px;
+      }
+      img {
+        border-radius: 41px 41px 0 0;
+        background-color: #000;
+      }
+    }
+  }
+}
+.cta-3 {
+  &.section {
+    @extend %p-relative;
+    z-index: 2;
+    background: #0a0808;
+    overflow: hidden;
+    .circle-1 {
+      @extend %p-absolute;
+      z-index: -1;
+      width: 634px;
+      height: 634px;
+      left: 50px;
+      bottom: -255px;
+      border-radius: 634px;
+      opacity: 0.53;
+      background: linear-gradient(135deg, #4642fc 0%, #adbbfe 100%);
+      filter: blur(301.412841796875px);
+    }
+    .circle-2 {
+      @extend %p-absolute;
+      z-index: -2;
+      width: 520px;
+      height: 519px;
+      top: -115px;
+      right: -80px;
+      border-radius: 520px;
+      opacity: 0.24;
+      background: #ef3e41;
+      filter: blur(226.05963134765625px);
+    }
+    .box-1 {
+      @extend %p-absolute;
+      z-index: -1;
+      left: 145px;
+      bottom: 50px;
+      animation: updown-float 3s ease-in-out infinite;
+
+      @include breakpoint(max-xxl) {
+        max-width: 5%;
+      }
+      @include breakpoint(max-lg) {
+        display: none;
+      }
+    }
+    .box-2 {
+      @extend %p-absolute;
+      z-index: -2;
+      right: 125px;
+      top: 50%;
+      animation: updown-float 8s ease-in-out infinite;
+      @include breakpoint(max-xxl) {
+        max-width: 5%;
+      }
+      @include breakpoint(max-lg) {
+        display: none;
+      }
+    }
+    .doll-1 {
+      @extend %p-absolute;
+      z-index: -1;
+      left: 12%;
+      top: 30%;
+      animation: updown-float 5s ease-in-out infinite;
+
+      @include breakpoint(max-xxl) {
+        left: 5%;
+        max-width: 10%;
+      }
+      @include breakpoint(max-lg) {
+        display: none;
+      }
+    }
+    .doll-2 {
+      @extend %p-absolute;
+      z-index: -1;
+      right: 12%;
+      top: 30%;
+      animation: updown-float 3s ease-in-out infinite;
+
+      @include breakpoint(max-xxl) {
+        right: 5%;
+        max-width: 15%;
+      }
+
+      @include breakpoint(max-lg) {
+        display: none;
+      }
+    }
+  }
+  &__content {
+    text-align: center;
+    max-width: 752px;
+    margin-inline: auto;
+    .content-title {
+    }
+    .buttons {
+      @extend %d-flex, %justify-center, %item-center;
+      gap: 24px;
+      margin: 45px;
+      @include breakpoint(max-sm) {
+        flex-direction: column;
+        gap: 15px;
+
+        a {
+          width: 100%;
+        }
+      }
+    }
+    .features-list {
+      ul {
+        @extend %d-flex, %justify-between, %item-center;
+        gap: 15px;
+        @include breakpoint(max-md) {
+          flex-direction: column;
+        }
+        li {
+          @extend %d-flex, %justify-center, %item-center;
+          gap: 12px;
+          color: var(--color-white);
+          font-size: 18px;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: -1.08px;
+
+          @include breakpoint(max-lg) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

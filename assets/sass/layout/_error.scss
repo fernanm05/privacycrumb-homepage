@@ -1,0 +1,160 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+
+.error {
+  &.section {
+    @extend %p-relative;
+    min-height: 100vh;
+    overflow: hidden;
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+    background: radial-gradient(
+      ellipse at center,
+      rgba(var(--primary-color-rgb), 0.05) 0%,
+      transparent 70%
+    );
+
+    &::before {
+      @extend %p-absolute;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(var(--primary-color-rgb), 0.15) 0%,
+        rgba(var(--primary-color-2-rgb), 0.08) 50%,
+        transparent 100%
+      );
+      top: -400px;
+      left: -200px;
+      z-index: -1;
+      animation: morphOrb1 12s ease-in-out infinite;
+
+      @include breakpoint(max-md) {
+        width: 500px;
+        height: 500px;
+        top: -250px;
+      }
+    }
+
+    &::after {
+      @extend %p-absolute;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(var(--secondary-color-rgb), 0.12) 0%,
+        rgba(var(--primary-color-rgb), 0.06) 50%,
+        transparent 100%
+      );
+      bottom: -300px;
+      right: -250px;
+      z-index: -1;
+      animation: morphOrb2 15s ease-in-out infinite;
+
+      @include breakpoint(max-md) {
+        width: 450px;
+        height: 450px;
+        bottom: -200px;
+      }
+    }
+  }
+
+  &__content {
+    @extend %text-center, %p-relative;
+    max-width: 800px;
+    margin-inline: auto;
+    padding-inline: 20px;
+    z-index: 2;
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  &-image {
+    @extend %p-relative;
+    margin-bottom: -35px;
+    animation: floatImage 6s ease-in-out infinite;
+
+   
+
+    img {
+      max-width: 600px;
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 20px 60px rgba(var(--primary-color-rgb), 0.25));
+      @include transition($transition-3-ease-in-out);
+
+      @include breakpoint(max-xxl) {
+        max-width: 550px;
+      }
+
+      @include breakpoint(max-xl) {
+        max-width: 500px;
+      }
+
+      @include breakpoint(max-lg) {
+        max-width: 450px;
+      }
+
+      @include breakpoint(max-md) {
+        max-width: 400px;
+      }
+
+      @include breakpoint(max-sm) {
+        max-width: 100%;
+      }
+    }
+
+    &::before {
+      @extend %p-absolute;
+      width: 80%;
+      height: 80%;
+      left: 50%;
+      top: 50%;
+      @include transform(translate(-50%, -50%));
+      background: radial-gradient(
+        circle,
+        rgba(var(--primary-color-rgb), 0.3) 0%,
+        rgba(var(--primary-color-2-rgb), 0.15) 50%,
+        transparent 100%
+      );
+      filter: blur(40px);
+      z-index: -1;
+      animation: glowPulse 3s ease-in-out infinite;
+    }
+  }
+
+  &-text {
+    @extend %text-medium;
+    font-family: $ff-urbanist;
+    font-size: 22px;
+    line-height: 160%;
+    letter-spacing: -0.5px;
+    color: var(--text-color-main);
+    opacity: 0.75;
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-inline: auto;
+    animation: fadeIn 1s ease-out 0.3s both;
+
+    @include breakpoint(max-lg) {
+      font-size: 20px;
+      margin-bottom: 45px;
+    }
+
+    @include breakpoint(max-md) {
+      font-size: 18px;
+      margin-bottom: 40px;
+      max-width: 500px;
+    }
+
+    @include breakpoint(max-sm) {
+      font-size: 16px;
+      margin-bottom: 35px;
+      max-width: 100%;
+      line-height: 150%;
+    }
+  }
+}

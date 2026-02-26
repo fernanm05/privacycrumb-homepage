@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460" width="720" height="460">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#111827"/>
+    </linearGradient>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="chartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <clipPath id="panelClip">
+      <rect x="20" y="20" width="680" height="420" rx="12"/>
+    </clipPath>
+  </defs>
+
+  <!-- Main panel -->
+  <rect x="20" y="20" width="680" height="420" rx="12" fill="url(#bg)" filter="url(#shadow)"/>
+
+  <!-- Top bar -->
+  <rect x="20" y="20" width="680" height="48" rx="0" fill="url(#headerGrad)" clip-path="url(#panelClip)"/>
+  <rect x="20" y="20" width="680" height="12" rx="12" fill="url(#headerGrad)"/>
+  <!-- Window dots -->
+  <circle cx="48" cy="44" r="5" fill="#ff5f56" opacity="0.9"/>
+  <circle cx="66" cy="44" r="5" fill="#ffbd2e" opacity="0.9"/>
+  <circle cx="84" cy="44" r="5" fill="#27c93f" opacity="0.9"/>
+  <!-- Title -->
+  <text x="115" y="49" font-family="'Inter', sans-serif" font-size="13" fill="white" font-weight="600">PrivacyCrumb — Consent Audit Log</text>
+  <!-- Right side chips -->
+  <rect x="520" y="33" width="80" height="22" rx="11" fill="rgba(255,255,255,0.15)"/>
+  <text x="560" y="48" font-family="sans-serif" font-size="10" fill="white" text-anchor="middle">Export CSV</text>
+  <rect x="614" y="33" width="72" height="22" rx="11" fill="rgba(255,255,255,0.2)"/>
+  <text x="650" y="48" font-family="sans-serif" font-size="10" fill="white" text-anchor="middle">Download PDF</text>
+
+  <!-- Search bar + filters row -->
+  <rect x="36" y="84" width="250" height="28" rx="6" fill="#1e2433"/>
+  <text x="52" y="102" font-family="sans-serif" font-size="11" fill="#6b7280">🔍 Search consent logs...</text>
+  <rect x="300" y="84" width="80" height="28" rx="6" fill="#1e2433"/>
+  <text x="340" y="102" font-family="sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">All Types ▾</text>
+  <rect x="392" y="84" width="80" height="28" rx="6" fill="#1e2433"/>
+  <text x="432" y="102" font-family="sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">All Status ▾</text>
+
+  <!-- Stat boxes -->
+  <rect x="490" y="78" width="90" height="40" rx="8" fill="#1a2036"/>
+  <text x="535" y="94" font-family="sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">Total Consents</text>
+  <text x="535" y="110" font-family="sans-serif" font-size="13" fill="#6366f1" font-weight="700" text-anchor="middle">48,291</text>
+  <rect x="592" y="78" width="90" height="40" rx="8" fill="#1a2036"/>
+  <text x="637" y="94" font-family="sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">Opt-in Rate</text>
+  <text x="637" y="110" font-family="sans-serif" font-size="13" fill="#22c55e" font-weight="700" text-anchor="middle">87.4%</text>
+
+  <!-- Table header -->
+  <rect x="36" y="126" width="648" height="28" rx="4" fill="#1a2036"/>
+  <text x="52" y="144" font-family="sans-serif" font-size="10" fill="#6b7280" font-weight="600">TIMESTAMP</text>
+  <text x="168" y="144" font-family="sans-serif" font-size="10" fill="#6b7280" font-weight="600">USER</text>
+  <text x="290" y="144" font-family="sans-serif" font-size="10" fill="#6b7280" font-weight="600">ACTION</text>
+  <text x="390" y="144" font-family="sans-serif" font-size="10" fill="#6b7280" font-weight="600">CONSENT TYPE</text>
+  <text x="520" y="144" font-family="sans-serif" font-size="10" fill="#6b7280" font-weight="600">STATUS</text>
+  <text x="610" y="144" font-family="sans-serif" font-size="10" fill="#6b7280" font-weight="600">COUNTRY</text>
+
+  <!-- Row 1 - highlighted -->
+  <rect x="36" y="156" width="648" height="30" rx="4" fill="rgba(99,102,241,0.08)"/>
+  <text x="52" y="175" font-family="sans-serif" font-size="10" fill="#9ca3af">2025-02-25 10:41:02</text>
+  <text x="168" y="175" font-family="sans-serif" font-size="10" fill="#e2e8f0">amanda.c@firm.io</text>
+  <text x="290" y="175" font-family="sans-serif" font-size="10" fill="#a5b4fc">Banner Accept</text>
+  <text x="390" y="175" font-family="sans-serif" font-size="10" fill="#9ca3af">Analytics + Marketing</text>
+  <rect x="516" y="163" width="52" height="16" rx="8" fill="rgba(34,197,94,0.15)"/>
+  <text x="542" y="175" font-family="sans-serif" font-size="10" fill="#22c55e" text-anchor="middle">Accepted</text>
+  <text x="614" y="175" font-family="sans-serif" font-size="10" fill="#9ca3af">🇩🇪 DE</text>
+
+  <!-- Row 2 -->
+  <rect x="36" y="188" width="648" height="30" rx="4" fill="transparent"/>
+  <text x="52" y="207" font-family="sans-serif" font-size="10" fill="#9ca3af">2025-02-25 10:40:15</text>
+  <text x="168" y="207" font-family="sans-serif" font-size="10" fill="#e2e8f0">j.martins@corp.nl</text>
+  <text x="290" y="207" font-family="sans-serif" font-size="10" fill="#a5b4fc">Preference Update</text>
+  <text x="390" y="207" font-family="sans-serif" font-size="10" fill="#9ca3af">Necessary Only</text>
+  <rect x="516" y="195" width="52" height="16" rx="8" fill="rgba(239,68,68,0.15)"/>
+  <text x="542" y="207" font-family="sans-serif" font-size="10" fill="#ef4444" text-anchor="middle">Declined</text>
+  <text x="614" y="207" font-family="sans-serif" font-size="10" fill="#9ca3af">🇳🇱 NL</text>
+
+  <!-- Row 3 -->
+  <rect x="36" y="220" width="648" height="30" rx="4" fill="rgba(99,102,241,0.04)"/>
+  <text x="52" y="239" font-family="sans-serif" font-size="10" fill="#9ca3af">2025-02-25 10:38:57</text>
+  <text x="168" y="239" font-family="sans-serif" font-size="10" fill="#e2e8f0">r.foley@saas.co</text>
+  <text x="290" y="239" font-family="sans-serif" font-size="10" fill="#a5b4fc">Banner Accept</text>
+  <text x="390" y="239" font-family="sans-serif" font-size="10" fill="#9ca3af">Analytics + Marketing</text>
+  <rect x="516" y="227" width="52" height="16" rx="8" fill="rgba(34,197,94,0.15)"/>
+  <text x="542" y="239" font-family="sans-serif" font-size="10" fill="#22c55e" text-anchor="middle">Accepted</text>
+  <text x="614" y="239" font-family="sans-serif" font-size="10" fill="#9ca3af">🇬🇧 GB</text>
+
+  <!-- Row 4 -->
+  <rect x="36" y="252" width="648" height="30" rx="4" fill="transparent"/>
+  <text x="52" y="271" font-family="sans-serif" font-size="10" fill="#9ca3af">2025-02-25 10:37:24</text>
+  <text x="168" y="271" font-family="sans-serif" font-size="10" fill="#e2e8f0">chen.w@techfirm.sg</text>
+  <text x="290" y="271" font-family="sans-serif" font-size="10" fill="#a5b4fc">Withdrawal</text>
+  <text x="390" y="271" font-family="sans-serif" font-size="10" fill="#9ca3af">All Categories</text>
+  <rect x="516" y="259" width="52" height="16" rx="8" fill="rgba(245,158,11,0.15)"/>
+  <text x="542" y="271" font-family="sans-serif" font-size="10" fill="#f59e0b" text-anchor="middle">Withdrawn</text>
+  <text x="614" y="271" font-family="sans-serif" font-size="10" fill="#9ca3af">🇸🇬 SG</text>
+
+  <!-- Row 5 -->
+  <rect x="36" y="284" width="648" height="30" rx="4" fill="rgba(99,102,241,0.04)"/>
+  <text x="52" y="303" font-family="sans-serif" font-size="10" fill="#9ca3af">2025-02-25 10:36:45</text>
+  <text x="168" y="303" font-family="sans-serif" font-size="10" fill="#e2e8f0">l.kato@startupco.jp</text>
+  <text x="290" y="303" font-family="sans-serif" font-size="10" fill="#a5b4fc">Banner Accept</text>
+  <text x="390" y="303" font-family="sans-serif" font-size="10" fill="#9ca3af">Analytics + Marketing</text>
+  <rect x="516" y="291" width="52" height="16" rx="8" fill="rgba(34,197,94,0.15)"/>
+  <text x="542" y="303" font-family="sans-serif" font-size="10" fill="#22c55e" text-anchor="middle">Accepted</text>
+  <text x="614" y="303" font-family="sans-serif" font-size="10" fill="#9ca3af">🇯🇵 JP</text>
+
+  <!-- Mini chart at bottom -->
+  <rect x="36" y="328" width="648" height="90" rx="8" fill="#1a2036"/>
+  <text x="52" y="348" font-family="sans-serif" font-size="10" fill="#6b7280" font-weight="600">CONSENT RATE TREND — LAST 30 DAYS</text>
+  <!-- Chart line -->
+  <polyline points="60,400 105,388 150,393 195,375 240,370 285,360 330,355 375,342 420,348 465,332 510,328 555,336 600,320 645,310 670,305" stroke="#6366f1" stroke-width="2" fill="none"/>
+  <!-- Chart area fill -->
+  <polygon points="60,400 105,388 150,393 195,375 240,370 285,360 330,355 375,342 420,348 465,332 510,328 555,336 600,320 645,310 670,305 670,410 60,410" fill="url(#chartGrad)"/>
+  <!-- Dot on latest point -->
+  <circle cx="670" cy="305" r="4" fill="#6366f1"/>
+  <circle cx="670" cy="305" r="7" fill="#6366f1" opacity="0.2"/>
+  <!-- Y axis labels -->
+  <text x="52" y="412" font-family="sans-serif" font-size="8" fill="#4b5563">40%</text>
+  <text x="52" y="385" font-family="sans-serif" font-size="8" fill="#4b5563">60%</text>
+  <text x="52" y="360" font-family="sans-serif" font-size="8" fill="#4b5563">80%</text>
+  <text x="52" y="338" font-family="sans-serif" font-size="8" fill="#4b5563">95%</text>
+</svg>

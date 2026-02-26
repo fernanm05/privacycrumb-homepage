@@ -1,0 +1,201 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+
+.team-main {
+  &.section {
+  }
+  &__header {
+    @extend %text-center;
+
+    .title {
+      @extend %d-flex, %justify-center, %item-center;
+      gap: 35px;
+      font-family: $ff-urbanist;
+      font-size: 140px;
+      font-weight: 400;
+      line-height: 110%;
+
+      @include breakpoint(max-xxl) {
+        font-size: calc(140px - 20px);
+      }
+      @include breakpoint(max-xl) {
+        font-size: calc(140px - 50px);
+      }
+      @include breakpoint(max-lg) {
+        font-size: calc(140px - 90px);
+        gap: 20px;
+      }
+      @include breakpoint(max-md) {
+        font-size: calc(140px - 100px);
+      }
+
+      i,
+      svg {
+        font-weight: 500;
+      }
+    }
+  }
+  &__item {
+    .team-thumb {
+      @extend %p-relative;
+      border-radius: 10px;
+      overflow: hidden;
+      user-select: none;
+
+      & > img {
+        @include transform(scale(1.2));
+      }
+
+      .thumb-shape {
+        @extend %p-absolute;
+        top: 50%;
+        left: 18px;
+        @include transform(translateY(-50%));
+        color: var(--primary-color-2);
+        stroke-dasharray: 1500;
+        stroke-dashoffset: 1500;
+        animation-delay: 3s;
+
+        @include breakpoint(max-md) {
+          svg {
+            width: 150px;
+          }
+        }
+        @include breakpoint(max-sm) {
+          svg {
+            width: 223px;
+          }
+        }
+      }
+
+      .social {
+        @extend %p-absolute,
+          %d-flex,
+          %flex-col-reverse,
+          %justify-between,
+          %item-center;
+        gap: 10px;
+        top: 0;
+        right: 25px;
+        height: 100%;
+        padding: 25px 17px;
+        background: rgba(var(--color-white-rgb), 0.24);
+        -webkit-backdrop-filter: blur(7px);
+        backdrop-filter: blur(7px);
+        @include transform(translateX(100px));
+        @include transition($transition);
+
+        @include breakpoint(max-md) {
+          padding: 10px 8px;
+          right: 15px;
+          -webkit-transform: translateX(0);
+          -ms-transform: translateX(0);
+          transform: translateX(0);
+        }
+
+        .social-title {
+          -webkit-writing-mode: sideways-lr;
+          -ms-writing-mode: sideways-lr;
+          writing-mode: sideways-lr;
+          text-orientation: mixed;
+
+          color: var(--color-white);
+          font-size: $fs-16;
+          font-weight: 400;
+          line-height: 162.5%;
+          letter-spacing: 5.44px;
+
+          @include breakpoint(max-md) {
+            font-size: $fs-12;
+          }
+        }
+
+        .line {
+          @extend %d-inline-block;
+          height: 44px;
+          width: 1px;
+          background-color: var(--color-white);
+        }
+        ul {
+          @extend %shrink-0, %d-flex, %flex-col-reverse, %item-center;
+          gap: 24px;
+
+          li {
+            @extend %p-relative;
+
+            &:not(:last-of-type) {
+              &::before {
+                @extend %p-absolute;
+                content: "";
+                width: 4px;
+                height: 4px;
+                left: 50%;
+                top: -12px;
+                @include transform(translateX(-50%));
+                border-radius: 100%;
+                background-color: rgba(var(--color-white-rgb), 0.7);
+              }
+            }
+            a {
+              @extend %d-grid, %place-center;
+              width: 36px;
+              height: 36px;
+              border: 1px solid rgba(var(--color-white-rgb), 0.7);
+              border-radius: 100%;
+              color: rgba(var(--color-white-rgb), 0.7);
+              font-size: $fs-14;
+
+              @include breakpoint(max-md) {
+                width: 28px;
+                height: 28px;
+                font-size: 10px;
+              }
+
+              &:hover {
+                border-color: var(--primary-color);
+                background-color: var(--primary-color);
+                color: var(--text-color-main);
+              }
+            }
+          }
+        }
+      }
+    }
+    .team-content {
+      .designation {
+        @extend %d-inline-block;
+        font-size: $fs-16;
+        font-weight: 400;
+        line-height: 162.5%;
+        letter-spacing: 0.32px;
+        margin-top: 15px;
+
+        @include breakpoint(max-md) {
+          margin-top: 10px;
+        }
+      }
+      .title {
+        font-weight: 500;
+        line-height: 138.462%;
+        margin-top: 5px;
+
+        a {
+          color: inherit;
+          font: inherit;
+          line-height: inherit;
+        }
+      }
+    }
+
+    &:hover,
+    &.active {
+      .thumb-shape {
+        animation: draw 2.5s ease forwards;
+      }
+      .social {
+        @include transform(translateX(0px));
+      }
+    }
+  }
+}

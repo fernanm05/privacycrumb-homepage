@@ -1,0 +1,117 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+
+.appreciation {
+  &.section {
+  }
+  &__thumb {
+    overflow: hidden;
+    border-radius: 42px;
+    margin-left: 22px;
+    @include breakpoint(max-xl) {
+      margin-left: 0;
+    }
+  }
+  &__content {
+    max-width: 660px;
+    margin-right: 22px;
+    @include breakpoint(max-xl) {
+      margin-right: 0;
+    }
+    .section-header {
+      margin-bottom: 50px;
+      .section-title {
+        max-width: 598px;
+        margin-bottom: 32px;
+      }
+      p {
+        color: rgba(var(--color-white-rgb), 0.72);
+        font-family: $ff-urbanist;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 144.444%;
+        opacity: 1;
+      }
+    }
+
+    .automation {
+      border-radius: 12px;
+      background: #0b0b0b;
+      overflow: hidden;
+      padding: 24px 32px;
+      margin-bottom: 30px;
+      .automation-title {
+        font-family: $ff-urbanist;
+        font-weight: 700;
+        line-height: 108.333%;
+        letter-spacing: -0.48px;
+        margin-bottom: 14px;
+      }
+      p {
+        color: rgba(var(--color-white-rgb), 0.72);
+        font-family: $ff-urbanist;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 150%;
+        opacity: 1;
+      }
+    }
+    .lead-management {
+      overflow: hidden;
+      .lead-management-title {
+        font-family: $ff-urbanist;
+        font-weight: 700;
+        line-height: 108.333%;
+        letter-spacing: -0.48px;
+        margin-bottom: 14px;
+      }
+      p {
+        color: rgba(var(--color-white-rgb), 0.72);
+        font-family: $ff-urbanist;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 150%;
+        opacity: 1;
+      }
+    }
+    .btn-customer {
+      @extend %d-flex, %item-center, %flex-wrap;
+      column-gap: 32px;
+      row-gap: 20px;
+      margin-top: 45px;
+
+      .customer {
+        @extend %d-flex, %item-center;
+        gap: 16px;
+        .customer-avatars {
+          img {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+
+            &:not(:first-child) {
+              margin-left: -18px;
+            }
+          }
+        }
+        .customer-info {
+          .total-customers {
+            font-family: $ff-urbanist;
+            font-weight: 700;
+            line-height: 108.333%;
+            letter-spacing: 1;
+          }
+          p {
+            color: rgba(var(--color-white-rgb), 0.72);
+            font-family: $ff-urbanist;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 150%;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

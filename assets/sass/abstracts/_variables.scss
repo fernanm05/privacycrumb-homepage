@@ -1,0 +1,114 @@
+@use "sass:color";
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+// --------------------------------------------------
+// Colors
+// --------------------------------------------------
+
+// Output CSS variables
+:root {
+  --primary-text-color: #050d14;
+  --primary-color: #7397e9;
+  --primary-color-rgb: 115, 151, 233;
+  --primary-color-2: #4642fc;
+  --primary-color-2-rgb: 70, 66, 252;
+  --secondary-color: #d1d7f5;
+  --secondary-color-rgb: 209, 215, 245;
+  --secondary-color-2: #030303;
+  --secondary-color-2-rgb: 3, 3, 3;
+  --third-color: #eff7fb;
+  --third-color-rgb: 239, 247, 251;
+  --body-color: #000;
+  --body-text-color: #fff;
+  --bg-color-1: #0f171d;
+  --bg-color-2: #040a10;
+  --bg-color-2-rgb: 4, 10, 16;
+  --bg-color-3: #171f26;
+  --text-color-main: #fff;
+  --text-color-main-rgb: 255, 255, 255;
+  --color-black: #000;
+  --color-black-rgb: 0, 0, 0;
+  --color-black-2: #060606;
+  --color-black-2-rgb: 6, 6, 6;
+  --color-white: #fff;
+  --color-white-rgb: 255, 255, 255;
+}
+
+// --------------------------------------------------
+// Container
+// --------------------------------------------------
+
+// Container width and gutter variables
+$container: 1344px;
+$medium-container: 0px;
+$large-container: 0px;
+$container-gutters: 24px;
+
+// Padding for containers (left and right)
+$container-padding-left: calc($container-gutters / 2);
+$container-padding-right: calc($container-gutters / 2);
+
+// --------------------------------------------------
+// Typography
+// --------------------------------------------------
+
+// Font families
+$ff-urbanist: "Urbanist", sans-serif;
+$ff-inter: "Inter", sans-serif;
+
+// Font sizes (Base and Headings)
+$fs-base: 18px !default;
+
+$fs-h1: 82px; // Update
+$fs-h2: 62px; // Update
+$fs-h3: 42px; // Update
+$fs-h4: 32px; // Update
+$fs-h5: 28px; // Update
+$fs-h6: 24px; // Update
+
+$fs-22: 22px;
+$fs-21: 21px;
+$fs-20: 20px;
+$fs-19: 19px;
+$fs-18: 18px;
+$fs-17: 17px;
+$fs-16: 16px;
+$fs-15: 15px;
+$fs-14: 14px;
+$fs-13: 13px;
+$fs-12: 12px;
+
+// --------------------------------------------------
+// Transitions
+// --------------------------------------------------
+$transition: all 0.5s ease;
+
+// transition 0.2 seconds
+$transition-2: all 0.2s;
+$transition-2-ease: all 0.2s ease;
+$transition-2-ease-in: all 0.2s ease-in;
+$transition-2-ease-out: all 0.2s ease-out;
+$transition-2-ease-in-out: all 0.2s ease-in-out;
+
+// transition 0.3 seconds
+$transition-3: all 0.3s;
+$transition-3-ease: all 0.3s ease;
+$transition-3-ease-in: all 0.3s ease-in;
+$transition-3-ease-out: all 0.3s ease-out;
+$transition-3-ease-in-out: all 0.3s ease-in-out;
+
+// transition 0.3 seconds
+$transition-4: all 0.4s;
+$transition-4-ease: all 0.4s ease;
+$transition-4-ease-in: all 0.4s ease-in;
+$transition-4-ease-out: all 0.4s ease-out;
+$transition-4-ease-in-out: all 0.4s ease-in-out;
+
+// transition 0.5 seconds
+$transition-5: all 0.5s;
+$transition-5-ease: all 0.5s ease;
+$transition-5-ease-in: all 0.5s ease-in;
+$transition-5-ease-out: all 0.5s ease-out;
+$transition-5-ease-in-out: all 0.5s ease-in-out;

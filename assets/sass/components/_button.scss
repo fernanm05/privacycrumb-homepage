@@ -1,0 +1,332 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+
+.saaslyn-1-btn {
+  @extend %d-inline-flex,
+    %w-content,
+    %justify-center,
+    %item-center,
+    %text-center,
+    %text-bold,
+    %p-relative;
+  z-index: 2;
+  height: max-content;
+  border-radius: 19px;
+  opacity: 0.92;
+  color: var(--primary-text-color);
+  font-family: $ff-urbanist;
+  font-size: $fs-base;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.36px;
+  background: linear-gradient(
+    93deg,
+    var(--primary-color) 0.49%,
+    var(--secondary-color) 48.33%,
+    var(--third-color) 100%
+  );
+  overflow: hidden;
+  padding: 22.5px 69px;
+  border-radius: 19px;
+  opacity: 0.92;
+  @include transition($transition-3-ease-in-out);
+
+  @include breakpoint(max-lg) {
+    padding: 18px 50px;
+  }
+
+  &::before {
+    @extend %p-absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(
+      273deg,
+      var(--primary-color) 0.49%,
+      var(--secondary-color) 48.33%,
+      var(--third-color) 100%
+    );
+    opacity: 0;
+    @include transition($transition-3-ease-in-out);
+  }
+
+  &:hover {
+    background-color: transparent;
+    color: var(--primary-text-color);
+    border-radius: 12px;
+    transform: skewX(-10deg);
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &.v2 {
+    padding: 18.5px 24.5px;
+
+    @include breakpoint(max-lg) {
+      padding: 15px 20px;
+    }
+  }
+}
+
+.saaslyn-2-btn {
+  @extend %d-inline-flex,
+    %w-content,
+    %justify-center,
+    %item-center,
+    %text-center,
+    %text-bold,
+    %p-relative;
+  z-index: 2;
+  height: max-content;
+  border-radius: 19px;
+  opacity: 0.92;
+  color: var(--text-color-main);
+  font-family: $ff-urbanist;
+  font-size: $fs-base;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.36px;
+  background: transparent;
+  overflow: hidden;
+  padding: 18.5px 24.5px;
+  border-radius: 19px;
+  border: 1px solid rgba(var(--primary-color-rgb), 0.5);
+  @include transition($transition-3-ease-in-out);
+  @include breakpoint(max-lg) {
+    padding: 15px 20px;
+  }
+
+  &::before {
+    @extend %p-absolute;
+    z-index: -1;
+    width: 150%;
+    height: 150%;
+    background: linear-gradient(
+      273deg,
+      var(--primary-color) 0.49%,
+      var(--secondary-color) 48.33%,
+      var(--third-color) 100%
+    );
+    @include transform(scaleX(0) skewX(-45deg));
+    @include transition($transition-3-ease-in-out);
+  }
+
+  &:hover {
+    color: var(--primary-text-color);
+    &::before {
+      @include transform(scaleX(1) skewX(-45deg));
+    }
+  }
+}
+.saaslyn-3-btn {
+  @extend %d-inline-flex, %justify-center, %item-center, %p-relative;
+  z-index: 2;
+  width: max-content;
+  height: max-content;
+  border-radius: 40.881px;
+  overflow: hidden;
+  padding: 18px 42px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -1.08px;
+  background-color: var(--primary-color-2);
+  color: var(--color-white);
+  @include transition($transition);
+
+  @include breakpoint(max-lg) {
+    padding: 15px 30px;
+  }
+  &::before {
+    @extend %p-absolute;
+    z-index: -1;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: rgba(var(--color-white-rgb), 0.58);
+    filter: blur(17px);
+    left: -19px;
+    top: -40px;
+    @include transition($transition);
+  }
+
+  &:hover {
+    &::before {
+      left: calc(100% - 49px);
+      top: calc(100% - 40px);
+    }
+  }
+
+  &.v2 {
+    background-color: transparent;
+    border: 1px solid rgba(70, 66, 252, 0.24);
+    color: var(--color-black);
+
+    &::before {
+      background-color: rgba(70, 66, 252, 0.32);
+    }
+  }
+}
+
+.saaslyn-4-btn {
+  @extend %d-inline-flex, %justify-center, %item-center, %p-relative;
+  border: 1px solid transparent;
+  gap: 10px;
+  height: max-content;
+  width: max-content;
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.32px;
+  border-radius: 74px;
+  // background: rgba(var(--color-white-rgb), 0.08);
+  background: #202020;
+  padding: 16px 32px;
+  z-index: 2;
+  overflow: hidden;
+
+  &::before {
+    @extend %p-absolute;
+    z-index: -1;
+    inset: 0;
+    opacity: 0;
+    background: linear-gradient(135deg, #4642fc 0%, #adbbfe 100%);
+    @include transition($transition);
+  }
+
+  &:hover,
+  .active {
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &.v2 {
+    border-color: rgba(255, 255, 255, 0.29);
+    &::before {
+      opacity: 1;
+    }
+
+    &:hover,
+    .active {
+      &::before {
+        opacity: 0;
+      }
+    }
+  }
+  &.v3 {
+    background-color: #494953;
+    &:hover,
+    &.active {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.saaslyn-5-btn {
+  display: flex;
+  padding: 12px 17px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 74px;
+  background: rgba(var(--color-white-rgb), 0.08);
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.32px;
+  overflow: hidden;
+
+  &:not(.v2) {
+    @extend %p-relative;
+    &::before {
+      @extend %p-absolute;
+      z-index: -1;
+      inset: 0;
+      opacity: 0;
+      background: linear-gradient(135deg, #4642fc 0%, #adbbfe 100%);
+      @include transition($transition);
+    }
+
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.v2 {
+    @extend %p-relative;
+    z-index: 2;
+    background: linear-gradient(135deg, #4642fc 0%, #adbbfe 100%);
+    overflow: hidden;
+    @include transition($transition);
+
+    &::before {
+      @extend %p-absolute;
+      z-index: -1;
+      inset: 0;
+      opacity: 0;
+      background: linear-gradient(135deg, #adbbfe 0%, #4642fc 100%);
+      @include transition($transition);
+    }
+
+    &:hover {
+      background-color: transparent;
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.saaslyn-6-btn {
+  @extend %d-inline-flex, %justify-center, %item-center, %p-relative;
+  z-index: 2;
+  width: max-content;
+  height: max-content;
+  border-radius: 10px;
+  color: #080808;
+  font-family: $ff-urbanist;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.9px;
+  padding: 24px;
+  white-space: nowrap;
+  border: none;
+  outline: none;
+  background: linear-gradient(180deg, #7397e9 0%, #d1d7f5 48.08%, #eff7fb 100%);
+  overflow: hidden;
+  @include transition($transition);
+
+  &::before {
+    @extend %p-absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      #eff7fb 0%,
+      #d1d7f5 51.92%,
+      #7397e9 100%
+    );
+    opacity: 0;
+    @include transition($transition);
+  }
+
+  &:hover {
+    background-color: transparent;
+    &::before {
+      opacity: 1;
+    }
+  }
+}

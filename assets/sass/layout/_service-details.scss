@@ -1,0 +1,300 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+
+.service-details {
+  &.section {
+    background-color: var(--bg-color-2);
+  }
+
+  &__article {
+    h2.h2 {
+      font-weight: 600;
+      line-height: 114.286%;
+      margin-bottom: 14px;
+      font-family: $ff-urbanist;
+
+      @include breakpoint(lg) {
+        margin-bottom: 28px;
+      }
+    }
+    p {
+      margin-bottom: 24px;
+      opacity: 0.75;
+      font-family: $ff-urbanist;
+      @include breakpoint(max-lg) {
+        margin-bottom: 12px;
+      }
+
+      &:has(+ img) {
+        margin-bottom: 48px;
+        @include breakpoint(max-lg) {
+          margin-bottom: 24px;
+        }
+      }
+    }
+    .blog-thumb {
+      overflow: hidden;
+      border-radius: 20px;
+
+      img {
+        width: 100%;
+        @include transition($transition);
+      }
+      &:hover {
+        img {
+          @include transform(scale(1.1));
+        }
+      }
+    }
+    h4 {
+      font-variant-numeric: lining-nums proportional-nums;
+      font-weight: 500;
+      line-height: 120.833%;
+      margin-top: 60px;
+      margin-bottom: 28px;
+      font-family: $ff-urbanist;
+
+      @include breakpoint(max-lg) {
+        margin-top: 30px;
+        margin-bottom: 14px;
+      }
+      @include breakpoint(max-md) {
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+    }
+    .process-list {
+      margin-bottom: 28px;
+      margin-left: 30px;
+      padding-left: 15px;
+      font-family: $ff-urbanist;
+
+      @include breakpoint(max-lg) {
+        margin-bottom: 14px;
+      }
+
+      p {
+        margin-bottom: 28px;
+        font-family: $ff-urbanist;
+
+        @include breakpoint(max-lg) {
+          margin-bottom: 14px;
+        }
+      }
+      li {
+        @extend %p-relative;
+        color: rgba(var(--color-white-rgb),0.8);
+        font-family: $ff-urbanist;
+        line-height: 1.5;
+        &::before {
+          @extend %p-absolute;
+          content: "\f111";
+          left: -15px;
+          font: var(--fa-font-sharp-solid);
+          font-size: 5px;
+          top: 10px;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 20px;
+
+          @include breakpoint(max-lg) {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+  &__article-roadmap {
+    margin: 60px 0;
+    gap: 88px;
+    border-top: 1.5px solid rgba(var(--color-white-rgb), 0.12);
+    border-bottom: 1.5px solid rgba(var(--color-white-rgb), 0.12);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    font-family: $ff-urbanist;
+    @include breakpoint(max-lg) {
+      margin: 30px 0;
+    }
+
+    @include breakpoint(max-xl) {
+      gap: 30px;
+    }
+    @include breakpoint(max-lg) {
+      gap: 10px;
+    }
+    @include breakpoint(max-md) {
+      gap: 20px;
+    }
+    @include breakpoint(max-sm) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .roadmap {
+      &__item {
+        padding: 40px 0;
+
+        @include breakpoint(max-lg) {
+          padding: 20px 0;
+        }
+        &:nth-child(1) .roadmap__icon {
+          background-color: #e9f4fd;
+          svg {
+            color: #0a83ec;
+          }
+        }
+        &:nth-child(2) .roadmap__icon {
+          background-color: #eeeefd;
+          svg {
+            color: #433eed;
+          }
+        }
+        &:nth-child(3) .roadmap__icon {
+          background-color: #e6faf3;
+          svg {
+            color: #00c881;
+          }
+        }
+        &:hover {
+          .roadmap__icon svg {
+            @include transform(scale(1.2));
+          }
+        }
+      }
+      &__icon {
+        margin: 0 auto;
+        margin-bottom: 32px;
+        width: 64px;
+        height: 64px;
+        line-height: 64px;
+        text-align: center;
+        border-radius: 100%;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        -ms-border-radius: 100%;
+        -o-border-radius: 100%;
+
+        @include breakpoint(max-lg) {
+          margin-bottom: 16px;
+        }
+        svg {
+          width: 25px;
+          height: 24px;
+          @include transition($transition);
+        }
+      }
+      &__content {
+        p {
+          margin-bottom: 0;
+          color: var(--color-white);
+          text-align: center;
+          font-family: $ff-urbanist;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 175%;
+          opacity: 0.7;
+        }
+      }
+      &__title {
+        margin-bottom: 10px;
+        color: var(--color-white);
+        text-align: center;
+        font-family: $ff-urbanist;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 158.333%;
+
+        @include breakpoint(max-xl) {
+          line-height: 1;
+        }
+        @include breakpoint(max-md) {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+  &__blockquote {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 24px;
+
+    @include breakpoint(max-md) {
+      padding: 10px;
+    }
+
+    &-wrapper {
+      padding: 24px;
+      backdrop-filter: blur(5px);
+
+      @include breakpoint(max-md) {
+        padding: 10px;
+      }
+    }
+    p {
+      font-family: $ff-urbanist;
+      font-size: 28px;
+      font-style: italic;
+      font-weight: 500;
+      line-height: 157.143%;
+      opacity: 0.75;
+
+      @include breakpoint(max-md) {
+        font-size: 20px;
+      }
+    }
+    .quote-author {
+      margin-top: 33px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      @include breakpoint(max-sm) {
+        flex-direction: column;
+      }
+    }
+    .author-info-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+
+      @include breakpoint(max-sm) {
+        flex-direction: column;
+      }
+    }
+    .author-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 64px;
+      -webkit-border-radius: 64px;
+      -moz-border-radius: 64px;
+      -ms-border-radius: 64px;
+      -o-border-radius: 64px;
+    }
+    .author-title {
+      color: var(--color-white);
+      font-family: $ff-urbanist;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+    .author-designation {
+      color: #c6c5fa;
+      font-family: $ff-urbanist;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 177.778%;
+      margin-bottom: 0;
+    }
+    .quote-icon {
+      color: rgba(255, 255, 255, 0.75);
+      text-align: right;
+    }
+  }
+}

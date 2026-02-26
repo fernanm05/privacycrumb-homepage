@@ -1,0 +1,90 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+
+.login {
+  &.section {
+    background-color: var(--bg-color-1);
+  }
+  &__form-wrap {
+    border-radius: 24px;
+    border: 1px solid rgba(var(--color-white-rgb), 0.25);
+    background: var(--bg-color-2);
+    padding: 40px;
+    max-width: 731px;
+    margin-inline: auto;
+    text-align: center;
+
+    @include breakpoint(max-md) {
+      padding: 25px;
+    }
+
+    .common-form-box {
+      .form-title {
+        font-weight: 600;
+        line-height: 120.833%;
+        font-family: $ff-urbanist;
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid rgba(var(--color-white-rgb), 0.1);
+
+        @include breakpoint(max-md) {
+          margin-bottom: 25px;
+          padding-bottom: 25px;
+        }
+      }
+      .input-group {
+        label {
+          font-size: $fs-18;
+          line-height: 1.7;
+          margin-bottom: 6px;
+        }
+        input,
+        textarea {
+          width: 100%;
+          background: #0e0f23;
+          border-radius: 8px !important;
+          border: 1px solid rgba(var(--color-white-rgb), 0.1);
+          padding: 12px 20px;
+          transition: border-color 0.3s ease;
+          &::placeholder {
+            color: rgba(var(--color-white-rgb), 0.5);
+            font-size: $fs-18;
+          }
+          &:focus {
+            border-color: var(--primary-color);
+            outline: none;
+          }
+        }
+      }
+      .form-info-wrap {
+        button {
+          font-size: 20px;
+          font-family: $ff-urbanist;
+          font-weight: 600;
+          padding: 18px 60px;
+
+          @include breakpoint(max-lg) {
+            padding: 15px 45px;
+          }
+        }
+
+        p {
+          font-family: $ff-urbanist;
+
+          &:has(> span, > a) {
+            color: rgba(var(--color-white-rgb), 0.5);
+          }
+
+          span {
+            color: var(--color-white);
+          }
+
+          a {
+            color: var(--primary-color-2);
+          }
+        }
+      }
+    }
+  }
+}

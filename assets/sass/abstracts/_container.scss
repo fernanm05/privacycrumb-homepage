@@ -1,0 +1,29 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm,
+.container {
+  @include breakpoint(xxl) {
+    max-width: $container + $container-gutters;
+    padding-left: $container-padding-left;
+    padding-right: $container-padding-right;
+  }
+  &.medium-container {
+    @include breakpoint(xxl) {
+      max-width: $medium-container + $container-gutters;
+      padding-left: $container-padding-left;
+      padding-right: $container-padding-right;
+    }
+  }
+  &.large-container {
+    @include breakpoint(xxl) {
+      max-width: $large-container + $container-gutters;
+      padding-left: $container-padding-left;
+      padding-right: $container-padding-right;
+    }
+  }
+}

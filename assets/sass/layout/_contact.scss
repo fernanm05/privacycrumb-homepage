@@ -1,0 +1,150 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+
+.contact {
+  &.section {
+  }
+  &__form-area {
+    .form-title {
+      font-family: $ff-urbanist;
+      font-weight: 700;
+      line-height: 76.19%;
+      letter-spacing: -1.26px;
+      margin-bottom: 32px;
+    }
+    p {
+      color: #a1a0a3;
+      font-family: $ff-urbanist;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 155.556%;
+      letter-spacing: -0.72px;
+      opacity: 1;
+    }
+  }
+  &__form {
+    margin-top: 45px;
+    .input-group {
+      @extend %d-flex, %flex-col;
+
+      .form-label {
+        font-family: $ff-urbanist;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 155.556%;
+        letter-spacing: -0.72px;
+        margin-bottom: 13px;
+      }
+      input,
+      textarea {
+        width: 100% !important;
+        border-radius: 10px !important;
+        margin: 0 !important;
+        border: 1px solid rgba(var(--color-white-rgb), 0.2);
+        color: rgba(var(--color-white-rgb), 0.62);
+        font-family: $ff-urbanist;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 175%;
+        letter-spacing: -0.64px;
+        padding: 15px 24px;
+        background-color: transparent;
+
+        &::placeholder {
+          color: rgba(var(--color-white-rgb), 0.62);
+          opacity: 1;
+        }
+      }
+    }
+    .button-area {
+      margin-top: 32px;
+    }
+  }
+
+  &__info {
+    padding: 42px 32px 32px;
+    border-radius: 42px;
+    background: #0c0d0d;
+    overflow: hidden;
+
+    @include breakpoint(max-md) {
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+    .info-list {
+      margin-bottom: 32px;
+      .info-item {
+        border-bottom: 0.5px solid rgba(var(--color-white-rgb), 0.16);
+        padding-bottom: 32px;
+        @include breakpoint(max-md) {
+          padding-bottom: 20px;
+        }
+
+        &:not(:first-of-type) {
+          padding-top: 32px;
+          @include breakpoint(max-md) {
+            padding-top: 20px;
+          }
+        }
+      }
+    }
+    .info-item {
+      @extend %d-flex, %item-center;
+      gap: 18px;
+      .item-icon {
+        @extend %d-grid, %place-center, %shrink-0;
+        width: 76px;
+        height: 76px;
+        border: 0.5px solid rgba(var(--color-white-rgb), 0.16);
+        border-radius: 100%;
+        overflow: hidden;
+        font-size: 35px;
+
+        @include breakpoint(max-md) {
+          width: 50px;
+          height: 50px;
+          font-size: 20px;
+        }
+      }
+      .item-content {
+        .item-title {
+          color: rgba(var(--color-white-rgb), 0.73);
+          font-family: $ff-urbanist;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 1;
+          letter-spacing: -0.48px;
+          margin-bottom: 10px;
+        }
+        a {
+          color: var(--color-white);
+          font-family: $ff-urbanist;
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 133.333%;
+          letter-spacing: -0.72px;
+
+          @include breakpoint(max-md) {
+            font-size: calc(24px - 5px);
+          }
+        }
+      }
+    }
+    .info-thumb {
+      border-radius: 22px;
+      overflow: hidden;
+      @include breakpoint(max-md) {
+        border-radius: 10px;
+      }
+    }
+  }
+  &__map {
+    @extend %d-block;
+    width: 100%;
+    height: 578px;
+    z-index: 1;
+  }
+}

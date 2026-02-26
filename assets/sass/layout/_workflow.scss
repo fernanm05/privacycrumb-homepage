@@ -1,0 +1,135 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+@use "sass:math";
+
+.workflow {
+  &.section {
+    overflow: hidden;
+    background: #5a5afc;
+
+    .section-header-2 {
+      @extend %p-relative;
+      .shape {
+        @extend %p-absolute;
+        right: calc(100% - 80px);
+        top: -110px;
+        @include breakpoint(max-lg) {
+          display: none;
+        }
+      }
+      .section-sub-title {
+        @extend %justify-start;
+        color: var(--color-white);
+
+        &::before {
+          background-color: var(--color-white);
+        }
+      }
+      .section-title {
+        color: var(--color-white);
+      }
+      p {
+        color: rgba(var(--color-white-rgb), 0.78);
+        opacity: 0.9;
+      }
+    }
+  }
+  &__content {
+    margin-top: 120px;
+
+    @include breakpoint(max-lg) {
+      margin-top: 40px;
+    }
+    .title {
+      color: var(--color-white);
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: -1.44px;
+      margin-bottom: 14px;
+    }
+    p {
+      color: var(--color-white);
+      color: rgba(var(--color-white-rgb), 0.78);
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 146.667%;
+      opacity: 0.9;
+    }
+  }
+  &__info {
+    border-radius: 47px;
+    border: 1px solid rgba(var(--color-white-rgb), 0.24);
+    background: rgba(var(--color-white-rgb), 0.06);
+    backdrop-filter: blur(5.5px);
+    padding: 54px 64px;
+    max-width: 575px;
+    width: 100%;
+    margin-left: auto;
+    @include breakpoint(max-lg) {
+      max-width: 100%;
+    }
+
+    @include breakpoint(max-xl) {
+      padding: 30px;
+    }
+    @include breakpoint(max-sm) {
+      padding: 25px;
+    }
+
+    .info-item {
+      @extend %d-flex, %item-center;
+      gap: 32px;
+      @include breakpoint(max-xl) {
+        gap: 20px;
+      }
+
+      &:not(:last-of-type) {
+        margin-bottom: 40px;
+        @include breakpoint(max-xl) {
+          margin-bottom: 20px;
+        }
+      }
+      .icon {
+        @extend %d-grid, %place-center, %shrink-0;
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+        background: rgba(var(--color-white-rgb), 0.12);
+        border-radius: 100%;
+        color: var(--color-white);
+
+        @include breakpoint(max-sm) {
+          width: 35px;
+          height: 35px;
+
+          i,
+          svg {
+            width: 15px;
+            height: 15px;
+          }
+        }
+      }
+      .info {
+        .title {
+          color: var(--color-white);
+          font-weight: 600;
+          line-height: 175%;
+          letter-spacing: -1.44px;
+          margin-bottom: 2px;
+
+          @include breakpoint(max-sm) {
+            line-height: 125%;
+          }
+        }
+        p {
+          color: rgba(var(--color-white-rgb), 0.78);
+          font-size: 15px;
+          font-weight: 500;
+          line-height: 146.667%;
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+}

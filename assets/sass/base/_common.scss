@@ -1,0 +1,192 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+/*
+============= Custom Scroll Bar CSS ================
+*/
+::-webkit-scrollbar {
+  width: 0.3em;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(var(--color-white-rgb), 0.5);
+  box-shadow: inset 0 0 6px rgba(var(--color-white-rgb), 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-2);
+  border-radius: 10px;
+}
+
+/*
+============= Custom Scroll Bar CSS End ================
+*/
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: var(--bg-color-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .loading-container {
+    margin: 40px auto;
+  }
+  .loading-container,
+  .loading {
+    height: 120px;
+    width: 120px;
+    position: relative;
+    border-radius: 100%;
+  }
+  .loading {
+    border: 2px solid transparent;
+    border-color: transparent var(--primary-color-2) transparent
+      var(--primary-color-2);
+    animation: rotate-loading 1.5s linear 0s infinite normal;
+    transform-origin: 50% 50%;
+  }
+  #loading-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 50px;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/*
+============= Section Header START ================
+*/
+.section-header {
+  .section-sub-title {
+    @extend %d-inline-flex;
+    height: max-content;
+    width: max-content;
+    color: var(--bg-color-2);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.36px;
+    border-radius: 60px;
+    background: linear-gradient(
+      90deg,
+      var(--primary-color) 0%,
+      var(--secondary-color) 48.08%,
+      var(--third-color) 100%
+    );
+    padding: 14px 25px;
+
+    &:has(+ .section-title) {
+      margin-bottom: 35px;
+
+      @include breakpoint(max-md) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+  .section-title {
+    text-align: center;
+    font-weight: 700;
+    line-height: 104.839%;
+    letter-spacing: -1.86px;
+  }
+}
+
+.section-header-2 {
+  .section-sub-title {
+    @extend %d-flex, %justify-center, %item-center, %p-relative;
+    gap: 7px;
+    color: var(--primary-color-2);
+    font-size: $fs-base;
+    font-weight: 500;
+    letter-spacing: -0.84px;
+    margin-bottom: 22px;
+
+    &::before {
+      @extend %d-inline-block;
+      content: "";
+      width: 8px;
+      height: 8px;
+      aspect-ratio: 1/1;
+      border-radius: 50px;
+      background: var(--primary-color-2);
+    }
+  }
+  .section-title {
+    font-weight: 600;
+    line-height: 104.839%;
+    letter-spacing: -1.9px;
+
+    &:has(+ p) {
+      margin-bottom: 16px;
+    }
+  }
+  p {
+    color: rgba(var(--secondary-color-2-rgb), 0.78);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 178.75%;
+    opacity: 0.9;
+  }
+}
+.section-header-3 {
+  .section-sub-title {
+    @extend %d-inline-block;
+    z-index: 2;
+    color: var(--color-white);
+    font-size: $fs-16;
+    font-weight: 500;
+    letter-spacing: 2.4px;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    background-image: linear-gradient(
+        var(--color-black-2),
+        var(--color-black-2)
+      ),
+      linear-gradient(90deg, #ed7543 0%, #cd4f75 30%, #6a48ed 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    white-space: nowrap;
+    padding: 13px 24px;
+
+    @include breakpoint(max-lg) {
+      padding: 12px 20px;
+    }
+    @include breakpoint(max-md) {
+      padding: 8px 15px;
+      font-size: $fs-13;
+      letter-spacing: 1.4px;
+    }
+  }
+  .section-title {
+    color: var(--color-white);
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -1.04px;
+
+    &:has(+ p) {
+      margin-bottom: 22px;
+    }
+  }
+  p {
+    font-size: 18px;
+    letter-spacing: -0.36px;
+    line-height: 150%;
+    font-weight: 500;
+  }
+}
+// ============= Section Header END ================
+// ============= Background Image START ================
+.background-image,
+[data-bg-src] {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+// ============= Background Image END ================

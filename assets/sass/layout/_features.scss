@@ -1,0 +1,304 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extend" as *;
+@use "../abstracts/mixins" as *;
+
+.features {
+  &.section {
+    background-color: var(--bg-color-2);
+  }
+
+  &-item__wrapper {
+    @extend %p-relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    border-radius: 31px;
+    border: 4px solid rgba(115, 151, 233, 0.16);
+    background: rgba(14, 24, 37, 0.52);
+    padding: 8px;
+
+    @include breakpoint(max-xl) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @include breakpoint(max-md) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+  &__item {
+    @extend %p-relative;
+    border-radius: 24px;
+    border: 2px solid transparent;
+    background: var(--primary-text-color);
+    padding: 42px 24px;
+    overflow: hidden;
+    @include transition($transition);
+    .item-icon {
+      @extend %shrink-0, %d-grid, %place-center, %p-relative;
+      z-index: 2;
+      width: 70px;
+      height: 70px;
+      flex-shrink: 0;
+      aspect-ratio: 1/1;
+      text-align: center;
+      margin-inline: auto;
+      border-radius: 14px;
+      background: linear-gradient(
+        135deg,
+        rgba(115, 151, 233, 0.08) 2.27%,
+        rgba(209, 215, 245, 0.08) 50.35%,
+        rgba(239, 247, 251, 0.08) 102.27%
+      );
+      overflow: hidden;
+      margin-bottom: 25px;
+      @include transition($transition);
+
+      i,
+      svg {
+        color: var(--text-color-main);
+        @include transition($transition);
+      }
+
+      &::after {
+        @extend %p-absolute;
+        z-index: -1;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          #7397e9 2.27%,
+          #d1d7f5 50.35%,
+          #eff7fb 102.27%
+        );
+        opacity: 0;
+        @include transition($transition);
+      }
+    }
+    .item-content {
+      text-align: center;
+      .item-title {
+        font-weight: 700;
+        line-height: 108.333%;
+        letter-spacing: -0.48px;
+
+        a {
+          font: inherit;
+        }
+      }
+      p {
+        font-weight: 500;
+        line-height: 122.222%;
+        letter-spacing: -0.72px;
+        opacity: 0.64;
+        margin-top: 25px;
+      }
+    }
+    .item-shape {
+      @extend %p-absolute;
+      right: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      pointer-events: none;
+      @include transition($transition);
+    }
+    &:hover,
+    &.active {
+      border-color: rgba(var(--text-color-main-rgb), 0.2);
+      box-shadow: 0 40px 60px 0 rgba(131, 160, 231, 0.24) inset;
+      .item-icon {
+        background-color: transparent;
+        i,
+        svg {
+          color: var(--bg-color-2);
+        }
+        &::after {
+          opacity: 1;
+        }
+      }
+      .item-shape {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.features-2 {
+  &.section {
+    @extend %p-relative;
+    z-index: 2;
+
+    .shape-1 {
+      @extend %p-absolute;
+      left: 60px;
+      top: 120px;
+      z-index: -1;
+      @include breakpoint(max-xl) {
+        top: 50px;
+      }
+      @include breakpoint(max-md) {
+        display: none;
+      }
+    }
+    .shape-bg {
+      @extend %p-absolute;
+      bottom: 100px;
+      right: 0;
+      z-index: -1;
+    }
+    .shape-line {
+      @extend %p-absolute;
+      z-index: -1;
+      left: 0;
+      bottom: 130px;
+      width: 90%;
+      #featuresTwoSvgPath {
+        transition: stroke-dashoffset 3s ease-in-out;
+      }
+    }
+  }
+  &__thumb {
+    padding-left: 30px;
+
+    @include breakpoint(max-lg) {
+      padding-left: 0px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+  &__item-wrapper {
+    @extend %d-grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 42px;
+    padding-inline-end: 60px;
+    padding-bottom: 70px;
+
+    @include breakpoint(max-xl) {
+      gap: 24px;
+      padding-inline: 0px;
+      padding-bottom: 50px;
+    }
+    @include breakpoint(max-sm) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      padding-bottom: 0px;
+    }
+
+    .features-2__item {
+      &:nth-of-type(even) {
+        // margin-top: 60px;
+        @include transform(translateY(60px));
+        @include breakpoint(max-lg) {
+          @include transform(translateY(30px));
+        }
+        @include breakpoint(max-sm) {
+          @include transform(translateY(0px));
+        }
+      }
+    }
+  }
+  &__item {
+    @extend %p-relative;
+    z-index: 2;
+    border-radius: 24px;
+    border: 1px solid var(--color-white);
+    background: var(--color-white);
+    box-shadow: 0 20px 30px 0 rgba(var(--color-black-rgb), 0.05);
+    padding: 30px;
+    height: max-content;
+
+    .item-bg {
+      @extend %p-absolute;
+      inset: 0;
+      z-index: -1;
+      object-fit: fill;
+    }
+
+    .item-thumb {
+      margin-bottom: 28px;
+      padding-inline: 13px;
+    }
+    .item-content {
+      .item-title {
+        color: #141414;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: -1.2px;
+        margin-bottom: 10px;
+      }
+      p {
+        color: #848484;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 133.333%;
+        letter-spacing: -0.9px;
+      }
+    }
+  }
+}
+
+.features-3 {
+  &.section {
+    @extend %p-relative;
+    z-index: 2;
+
+    &::before {
+      @extend %p-absolute;
+      width: 913px;
+      height: 913px;
+      left: 50%;
+      top: 50%;
+      border-radius: 913px;
+      opacity: 0.37;
+      background: linear-gradient(135deg, #4642fc 0%, #adbbfe 100%);
+      filter: blur(301.412841796875px);
+      z-index: -1;
+      @include transform(translate(-50%, -50%));
+    }
+    .section-header-3 {
+      max-width: 1050px;
+      margin-inline: auto;
+      text-align: center;
+      .logo {
+        width: max-content;
+        margin-inline: auto;
+        margin-bottom: 65px;
+        @include breakpoint(max-md) {
+          margin-bottom: 35px;
+        }
+
+        i,
+        svg {
+          @include breakpoint(max-md) {
+            width: 80px;
+            height: 80px;
+          }
+        }
+      }
+
+      p {
+        max-width: 784px;
+        margin-inline: auto;
+        color: rgba(var(--color-white-rgb), 0.75);
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 150%;
+        letter-spacing: -0.36px;
+      }
+    }
+  }
+  &__content {
+    text-align: center;
+    margin-inline: center;
+    // padding-inline: 25px;
+    -webkit-user-drag: none;
+    pointer-events: none;
+    > * {
+      width: 1646px;
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+    }
+  }
+}
