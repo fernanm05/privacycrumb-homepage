@@ -344,9 +344,9 @@
       navigation:
         prev && next
           ? {
-              prevEl: prev,
-              nextEl: next,
-            }
+            prevEl: prev,
+            nextEl: next,
+          }
           : undefined,
     });
   };
@@ -440,9 +440,8 @@
       const rect = target.getBoundingClientRect();
       const parentRect = toggle.getBoundingClientRect();
       highlighter.style.width = rect.width + "px";
-      highlighter.style.transform = `translateX(${
-        rect.left - parentRect.left
-      }px)`;
+      highlighter.style.transform = `translateX(${rect.left - parentRect.left
+        }px)`;
     }
 
     monthly.addEventListener("change", moveHighlighter);
@@ -1261,11 +1260,11 @@
       breakpoints: {
         992: {
           slidesPerView: 2,
-          spaceBetween: 64,
+          spaceBetween: 24,
         },
         1300: {
-          slidesPerView: 2.8,
-          spaceBetween: 64,
+          slidesPerView: 3,
+          spaceBetween: 24,
         },
       },
     });
