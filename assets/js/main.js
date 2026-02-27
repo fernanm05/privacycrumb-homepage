@@ -313,10 +313,14 @@
       slidesPerView: "auto",
       spaceBetween: 24,
       loop: true,
+      allowTouchMove: false,
       autoplay: {
         delay: 1,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false,
       },
-      speed: 2000,
+      speed: 3000,
+      freeMode: true,
     });
   };
   initBrandThreeSlider();
