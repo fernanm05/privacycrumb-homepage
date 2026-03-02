@@ -313,11 +313,11 @@
       slidesPerView: "auto",
       spaceBetween: 24,
       loop: true,
-      allowTouchMove: false,
+      grabCursor: true,
       autoplay: {
         delay: 1,
         disableOnInteraction: false,
-        pauseOnMouseEnter: false,
+        pauseOnMouseEnter: true,
       },
       speed: 3000,
       freeMode: true,
