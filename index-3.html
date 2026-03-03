@@ -190,6 +190,8 @@
 
     .process__item .item-icon {
       color: #1a1a2e !important;
+      border: 2px solid #1a1a2e !important;
+      border-radius: 50% !important;
     }
 
     .process__item .item-icon svg {
@@ -215,6 +217,14 @@
 
     .brand-3__content .brand-title .line {
       background: rgba(26, 26, 46, 0.15) !important;
+    }
+
+    .brand-3__item img {
+      opacity: 1 !important;
+    }
+
+    .brand-3__item::after {
+      display: none !important;
     }
 
     .brand-3__item {
@@ -275,8 +285,21 @@
       color: #1a1a2e !important;
     }
 
-    .testimonial-3__item .item-content .item-header .author-designation {
+    .testimonial-3__item .item-content .item-header .author-designation,
+    .testimonial-3__item .item-content .item-author .author-designation {
       color: #6a6a8a !important;
+    }
+
+    .testimonial-3__item .item-content .item-header .rating-stars ul li,
+    .testimonial-3__item .item-content .rating-stars ul li {
+      background: rgba(26, 26, 46, 0.25) !important;
+      width: 28px !important;
+      height: 28px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin: 0 2px !important;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%) !important;
     }
 
     /* ── CTA section ── */
@@ -303,7 +326,7 @@
     }
 
     .faq-3__accordion .accordion-item {
-      background: #f5f5fa !important;
+      background: transparent !important;
       border-color: rgba(26, 26, 46, 0.08) !important;
     }
 
@@ -338,14 +361,27 @@
       color: #4a4a6a !important;
     }
 
+    .footer-three__main .newsletter {
+      border-bottom: 2px solid #1a1a2e !important;
+    }
+
     .footer-three__main .newsletter input {
-      background: #ffffff !important;
+      background: transparent !important;
       color: #1a1a2e !important;
-      border: 1px solid rgba(26, 26, 46, 0.12) !important;
+      border: none !important;
+      border-radius: 0 !important;
     }
 
     .footer-three__main .newsletter input::placeholder {
-      color: #8a8aaa !important;
+      color: #6a6a8a !important;
+    }
+
+    .footer-three__main .newsletter button,
+    .footer-three__main .newsletter button i,
+    .footer-three__main .newsletter button svg,
+    .footer-three__main .newsletter .icon {
+      color: #1a1a2e !important;
+      fill: #1a1a2e !important;
     }
 
     .footer-three__main h5,
@@ -497,6 +533,11 @@
       background: rgba(26, 26, 46, 0.1) !important;
     }
 
+    .awesome-features__item .item-thumb img {
+      box-shadow: 0 0 30px rgba(108, 60, 224, 0.35), 0 0 60px rgba(99, 102, 241, 0.2), 0 12px 40px rgba(0, 0, 0, 0.12);
+      border-radius: 12px;
+    }
+
     .awesome-features__item .item-content .item-number {
       color: #ffffff !important;
     }
@@ -523,12 +564,18 @@
     }
 
     .blog-3__item {
-      background: #ffffff !important;
-      border: 1px solid rgba(26, 26, 46, 0.08) !important;
+      background: transparent !important;
+      border: none !important;
+      margin-top: 30px !important;
+    }
+
+    .blog-3__item .item-thumb {
+      box-shadow: 0 0 20px rgba(108, 60, 224, 0.18), 0 0 40px rgba(99, 102, 241, 0.1), 0 8px 30px rgba(0, 0, 0, 0.08) !important;
+      border-radius: 15px !important;
     }
 
     .blog-3__item .item-content .item-tags span {
-      color: #6c3ce0 !important;
+      color: #1a1a2e !important;
     }
 
     .blog-3__item .item-content h5,
@@ -573,6 +620,13 @@
       background: rgba(108, 60, 224, 0.1) !important;
       border: 1px solid rgba(108, 60, 224, 0.15) !important;
       border-radius: 50% !important;
+      width: 50px !important;
+      height: 50px !important;
+      min-width: 50px !important;
+      min-height: 50px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
     }
 
     .pricing-3__item .item-header .header-inner .icon i {
@@ -612,22 +666,64 @@
       color: #ffffff !important;
     }
 
-    /* ── Offcanvas / Sidebar stays dark (intentional) ── */
+    /* ── Hamburger icon → black for white header ── */
+    .hamburger-menu span {
+      background: #1a1a2e !important;
+    }
+
+    .hamburger-menu-close {
+      color: #1a1a2e !important;
+      background-color: transparent !important;
+      background: transparent !important;
+      border: 1px solid rgba(26, 26, 46, 0.2) !important;
+    }
+
+    .hamburger-menu-close i {
+      color: #1a1a2e !important;
+    }
+
+    .header-one__menu-btns .hamburger-menu,
+    .hamburger-menu {
+      background-color: transparent !important;
+      background: transparent !important;
+      border: 1px solid rgba(26, 26, 46, 0.2) !important;
+    }
+
+    /* ── Offcanvas / Sidebar → white theme ── */
     #offcanvasRight {
-      background: #0f171d !important;
-      color: #ffffff !important;
+      background: #ffffff !important;
+      color: #1a1a2e !important;
     }
 
     #offcanvasRight h4,
     #offcanvasRight h5,
     #offcanvasRight h6 {
-      color: #ffffff !important;
+      color: #1a1a2e !important;
     }
 
     #offcanvasRight p,
     #offcanvasRight .info,
     #offcanvasRight a {
-      color: rgba(255, 255, 255, 0.8) !important;
+      color: #4a4a6a !important;
+    }
+
+    #offcanvasRight .saaslyn-5-btn:not(.v2) {
+      color: #1a1a2e !important;
+    }
+
+    #offcanvasRight .saaslyn-5-btn.v2 {
+      color: #ffffff !important;
+    }
+
+    #offcanvasRight .header-one__menu-btns .divider {
+      background: rgba(26, 26, 46, 0.2) !important;
+      width: 2px !important;
+      height: 30px !important;
+      display: block !important;
+    }
+
+    #offcanvasRight .header-one__menu-btns .buttons {
+      justify-content: center !important;
     }
 
     /* ── CTA section decorative shapes ── */
@@ -1005,44 +1101,50 @@
     /* ── Sidebar accent color → violet ── */
     #offcanvasRight,
     .offcanvas.offcanvas-end {
-      border-left-color: #a855f7 !important;
+      border-left-color: rgba(108, 60, 224, 0.2) !important;
+      background: #ffffff !important;
     }
 
     #offcanvasRight::before,
     .offcanvas.offcanvas-end::before {
-      background: #a855f7 !important;
-      background-color: #a855f7 !important;
+      background: rgba(108, 60, 224, 0.05) !important;
+      background-color: rgba(108, 60, 224, 0.05) !important;
+    }
+
+    #offcanvasRight .offcanvas-menu nav ul li a,
+    .offcanvas-menu .saaslyn__nav-list .saaslyn__nav-item .saaslyn__nav-link {
+      color: #1a1a2e !important;
     }
 
     #offcanvasRight .offcanvas-menu nav ul li a::before,
     .offcanvas-menu .saaslyn__nav-list .saaslyn__nav-item .saaslyn__nav-link::before {
-      background: #a855f7 !important;
+      background: #6c3ce0 !important;
     }
 
-    /* Override any blue accent bar */
+    /* Override any accent bar */
     .offcanvas::after,
     #offcanvasRight::after {
-      background: #a855f7 !important;
-      background-color: #a855f7 !important;
+      background: rgba(108, 60, 224, 0.1) !important;
+      background-color: rgba(108, 60, 224, 0.1) !important;
     }
 
-    /* Contact Info icons → violet */
+    /* Contact Info icons → purple */
     #offcanvasRight .contact-area .icon i,
     .offcanvas .contact-area .icon i {
-      color: #a855f7 !important;
+      color: #6c3ce0 !important;
     }
 
-    /* Social Share icons → violet border & hover */
+    /* Social Share icons */
     #offcanvasRight .social-icons ul li a,
     .offcanvas .social-icons ul li a {
-      border-color: rgba(168, 85, 247, 0.4) !important;
-      color: #a855f7 !important;
+      border-color: rgba(108, 60, 224, 0.3) !important;
+      color: #1a1a2e !important;
     }
 
     #offcanvasRight .social-icons ul li a:hover,
     .offcanvas .social-icons ul li a:hover {
-      background: #a855f7 !important;
-      border-color: #a855f7 !important;
+      background: #6c3ce0 !important;
+      border-color: #6c3ce0 !important;
       color: #fff !important;
     }
 
@@ -1247,13 +1349,13 @@
       </nav>
       <!-- End Mobile Menu -->
       <!-- Mobile Login/Signup Buttons -->
-      <div
-        style="display:flex;gap:12px;padding:20px 20px 0;border-top:1px solid rgba(255,255,255,0.1);margin-top:16px;">
-        <a href="./login.html"
-          style="flex:1;text-align:center;padding:12px 0;border:1.5px solid rgba(168,85,247,0.5);border-radius:8px;color:#fff;text-decoration:none;font-weight:600;font-size:15px;transition:all 0.3s;">Login</a>
-        <a href="./sign-up.html"
-          style="flex:1;text-align:center;padding:12px 0;background:linear-gradient(135deg,#a855f7,#7c3aed);border:none;border-radius:8px;color:#fff;text-decoration:none;font-weight:600;font-size:15px;transition:all 0.3s;">Sign
-          Up</a>
+      <div class="header-one__menu-btns"
+        style="padding:20px 80px 0;border-top:1px solid rgba(26,26,46,0.08);margin-top:16px;">
+        <div class="buttons" style="display:flex;align-items:center;justify-content:center;gap:8px;">
+          <a href="./login.html" class="saaslyn-5-btn">Login</a>
+          <div class="divider"></div>
+          <a href="./sign-up.html" class="saaslyn-5-btn v2">Sign Up</a>
+        </div>
       </div>
     </div>
     <div class="offcanvas-body">
@@ -3861,7 +3963,7 @@
                 <div class="copyright">Copyright <span class="current-year"></span> <a href="./">Privacy Crumb</a>. all
                   rights reserved. Terms & Conditions </div>
               </div>
-              <div class="col-md-auto"><a href="#" class="terms">Terms & Conditions</a></div>
+
             </div>
           </div>
         </div>
