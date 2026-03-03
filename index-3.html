@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -26,8 +26,7 @@
   <meta name="developer" content="Sakebul Islam" />
 
   <title>PrivacyCrumb</title>
-
-  <link rel="icon" href="assets/images/Privacy-new-logo.png" type="image/png" />
+  <link rel="icon" type="image/png" href="./assets/images/Privacy-new-logo.png">
 
   <link rel="stylesheet" href="assets/css/plugins.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -767,7 +766,7 @@
     <div class="loading-container">
       <div class="loading"></div>
       <div id="loading-icon">
-        <img src="./assets/images/logo-icon.svg" alt="" />
+        <img src="./assets/images/Privacy-new-logo.png" alt="PrivacyCrumb" style="width:40px;height:40px;" />
       </div>
     </div>
   </div>
@@ -1643,27 +1642,28 @@
 
                   .i3-step {
                     font-size: 10px;
-                    color: rgba(255, 255, 255, 0.22);
+                    color: rgba(26, 26, 46, 0.35);
                     transition: color .3s;
                   }
 
                   .i3-step.active {
-                    color: #a5b4fc;
+                    color: #6c3ce0;
                     font-weight: 700;
                   }
 
                   .i3-step.done {
-                    color: rgba(165, 180, 252, 0.4);
+                    color: rgba(108, 60, 224, 0.5);
                   }
 
                   .i3-result {
                     margin-top: 16px;
                     display: none;
-                    background: rgba(99, 102, 241, 0.08);
-                    border: 1px solid rgba(99, 102, 241, 0.2);
+                    background: #2d2d4a;
+                    border: 1px solid #2d2d4a;
                     border-radius: 12px;
                     padding: 16px 18px;
                     animation: i3fadeIn .4s ease;
+                    text-align: center;
                   }
 
                   @keyframes i3fadeIn {
@@ -1680,7 +1680,8 @@
 
                   .i3-result-top {
                     display: flex;
-                    align-items: flex-start;
+                    align-items: center;
+                    justify-content: center;
                     gap: 12px;
                     margin-bottom: 12px;
                   }
@@ -1693,20 +1694,21 @@
 
                   .i3-result-title {
                     font-weight: 700;
-                    color: #fff;
+                    color: #ffffff;
                     font-size: 14px;
                     margin-bottom: 3px;
                   }
 
                   .i3-result-sub {
                     font-size: 12px;
-                    color: rgba(255, 255, 255, 0.4);
+                    color: #ffffff;
                   }
 
                   .i3-pills {
                     display: flex;
                     gap: 8px;
                     flex-wrap: wrap;
+                    justify-content: center;
                     margin-bottom: 14px;
                   }
 
@@ -1742,7 +1744,7 @@
                     padding: 10px 20px;
                     border-radius: 9px;
                     background: linear-gradient(135deg, #6366f1, #8b5cf6);
-                    color: #fff;
+                    color: #fff !important;
                     font-weight: 700;
                     font-size: 13px;
                     text-decoration: none;
@@ -3878,7 +3880,7 @@
         <div class="footer-three__main section-padding-top">
           <div class="container">
             <div class="row g-5">
-              <div class="col-lg-6">
+              <div class="col-lg-3">
                 <div class="footer-info"><a href="./index.html" class="footer-logo"
                     style="display:flex;align-items:center;text-decoration:none;"><img
                       src="./assets/images/PrivacyCrumbLogo4.svg" alt="Privacy Crumb" class="logo-steady-glow"
@@ -3891,54 +3893,140 @@
                     id="newsletter-email" placeholder="Newsletter email" required /><button type="submit"><i
                       class="fa-light fa-arrow-right-long"></i></button></form>
               </div>
-              <div class="col-lg-6">
-                <div class="info-area">
-                  <div class="links-group v3">
-                    <h6 class="link-title">All Pages</h6>
-                    <div class="link-list">
-                      <ul>
-                        <li><a href="./about.html">About Us</a></li>
-                        <li><a href="./service.html">Services</a></li>
-                        <li><a href="./team">Team</a></li>
-                        <li><a href="./login.html">Log in</a></li>
-                        <li><a href="./sign-up.html">Sign up</a></li>
-                      </ul>
+              <div class="col-lg-9" style="border-left:2px solid rgba(26,26,46,0.12);padding-left:40px;">
+                <div class="info-area" style="display:grid;grid-template-columns:repeat(4,1fr);gap:30px;">
+                  <style>
+                    .info-area>div>.links-group {
+                      margin-bottom: 28px;
+                    }
+
+                    .info-area>div>.links-group:last-child {
+                      margin-bottom: 0;
+                    }
+                  </style>
+                  <!-- Column 1 -->
+                  <div>
+                    <div class="links-group v3">
+                      <h6 class="link-title">PrivacyCrumb</h6>
+                      <div class="link-list">
+                        <ul>
+                          <li><a href="./pricing.html">Pricing</a></li>
+                          <li><a href="./features.html">Features</a></li>
+                          <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="links-group v3">
+                      <h6 class="link-title">Products</h6>
+                      <div class="link-list">
+                        <ul>
+                          <li><a href="#">Shopify App</a></li>
+                          <li><a href="#">Consent Management Platform</a></li>
+                          <li><a href="#">WordPress Plugin</a></li>
+                          <li><a href="#">Wix App</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="links-group v3">
+                      <h6 class="link-title">Use Cases</h6>
+                      <div class="link-list">
+                        <ul>
+                          <li><a href="#">Founder</a></li>
+                          <li><a href="#">Developer</a></li>
+                          <li><a href="#">Marketer</a></li>
+                          <li><a href="#">Agency</a></li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                  <div class="links-group v3">
-                    <h6 class="link-title">Free Tools ✨</h6>
-                    <div class="link-list">
-                      <ul>
-                        <li><a href="https://app.privacycrumb.com/free/privacy-policy-generator">Privacy Policy
-                            Generator</a></li>
-                        <li><a href="https://app.privacycrumb.com/free/cookie-policy-generator">Cookie Policy
-                            Generator</a></li>
-                        <li><a href="https://app.privacycrumb.com/free-scanner">Cookie Checker</a></li>
-                      </ul>
+                  <!-- Column 2 -->
+                  <div>
+                    <div class="links-group v3">
+                      <h6 class="link-title">Free Tools ✨</h6>
+                      <div class="link-list">
+                        <ul>
+                          <li><a href="https://app.privacycrumb.com/free/privacy-policy-generator">Privacy Policy
+                              Generator</a></li>
+                          <li><a href="https://app.privacycrumb.com/free/cookie-policy-generator">Cookie Policy
+                              Generator</a></li>
+                          <li><a href="https://app.privacycrumb.com/free-scanner">Cookie Checker</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="links-group v3">
+                      <h6 class="link-title">Compare</h6>
+                      <div class="link-list">
+                        <ul>
+                          <li><a href="#">Cookiebot</a></li>
+                          <li><a href="#">Iubenda</a></li>
+                          <li><a href="#">Complianz</a></li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                  <div class="links-group v3">
-                    <h6 class="link-title">Demo Pages</h6>
-                    <div class="link-list">
-                      <ul>
-                        <li><a href="./index.html">ChatBot</a></li>
-                        <li><a href="./features.html">Features</a></li>
-                        <li><a href="./pricing.html">Pricing</a></li>
-                        <li><a href="./blog.html">Blogs</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
-                      </ul>
+                  <!-- Column 3 -->
+                  <div>
+                    <div class="links-group v3">
+                      <h6 class="link-title">Resources</h6>
+                      <div class="link-list">
+                        <ul>
+                          <li><a href="./blog.html">Blogs</a></li>
+                          <li><a href="#">Knowledge Base</a></li>
+                          <li><a href="#">Infographics</a></li>
+                          <li><a href="#">Newsletter</a></li>
+                          <li><a href="./about.html">About</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="links-group v3">
+                      <h6 class="link-title">Solutions</h6>
+                      <div class="link-list">
+                        <ul>
+                          <li><a href="#">GDPR EU & UK</a></li>
+                          <li><a href="#">CCPA California</a></li>
+                          <li><a href="#">CPRA California</a></li>
+                          <li><a href="#">IAB TCF v2.2</a></li>
+                          <li><a href="#">Google Consent Mode</a></li>
+                          <li><a href="#">All regulations →</a></li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                  <div class="links-group v3">
-                    <h6 class="link-title">Contact Us</h6>
-                    <div class="link-list">
-                      <ul>
-                        <li><a href="tel:+431234566666">(43) 123 456 6666</a></li>
-                        <li><a href="mailto:privacy@gmail.com">privacy@gmail.com</a></li>
-                        <li><a href="https://maps.app.goo.gl/nKez388NmcRRqRvQ7">2912 Meadow brook Road,
-                            Los Angeles,
-                            CA 33001</a></li>
-                      </ul>
+                  <!-- Column 4 -->
+                  <div>
+                    <div class="links-group v3">
+                      <h6 class="link-title">Partners <span
+                          style="display:inline-block;padding:2px 10px;border-radius:20px;background:linear-gradient(135deg,#6c3ce0,#00c9a7);color:#fff;font-size:11px;font-weight:600;margin-left:6px;vertical-align:middle;">Join
+                          us!</span></h6>
+                      <div class="link-list">
+                        <ul>
+                          <li><a href="#">Agency Partner</a></li>
+                          <li><a href="#">Affiliate Partner</a></li>
+                          <li><a href="#">Strategic Partner</a></li>
+                          <li><a href="#">Partner Directory</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="links-group v3">
+                      <h6 class="link-title">Support</h6>
+                      <div class="link-list">
+                        <ul>
+                          <li><a href="#">Help Center</a></li>
+                          <li><a href="./contact.html">Contact Us</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="links-group v3">
+                      <h6 class="link-title">Legal</h6>
+                      <div class="link-list">
+                        <ul>
+                          <li><a href="#">Privacy Policy</a></li>
+                          <li><a href="#">Cookie Policy</a></li>
+                          <li><a href="#">Terms and Conditions</a></li>
+                          <li><a href="#">Data Processing Agreement</a></li>
+                          <li><a href="#">Accessibility Statement</a></li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
