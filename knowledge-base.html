@@ -25,7 +25,7 @@
   <meta name="twitter:image" content="http://saaslyn-html.netlify.app/assets/images/preview.png" />
   <meta name="developer" content="Sakebul Islam" />
 
-  <title>PrivacyCrumb - Contact Us</title>
+  <title>PrivacyCrumb - Knowledge Base</title>
   <link rel="icon" type="image/png" href="./assets/images/Privacy-new-logo.png">
 
   <link rel="stylesheet" href="assets/css/plugins.css" />
@@ -1443,443 +1443,464 @@
   <div id="smooth-wrapper">
     <div id="smooth-content">
       <main>
-        <!--================= Contact Hero section start =================-->
+        <!--================= KB Hero section start =================-->
         <section class="banner-three section section-padding-top-bottom"
           data-bg-src="./assets/images/banner/banner-three-bg.png">
+          <style>
+            .kb-search-wrap {
+              max-width: 640px;
+              margin: 32px auto 0;
+            }
+
+            .kb-search-bar {
+              display: flex;
+              align-items: center;
+              background: #ffffff;
+              border: 2px solid rgba(26, 26, 46, 0.08);
+              border-radius: 14px;
+              padding: 6px 6px 6px 20px;
+              transition: border-color 0.25s, box-shadow 0.25s;
+              gap: 8px;
+            }
+
+            .kb-search-bar:focus-within {
+              border-color: #6c3ce0;
+              box-shadow: 0 0 0 4px rgba(108, 60, 224, 0.08), 0 4px 20px rgba(108, 60, 224, 0.06);
+            }
+
+            .kb-search-bar i {
+              color: #8a8aaa;
+              font-size: 18px;
+              flex-shrink: 0;
+            }
+
+            .kb-search-bar input {
+              flex: 1;
+              border: none;
+              outline: none;
+              background: transparent;
+              font-size: 15px;
+              color: #1a1a2e;
+              font-family: inherit;
+              padding: 10px 4px;
+            }
+
+            .kb-search-bar input::placeholder {
+              color: #8a8aaa;
+            }
+
+            .kb-search-btn {
+              padding: 10px 22px;
+              border-radius: 10px;
+              background: linear-gradient(135deg, #6c3ce0, #4642fc);
+              color: #fff;
+              font-weight: 700;
+              font-size: 14px;
+              border: none;
+              cursor: pointer;
+              white-space: nowrap;
+              font-family: inherit;
+              transition: opacity 0.2s, transform 0.15s;
+            }
+
+            .kb-search-btn:hover {
+              opacity: 0.9;
+              transform: translateY(-1px);
+            }
+          </style>
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-lg-8 text-center">
                 <div class="section-header-3">
-                  <span class="section-sub-title" style="color:#6c3ce0;">Contact Us</span>
+                  <span class="section-sub-title" style="color:#6c3ce0;">Knowledge Base</span>
                   <h1 class="section-title text-anime" style="color:#1a1a2e;">
-                    Get In Touch With Our Team
+                    How Can We Help You?
                   </h1>
-                  <p style="color:#4a4a6a;max-width:600px;margin:0 auto;">
-                    Have a question about compliance, need help with setup, or want to explore enterprise plans?
-                    We'd love to hear from you.
+                  <p style="color:#4a4a6a;max-width:620px;margin:0 auto;">
+                    Find answers to common questions, learn how to set up PrivacyCrumb, and get the most out of your
+                    cookie compliance platform.
                   </p>
+                </div>
+                <div class="kb-search-wrap">
+                  <div class="kb-search-bar">
+                    <i class="fa-light fa-search"></i>
+                    <input type="text" id="kbSearchInput" placeholder="Search for articles, guides, and more..."
+                      oninput="filterKB()" />
+                    <button class="kb-search-btn" onclick="filterKB()">Search</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <!--================= Contact Hero section end =================-->
+        <!--================= KB Hero section end =================-->
 
-        <!--================= Contact Info Cards section start =================-->
-        <section class="section" style="padding:60px 0;">
+        <!--================= KB Categories section start =================-->
+        <section class="section section-padding-top-bottom">
           <style>
-            .contact-info-grid {
+            .kb-cat-grid {
               display: grid;
               grid-template-columns: repeat(3, 1fr);
               gap: 24px;
             }
+
             @media (max-width: 991px) {
-              .contact-info-grid { grid-template-columns: 1fr; }
+              .kb-cat-grid {
+                grid-template-columns: repeat(2, 1fr);
+              }
             }
-            .contact-info-card {
-              background: #f5f5fa;
-              border-radius: 18px;
-              padding: 36px 28px;
-              text-align: center;
-              transition: transform 0.3s, box-shadow 0.3s;
+
+            @media (max-width: 575px) {
+              .kb-cat-grid {
+                grid-template-columns: 1fr;
+              }
             }
-            .contact-info-card:hover {
-              transform: translateY(-6px);
-              box-shadow: 0 16px 48px rgba(108,60,224,0.1);
-            }
-            .contact-info-icon {
-              width: 64px;
-              height: 64px;
+
+            .kb-cat-card {
+              background: #ffffff;
+              border: 1px solid rgba(26, 26, 46, 0.08);
               border-radius: 16px;
-              background: linear-gradient(135deg, #6c3ce0, #4642fc);
+              padding: 32px 28px;
+              transition: transform 0.3s, box-shadow 0.3s;
+              text-decoration: none;
+              display: block;
+            }
+
+            .kb-cat-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 16px 48px rgba(108, 60, 224, 0.1);
+            }
+
+            .kb-cat-icon {
+              width: 56px;
+              height: 56px;
+              border-radius: 14px;
+              background: rgba(108, 60, 224, 0.08);
               display: flex;
               align-items: center;
               justify-content: center;
-              margin: 0 auto 20px;
+              margin-bottom: 18px;
             }
-            .contact-info-icon i {
-              font-size: 26px;
-              color: #fff;
+
+            .kb-cat-icon i {
+              font-size: 24px;
+              color: #6c3ce0;
             }
-            .contact-info-title {
+
+            .kb-cat-title {
               font-size: 18px;
               font-weight: 700;
               color: #1a1a2e;
               margin-bottom: 8px;
             }
-            .contact-info-text {
+
+            .kb-cat-desc {
               font-size: 14px;
               color: #4a4a6a;
-              line-height: 1.65;
+              line-height: 1.6;
+              margin-bottom: 14px;
             }
-            .contact-info-text a {
-              color: #6c3ce0 !important;
+
+            .kb-cat-count {
+              font-size: 13px;
+              color: #6c3ce0;
               font-weight: 600;
-              text-decoration: none;
-            }
-            .contact-info-text a:hover {
-              text-decoration: underline;
+              display: flex;
+              align-items: center;
+              gap: 6px;
             }
           </style>
           <div class="container">
-            <div class="contact-info-grid">
-              <div class="contact-info-card">
-                <div class="contact-info-icon"><i class="fa-light fa-envelope"></i></div>
-                <h4 class="contact-info-title">Email Us</h4>
-                <p class="contact-info-text">
-                  For general inquiries and support<br>
-                  <a href="mailto:privacy@gmail.com">privacy@gmail.com</a>
-                </p>
+            <div class="row justify-content-center" style="margin-bottom:40px;">
+              <div class="col-lg-7 text-center">
+                <div class="section-header-3">
+                  <span class="section-sub-title" style="color:#6c3ce0;">Browse Topics</span>
+                  <h2 class="section-title text-anime" style="color:#1a1a2e;">Popular Categories</h2>
+                </div>
               </div>
-              <div class="contact-info-card">
-                <div class="contact-info-icon"><i class="fa-light fa-location-dot"></i></div>
-                <h4 class="contact-info-title">Visit Us</h4>
-                <p class="contact-info-text">
-                  Main Street, DaanLungsod<br>
-                  Tuburan, Philippines
+            </div>
+            <div class="kb-cat-grid" id="kbCatGrid">
+              <a class="kb-cat-card kb-item" href="#">
+                <div class="kb-cat-icon"><i class="fa-light fa-rocket-launch"></i></div>
+                <h3 class="kb-cat-title">Getting Started</h3>
+                <p class="kb-cat-desc">Set up your account, install the script, and launch your first cookie consent
+                  banner in minutes.</p>
+                <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 8 articles</span>
+              </a>
+              <a class="kb-cat-card kb-item" href="#">
+                <div class="kb-cat-icon"><i class="fa-light fa-cookie-bite"></i></div>
+                <h3 class="kb-cat-title">Cookie Scanner</h3>
+                <p class="kb-cat-desc">Learn how to run scans, understand scan results, and keep your cookie inventory
+                  up to date.</p>
+                <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 6 articles</span>
+              </a>
+              <a class="kb-cat-card kb-item" href="#">
+                <div class="kb-cat-icon"><i class="fa-light fa-window-maximize"></i></div>
+                <h3 class="kb-cat-title">Consent Banner</h3>
+                <p class="kb-cat-desc">Customize your banner design, configure consent categories, and set up
+                  geo-targeted rules.</p>
+                <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 12 articles</span>
+              </a>
+              <a class="kb-cat-card kb-item" href="#">
+                <div class="kb-cat-icon"><i class="fa-light fa-shield-check"></i></div>
+                <h3 class="kb-cat-title">GDPR Compliance</h3>
+                <p class="kb-cat-desc">Understand GDPR requirements, legal basis for cookies, and how PrivacyCrumb keeps
+                  you compliant.</p>
+                <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 10 articles</span>
+              </a>
+              <a class="kb-cat-card kb-item" href="#">
+                <div class="kb-cat-icon"><i class="fa-light fa-flag-usa"></i></div>
+                <h3 class="kb-cat-title">CCPA / CPRA</h3>
+                <p class="kb-cat-desc">California privacy law requirements, "Do Not Sell" links, and opt-out
+                  configuration guides.</p>
+                <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 5 articles</span>
+              </a>
+              <a class="kb-cat-card kb-item" href="#">
+                <div class="kb-cat-icon"><i class="fa-light fa-chart-mixed"></i></div>
+                <h3 class="kb-cat-title">Google Consent Mode</h3>
+                <p class="kb-cat-desc">Set up Google Consent Mode v2, configure tag behavior, and preserve your
+                  analytics data.</p>
+                <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 4 articles</span>
+              </a>
+              <a class="kb-cat-card kb-item" href="#">
+                <div class="kb-cat-icon"><i class="fa-light fa-file-contract"></i></div>
+                <h3 class="kb-cat-title">Policy Generator</h3>
+                <p class="kb-cat-desc">Auto-generate privacy policies and cookie policies that stay current with your
+                  actual cookie usage.</p>
+                <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 5 articles</span>
+              </a>
+              <a class="kb-cat-card kb-item" href="#">
+                <div class="kb-cat-icon"><i class="fa-light fa-clipboard-list-check"></i></div>
+                <h3 class="kb-cat-title">Consent Logging</h3>
+                <p class="kb-cat-desc">How consent records are stored, how to export audit logs, and retention period
+                  settings.</p>
+                <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 4 articles</span>
+              </a>
+              <a class="kb-cat-card kb-item" href="#">
+                <div class="kb-cat-icon"><i class="fa-light fa-globe"></i></div>
+                <h3 class="kb-cat-title">Multi-Language & Geo</h3>
+                <p class="kb-cat-desc">Add languages to your banner, configure geo-targeting rules, and manage regional
+                  compliance.</p>
+                <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 7 articles</span>
+              </a>
+              <a class="kb-cat-card kb-item" href="#">
+                <div class="kb-cat-icon"><i class="fa-light fa-code"></i></div>
+                <h3 class="kb-cat-title">Developer & API</h3>
+                <p class="kb-cat-desc">JavaScript API reference, callback events, custom integration guides, and webhook
+                  setup.</p>
+                <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 9 articles</span>
+              </a>
+              <a class="kb-cat-card kb-item" href="#">
+                <div class="kb-cat-icon"><i class="fa-light fa-users-gear"></i></div>
+                <h3 class="kb-cat-title">Account & Billing</h3>
+                <p class="kb-cat-desc">Manage your subscription, add team members, update payment methods, and view
+                  invoices.</p>
+                <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 6 articles</span>
+              </a>
+              <a class="kb-cat-card kb-item" href="#">
+                <div class="kb-cat-icon"><i class="fa-light fa-puzzle-piece"></i></div>
+                <h3 class="kb-cat-title">Integrations</h3>
+                <p class="kb-cat-desc">Connect with WordPress, Shopify, Google Tag Manager, and other popular platforms.
                 </p>
-              </div>
-              <div class="contact-info-card">
-                <div class="contact-info-icon"><i class="fa-light fa-clock"></i></div>
-                <h4 class="contact-info-title">Office Hours</h4>
-                <p class="contact-info-text">
-                  Monday - Friday<br>
-                  8:00 AM - 5:00 PM (PHT)
-                </p>
-              </div>
+                <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 8 articles</span>
+              </a>
             </div>
           </div>
         </section>
-        <!--================= Contact Info Cards section end =================-->
+        <!--================= KB Categories section end =================-->
 
-        <!--================= Contact Form section start =================-->
+        <!--================= Popular Articles section start =================-->
         <section class="section section-padding-top-bottom" style="background:#f5f5fa;">
           <style>
-            .contact-form-wrap {
-              background: #ffffff;
-              border-radius: 20px;
-              padding: 48px;
-              box-shadow: 0 8px 40px rgba(0,0,0,0.04);
+            .kb-article-list {
+              list-style: none;
+              padding: 0;
+              margin: 0;
             }
-            @media (max-width: 767px) {
-              .contact-form-wrap { padding: 28px 20px; }
-            }
-            .contact-form-group {
-              margin-bottom: 20px;
-            }
-            .contact-form-group label {
-              display: block;
-              font-size: 13px;
-              font-weight: 700;
-              color: #1a1a2e;
-              margin-bottom: 8px;
-              letter-spacing: 0.02em;
-            }
-            .contact-form-group input,
-            .contact-form-group select,
-            .contact-form-group textarea {
-              width: 100%;
-              padding: 14px 18px;
-              border-radius: 12px;
-              border: 2px solid rgba(26,26,46,0.08);
-              background: #f9f9fc;
-              color: #1a1a2e;
-              font-size: 14px;
-              font-family: inherit;
-              outline: none;
-              transition: border-color 0.25s, box-shadow 0.25s;
-            }
-            .contact-form-group input:focus,
-            .contact-form-group select:focus,
-            .contact-form-group textarea:focus {
-              border-color: #6c3ce0;
-              box-shadow: 0 0 0 4px rgba(108,60,224,0.06);
-              background: #fff;
-            }
-            .contact-form-group input::placeholder,
-            .contact-form-group textarea::placeholder {
-              color: #8a8aaa;
-            }
-            .contact-form-group textarea {
-              resize: vertical;
-              min-height: 140px;
-            }
-            .contact-form-row {
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              gap: 20px;
-            }
-            @media (max-width: 575px) {
-              .contact-form-row { grid-template-columns: 1fr; }
-            }
-            .contact-submit-btn {
-              display: inline-flex;
-              align-items: center;
-              gap: 8px;
-              padding: 14px 36px;
-              border-radius: 12px;
-              background: linear-gradient(135deg, #6c3ce0, #4642fc);
-              color: #fff;
-              font-weight: 700;
-              font-size: 15px;
-              border: none;
-              cursor: pointer;
-              font-family: inherit;
-              transition: transform 0.15s, box-shadow 0.15s, opacity 0.2s;
-              box-shadow: 0 4px 20px rgba(108,60,224,0.35);
-            }
-            .contact-submit-btn:hover {
-              transform: translateY(-2px);
-              box-shadow: 0 8px 28px rgba(108,60,224,0.45);
-            }
-            .contact-submit-btn:active {
-              transform: translateY(0);
-            }
-          </style>
-          <div class="container">
-            <div class="row g-5 align-items-start">
-              <div class="col-lg-5">
-                <div class="section-header-3" style="text-align:left;">
-                  <span class="section-sub-title" style="color:#6c3ce0;">Send a Message</span>
-                  <h2 class="section-title text-anime" style="color:#1a1a2e;">Let's Start a<br>Conversation</h2>
-                  <p style="color:#4a4a6a;">
-                    Fill out the form and our team will get back to you within 24 hours. For urgent
-                    matters, reach out directly via email.
-                  </p>
-                </div>
-                <div style="margin-top:32px;">
-                  <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
-                    <div style="width:44px;height:44px;border-radius:12px;background:rgba(108,60,224,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <i class="fa-light fa-phone" style="color:#6c3ce0;font-size:18px;"></i>
-                    </div>
-                    <div>
-                      <div style="font-size:12px;color:#6a6a8a;font-weight:600;">Phone</div>
-                      <a href="tel:+11002345909" style="color:#1a1a2e !important;font-weight:600;font-size:14px;text-decoration:none;">+1 100 234 5909</a>
-                    </div>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
-                    <div style="width:44px;height:44px;border-radius:12px;background:rgba(108,60,224,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <i class="fa-light fa-envelope" style="color:#6c3ce0;font-size:18px;"></i>
-                    </div>
-                    <div>
-                      <div style="font-size:12px;color:#6a6a8a;font-weight:600;">Email</div>
-                      <a href="mailto:privacy@gmail.com" style="color:#1a1a2e !important;font-weight:600;font-size:14px;text-decoration:none;">privacy@gmail.com</a>
-                    </div>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:14px;">
-                    <div style="width:44px;height:44px;border-radius:12px;background:rgba(108,60,224,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <i class="fa-light fa-messages" style="color:#6c3ce0;font-size:18px;"></i>
-                    </div>
-                    <div>
-                      <div style="font-size:12px;color:#6a6a8a;font-weight:600;">Live Chat</div>
-                      <span style="color:#1a1a2e;font-weight:600;font-size:14px;">Available Mon-Fri, 8AM-5PM</span>
-                    </div>
-                  </div>
-                </div>
-                <!-- Social Links -->
-                <div style="margin-top:36px;padding-top:24px;border-top:1px solid rgba(26,26,46,0.06);">
-                  <div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:14px;">Follow Us</div>
-                  <div style="display:flex;gap:10px;">
-                    <a href="https://www.facebook.com/" target="_blank" style="width:40px;height:40px;border-radius:10px;background:rgba(108,60,224,0.06);display:flex;align-items:center;justify-content:center;color:#6c3ce0 !important;text-decoration:none;transition:background 0.2s;">
-                      <i class="fa-brands fa-facebook-f" style="font-size:16px;"></i>
-                    </a>
-                    <a href="https://www.instagram.com/" target="_blank" style="width:40px;height:40px;border-radius:10px;background:rgba(108,60,224,0.06);display:flex;align-items:center;justify-content:center;color:#6c3ce0 !important;text-decoration:none;transition:background 0.2s;">
-                      <i class="fa-brands fa-instagram" style="font-size:16px;"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/" target="_blank" style="width:40px;height:40px;border-radius:10px;background:rgba(108,60,224,0.06);display:flex;align-items:center;justify-content:center;color:#6c3ce0 !important;text-decoration:none;transition:background 0.2s;">
-                      <i class="fa-brands fa-linkedin-in" style="font-size:16px;"></i>
-                    </a>
-                    <a href="#" target="_blank" style="width:40px;height:40px;border-radius:10px;background:rgba(108,60,224,0.06);display:flex;align-items:center;justify-content:center;color:#6c3ce0 !important;text-decoration:none;transition:background 0.2s;">
-                      <i class="fa-brands fa-youtube" style="font-size:16px;"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-7">
-                <div class="contact-form-wrap">
-                  <form id="contactForm" onsubmit="handleContactSubmit(event)">
-                    <div class="contact-form-row">
-                      <div class="contact-form-group">
-                        <label for="contactName">Full Name *</label>
-                        <input type="text" id="contactName" name="name" placeholder="John Doe" required />
-                      </div>
-                      <div class="contact-form-group">
-                        <label for="contactEmail">Email Address *</label>
-                        <input type="email" id="contactEmail" name="email" placeholder="john@example.com" required />
-                      </div>
-                    </div>
-                    <div class="contact-form-row">
-                      <div class="contact-form-group">
-                        <label for="contactCompany">Company</label>
-                        <input type="text" id="contactCompany" name="company" placeholder="Your Company" />
-                      </div>
-                      <div class="contact-form-group">
-                        <label for="contactSubject">Subject *</label>
-                        <select id="contactSubject" name="subject" required>
-                          <option value="" disabled selected>Select a topic</option>
-                          <option value="general">General Inquiry</option>
-                          <option value="support">Technical Support</option>
-                          <option value="sales">Sales / Enterprise</option>
-                          <option value="billing">Billing Question</option>
-                          <option value="partnership">Partnership</option>
-                          <option value="other">Other</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="contact-form-group">
-                      <label for="contactWebsite">Website URL</label>
-                      <input type="url" id="contactWebsite" name="website" placeholder="https://yourwebsite.com" />
-                    </div>
-                    <div class="contact-form-group">
-                      <label for="contactMessage">Message *</label>
-                      <textarea id="contactMessage" name="message" placeholder="Tell us how we can help you..." required></textarea>
-                    </div>
-                    <button type="submit" class="contact-submit-btn">
-                      Send Message <i class="fa-light fa-paper-plane-top"></i>
-                    </button>
-                  </form>
-                  <div id="contactSuccess" style="display:none;margin-top:24px;padding:20px;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);border-radius:12px;text-align:center;">
-                    <div style="font-size:24px;margin-bottom:8px;">✅</div>
-                    <div style="font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:4px;">Message Sent!</div>
-                    <div style="font-size:14px;color:#4a4a6a;">Thank you for reaching out. We'll get back to you within 24 hours.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <script>
-            function handleContactSubmit(e) {
-              e.preventDefault();
-              document.getElementById('contactForm').style.display = 'none';
-              document.getElementById('contactSuccess').style.display = 'block';
-            }
-          </script>
-        </section>
-        <!--================= Contact Form section end =================-->
 
-        <!--================= FAQ section start =================-->
-        <section class="section section-padding-top-bottom">
-          <style>
-            .contact-faq-item {
-              background: #fff;
-              border: 1px solid rgba(26,26,46,0.06);
-              border-radius: 14px;
-              margin-bottom: 12px;
-              overflow: hidden;
-            }
-            .contact-faq-q {
+            .kb-article-item {
+              background: #ffffff;
+              border: 1px solid rgba(26, 26, 46, 0.06);
+              border-radius: 12px;
               padding: 20px 24px;
+              margin-bottom: 10px;
               display: flex;
               align-items: center;
               justify-content: space-between;
-              cursor: pointer;
               gap: 16px;
-              transition: background 0.2s;
+              transition: transform 0.2s, box-shadow 0.2s;
+              text-decoration: none;
+              color: inherit;
             }
-            .contact-faq-q:hover {
-              background: rgba(108,60,224,0.02);
+
+            .kb-article-item:hover {
+              transform: translateX(4px);
+              box-shadow: 0 4px 16px rgba(108, 60, 224, 0.06);
             }
-            .contact-faq-q h5 {
+
+            .kb-article-item .article-left {
+              display: flex;
+              align-items: center;
+              gap: 14px;
+              flex: 1;
+            }
+
+            .kb-article-item .article-icon {
+              width: 40px;
+              height: 40px;
+              border-radius: 10px;
+              background: rgba(108, 60, 224, 0.08);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-shrink: 0;
+            }
+
+            .kb-article-item .article-icon i {
+              color: #6c3ce0;
+              font-size: 16px;
+            }
+
+            .kb-article-item .article-title {
               font-size: 15px;
-              font-weight: 700;
+              font-weight: 600;
               color: #1a1a2e;
-              margin: 0;
             }
-            .contact-faq-q i {
+
+            .kb-article-item .article-cat {
+              font-size: 12px;
+              color: #6a6a8a;
+              margin-top: 2px;
+            }
+
+            .kb-article-item .article-arrow {
               color: #6c3ce0;
               font-size: 16px;
               flex-shrink: 0;
-              transition: transform 0.3s;
+              opacity: 0;
+              transition: opacity 0.2s;
             }
-            .contact-faq-item.open .contact-faq-q i {
-              transform: rotate(180deg);
+
+            .kb-article-item:hover .article-arrow {
+              opacity: 1;
             }
-            .contact-faq-a {
-              max-height: 0;
-              overflow: hidden;
-              transition: max-height 0.35s ease, padding 0.35s ease;
-              padding: 0 24px;
-            }
-            .contact-faq-item.open .contact-faq-a {
-              max-height: 200px;
-              padding: 0 24px 20px;
-            }
-            .contact-faq-a p {
-              font-size: 14px;
-              color: #4a4a6a;
-              line-height: 1.65;
-              margin: 0;
+
+            @media (max-width: 575px) {
+              .kb-article-item {
+                flex-direction: column;
+                align-items: flex-start;
+              }
             }
           </style>
           <div class="container">
-            <div class="row justify-content-center" style="margin-bottom:48px;">
+            <div class="row justify-content-center" style="margin-bottom:40px;">
               <div class="col-lg-7 text-center">
                 <div class="section-header-3">
-                  <span class="section-sub-title" style="color:#6c3ce0;">FAQ</span>
-                  <h2 class="section-title text-anime" style="color:#1a1a2e;">Common Questions</h2>
+                  <span class="section-sub-title" style="color:#6c3ce0;">Most Read</span>
+                  <h2 class="section-title text-anime" style="color:#1a1a2e;">Popular Articles</h2>
                 </div>
               </div>
             </div>
             <div class="row justify-content-center">
               <div class="col-lg-8">
-                <div class="contact-faq-item open">
-                  <div class="contact-faq-q" onclick="toggleFaq(this)">
-                    <h5>How quickly will I receive a response?</h5>
-                    <i class="fa-light fa-chevron-down"></i>
-                  </div>
-                  <div class="contact-faq-a">
-                    <p>We typically respond within 4 hours during business hours (Mon-Fri, 8AM-5PM PHT). Enterprise and Pro plan customers receive priority support with faster response times.</p>
-                  </div>
-                </div>
-                <div class="contact-faq-item">
-                  <div class="contact-faq-q" onclick="toggleFaq(this)">
-                    <h5>Do you offer live chat support?</h5>
-                    <i class="fa-light fa-chevron-down"></i>
-                  </div>
-                  <div class="contact-faq-a">
-                    <p>Yes! Live chat is available Monday through Friday during business hours. You can access it from the chat widget in the bottom-right corner of your PrivacyCrumb dashboard.</p>
-                  </div>
-                </div>
-                <div class="contact-faq-item">
-                  <div class="contact-faq-q" onclick="toggleFaq(this)">
-                    <h5>Can I schedule a demo of PrivacyCrumb?</h5>
-                    <i class="fa-light fa-chevron-down"></i>
-                  </div>
-                  <div class="contact-faq-a">
-                    <p>Absolutely! Select "Sales / Enterprise" as the subject in the contact form above and mention you'd like a demo. Our team will schedule a personalized walkthrough at your convenience.</p>
-                  </div>
-                </div>
-                <div class="contact-faq-item">
-                  <div class="contact-faq-q" onclick="toggleFaq(this)">
-                    <h5>I need help with setup. Where should I start?</h5>
-                    <i class="fa-light fa-chevron-down"></i>
-                  </div>
-                  <div class="contact-faq-a">
-                    <p>Check out our <a href="./knowledge-base.html" style="color:#6c3ce0 !important;font-weight:600;">Knowledge Base</a> for step-by-step guides. If you still need assistance, reach out through this form and we'll help you get set up.</p>
-                  </div>
-                </div>
-                <div class="contact-faq-item">
-                  <div class="contact-faq-q" onclick="toggleFaq(this)">
-                    <h5>Do you offer custom enterprise solutions?</h5>
-                    <i class="fa-light fa-chevron-down"></i>
-                  </div>
-                  <div class="contact-faq-a">
-                    <p>Yes! For businesses with specific compliance needs, multiple domains, or custom integration requirements, we offer tailored enterprise plans. Contact our sales team through the form above.</p>
-                  </div>
-                </div>
+                <ul class="kb-article-list" id="kbArticleList">
+                  <li><a class="kb-article-item kb-item" href="#">
+                      <div class="article-left">
+                        <div class="article-icon"><i class="fa-light fa-code"></i></div>
+                        <div>
+                          <div class="article-title">How to Install the PrivacyCrumb Script on Your Website</div>
+                          <div class="article-cat">Getting Started</div>
+                        </div>
+                      </div>
+                      <i class="fa-light fa-arrow-right article-arrow"></i>
+                    </a></li>
+                  <li><a class="kb-article-item kb-item" href="#">
+                      <div class="article-left">
+                        <div class="article-icon"><i class="fa-light fa-palette"></i></div>
+                        <div>
+                          <div class="article-title">How to Customize Your Cookie Consent Banner Design</div>
+                          <div class="article-cat">Consent Banner</div>
+                        </div>
+                      </div>
+                      <i class="fa-light fa-arrow-right article-arrow"></i>
+                    </a></li>
+                  <li><a class="kb-article-item kb-item" href="#">
+                      <div class="article-left">
+                        <div class="article-icon"><i class="fa-light fa-scanner"></i></div>
+                        <div>
+                          <div class="article-title">Running Your First Cookie Scan: A Step-by-Step Guide</div>
+                          <div class="article-cat">Cookie Scanner</div>
+                        </div>
+                      </div>
+                      <i class="fa-light fa-arrow-right article-arrow"></i>
+                    </a></li>
+                  <li><a class="kb-article-item kb-item" href="#">
+                      <div class="article-left">
+                        <div class="article-icon"><i class="fa-light fa-chart-mixed"></i></div>
+                        <div>
+                          <div class="article-title">Setting Up Google Consent Mode v2 with PrivacyCrumb</div>
+                          <div class="article-cat">Google Consent Mode</div>
+                        </div>
+                      </div>
+                      <i class="fa-light fa-arrow-right article-arrow"></i>
+                    </a></li>
+                  <li><a class="kb-article-item kb-item" href="#">
+                      <div class="article-left">
+                        <div class="article-icon"><i class="fa-light fa-globe"></i></div>
+                        <div>
+                          <div class="article-title">Configuring Geo-Targeting Rules for Different Regions</div>
+                          <div class="article-cat">Multi-Language & Geo</div>
+                        </div>
+                      </div>
+                      <i class="fa-light fa-arrow-right article-arrow"></i>
+                    </a></li>
+                  <li><a class="kb-article-item kb-item" href="#">
+                      <div class="article-left">
+                        <div class="article-icon"><i class="fa-light fa-file-contract"></i></div>
+                        <div>
+                          <div class="article-title">Generating a GDPR-Compliant Privacy Policy Automatically</div>
+                          <div class="article-cat">Policy Generator</div>
+                        </div>
+                      </div>
+                      <i class="fa-light fa-arrow-right article-arrow"></i>
+                    </a></li>
+                  <li><a class="kb-article-item kb-item" href="#">
+                      <div class="article-left">
+                        <div class="article-icon"><i class="fa-light fa-puzzle-piece"></i></div>
+                        <div>
+                          <div class="article-title">Installing PrivacyCrumb on WordPress in 2 Minutes</div>
+                          <div class="article-cat">Integrations</div>
+                        </div>
+                      </div>
+                      <i class="fa-light fa-arrow-right article-arrow"></i>
+                    </a></li>
+                  <li><a class="kb-article-item kb-item" href="#">
+                      <div class="article-left">
+                        <div class="article-icon"><i class="fa-light fa-download"></i></div>
+                        <div>
+                          <div class="article-title">How to Export Your Consent Logs for Audit Purposes</div>
+                          <div class="article-cat">Consent Logging</div>
+                        </div>
+                      </div>
+                      <i class="fa-light fa-arrow-right article-arrow"></i>
+                    </a></li>
+                </ul>
               </div>
             </div>
           </div>
-          <script>
-            function toggleFaq(el) {
-              var item = el.parentElement;
-              var wasOpen = item.classList.contains('open');
-              document.querySelectorAll('.contact-faq-item').forEach(function(i) { i.classList.remove('open'); });
-              if (!wasOpen) item.classList.add('open');
-            }
-          </script>
         </section>
-        <!--================= FAQ section end =================-->
+        <!--================= Popular Articles section end =================-->
+
+        <!--================= KB Search Script =================-->
+        <script>
+          function filterKB() {
+            var q = document.getElementById('kbSearchInput').value.toLowerCase().trim();
+            document.querySelectorAll('.kb-item').forEach(function (el) {
+              var text = el.textContent.toLowerCase();
+              el.style.display = (!q || text.indexOf(q) > -1) ? '' : 'none';
+            });
+          }
+        </script>
 
         <!--================= CTA section start =================-->
         <section class="cta-3 section section-padding-top-bottom overflow-hidden"
@@ -1891,6 +1912,7 @@
               align-items: flex-start !important;
               text-align: left !important;
             }
+
             .cta-3 .features-list {
               display: flex !important;
               justify-content: center !important;
@@ -1899,23 +1921,22 @@
           <div class="container">
             <div class="row g-4">
               <div class="cta-3__content">
-                <h2 class="content-title text-anime">Ready to Get Started<br>With PrivacyCrumb?</h2>
-                <div class="buttons">
-                  <a href="./sign-up.html" class="saaslyn-4-btn v2">Start Free Trial <i class="fa-light fa-arrow-right-long"></i></a>
-                  <a href="./pricing.html" class="saaslyn-4-btn">View Pricing <i class="fa-light fa-arrow-right-long"></i></a>
-                </div>
+                <h2 class="content-title text-anime">Still Can't Find What<br />You're Looking For?</h2>
+                <div class="buttons"><a href="./contact.html" class="saaslyn-4-btn v2">Contact Support <i
+                      class="fa-light fa-arrow-right-long"></i></a><a href="./blog.html" class="saaslyn-4-btn">Read Our
+                    Blog <i class="fa-light fa-arrow-right-long"></i></a></div>
                 <div class="features-list">
                   <ul>
-                    <li><i class="fa-light fa-badge-check"></i>No credit card required</li>
-                    <li><i class="fa-light fa-badge-check"></i>Full features in free trial</li>
-                    <li><i class="fa-light fa-badge-check"></i>Setup in under 2 minutes</li>
+                    <li><i class="fa-light fa-badge-check"></i>Average response time under 4 hours</li>
+                    <li><i class="fa-light fa-badge-check"></i>Priority support for Pro & Enterprise</li>
+                    <li><i class="fa-light fa-badge-check"></i>Live chat available Mon-Fri</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <!--================= CTA section end =================-->
+        <!--=================cta section end=================-->
       </main>
       <!--=================footer section start=================-->
       <footer class="footer-three section" data-bg-src="./assets/images/footer/footer-three-bg.svg">
