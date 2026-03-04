@@ -1473,50 +1473,67 @@
               grid-template-columns: repeat(3, 1fr);
               gap: 24px;
             }
+
             @media (max-width: 991px) {
-              .contact-info-grid { grid-template-columns: 1fr; }
+              .contact-info-grid {
+                grid-template-columns: 1fr;
+              }
             }
+
             .contact-info-card {
-              background: #f5f5fa;
-              border-radius: 18px;
-              padding: 36px 28px;
-              text-align: center;
+              background: #ffffff;
+              border: 1px solid rgba(26, 26, 46, 0.06);
+              border-radius: 16px;
+              padding: 28px;
+              text-align: left;
               transition: transform 0.3s, box-shadow 0.3s;
+              box-shadow: 0 4px 24px rgba(108, 60, 224, 0.12), 0 0 40px rgba(108, 60, 224, 0.06);
             }
+
             .contact-info-card:hover {
               transform: translateY(-6px);
-              box-shadow: 0 16px 48px rgba(108,60,224,0.1);
+              box-shadow: 0 12px 40px rgba(108, 60, 224, 0.16), 0 0 60px rgba(108, 60, 224, 0.08);
             }
+
             .contact-info-icon {
               width: 64px;
               height: 64px;
               border-radius: 16px;
-              background: linear-gradient(135deg, #6c3ce0, #4642fc);
+              background: #ffffff;
+              border: 2px solid rgba(26, 26, 46, 0.1);
+              box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
               display: flex;
               align-items: center;
               justify-content: center;
-              margin: 0 auto 20px;
+              margin-bottom: 20px;
             }
+
             .contact-info-icon i {
               font-size: 26px;
-              color: #fff;
-            }
-            .contact-info-title {
-              font-size: 18px;
-              font-weight: 700;
               color: #1a1a2e;
-              margin-bottom: 8px;
             }
+
+            .contact-info-title {
+              font-size: 17px !important;
+              font-weight: 700 !important;
+              color: #1a1a2e !important;
+              margin-bottom: 8px !important;
+              line-height: 1.3 !important;
+            }
+
             .contact-info-text {
-              font-size: 14px;
-              color: #4a4a6a;
-              line-height: 1.65;
+              font-size: 14px !important;
+              color: #4a4a6a !important;
+              line-height: 1.6 !important;
+              margin-bottom: 0 !important;
             }
+
             .contact-info-text a {
-              color: #6c3ce0 !important;
+              color: #1a1a2e !important;
               font-weight: 600;
               text-decoration: none;
             }
+
             .contact-info-text a:hover {
               text-decoration: underline;
             }
@@ -1525,7 +1542,7 @@
             <div class="contact-info-grid">
               <div class="contact-info-card">
                 <div class="contact-info-icon"><i class="fa-light fa-envelope"></i></div>
-                <h4 class="contact-info-title">Email Us</h4>
+                <h5 class="contact-info-title">Email Us</h5>
                 <p class="contact-info-text">
                   For general inquiries and support<br>
                   <a href="mailto:privacy@gmail.com">privacy@gmail.com</a>
@@ -1533,7 +1550,7 @@
               </div>
               <div class="contact-info-card">
                 <div class="contact-info-icon"><i class="fa-light fa-location-dot"></i></div>
-                <h4 class="contact-info-title">Visit Us</h4>
+                <h5 class="contact-info-title">Visit Us</h5>
                 <p class="contact-info-text">
                   Main Street, DaanLungsod<br>
                   Tuburan, Philippines
@@ -1541,7 +1558,7 @@
               </div>
               <div class="contact-info-card">
                 <div class="contact-info-icon"><i class="fa-light fa-clock"></i></div>
-                <h4 class="contact-info-title">Office Hours</h4>
+                <h5 class="contact-info-title">Office Hours</h5>
                 <p class="contact-info-text">
                   Monday - Friday<br>
                   8:00 AM - 5:00 PM (PHT)
@@ -1559,14 +1576,19 @@
               background: #ffffff;
               border-radius: 20px;
               padding: 48px;
-              box-shadow: 0 8px 40px rgba(0,0,0,0.04);
+              box-shadow: 0 8px 40px rgba(0, 0, 0, 0.04);
             }
+
             @media (max-width: 767px) {
-              .contact-form-wrap { padding: 28px 20px; }
+              .contact-form-wrap {
+                padding: 28px 20px;
+              }
             }
+
             .contact-form-group {
               margin-bottom: 20px;
             }
+
             .contact-form-group label {
               display: block;
               font-size: 13px;
@@ -1575,13 +1597,14 @@
               margin-bottom: 8px;
               letter-spacing: 0.02em;
             }
+
             .contact-form-group input,
             .contact-form-group select,
             .contact-form-group textarea {
               width: 100%;
               padding: 14px 18px;
               border-radius: 12px;
-              border: 2px solid rgba(26,26,46,0.08);
+              border: 2px solid rgba(26, 26, 46, 0.08);
               background: #f9f9fc;
               color: #1a1a2e;
               font-size: 14px;
@@ -1589,29 +1612,37 @@
               outline: none;
               transition: border-color 0.25s, box-shadow 0.25s;
             }
+
             .contact-form-group input:focus,
             .contact-form-group select:focus,
             .contact-form-group textarea:focus {
               border-color: #6c3ce0;
-              box-shadow: 0 0 0 4px rgba(108,60,224,0.06);
+              box-shadow: 0 0 0 4px rgba(108, 60, 224, 0.06);
               background: #fff;
             }
+
             .contact-form-group input::placeholder,
             .contact-form-group textarea::placeholder {
               color: #8a8aaa;
             }
+
             .contact-form-group textarea {
               resize: vertical;
               min-height: 140px;
             }
+
             .contact-form-row {
               display: grid;
               grid-template-columns: 1fr 1fr;
               gap: 20px;
             }
+
             @media (max-width: 575px) {
-              .contact-form-row { grid-template-columns: 1fr; }
+              .contact-form-row {
+                grid-template-columns: 1fr;
+              }
             }
+
             .contact-submit-btn {
               display: inline-flex;
               align-items: center;
@@ -1626,12 +1657,14 @@
               cursor: pointer;
               font-family: inherit;
               transition: transform 0.15s, box-shadow 0.15s, opacity 0.2s;
-              box-shadow: 0 4px 20px rgba(108,60,224,0.35);
+              box-shadow: 0 4px 20px rgba(108, 60, 224, 0.35);
             }
+
             .contact-submit-btn:hover {
               transform: translateY(-2px);
-              box-shadow: 0 8px 28px rgba(108,60,224,0.45);
+              box-shadow: 0 8px 28px rgba(108, 60, 224, 0.45);
             }
+
             .contact-submit-btn:active {
               transform: translateY(0);
             }
@@ -1649,26 +1682,32 @@
                 </div>
                 <div style="margin-top:32px;">
                   <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
-                    <div style="width:44px;height:44px;border-radius:12px;background:rgba(108,60,224,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <i class="fa-light fa-phone" style="color:#6c3ce0;font-size:18px;"></i>
+                    <div
+                      style="width:44px;height:44px;border-radius:12px;background:rgba(26,26,46,0.06);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                      <i class="fa-light fa-phone" style="color:#1a1a2e;font-size:18px;"></i>
                     </div>
                     <div>
                       <div style="font-size:12px;color:#6a6a8a;font-weight:600;">Phone</div>
-                      <a href="tel:+11002345909" style="color:#1a1a2e !important;font-weight:600;font-size:14px;text-decoration:none;">+1 100 234 5909</a>
+                      <a href="tel:+11002345909"
+                        style="color:#1a1a2e !important;font-weight:600;font-size:14px;text-decoration:none;">+1 100 234
+                        5909</a>
                     </div>
                   </div>
                   <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
-                    <div style="width:44px;height:44px;border-radius:12px;background:rgba(108,60,224,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <i class="fa-light fa-envelope" style="color:#6c3ce0;font-size:18px;"></i>
+                    <div
+                      style="width:44px;height:44px;border-radius:12px;background:rgba(26,26,46,0.06);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                      <i class="fa-light fa-envelope" style="color:#1a1a2e;font-size:18px;"></i>
                     </div>
                     <div>
                       <div style="font-size:12px;color:#6a6a8a;font-weight:600;">Email</div>
-                      <a href="mailto:privacy@gmail.com" style="color:#1a1a2e !important;font-weight:600;font-size:14px;text-decoration:none;">privacy@gmail.com</a>
+                      <a href="mailto:privacy@gmail.com"
+                        style="color:#1a1a2e !important;font-weight:600;font-size:14px;text-decoration:none;">privacy@gmail.com</a>
                     </div>
                   </div>
                   <div style="display:flex;align-items:center;gap:14px;">
-                    <div style="width:44px;height:44px;border-radius:12px;background:rgba(108,60,224,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <i class="fa-light fa-messages" style="color:#6c3ce0;font-size:18px;"></i>
+                    <div
+                      style="width:44px;height:44px;border-radius:12px;background:rgba(26,26,46,0.06);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                      <i class="fa-light fa-messages" style="color:#1a1a2e;font-size:18px;"></i>
                     </div>
                     <div>
                       <div style="font-size:12px;color:#6a6a8a;font-weight:600;">Live Chat</div>
@@ -1680,16 +1719,20 @@
                 <div style="margin-top:36px;padding-top:24px;border-top:1px solid rgba(26,26,46,0.06);">
                   <div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:14px;">Follow Us</div>
                   <div style="display:flex;gap:10px;">
-                    <a href="https://www.facebook.com/" target="_blank" style="width:40px;height:40px;border-radius:10px;background:rgba(108,60,224,0.06);display:flex;align-items:center;justify-content:center;color:#6c3ce0 !important;text-decoration:none;transition:background 0.2s;">
+                    <a href="https://www.facebook.com/" target="_blank"
+                      style="width:40px;height:40px;border-radius:10px;background:rgba(108,60,224,0.06);display:flex;align-items:center;justify-content:center;color:#6c3ce0 !important;text-decoration:none;transition:background 0.2s;">
                       <i class="fa-brands fa-facebook-f" style="font-size:16px;"></i>
                     </a>
-                    <a href="https://www.instagram.com/" target="_blank" style="width:40px;height:40px;border-radius:10px;background:rgba(108,60,224,0.06);display:flex;align-items:center;justify-content:center;color:#6c3ce0 !important;text-decoration:none;transition:background 0.2s;">
+                    <a href="https://www.instagram.com/" target="_blank"
+                      style="width:40px;height:40px;border-radius:10px;background:rgba(108,60,224,0.06);display:flex;align-items:center;justify-content:center;color:#6c3ce0 !important;text-decoration:none;transition:background 0.2s;">
                       <i class="fa-brands fa-instagram" style="font-size:16px;"></i>
                     </a>
-                    <a href="https://www.linkedin.com/" target="_blank" style="width:40px;height:40px;border-radius:10px;background:rgba(108,60,224,0.06);display:flex;align-items:center;justify-content:center;color:#6c3ce0 !important;text-decoration:none;transition:background 0.2s;">
+                    <a href="https://www.linkedin.com/" target="_blank"
+                      style="width:40px;height:40px;border-radius:10px;background:rgba(108,60,224,0.06);display:flex;align-items:center;justify-content:center;color:#6c3ce0 !important;text-decoration:none;transition:background 0.2s;">
                       <i class="fa-brands fa-linkedin-in" style="font-size:16px;"></i>
                     </a>
-                    <a href="#" target="_blank" style="width:40px;height:40px;border-radius:10px;background:rgba(108,60,224,0.06);display:flex;align-items:center;justify-content:center;color:#6c3ce0 !important;text-decoration:none;transition:background 0.2s;">
+                    <a href="#" target="_blank"
+                      style="width:40px;height:40px;border-radius:10px;background:rgba(108,60,224,0.06);display:flex;align-items:center;justify-content:center;color:#6c3ce0 !important;text-decoration:none;transition:background 0.2s;">
                       <i class="fa-brands fa-youtube" style="font-size:16px;"></i>
                     </a>
                   </div>
@@ -1732,16 +1775,19 @@
                     </div>
                     <div class="contact-form-group">
                       <label for="contactMessage">Message *</label>
-                      <textarea id="contactMessage" name="message" placeholder="Tell us how we can help you..." required></textarea>
+                      <textarea id="contactMessage" name="message" placeholder="Tell us how we can help you..."
+                        required></textarea>
                     </div>
                     <button type="submit" class="contact-submit-btn">
                       Send Message <i class="fa-light fa-paper-plane-top"></i>
                     </button>
                   </form>
-                  <div id="contactSuccess" style="display:none;margin-top:24px;padding:20px;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);border-radius:12px;text-align:center;">
+                  <div id="contactSuccess"
+                    style="display:none;margin-top:24px;padding:20px;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);border-radius:12px;text-align:center;">
                     <div style="font-size:24px;margin-bottom:8px;">✅</div>
                     <div style="font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:4px;">Message Sent!</div>
-                    <div style="font-size:14px;color:#4a4a6a;">Thank you for reaching out. We'll get back to you within 24 hours.</div>
+                    <div style="font-size:14px;color:#4a4a6a;">Thank you for reaching out. We'll get back to you within
+                      24 hours.</div>
                   </div>
                 </div>
               </div>
@@ -1758,57 +1804,32 @@
         <!--================= Contact Form section end =================-->
 
         <!--================= FAQ section start =================-->
-        <section class="section section-padding-top-bottom">
+        <section class="faq-3 section section-padding-top-bottom overflow-hidden">
           <style>
-            .contact-faq-item {
-              background: #fff;
-              border: 1px solid rgba(26,26,46,0.06);
-              border-radius: 14px;
-              margin-bottom: 12px;
-              overflow: hidden;
+            .faq-3.section {
+              background: #ffffff !important;
             }
-            .contact-faq-q {
-              padding: 20px 24px;
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              cursor: pointer;
-              gap: 16px;
-              transition: background 0.2s;
+
+            .faq-3__accordion .accordion-item {
+              background: transparent !important;
+              border-color: rgba(26, 26, 46, 0.08) !important;
             }
-            .contact-faq-q:hover {
-              background: rgba(108,60,224,0.02);
+
+            .faq-3__accordion .accordion-item .accordion-header .accordion-button {
+              color: #1a1a2e !important;
+              background: transparent !important;
+              font-size: 15px !important;
+              font-weight: 700 !important;
             }
-            .contact-faq-q h5 {
-              font-size: 15px;
-              font-weight: 700;
-              color: #1a1a2e;
-              margin: 0;
+
+            .faq-3__accordion .accordion-item .accordion-header .accordion-button:focus {
+              box-shadow: none;
             }
-            .contact-faq-q i {
-              color: #6c3ce0;
-              font-size: 16px;
-              flex-shrink: 0;
-              transition: transform 0.3s;
-            }
-            .contact-faq-item.open .contact-faq-q i {
-              transform: rotate(180deg);
-            }
-            .contact-faq-a {
-              max-height: 0;
-              overflow: hidden;
-              transition: max-height 0.35s ease, padding 0.35s ease;
-              padding: 0 24px;
-            }
-            .contact-faq-item.open .contact-faq-a {
-              max-height: 200px;
-              padding: 0 24px 20px;
-            }
-            .contact-faq-a p {
-              font-size: 14px;
-              color: #4a4a6a;
-              line-height: 1.65;
-              margin: 0;
+
+            .faq-3__accordion .accordion-item .accordion-body {
+              color: #4a4a6a !important;
+              font-size: 14px !important;
+              line-height: 1.6 !important;
             }
           </style>
           <div class="container">
@@ -1822,413 +1843,415 @@
             </div>
             <div class="row justify-content-center">
               <div class="col-lg-8">
-                <div class="contact-faq-item open">
-                  <div class="contact-faq-q" onclick="toggleFaq(this)">
-                    <h5>How quickly will I receive a response?</h5>
-                    <i class="fa-light fa-chevron-down"></i>
+                <div class="faq-3__accordion accordion" id="contactFaqAccordion">
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#contactFaq1" aria-expanded="true"
+                        aria-controls="contactFaq1">How quickly will I receive a response?</button></h6>
+                    <div id="contactFaq1" class="accordion-collapse collapse show"
+                      data-bs-parent="#contactFaqAccordion">
+                      <div class="accordion-body">We typically respond within 4 hours during business hours (Mon-Fri,
+                        8AM-5PM PHT). Enterprise and Pro plan customers receive priority support with faster response
+                        times.</div>
+                    </div>
                   </div>
-                  <div class="contact-faq-a">
-                    <p>We typically respond within 4 hours during business hours (Mon-Fri, 8AM-5PM PHT). Enterprise and Pro plan customers receive priority support with faster response times.</p>
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#contactFaq2" aria-expanded="false"
+                        aria-controls="contactFaq2">Do you offer live chat support?</button></h6>
+                    <div id="contactFaq2" class="accordion-collapse collapse" data-bs-parent="#contactFaqAccordion">
+                      <div class="accordion-body">Yes! Live chat is available Monday through Friday during business
+                        hours. You can access it from the chat widget in the bottom-right corner of your PrivacyCrumb
+                        dashboard.</div>
+                    </div>
                   </div>
-                </div>
-                <div class="contact-faq-item">
-                  <div class="contact-faq-q" onclick="toggleFaq(this)">
-                    <h5>Do you offer live chat support?</h5>
-                    <i class="fa-light fa-chevron-down"></i>
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#contactFaq3" aria-expanded="false"
+                        aria-controls="contactFaq3">Can I schedule a demo of PrivacyCrumb?</button></h6>
+                    <div id="contactFaq3" class="accordion-collapse collapse" data-bs-parent="#contactFaqAccordion">
+                      <div class="accordion-body">Absolutely! Select "Sales / Enterprise" as the subject in the contact
+                        form above and mention you'd like a demo. Our team will schedule a personalized walkthrough at
+                        your convenience.</div>
+                    </div>
                   </div>
-                  <div class="contact-faq-a">
-                    <p>Yes! Live chat is available Monday through Friday during business hours. You can access it from the chat widget in the bottom-right corner of your PrivacyCrumb dashboard.</p>
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#contactFaq4" aria-expanded="false"
+                        aria-controls="contactFaq4">I need help with setup. Where should I start?</button></h6>
+                    <div id="contactFaq4" class="accordion-collapse collapse" data-bs-parent="#contactFaqAccordion">
+                      <div class="accordion-body">Check out our <a href="./knowledge-base.html"
+                          style="color:#6c3ce0 !important;font-weight:600;">Knowledge Base</a> for step-by-step guides.
+                        If you still need assistance, reach out through this form and we'll help you get set up.</div>
+                    </div>
                   </div>
-                </div>
-                <div class="contact-faq-item">
-                  <div class="contact-faq-q" onclick="toggleFaq(this)">
-                    <h5>Can I schedule a demo of PrivacyCrumb?</h5>
-                    <i class="fa-light fa-chevron-down"></i>
-                  </div>
-                  <div class="contact-faq-a">
-                    <p>Absolutely! Select "Sales / Enterprise" as the subject in the contact form above and mention you'd like a demo. Our team will schedule a personalized walkthrough at your convenience.</p>
-                  </div>
-                </div>
-                <div class="contact-faq-item">
-                  <div class="contact-faq-q" onclick="toggleFaq(this)">
-                    <h5>I need help with setup. Where should I start?</h5>
-                    <i class="fa-light fa-chevron-down"></i>
-                  </div>
-                  <div class="contact-faq-a">
-                    <p>Check out our <a href="./knowledge-base.html" style="color:#6c3ce0 !important;font-weight:600;">Knowledge Base</a> for step-by-step guides. If you still need assistance, reach out through this form and we'll help you get set up.</p>
-                  </div>
-                </div>
-                <div class="contact-faq-item">
-                  <div class="contact-faq-q" onclick="toggleFaq(this)">
-                    <h5>Do you offer custom enterprise solutions?</h5>
-                    <i class="fa-light fa-chevron-down"></i>
-                  </div>
-                  <div class="contact-faq-a">
-                    <p>Yes! For businesses with specific compliance needs, multiple domains, or custom integration requirements, we offer tailored enterprise plans. Contact our sales team through the form above.</p>
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#contactFaq5" aria-expanded="false"
+                        aria-controls="contactFaq5">Do you offer custom enterprise solutions?</button></h6>
+                    <div id="contactFaq5" class="accordion-collapse collapse" data-bs-parent="#contactFaqAccordion">
+                      <div class="accordion-body">Yes! For businesses with specific compliance needs, multiple domains,
+                        or custom integration requirements, we offer tailored enterprise plans. Contact our sales team
+                        through the form above.</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <script>
-            function toggleFaq(el) {
-              var item = el.parentElement;
-              var wasOpen = item.classList.contains('open');
-              document.querySelectorAll('.contact-faq-item').forEach(function(i) { i.classList.remove('open'); });
-              if (!wasOpen) item.classList.add('open');
-            }
-          </script>
         </section>
         <!--================= FAQ section end =================-->
 
-        <!--================= CTA section start =================-->
-        <section class="cta-3 section section-padding-top-bottom overflow-hidden"
-          data-bg-src="./assets/images/cta/cta-3-dot-bg.svg">
-          <style>
-            .cta-3 .features-list ul {
-              display: inline-flex !important;
-              flex-direction: column !important;
-              align-items: flex-start !important;
-              text-align: left !important;
-            }
-            .cta-3 .features-list {
-              display: flex !important;
-              justify-content: center !important;
-            }
-          </style>
-          <div class="container">
-            <div class="row g-4">
-              <div class="cta-3__content">
-                <h2 class="content-title text-anime">Ready to Get Started<br>With PrivacyCrumb?</h2>
-                <div class="buttons">
-                  <a href="./sign-up.html" class="saaslyn-4-btn v2">Start Free Trial <i class="fa-light fa-arrow-right-long"></i></a>
-                  <a href="./pricing.html" class="saaslyn-4-btn">View Pricing <i class="fa-light fa-arrow-right-long"></i></a>
+  <!--================= CTA section start =================-->
+  <section class="cta-3 section section-padding-top-bottom overflow-hidden"
+    data-bg-src="./assets/images/cta/cta-3-dot-bg.svg">
+    <style>
+      .cta-3 .features-list ul {
+        display: inline-flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+      }
+
+      .cta-3 .features-list {
+        display: flex !important;
+        justify-content: center !important;
+      }
+    </style>
+    <div class="container">
+      <div class="row g-4">
+        <div class="cta-3__content">
+          <h2 class="content-title text-anime">Ready to Get Started<br>With PrivacyCrumb?</h2>
+          <div class="buttons">
+            <a href="./sign-up.html" class="saaslyn-4-btn v2">Start Free Trial <i
+                class="fa-light fa-arrow-right-long"></i></a>
+            <a href="./pricing.html" class="saaslyn-4-btn">View Pricing <i class="fa-light fa-arrow-right-long"></i></a>
+          </div>
+          <div class="features-list">
+            <ul>
+              <li><i class="fa-light fa-badge-check"></i>No credit card required</li>
+              <li><i class="fa-light fa-badge-check"></i>Full features in free trial</li>
+              <li><i class="fa-light fa-badge-check"></i>Setup in under 2 minutes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================= CTA section end =================-->
+  </main>
+  <!--=================footer section start=================-->
+  <footer class="footer-three section" data-bg-src="./assets/images/footer/footer-three-bg.svg">
+    <style>
+      /* ── Footer – Desktop Layout ── */
+      .footer-three__main .info-area {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 24px !important;
+      }
+
+      /* ── Footer – Mobile Layout Fix ── */
+      @media (max-width: 991.98px) {
+        .footer-three__main .info-area {
+          flex-wrap: wrap !important;
+          gap: 24px !important;
+        }
+
+        .footer-three__main .info-area .links-group {
+          min-width: 140px !important;
+          flex: 0 0 auto !important;
+        }
+
+        .footer-three__main .footer-info p {
+          font-size: 14px !important;
+        }
+
+        .footer-three__main .newsletter input {
+          font-size: 14px !important;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .footer-three__main .row.g-5 {
+          gap: 30px !important;
+        }
+
+        .footer-three__main .info-area {
+          display: grid !important;
+          grid-template-columns: repeat(4, 1fr) !important;
+          gap: 16px !important;
+        }
+
+        .footer-three__main .info-area .links-group {
+          min-width: unset !important;
+        }
+
+        .footer-three__main .info-area .links-group .link-title {
+          font-size: 16px !important;
+          margin-bottom: 10px !important;
+        }
+
+        .footer-three__main .info-area .links-group .link-list ul li {
+          font-size: 13px !important;
+        }
+
+        .footer-three__main .info-area .links-group .link-list ul li a {
+          font-size: 13px !important;
+        }
+
+        .footer-three__main .footer-info p {
+          font-size: 13px !important;
+          line-height: 1.6 !important;
+        }
+
+        .footer-three__main .footer-logo span {
+          font-size: 18px !important;
+        }
+
+        .footer-crop-logo {
+          overflow: hidden !important;
+        }
+
+        .footer-crop-logo img {
+          max-height: 60px !important;
+          object-fit: contain;
+        }
+
+        .footer-three__bottom {
+          padding: 16px 0 !important;
+        }
+
+        .footer-three__bottom .copyright {
+          font-size: 12px !important;
+        }
+
+        .footer-three__bottom .terms {
+          font-size: 12px !important;
+        }
+
+        .footer-three .section-padding-top {
+          padding-top: 50px !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .footer-three__main .info-area {
+          grid-template-columns: repeat(4, 1fr) !important;
+          gap: 10px !important;
+        }
+
+        .footer-three__main .info-area .links-group .link-title {
+          font-size: 15px !important;
+        }
+
+        .footer-three__main .info-area .links-group .link-list ul li a {
+          font-size: 12.5px !important;
+        }
+
+        .footer-three__main .newsletter {
+          flex-direction: column !important;
+        }
+
+        .footer-three__main .newsletter input {
+          font-size: 13px !important;
+          width: 100% !important;
+        }
+
+        .footer-crop-logo img {
+          max-height: 45px !important;
+        }
+
+        .footer-three__bottom .copyright {
+          font-size: 11px !important;
+          line-height: 1.5;
+        }
+
+        .footer-three .section-padding-top {
+          padding-top: 40px !important;
+        }
+      }
+    </style>
+    <div class="footer-three__main section-padding-top">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-3">
+            <div class="footer-info"><a href="./index.html" class="footer-logo"
+                style="display:flex;align-items:center;text-decoration:none;"><img
+                  src="./assets/images/PrivacyCrumbLogo4.svg" alt="Privacy Crumb" class="logo-steady-glow"
+                  style="height:44px;width:auto;" /></a>
+              <p>Stay up to date with all the recent news and great discounts by simply adding your
+                email address
+                to our list. </p>
+            </div>
+            <form action="./index-3.html" class="newsletter"><input type="email" name="newsletter-email"
+                id="newsletter-email" placeholder="Newsletter email" required /><button type="submit"><i
+                  class="fa-light fa-arrow-right-long"></i></button></form>
+          </div>
+          <div class="col-lg-9" style="border-left:2px solid rgba(26,26,46,0.12);padding-left:40px;">
+            <div class="info-area" style="display:grid;grid-template-columns:repeat(4,1fr);gap:30px;">
+              <style>
+                .info-area>div>.links-group {
+                  margin-bottom: 28px;
+                }
+
+                .info-area>div>.links-group:last-child {
+                  margin-bottom: 0;
+                }
+              </style>
+              <!-- Column 1 -->
+              <div>
+                <div class="links-group v3">
+                  <h6 class="link-title">PrivacyCrumb</h6>
+                  <div class="link-list">
+                    <ul>
+                      <li><a href="./pricing.html">Pricing</a></li>
+                      <li><a href="./features.html">Features</a></li>
+                      <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                  </div>
                 </div>
-                <div class="features-list">
-                  <ul>
-                    <li><i class="fa-light fa-badge-check"></i>No credit card required</li>
-                    <li><i class="fa-light fa-badge-check"></i>Full features in free trial</li>
-                    <li><i class="fa-light fa-badge-check"></i>Setup in under 2 minutes</li>
-                  </ul>
+                <div class="links-group v3">
+                  <h6 class="link-title">Products</h6>
+                  <div class="link-list">
+                    <ul>
+                      <li><a href="#">Shopify App</a></li>
+                      <li><a href="#">Consent Management Platform</a></li>
+                      <li><a href="#">WordPress Plugin</a></li>
+                      <li><a href="#">Wix App</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="links-group v3">
+                  <h6 class="link-title">Use Cases</h6>
+                  <div class="link-list">
+                    <ul>
+                      <li><a href="#">Founder</a></li>
+                      <li><a href="#">Developer</a></li>
+                      <li><a href="#">Marketer</a></li>
+                      <li><a href="#">Agency</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Column 2 -->
+              <div>
+                <div class="links-group v3">
+                  <h6 class="link-title">Free Tools ✨</h6>
+                  <div class="link-list">
+                    <ul>
+                      <li><a href="https://app.privacycrumb.com/free/privacy-policy-generator">Privacy Policy
+                          Generator</a></li>
+                      <li><a href="https://app.privacycrumb.com/free/cookie-policy-generator">Cookie Policy
+                          Generator</a></li>
+                      <li><a href="https://app.privacycrumb.com/free-scanner">Cookie Checker</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="links-group v3">
+                  <h6 class="link-title">Compare</h6>
+                  <div class="link-list">
+                    <ul>
+                      <li><a href="#">Cookiebot</a></li>
+                      <li><a href="#">Iubenda</a></li>
+                      <li><a href="#">Complianz</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Column 3 -->
+              <div>
+                <div class="links-group v3">
+                  <h6 class="link-title">Resources</h6>
+                  <div class="link-list">
+                    <ul>
+                      <li><a href="./blog.html">Blogs</a></li>
+                      <li><a href="./knowledge-base.html">Knowledge Base</a></li>
+                      <li><a href="#">Infographics</a></li>
+                      <li><a href="#">Newsletter</a></li>
+                      <li><a href="./about.html">About</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="links-group v3">
+                  <h6 class="link-title">Solutions</h6>
+                  <div class="link-list">
+                    <ul>
+                      <li><a href="#">GDPR EU & UK</a></li>
+                      <li><a href="#">CCPA California</a></li>
+                      <li><a href="#">CPRA California</a></li>
+                      <li><a href="#">IAB TCF v2.2</a></li>
+                      <li><a href="#">Google Consent Mode</a></li>
+                      <li><a href="#">All regulations →</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Column 4 -->
+              <div>
+                <div class="links-group v3">
+                  <h6 class="link-title">Partners <span
+                      style="display:inline-block;padding:2px 10px;border-radius:20px;background:linear-gradient(135deg,#6c3ce0,#00c9a7);color:#fff;font-size:11px;font-weight:600;margin-left:6px;vertical-align:middle;">Join
+                      us!</span></h6>
+                  <div class="link-list">
+                    <ul>
+                      <li><a href="#">Agency Partner</a></li>
+                      <li><a href="#">Affiliate Partner</a></li>
+                      <li><a href="#">Strategic Partner</a></li>
+                      <li><a href="#">Partner Directory</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="links-group v3">
+                  <h6 class="link-title">Support</h6>
+                  <div class="link-list">
+                    <ul>
+                      <li><a href="#">Help Center</a></li>
+                      <li><a href="./contact.html">Contact Us</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="links-group v3">
+                  <h6 class="link-title">Legal</h6>
+                  <div class="link-list">
+                    <ul>
+                      <li><a href="#">Privacy Policy</a></li>
+                      <li><a href="#">Cookie Policy</a></li>
+                      <li><a href="#">Terms and Conditions</a></li>
+                      <li><a href="#">Data Processing Agreement</a></li>
+                      <li><a href="#">Accessibility Statement</a></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-        <!--================= CTA section end =================-->
-      </main>
-      <!--=================footer section start=================-->
-      <footer class="footer-three section" data-bg-src="./assets/images/footer/footer-three-bg.svg">
-        <style>
-          /* ── Footer – Desktop Layout ── */
-          .footer-three__main .info-area {
-            display: grid !important;
-            grid-template-columns: repeat(4, 1fr) !important;
-            gap: 24px !important;
-          }
-
-          /* ── Footer – Mobile Layout Fix ── */
-          @media (max-width: 991.98px) {
-            .footer-three__main .info-area {
-              flex-wrap: wrap !important;
-              gap: 24px !important;
-            }
-
-            .footer-three__main .info-area .links-group {
-              min-width: 140px !important;
-              flex: 0 0 auto !important;
-            }
-
-            .footer-three__main .footer-info p {
-              font-size: 14px !important;
-            }
-
-            .footer-three__main .newsletter input {
-              font-size: 14px !important;
-            }
-          }
-
-          @media (max-width: 767.98px) {
-            .footer-three__main .row.g-5 {
-              gap: 30px !important;
-            }
-
-            .footer-three__main .info-area {
-              display: grid !important;
-              grid-template-columns: repeat(4, 1fr) !important;
-              gap: 16px !important;
-            }
-
-            .footer-three__main .info-area .links-group {
-              min-width: unset !important;
-            }
-
-            .footer-three__main .info-area .links-group .link-title {
-              font-size: 16px !important;
-              margin-bottom: 10px !important;
-            }
-
-            .footer-three__main .info-area .links-group .link-list ul li {
-              font-size: 13px !important;
-            }
-
-            .footer-three__main .info-area .links-group .link-list ul li a {
-              font-size: 13px !important;
-            }
-
-            .footer-three__main .footer-info p {
-              font-size: 13px !important;
-              line-height: 1.6 !important;
-            }
-
-            .footer-three__main .footer-logo span {
-              font-size: 18px !important;
-            }
-
-            .footer-crop-logo {
-              overflow: hidden !important;
-            }
-
-            .footer-crop-logo img {
-              max-height: 60px !important;
-              object-fit: contain;
-            }
-
-            .footer-three__bottom {
-              padding: 16px 0 !important;
-            }
-
-            .footer-three__bottom .copyright {
-              font-size: 12px !important;
-            }
-
-            .footer-three__bottom .terms {
-              font-size: 12px !important;
-            }
-
-            .footer-three .section-padding-top {
-              padding-top: 50px !important;
-            }
-          }
-
-          @media (max-width: 480px) {
-            .footer-three__main .info-area {
-              grid-template-columns: repeat(4, 1fr) !important;
-              gap: 10px !important;
-            }
-
-            .footer-three__main .info-area .links-group .link-title {
-              font-size: 15px !important;
-            }
-
-            .footer-three__main .info-area .links-group .link-list ul li a {
-              font-size: 12.5px !important;
-            }
-
-            .footer-three__main .newsletter {
-              flex-direction: column !important;
-            }
-
-            .footer-three__main .newsletter input {
-              font-size: 13px !important;
-              width: 100% !important;
-            }
-
-            .footer-crop-logo img {
-              max-height: 45px !important;
-            }
-
-            .footer-three__bottom .copyright {
-              font-size: 11px !important;
-              line-height: 1.5;
-            }
-
-            .footer-three .section-padding-top {
-              padding-top: 40px !important;
-            }
-          }
-        </style>
-        <div class="footer-three__main section-padding-top">
-          <div class="container">
-            <div class="row g-5">
-              <div class="col-lg-3">
-                <div class="footer-info"><a href="./index.html" class="footer-logo"
-                    style="display:flex;align-items:center;text-decoration:none;"><img
-                      src="./assets/images/PrivacyCrumbLogo4.svg" alt="Privacy Crumb" class="logo-steady-glow"
-                      style="height:44px;width:auto;" /></a>
-                  <p>Stay up to date with all the recent news and great discounts by simply adding your
-                    email address
-                    to our list. </p>
-                </div>
-                <form action="./index-3.html" class="newsletter"><input type="email" name="newsletter-email"
-                    id="newsletter-email" placeholder="Newsletter email" required /><button type="submit"><i
-                      class="fa-light fa-arrow-right-long"></i></button></form>
-              </div>
-              <div class="col-lg-9" style="border-left:2px solid rgba(26,26,46,0.12);padding-left:40px;">
-                <div class="info-area" style="display:grid;grid-template-columns:repeat(4,1fr);gap:30px;">
-                  <style>
-                    .info-area>div>.links-group {
-                      margin-bottom: 28px;
-                    }
-
-                    .info-area>div>.links-group:last-child {
-                      margin-bottom: 0;
-                    }
-                  </style>
-                  <!-- Column 1 -->
-                  <div>
-                    <div class="links-group v3">
-                      <h6 class="link-title">PrivacyCrumb</h6>
-                      <div class="link-list">
-                        <ul>
-                          <li><a href="./pricing.html">Pricing</a></li>
-                          <li><a href="./features.html">Features</a></li>
-                          <li><a href="#faq">FAQ</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="links-group v3">
-                      <h6 class="link-title">Products</h6>
-                      <div class="link-list">
-                        <ul>
-                          <li><a href="#">Shopify App</a></li>
-                          <li><a href="#">Consent Management Platform</a></li>
-                          <li><a href="#">WordPress Plugin</a></li>
-                          <li><a href="#">Wix App</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="links-group v3">
-                      <h6 class="link-title">Use Cases</h6>
-                      <div class="link-list">
-                        <ul>
-                          <li><a href="#">Founder</a></li>
-                          <li><a href="#">Developer</a></li>
-                          <li><a href="#">Marketer</a></li>
-                          <li><a href="#">Agency</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Column 2 -->
-                  <div>
-                    <div class="links-group v3">
-                      <h6 class="link-title">Free Tools ✨</h6>
-                      <div class="link-list">
-                        <ul>
-                          <li><a href="https://app.privacycrumb.com/free/privacy-policy-generator">Privacy Policy
-                              Generator</a></li>
-                          <li><a href="https://app.privacycrumb.com/free/cookie-policy-generator">Cookie Policy
-                              Generator</a></li>
-                          <li><a href="https://app.privacycrumb.com/free-scanner">Cookie Checker</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="links-group v3">
-                      <h6 class="link-title">Compare</h6>
-                      <div class="link-list">
-                        <ul>
-                          <li><a href="#">Cookiebot</a></li>
-                          <li><a href="#">Iubenda</a></li>
-                          <li><a href="#">Complianz</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Column 3 -->
-                  <div>
-                    <div class="links-group v3">
-                      <h6 class="link-title">Resources</h6>
-                      <div class="link-list">
-                        <ul>
-                          <li><a href="./blog.html">Blogs</a></li>
-                          <li><a href="./knowledge-base.html">Knowledge Base</a></li>
-                          <li><a href="#">Infographics</a></li>
-                          <li><a href="#">Newsletter</a></li>
-                          <li><a href="./about.html">About</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="links-group v3">
-                      <h6 class="link-title">Solutions</h6>
-                      <div class="link-list">
-                        <ul>
-                          <li><a href="#">GDPR EU & UK</a></li>
-                          <li><a href="#">CCPA California</a></li>
-                          <li><a href="#">CPRA California</a></li>
-                          <li><a href="#">IAB TCF v2.2</a></li>
-                          <li><a href="#">Google Consent Mode</a></li>
-                          <li><a href="#">All regulations →</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Column 4 -->
-                  <div>
-                    <div class="links-group v3">
-                      <h6 class="link-title">Partners <span
-                          style="display:inline-block;padding:2px 10px;border-radius:20px;background:linear-gradient(135deg,#6c3ce0,#00c9a7);color:#fff;font-size:11px;font-weight:600;margin-left:6px;vertical-align:middle;">Join
-                          us!</span></h6>
-                      <div class="link-list">
-                        <ul>
-                          <li><a href="#">Agency Partner</a></li>
-                          <li><a href="#">Affiliate Partner</a></li>
-                          <li><a href="#">Strategic Partner</a></li>
-                          <li><a href="#">Partner Directory</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="links-group v3">
-                      <h6 class="link-title">Support</h6>
-                      <div class="link-list">
-                        <ul>
-                          <li><a href="#">Help Center</a></li>
-                          <li><a href="./contact.html">Contact Us</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="links-group v3">
-                      <h6 class="link-title">Legal</h6>
-                      <div class="link-list">
-                        <ul>
-                          <li><a href="#">Privacy Policy</a></li>
-                          <li><a href="#">Cookie Policy</a></li>
-                          <li><a href="#">Terms and Conditions</a></li>
-                          <li><a href="#">Data Processing Agreement</a></li>
-                          <li><a href="#">Accessibility Statement</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <div class="footer-crop-logo" style="pointer-events:none;position:relative;z-index:0;
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="footer-crop-logo" style="pointer-events:none;position:relative;z-index:0;
                   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 100%);
                   mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 100%);">
-                  <img src="./assets/images/footer/footer-3-logo.svg" alt="Privacy Crumb"
-                    style="filter: brightness(0) saturate(100%) invert(12%) sepia(90%) saturate(2500%) hue-rotate(15deg) brightness(90%) contrast(100%);" />
-                </div>
-              </div>
+              <img src="./assets/images/footer/footer-3-logo.svg" alt="Privacy Crumb"
+                style="filter: brightness(0) saturate(100%) invert(12%) sepia(90%) saturate(2500%) hue-rotate(15deg) brightness(90%) contrast(100%);" />
             </div>
           </div>
         </div>
-        <div class="footer-three__bottom">
-          <div class="container">
-            <div class="row g-2 align-items-center justify-content-between text-center text-md-start">
-              <div class="col-md-auto">
-                <div class="copyright">Copyright <span class="current-year"></span> <a href="./">Privacy Crumb</a>. all
-                  rights reserved. Terms & Conditions </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </footer>
-      <!--=================footer section end=================-->
+      </div>
     </div>
+    <div class="footer-three__bottom">
+      <div class="container">
+        <div class="row g-2 align-items-center justify-content-between text-center text-md-start">
+          <div class="col-md-auto">
+            <div class="copyright">Copyright <span class="current-year"></span> <a href="./">Privacy Crumb</a>. all
+              rights reserved. Terms & Conditions </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--=================footer section end=================-->
+  </div>
   </div>
   <!-- JS Files -->
   <!-- jQuery -->
