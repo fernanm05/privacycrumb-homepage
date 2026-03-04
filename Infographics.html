@@ -1455,7 +1455,8 @@
                     Visual Guides &amp; Data
                   </h1>
                   <p style="color:#4a4a6a;max-width:600px;margin:0 auto;">
-                    Explore our collection of infographics to understand complex data privacy laws, compliance checklists, and security best practices at a glance.
+                    Explore our collection of infographics to understand complex data privacy laws, compliance
+                    checklists, and security best practices at a glance.
                   </p>
                 </div>
               </div>
@@ -1472,12 +1473,19 @@
               grid-template-columns: repeat(3, 1fr);
               gap: 30px;
             }
+
             @media (max-width: 991px) {
-              .infographic-grid { grid-template-columns: repeat(2, 1fr); }
+              .infographic-grid {
+                grid-template-columns: repeat(2, 1fr);
+              }
             }
+
             @media (max-width: 767px) {
-              .infographic-grid { grid-template-columns: 1fr; }
+              .infographic-grid {
+                grid-template-columns: 1fr;
+              }
             }
+
             .info-card {
               background: #ffffff;
               border: 1px solid rgba(26, 26, 46, 0.08);
@@ -1485,10 +1493,12 @@
               overflow: hidden;
               transition: transform 0.3s, box-shadow 0.3s;
             }
+
             .info-card:hover {
               transform: translateY(-6px);
               box-shadow: 0 12px 40px rgba(108, 60, 224, 0.12);
             }
+
             .info-card-img-wrap {
               width: 100%;
               height: 240px;
@@ -1496,18 +1506,22 @@
               position: relative;
               overflow: hidden;
             }
+
             .info-card-img-wrap img {
               width: 100%;
               height: 100%;
               object-fit: cover;
               transition: transform 0.5s ease;
             }
+
             .info-card:hover .info-card-img-wrap img {
               transform: scale(1.05);
             }
+
             .info-card-content {
               padding: 24px;
             }
+
             .info-cat {
               display: inline-block;
               padding: 4px 12px;
@@ -1520,6 +1534,7 @@
               text-transform: uppercase;
               letter-spacing: 0.5px;
             }
+
             .info-title {
               font-size: 18px;
               font-weight: 700;
@@ -1527,12 +1542,14 @@
               margin-bottom: 12px;
               line-height: 1.4;
             }
+
             .info-desc {
               font-size: 14px;
               color: #4a4a6a;
               line-height: 1.6;
               margin-bottom: 20px;
             }
+
             .info-download-btn {
               display: inline-flex;
               align-items: center;
@@ -1543,32 +1560,35 @@
               text-decoration: none;
               transition: color 0.2s;
             }
+
             .info-download-btn i {
               color: #6c3ce0;
               transition: transform 0.2s;
             }
+
             .info-download-btn:hover {
               color: #6c3ce0;
             }
+
             .info-download-btn:hover i {
               transform: translateY(2px);
             }
           </style>
           <div class="container">
-            
+
             <div class="infographic-grid">
               <!-- Card 1 -->
               <div class="info-card">
                 <div class="info-card-img-wrap">
-                  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(108,60,224,0.1),rgba(0,201,167,0.1));display:flex;align-items:center;justify-content:center;">
-                    <i class="fa-light fa-image" style="font-size:48px;color:#6c3ce0;opacity:0.5;"></i>
-                  </div>
+                  <img src="./assets/images/infographics/info_gdpr.png" alt="GDPR Compliance">
                 </div>
                 <div class="info-card-content">
                   <div class="info-cat">GDPR Compliance</div>
                   <h4 class="info-title">The Ultimate GDPR Checklist for 2024</h4>
-                  <p class="info-desc">A comprehensive visual guide to ensuring your website meets all current European data protection standards.</p>
-                  <a href="#" class="info-download-btn">View Infographic <i class="fa-regular fa-arrow-down-to-bracket"></i></a>
+                  <p class="info-desc">A comprehensive visual guide to ensuring your website meets all current European
+                    data protection standards.</p>
+                  <a href="#" class="info-download-btn">View Infographic <i
+                      class="fa-regular fa-arrow-down-to-bracket"></i></a>
                 </div>
               </div>
 
@@ -1580,8 +1600,10 @@
                 <div class="info-card-content">
                   <div class="info-cat">CCPA / CPRA</div>
                   <h4 class="info-title">California Privacy Laws Explained</h4>
-                  <p class="info-desc">Understand the key differences between CCPA and CPRA, and what businesses need to do to stay compliant.</p>
-                  <a href="#" class="info-download-btn">View Infographic <i class="fa-regular fa-arrow-down-to-bracket"></i></a>
+                  <p class="info-desc">Understand the key differences between CCPA and CPRA, and what businesses need to
+                    do to stay compliant.</p>
+                  <a href="#" class="info-download-btn">View Infographic <i
+                      class="fa-regular fa-arrow-down-to-bracket"></i></a>
                 </div>
               </div>
 
@@ -1593,8 +1615,10 @@
                 <div class="info-card-content">
                   <div class="info-cat">Data Security</div>
                   <h4 class="info-title">5 Steps to Secure User Data</h4>
-                  <p class="info-desc">Visualizing the best practices for encrypting, storing, and managing sensitive user information securely.</p>
-                  <a href="#" class="info-download-btn">View Infographic <i class="fa-regular fa-arrow-down-to-bracket"></i></a>
+                  <p class="info-desc">Visualizing the best practices for encrypting, storing, and managing sensitive
+                    user information securely.</p>
+                  <a href="#" class="info-download-btn">View Infographic <i
+                      class="fa-regular fa-arrow-down-to-bracket"></i></a>
                 </div>
               </div>
 
@@ -1606,8 +1630,10 @@
                 <div class="info-card-content">
                   <div class="info-cat">Cookie Policies</div>
                   <h4 class="info-title">How Cookies Actually Work</h4>
-                  <p class="info-desc">A simplified breakdown of first-party vs third-party cookies and what consent looks like in practice.</p>
-                  <a href="#" class="info-download-btn">View Infographic <i class="fa-regular fa-arrow-down-to-bracket"></i></a>
+                  <p class="info-desc">A simplified breakdown of first-party vs third-party cookies and what consent
+                    looks like in practice.</p>
+                  <a href="#" class="info-download-btn">View Infographic <i
+                      class="fa-regular fa-arrow-down-to-bracket"></i></a>
                 </div>
               </div>
 
@@ -1619,8 +1645,10 @@
                 <div class="info-card-content">
                   <div class="info-cat">Global Compliance</div>
                   <h4 class="info-title">Privacy Laws Around the World</h4>
-                  <p class="info-desc">An interactive map showing the various data privacy regulations across different countries and regions.</p>
-                  <a href="#" class="info-download-btn">View Infographic <i class="fa-regular fa-arrow-down-to-bracket"></i></a>
+                  <p class="info-desc">An interactive map showing the various data privacy regulations across different
+                    countries and regions.</p>
+                  <a href="#" class="info-download-btn">View Infographic <i
+                      class="fa-regular fa-arrow-down-to-bracket"></i></a>
                 </div>
               </div>
 
@@ -1632,17 +1660,19 @@
                 <div class="info-card-content">
                   <div class="info-cat">For Developers</div>
                   <h4 class="info-title">Implementing Consent Management</h4>
-                  <p class="info-desc">Technical flowcharts demonstrating how to integrate consent management platforms via API and SDKs.</p>
-                  <a href="#" class="info-download-btn">View Infographic <i class="fa-regular fa-arrow-down-to-bracket"></i></a>
+                  <p class="info-desc">Technical flowcharts demonstrating how to integrate consent management platforms
+                    via API and SDKs.</p>
+                  <a href="#" class="info-download-btn">View Infographic <i
+                      class="fa-regular fa-arrow-down-to-bracket"></i></a>
                 </div>
               </div>
 
             </div>
-            
+
             <div style="text-align:center;margin-top:40px;">
               <a href="#" class="saaslyn-4-btn">Load More Infographics</a>
             </div>
-            
+
           </div>
         </section>
         <!--================= Infographics Grid section end =================-->
