@@ -1444,8 +1444,26 @@
     <div id="smooth-content">
       <main>
         <!--================= Pricing Hero section start =================-->
-        <section class="banner-three section section-padding-top-bottom"
-          data-bg-src="./assets/images/banner/banner-three-bg.png">
+        <section class="banner-three section section-padding-top-bottom pricing-hero-section"
+          data-bg-src="./assets/images/banner/banner-three-bg.png" style="position:relative;">
+          <style>
+            .pricing-hero-section::after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              height: 60%;
+              background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 40%, rgba(255, 255, 255, 1) 100%);
+              pointer-events: none;
+              z-index: 1;
+            }
+
+            .pricing-hero-section>.container {
+              position: relative;
+              z-index: 2;
+            }
+          </style>
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-lg-8 text-center">
