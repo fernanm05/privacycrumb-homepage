@@ -1443,10 +1443,23 @@
   <div id="smooth-wrapper">
     <div id="smooth-content">
       <main>
-        <!--================= Newsletter Hero section start =================-->
-        <section class="banner-three section section-padding-top-bottom"
-          data-bg-src="./assets/images/banner/banner-three-bg.png">
-          <div class="container">
+        <!--================= Newsletter Hero + Form section start =================-->
+        <section class="banner-three section section-padding-top-bottom nl-hero-section"
+          data-bg-src="./assets/images/banner/banner-three-bg.png" style="padding-bottom: 100px; position: relative;">
+          <style>
+            .nl-hero-section::after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              height: 60%;
+              background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 40%, rgba(255, 255, 255, 1) 100%);
+              pointer-events: none;
+              z-index: 1;
+            }
+          </style>
+          <div class="container" style="position: relative; z-index: 2;">
             <div class="row justify-content-center">
               <div class="col-lg-8 text-center">
                 <div class="section-header-3">
@@ -1455,7 +1468,8 @@
                     Join the PrivacyCrumb Privacy Digest
                   </h1>
                   <p style="color:#4a4a6a;max-width:620px;margin:0 auto;font-size:15px;line-height:1.7;">
-                    Every month, you'll get a digest filled with the latest news on data privacy, insightful blogs around compliance and interesting articles that you may find helpful.
+                    Every month, you'll get a digest filled with the latest news on data privacy, insightful blogs
+                    around compliance and interesting articles that you may find helpful.
                   </p>
                   <p style="color:#1a1a2e;font-weight:600;font-size:14px;margin-top:10px;">
                     We'll only send you the newsletter, no spam!
@@ -1463,140 +1477,155 @@
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-        <!--================= Newsletter Hero section end =================-->
+            <!-- Form card sits inside the hero so the bg covers it -->
+            <div class="row justify-content-center" style="margin-top:40px;">
+              <div class="col-lg-6">
+                <!--================= Newsletter Form (inside hero) =================-->
+                <div style="padding-bottom:40px;">
+                  <style>
+                    .nl-form-card {
+                      max-width: 540px;
+                      margin: 0 auto;
+                      background: #fff;
+                      border-radius: 16px;
+                      padding: 40px;
+                      border: 1px solid rgba(26, 26, 46, 0.06);
+                      box-shadow: 0 4px 24px rgba(108, 60, 224, 0.12), 0 0 40px rgba(108, 60, 224, 0.06);
+                    }
 
-        <!--================= Newsletter Form section start =================-->
-        <section class="section" style="padding:0 0 80px 0;">
-          <style>
-            .nl-form-card {
-              max-width: 540px;
-              margin: -40px auto 0;
-              background: #fff;
-              border-radius: 16px;
-              padding: 40px;
-              border: 1px solid rgba(26,26,46,0.06);
-              box-shadow: 0 4px 24px rgba(108,60,224,0.12), 0 0 40px rgba(108,60,224,0.06);
-              position: relative;
-              z-index: 2;
-            }
-            .nl-form-card h3 {
-              font-size: 18px !important;
-              font-weight: 700;
-              color: #1a1a2e;
-              margin-bottom: 24px;
-              text-align: center;
-            }
-            .nl-field {
-              margin-bottom: 18px;
-            }
-            .nl-field label {
-              display: block;
-              font-size: 13px;
-              font-weight: 600;
-              color: #1a1a2e;
-              margin-bottom: 6px;
-            }
-            .nl-field input[type="text"],
-            .nl-field input[type="email"] {
-              width: 100%;
-              padding: 12px 16px;
-              border-radius: 8px;
-              border: 1px solid rgba(26,26,46,0.15);
-              background: #fff;
-              color: #1a1a2e;
-              font-size: 14px;
-              font-family: inherit;
-              outline: none;
-              transition: border-color 0.25s, box-shadow 0.25s;
-            }
-            .nl-field input[type="text"]:focus,
-            .nl-field input[type="email"]:focus {
-              border-color: #6c3ce0;
-              box-shadow: 0 0 0 3px rgba(108,60,224,0.06);
-            }
-            .nl-consent {
-              display: flex;
-              align-items: flex-start;
-              gap: 8px;
-              margin-bottom: 24px;
-              margin-top: 4px;
-            }
-            .nl-consent input[type="checkbox"] {
-              margin-top: 3px;
-              accent-color: #6c3ce0;
-              width: 16px;
-              height: 16px;
-              flex-shrink: 0;
-            }
-            .nl-consent label {
-              font-size: 13px;
-              color: #4a4a6a;
-              line-height: 1.5;
-              cursor: pointer;
-            }
-            .nl-consent label a {
-              color: #1a1a2e;
-              text-decoration: underline;
-            }
-            .nl-submit-btn {
-              width: 100%;
-              padding: 14px;
-              border-radius: 8px;
-              background: linear-gradient(135deg, #6c3ce0, #4642fc);
-              color: #fff;
-              font-weight: 700;
-              font-size: 15px;
-              border: none;
-              cursor: pointer;
-              font-family: inherit;
-              transition: transform 0.15s, box-shadow 0.15s;
-              box-shadow: 0 4px 20px rgba(108,60,224,0.35);
-            }
-            .nl-submit-btn:hover {
-              transform: translateY(-2px);
-              box-shadow: 0 8px 28px rgba(108,60,224,0.45);
-            }
-            .nl-submit-btn:active {
-              transform: translateY(0);
-            }
-          </style>
-          <div class="container">
-            <div class="nl-form-card">
-              <h3>Stay in the know on privacy</h3>
-              <form id="nlForm" onsubmit="handleNlSubmit(event)">
-                <div class="nl-field">
-                  <label for="nlName">Name</label>
-                  <input type="text" id="nlName" name="name" />
+                    .nl-form-card h3 {
+                      font-size: 18px !important;
+                      font-weight: 700;
+                      color: #1a1a2e;
+                      margin-bottom: 24px;
+                      text-align: center;
+                    }
+
+                    .nl-field {
+                      margin-bottom: 18px;
+                    }
+
+                    .nl-field label {
+                      display: block;
+                      font-size: 13px;
+                      font-weight: 600;
+                      color: #1a1a2e;
+                      margin-bottom: 6px;
+                    }
+
+                    .nl-field input[type="text"],
+                    .nl-field input[type="email"] {
+                      width: 100%;
+                      padding: 12px 16px;
+                      border-radius: 8px;
+                      border: 1px solid rgba(26, 26, 46, 0.15);
+                      background: #fff;
+                      color: #1a1a2e;
+                      font-size: 14px;
+                      font-family: inherit;
+                      outline: none;
+                      transition: border-color 0.25s, box-shadow 0.25s;
+                    }
+
+                    .nl-field input[type="text"]:focus,
+                    .nl-field input[type="email"]:focus {
+                      border-color: #6c3ce0;
+                      box-shadow: 0 0 0 3px rgba(108, 60, 224, 0.06);
+                    }
+
+                    .nl-consent {
+                      display: flex;
+                      align-items: flex-start;
+                      gap: 8px;
+                      margin-bottom: 24px;
+                      margin-top: 4px;
+                    }
+
+                    .nl-consent input[type="checkbox"] {
+                      margin-top: 3px;
+                      accent-color: #6c3ce0;
+                      width: 16px;
+                      height: 16px;
+                      flex-shrink: 0;
+                    }
+
+                    .nl-consent label {
+                      font-size: 13px;
+                      color: #4a4a6a;
+                      line-height: 1.5;
+                      cursor: pointer;
+                    }
+
+                    .nl-consent label a {
+                      color: #1a1a2e;
+                      text-decoration: underline;
+                    }
+
+                    .nl-submit-btn {
+                      width: 100%;
+                      padding: 14px;
+                      border-radius: 8px;
+                      background: linear-gradient(135deg, #6c3ce0, #4642fc);
+                      color: #fff;
+                      font-weight: 700;
+                      font-size: 15px;
+                      border: none;
+                      cursor: pointer;
+                      font-family: inherit;
+                      transition: transform 0.15s, box-shadow 0.15s;
+                      box-shadow: 0 4px 20px rgba(108, 60, 224, 0.35);
+                    }
+
+                    .nl-submit-btn:hover {
+                      transform: translateY(-2px);
+                      box-shadow: 0 8px 28px rgba(108, 60, 224, 0.45);
+                    }
+
+                    .nl-submit-btn:active {
+                      transform: translateY(0);
+                    }
+                  </style>
+                  <div class="container">
+                    <div class="nl-form-card">
+                      <h3>Stay in the know on privacy</h3>
+                      <form id="nlForm" onsubmit="handleNlSubmit(event)">
+                        <div class="nl-field">
+                          <label for="nlName">Name</label>
+                          <input type="text" id="nlName" name="name" />
+                        </div>
+                        <div class="nl-field">
+                          <label for="nlEmail">Email</label>
+                          <input type="email" id="nlEmail" name="email" required />
+                        </div>
+                        <div class="nl-consent">
+                          <input type="checkbox" id="nlConsent" required />
+                          <label for="nlConsent">I agree to receive newsletters from PrivacyCrumb and accept the <a
+                              href="./privacy-policy.html">privacy policy</a>.</label>
+                        </div>
+                        <button type="submit" class="nl-submit-btn">Subscribe</button>
+                      </form>
+                      <div id="nlSuccess"
+                        style="display:none;margin-top:20px;padding:20px;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);border-radius:12px;text-align:center;">
+                        <div style="font-size:18px;font-weight:700;color:#1a1a2e;margin-bottom:4px;">You\'re Subscribed!
+                          \ud83c\udf89</div>
+                        <div style="font-size:14px;color:#4a4a6a;">Check your inbox for a welcome email.</div>
+                      </div>
+                    </div>
+                  </div>
+                  <script>
+                    function handleNlSubmit(e) {
+                      e.preventDefault();
+                      document.getElementById('nlForm').style.display = 'none';
+                      document.getElementById('nlSuccess').style.display = 'block';
+                    }
+                  </script>
                 </div>
-                <div class="nl-field">
-                  <label for="nlEmail">Email</label>
-                  <input type="email" id="nlEmail" name="email" required />
-                </div>
-                <div class="nl-consent">
-                  <input type="checkbox" id="nlConsent" required />
-                  <label for="nlConsent">I agree to receive newsletters from PrivacyCrumb and accept the <a href="./privacy-policy.html">privacy policy</a>.</label>
-                </div>
-                <button type="submit" class="nl-submit-btn">Subscribe</button>
-              </form>
-              <div id="nlSuccess" style="display:none;margin-top:20px;padding:20px;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);border-radius:12px;text-align:center;">
-                <div style="font-size:18px;font-weight:700;color:#1a1a2e;margin-bottom:4px;">You\'re Subscribed! \ud83c\udf89</div>
-                <div style="font-size:14px;color:#4a4a6a;">Check your inbox for a welcome email.</div>
               </div>
             </div>
           </div>
-          <script>
-            function handleNlSubmit(e) {
-              e.preventDefault();
-              document.getElementById('nlForm').style.display = 'none';
-              document.getElementById('nlSuccess').style.display = 'block';
-            }
-          </script>
         </section>
-        <!--================= Newsletter Form section end =================-->
-
-        </main>
+        <!--================= Newsletter Hero + Form section end =================-->
+      </main>
 
       <!--=================footer section start=================-->
       <footer class="footer-three section" data-bg-src="./assets/images/footer/footer-three-bg.svg">
@@ -1825,7 +1854,7 @@
                           <li><a href="./blog.html">Blogs</a></li>
                           <li><a href="./knowledge-base.html">Knowledge Base</a></li>
                           <li><a href="./Infographics.html">Infographics</a></li>
-                          <li><a href="#">Newsletter</a></li>
+                          <li><a href="./newsletter.html">Newsletter</a></li>
                           <li><a href="./about.html">About</a></li>
                         </ul>
                       </div>
