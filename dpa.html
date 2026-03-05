@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -25,7 +25,7 @@
   <meta name="twitter:image" content="http://saaslyn-html.netlify.app/assets/images/preview.png" />
   <meta name="developer" content="Sakebul Islam" />
 
-  <title>PrivacyCrumb - About Us</title>
+  <title>PrivacyCrumb - Data Processing Agreement</title>
   <link rel="icon" type="image/png" href="./assets/images/Privacy-new-logo.png">
 
   <link rel="stylesheet" href="assets/css/plugins.css" />
@@ -1139,27 +1139,25 @@
   <div id="smooth-wrapper">
     <div id="smooth-content">
       <main>
-        <!--================= About Hero section start =================-->
-        <section class="banner-three section section-padding-top-bottom about-hero-section"
+        <!--================= DPA Hero section start =================-->
+        <section class="banner-three section section-padding-top-bottom dpa-hero-section"
           data-bg-src="./assets/images/banner/banner-three-bg.png" style="position:relative;">
           <style>
-            .about-hero-section {
+            .dpa-hero-section {
               overflow: visible !important;
             }
-
-            .about-hero-section::after {
+            .dpa-hero-section::after {
               content: '';
               position: absolute;
               bottom: 0;
               left: 0;
               right: 0;
               height: 60%;
-              background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 40%, rgba(255, 255, 255, 1) 100%) !important;
+              background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 40%, rgba(255,255,255,1) 100%) !important;
               pointer-events: none;
               z-index: 1;
             }
-
-            .about-hero-section>.container {
+            .dpa-hero-section > .container {
               position: relative;
               z-index: 2;
             }
@@ -1168,564 +1166,269 @@
             <div class="row justify-content-center">
               <div class="col-lg-8 text-center">
                 <div class="section-header-3">
-                  <span class="section-sub-title" style="color:#6c3ce0;">About PrivacyCrumb</span>
+                  <span class="section-sub-title" style="color:#6c3ce0;">Legal</span>
                   <h1 class="section-title text-anime" style="color:#1a1a2e;">
-                    Making Privacy Compliance<br>Simple for Everyone
+                    Data Processing Agreement
                   </h1>
-                  <p style="color:#4a4a6a;max-width:640px;margin:0 auto;">
-                    We believe that website owners shouldn't need a law degree to stay compliant. PrivacyCrumb was built
-                    to automate cookie compliance so you can focus on what matters — growing your business.
+                  <p style="color:#4a4a6a;max-width:620px;margin:0 auto;">
+                    This Data Processing Agreement outlines how PrivacyCrumb processes personal data on behalf of our customers.
                   </p>
-                </div>
-                <div style="margin-top:32px;">
-                  <a href="./sign-up.html" class="saaslyn-4-btn v2" style="margin-right:12px;">Get Started Free <i
-                      class="fa-light fa-arrow-right-long"></i></a>
-                  <a href="./contact.html" class="saaslyn-4-btn">Contact Us <i
-                      class="fa-light fa-arrow-right-long"></i></a>
                 </div>
               </div>
             </div>
-
           </div>
         </section>
-        <!--================= About Hero section end =================-->
+        <!--================= DPA Hero section end =================-->
 
-        <!--================= Stats section start =================-->
-        <section class="section" style="padding:60px 0;">
+        <!--================= DPA Content section start =================-->
+        <section class="section" style="padding:60px 0 100px;">
           <style>
-            .about-stats-grid {
-              display: grid;
-              grid-template-columns: repeat(4, 1fr);
-              gap: 24px;
+            .dpa-container {
+              max-width: 860px;
+              margin: 0 auto;
+              padding: 0 20px;
             }
-
-            @media (max-width: 991px) {
-              .about-stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-              }
+            .dpa-block {
+              margin-bottom: 40px;
             }
-
-            @media (max-width: 575px) {
-              .about-stats-grid {
-                grid-template-columns: 1fr;
-              }
-            }
-
-            .about-stat-card {
-              background: #f5f5fa;
-              border-radius: 16px;
-              padding: 32px 24px;
-              text-align: center;
-              transition: transform 0.3s, box-shadow 0.3s;
-              box-shadow: 0 4px 24px rgba(108, 60, 224, 0.1), 0 0 40px rgba(108, 60, 224, 0.05);
-            }
-
-            .about-stat-card:hover {
-              transform: translateY(-4px);
-              box-shadow: 0 12px 40px rgba(108, 60, 224, 0.1);
-            }
-
-            .about-stat-number {
-              font-size: 42px;
-              font-weight: 800;
+            .dpa-block h2 {
+              font-size: 22px;
               color: #1a1a2e;
-              line-height: 1.1;
+              font-weight: 700;
+              margin-bottom: 16px;
+              padding-bottom: 10px;
+              border-bottom: 2px solid rgba(108, 60, 224, 0.12);
+            }
+            .dpa-block h3 {
+              font-size: 17px;
+              color: #1a1a2e;
+              font-weight: 600;
+              margin: 20px 0 10px;
+            }
+            .dpa-block p, .dpa-block li {
+              font-size: 15px;
+              line-height: 1.8;
+              color: #4a4a6a;
+            }
+            .dpa-block ul, .dpa-block ol {
+              padding-left: 24px;
+              margin: 12px 0;
+            }
+            .dpa-block ul li {
+              margin-bottom: 8px;
+              list-style-type: disc;
+            }
+            .dpa-block ol li {
               margin-bottom: 8px;
             }
-
-            .about-stat-label {
-              font-size: 15px;
-              font-weight: 600;
+            .dpa-def-table {
+              width: 100%;
+              border-collapse: collapse;
+              margin: 16px 0 24px;
+              border-radius: 12px;
+              overflow: hidden;
+            }
+            .dpa-def-table th {
+              background: rgba(108, 60, 224, 0.1);
               color: #1a1a2e;
-              margin-bottom: 4px;
-            }
-
-            .about-stat-desc {
-              font-size: 13px;
-              color: #6a6a8a;
-            }
-          </style>
-          <div class="container">
-            <div class="about-stats-grid">
-              <div class="about-stat-card">
-                <div class="about-stat-number">10K+</div>
-                <div class="about-stat-label">Websites Protected</div>
-                <div class="about-stat-desc">Across 80+ countries worldwide</div>
-              </div>
-              <div class="about-stat-card">
-                <div class="about-stat-number">50M+</div>
-                <div class="about-stat-label">Consents Logged</div>
-                <div class="about-stat-desc">Tamper-proof audit-ready records</div>
-              </div>
-              <div class="about-stat-card">
-                <div class="about-stat-number">99.9%</div>
-                <div class="about-stat-label">Uptime</div>
-                <div class="about-stat-desc">Enterprise-grade reliability</div>
-              </div>
-              <div class="about-stat-card">
-                <div class="about-stat-number">&lt;2min</div>
-                <div class="about-stat-label">Setup Time</div>
-                <div class="about-stat-desc">One script, full compliance</div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!--================= Stats section end =================-->
-
-        <!--================= Our Story section start =================-->
-        <section class="section section-padding-top-bottom" style="background:#f5f5fa;">
-          <style>
-            .about-story-icon {
-              width: 64px;
-              height: 64px;
-              border-radius: 16px;
-              background: #ffffff;
-              border: 2px solid rgba(26, 26, 46, 0.1);
-              box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              margin-bottom: 24px;
-            }
-
-            .about-story-icon i {
-              font-size: 28px;
-              color: #1a1a2e;
-            }
-          </style>
-          <div class="container">
-            <div class="row justify-content-center" style="margin-bottom:48px;">
-              <div class="col-lg-7 text-center">
-                <div class="section-header-3">
-                  <span class="section-sub-title" style="color:#6c3ce0;">Our Story</span>
-                  <h2 class="section-title text-anime" style="color:#1a1a2e;">Why We Built PrivacyCrumb</h2>
-                </div>
-              </div>
-            </div>
-            <div class="row g-4 align-items-center">
-              <div class="col-lg-6">
-                <div style="padding-right:20px;">
-                  <p style="font-size:16px;line-height:1.8;color:#3a3a5c;margin-bottom:20px;">
-                    PrivacyCrumb was born from frustration. As web developers, we watched businesses struggle
-                    with cookie compliance — juggling confusing regulations, paying for overpriced solutions,
-                    and still getting it wrong.
-                  </p>
-                  <p style="font-size:16px;line-height:1.8;color:#3a3a5c;margin-bottom:20px;">
-                    We saw cookie banners that were little more than "digital wallpaper" — pretty overlays
-                    that offered zero real protection. Meanwhile, regulators were issuing fines worth millions.
-                  </p>
-                  <p style="font-size:16px;line-height:1.8;color:#3a3a5c;">
-                    So we built what we wish existed: a single platform that <strong>scans your cookies</strong>,
-                    <strong>generates your policies</strong>, <strong>displays a compliant banner</strong>, and
-                    <strong>logs every consent</strong> with a tamper-proof audit trail — all for a fraction of
-                    the cost that legacy tools charge.
-                  </p>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
-                  <div
-                    style="background:#fff;border-radius:16px;padding:28px;border:1px solid rgba(26,26,46,0.06);box-shadow:0 4px 24px rgba(108,60,224,0.12), 0 0 40px rgba(108,60,224,0.06);">
-                    <div class="about-story-icon"><i class="fa-light fa-shield-check"></i></div>
-                    <h5 style="font-size:17px;font-weight:700;color:#1a1a2e;margin-bottom:8px;">Real Compliance</h5>
-                    <p style="font-size:14px;color:#4a4a6a;line-height:1.6;">Not just a banner — a complete compliance
-                      system with proof.</p>
-                  </div>
-                  <div
-                    style="background:#fff;border-radius:16px;padding:28px;border:1px solid rgba(26,26,46,0.06);box-shadow:0 4px 24px rgba(108,60,224,0.12), 0 0 40px rgba(108,60,224,0.06);">
-                    <div class="about-story-icon"><i class="fa-light fa-bolt"></i></div>
-                    <h5 style="font-size:17px;font-weight:700;color:#1a1a2e;margin-bottom:8px;">Built for Speed</h5>
-                    <p style="font-size:14px;color:#4a4a6a;line-height:1.6;">Lightweight script that won't slow your
-                      site down.</p>
-                  </div>
-                  <div
-                    style="background:#fff;border-radius:16px;padding:28px;border:1px solid rgba(26,26,46,0.06);box-shadow:0 4px 24px rgba(108,60,224,0.12), 0 0 40px rgba(108,60,224,0.06);">
-                    <div class="about-story-icon"><i class="fa-light fa-money-bill-wave"></i></div>
-                    <h5 style="font-size:17px;font-weight:700;color:#1a1a2e;margin-bottom:8px;">Fair Pricing</h5>
-                    <p style="font-size:14px;color:#4a4a6a;line-height:1.6;">Enterprise features at startup-friendly
-                      prices.</p>
-                  </div>
-                  <div
-                    style="background:#fff;border-radius:16px;padding:28px;border:1px solid rgba(26,26,46,0.06);box-shadow:0 4px 24px rgba(0,0,0,0.06), 0 0 40px rgba(26,26,46,0.04);">
-                    <div class="about-story-icon"><i class="fa-light fa-earth-americas"></i></div>
-                    <h5 style="font-size:17px;font-weight:700;color:#1a1a2e;margin-bottom:8px;">Global Coverage</h5>
-                    <p style="font-size:14px;color:#4a4a6a;line-height:1.6;">GDPR, CCPA, LGPD, POPIA — all in one
-                      platform.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!--================= Our Story section end =================-->
-
-        <!--================= Values section start =================-->
-        <section class="section section-padding-top-bottom">
-          <style>
-            .about-value-card {
-              background: #ffffff;
-              border: 1px solid rgba(26, 26, 46, 0.06);
-              border-radius: 16px;
-              padding: 28px;
+              padding: 12px 16px;
               text-align: left;
-              transition: transform 0.3s, box-shadow 0.3s;
-              height: 100%;
-              box-shadow: 0 4px 24px rgba(108, 60, 224, 0.12), 0 0 40px rgba(108, 60, 224, 0.06);
+              font-size: 14px;
+              font-weight: 600;
             }
-
-            .about-value-card:hover {
-              transform: translateY(-6px);
-              box-shadow: 0 12px 40px rgba(108, 60, 224, 0.16), 0 0 60px rgba(108, 60, 224, 0.08);
+            .dpa-def-table td {
+              padding: 12px 16px;
+              font-size: 14px;
+              color: #4a4a6a;
+              border-bottom: 1px solid rgba(108, 60, 224, 0.08);
             }
-
-            .about-value-icon {
-              width: 64px;
-              height: 64px;
-              border-radius: 16px;
-              background: #ffffff;
-              border: 2px solid rgba(26, 26, 46, 0.1);
-              box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              margin-bottom: 20px;
-            }
-
-            .about-value-icon i {
-              font-size: 28px;
-              color: #1a1a2e;
-            }
-
-            .about-value-title {
-              font-size: 17px !important;
-              font-weight: 700 !important;
-              color: #1a1a2e !important;
-              margin-bottom: 8px !important;
-              line-height: 1.3 !important;
-            }
-
-            .about-value-desc {
-              font-size: 14px !important;
-              color: #4a4a6a !important;
-              line-height: 1.6 !important;
-              margin-bottom: 0 !important;
+            .dpa-def-table tr:last-child td {
+              border-bottom: none;
             }
           </style>
           <div class="container">
-            <div class="row justify-content-center" style="margin-bottom:48px;">
-              <div class="col-lg-7 text-center">
-                <div class="section-header-3">
-                  <span class="section-sub-title" style="color:#6c3ce0;">Our Values</span>
-                  <h2 class="section-title text-anime" style="color:#1a1a2e;">What Drives Us Every Day</h2>
-                  <p style="color:#4a4a6a;max-width:560px;margin:0 auto;">
-                    These principles guide every feature we build and every decision we make.
-                  </p>
-                </div>
+            <div class="dpa-container">
+
+              <div class="dpa-block">
+                <h2>1. Introduction</h2>
+                <p>This Data Processing Agreement (&ldquo;DPA&rdquo;) forms part of the <a href="./terms-conditions.html" style="color:#6c3ce0;">Terms and Conditions</a> between PrivacyCrumb (&ldquo;Processor&rdquo; / &ldquo;we&rdquo;) and you (&ldquo;Controller&rdquo; / &ldquo;Customer&rdquo;).</p>
+                <p>This DPA applies where and only to the extent that PrivacyCrumb processes personal data on behalf of the Customer in the course of providing the Services, and such personal data is subject to data protection laws including the EU General Data Protection Regulation (GDPR), the UK GDPR, and/or the California Consumer Privacy Act (CCPA).</p>
               </div>
-            </div>
-            <div class="row g-4">
-              <div class="col-lg-4 col-md-6">
-                <div class="about-value-card">
-                  <div class="about-value-icon"><i class="fa-light fa-eye"></i></div>
-                  <h5 class="about-value-title">Transparency First</h5>
-                  <p class="about-value-desc">We practice what we preach. Our code, our pricing, and our policies are
-                    clear and upfront — no hidden tricks.</p>
-                </div>
+
+              <div class="dpa-block">
+                <h2>2. Definitions</h2>
+                <table class="dpa-def-table">
+                  <thead>
+                    <tr>
+                      <th>Term</th>
+                      <th>Definition</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Controller</strong></td>
+                      <td>The Customer who determines the purposes and means of processing personal data.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Processor</strong></td>
+                      <td>PrivacyCrumb, which processes personal data on behalf of the Controller.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Data Subject</strong></td>
+                      <td>An identified or identifiable natural person whose personal data is processed.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Personal Data</strong></td>
+                      <td>Any information relating to a Data Subject that is processed by PrivacyCrumb on behalf of the Customer.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Sub-processor</strong></td>
+                      <td>A third party engaged by PrivacyCrumb to process personal data on behalf of the Controller.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Data Breach</strong></td>
+                      <td>A breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorized disclosure of, or access to personal data.</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="about-value-card">
-                  <div class="about-value-icon"><i class="fa-light fa-user-shield"></i></div>
-                  <h5 class="about-value-title">Privacy by Design</h5>
-                  <p class="about-value-desc">We don't just help you comply — we build with privacy at the core.
-                    Minimal
-                    data, maximum protection.</p>
-                </div>
+
+              <div class="dpa-block">
+                <h2>3. Scope and Purpose of Processing</h2>
+                <h3>Nature of Processing</h3>
+                <p>PrivacyCrumb processes personal data to provide cookie consent management services, including:</p>
+                <ul>
+                  <li>Collecting and storing end-user consent preferences</li>
+                  <li>Logging consent records for compliance documentation</li>
+                  <li>Scanning websites for cookies and tracking technologies</li>
+                  <li>Generating compliance reports and analytics</li>
+                </ul>
+                <h3>Categories of Data Subjects</h3>
+                <ul>
+                  <li>Website visitors of the Customer&rsquo;s website(s)</li>
+                  <li>Customer&rsquo;s employees and authorized users</li>
+                </ul>
+                <h3>Types of Personal Data</h3>
+                <ul>
+                  <li>IP addresses (anonymized where possible)</li>
+                  <li>Consent preferences and timestamps</li>
+                  <li>Browser and device information</li>
+                  <li>Cookie identifiers</li>
+                  <li>Geographic location (country/region level)</li>
+                </ul>
               </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="about-value-card">
-                  <div class="about-value-icon"><i class="fa-light fa-people-group"></i></div>
-                  <h5 class="about-value-title">Customer Obsession</h5>
-                  <p class="about-value-desc">Our customers' success is our success. We offer dedicated support and
-                    listen to every feature request.</p>
-                </div>
+
+              <div class="dpa-block">
+                <h2>4. Obligations of the Processor</h2>
+                <p>PrivacyCrumb, as Processor, shall:</p>
+                <ol>
+                  <li>Process personal data only on documented instructions from the Controller, unless required by applicable law.</li>
+                  <li>Ensure that persons authorized to process personal data have committed themselves to confidentiality or are under an appropriate statutory obligation of confidentiality.</li>
+                  <li>Implement appropriate technical and organizational measures to ensure a level of security appropriate to the risk of processing.</li>
+                  <li>Not engage another processor (sub-processor) without prior written authorization from the Controller.</li>
+                  <li>Assist the Controller in responding to requests from Data Subjects exercising their rights under applicable data protection law.</li>
+                  <li>Assist the Controller in ensuring compliance with obligations related to security of processing, data breach notification, data protection impact assessments, and prior consultations.</li>
+                  <li>At the choice of the Controller, delete or return all personal data upon termination of services, unless retention is required by applicable law.</li>
+                  <li>Make available to the Controller all information necessary to demonstrate compliance with the obligations set out in this DPA.</li>
+                </ol>
               </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="about-value-card">
-                  <div class="about-value-icon"><i class="fa-light fa-gauge-max"></i></div>
-                  <h5 class="about-value-title">Performance Matters</h5>
-                  <p class="about-value-desc">Compliance should never slow down your website. Our script is
-                    ultra-lightweight and loads asynchronously.</p>
-                </div>
+
+              <div class="dpa-block">
+                <h2>5. Obligations of the Controller</h2>
+                <p>The Customer, as Controller, shall:</p>
+                <ul>
+                  <li>Ensure that the processing of personal data is lawful and that all necessary consents, notices, and authorizations have been obtained.</li>
+                  <li>Provide documented instructions for processing personal data.</li>
+                  <li>Comply with all applicable data protection laws and regulations.</li>
+                  <li>Notify PrivacyCrumb without undue delay if a data subject exercises their rights regarding personal data processed through the Services.</li>
+                </ul>
               </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="about-value-card">
-                  <div class="about-value-icon"><i class="fa-light fa-arrows-rotate"></i></div>
-                  <h5 class="about-value-title">Always Evolving</h5>
-                  <p class="about-value-desc">Privacy laws change constantly. We stay ahead so you don't have to —
-                    automatic updates, always compliant.</p>
-                </div>
+
+              <div class="dpa-block">
+                <h2>6. Security Measures</h2>
+                <p>PrivacyCrumb implements and maintains appropriate technical and organizational security measures, including:</p>
+                <ul>
+                  <li><strong>Encryption:</strong> All data is encrypted in transit (TLS 1.2+) and at rest (AES-256).</li>
+                  <li><strong>Access Controls:</strong> Role-based access controls with multi-factor authentication for internal systems.</li>
+                  <li><strong>Monitoring:</strong> Continuous security monitoring and intrusion detection systems.</li>
+                  <li><strong>Backup:</strong> Regular automated backups with tested disaster recovery procedures.</li>
+                  <li><strong>Audit:</strong> Regular security audits and vulnerability assessments.</li>
+                  <li><strong>Training:</strong> Regular data protection training for all employees.</li>
+                </ul>
               </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="about-value-card">
-                  <div class="about-value-icon"><i class="fa-light fa-handshake"></i></div>
-                  <h5 class="about-value-title">Fair & Accessible</h5>
-                  <p class="about-value-desc">Enterprise-grade compliance shouldn't cost enterprise-grade prices. We
-                    make it affordable for businesses of all sizes.</p>
-                </div>
+
+              <div class="dpa-block">
+                <h2>7. Sub-processors</h2>
+                <p>PrivacyCrumb may engage sub-processors to assist in providing the Services. The Customer hereby provides general written authorization for PrivacyCrumb to engage sub-processors, subject to the following conditions:</p>
+                <ul>
+                  <li>PrivacyCrumb will maintain an up-to-date list of sub-processors.</li>
+                  <li>PrivacyCrumb will notify the Customer of any intended changes to sub-processors at least 30 days in advance.</li>
+                  <li>The Customer may object to a new sub-processor within 14 days of notification.</li>
+                  <li>PrivacyCrumb will ensure that sub-processors are bound by data protection obligations no less protective than those in this DPA.</li>
+                </ul>
+              </div>
+
+              <div class="dpa-block">
+                <h2>8. Data Breach Notification</h2>
+                <p>In the event of a Data Breach, PrivacyCrumb shall:</p>
+                <ol>
+                  <li>Notify the Controller without undue delay, and in any event within <strong>72 hours</strong> of becoming aware of the breach.</li>
+                  <li>Provide sufficient information to enable the Controller to meet its obligations under applicable data protection law, including:
+                    <ul>
+                      <li>The nature of the breach, including categories and approximate number of data subjects and records affected</li>
+                      <li>The likely consequences of the breach</li>
+                      <li>Measures taken or proposed to address the breach</li>
+                      <li>Contact details for the PrivacyCrumb data protection point of contact</li>
+                    </ul>
+                  </li>
+                  <li>Cooperate with the Controller and take reasonable steps to assist in the investigation, mitigation, and remediation of the breach.</li>
+                </ol>
+              </div>
+
+              <div class="dpa-block">
+                <h2>9. International Data Transfers</h2>
+                <p>Where personal data is transferred outside the European Economic Area (EEA), the United Kingdom, or other jurisdictions with data transfer restrictions, PrivacyCrumb ensures that appropriate safeguards are in place, including:</p>
+                <ul>
+                  <li><strong>Standard Contractual Clauses (SCCs):</strong> EU Commission-approved standard contractual clauses.</li>
+                  <li><strong>UK International Data Transfer Agreement:</strong> For transfers from the UK.</li>
+                  <li><strong>Adequacy Decisions:</strong> Where applicable, reliance on adequacy decisions by the relevant authority.</li>
+                </ul>
+              </div>
+
+              <div class="dpa-block">
+                <h2>10. Data Retention and Deletion</h2>
+                <p>PrivacyCrumb will retain personal data only for as long as necessary to provide the Services or as required by applicable law.</p>
+                <ul>
+                  <li><strong>Active Accounts:</strong> Data is retained for the duration of the service agreement.</li>
+                  <li><strong>Account Termination:</strong> Upon termination, all personal data will be deleted within 30 days unless the Controller requests a data export.</li>
+                  <li><strong>Consent Records:</strong> Consent logs are retained for a minimum period as required by applicable privacy regulations (typically 3&ndash;5 years) to demonstrate compliance.</li>
+                </ul>
+              </div>
+
+              <div class="dpa-block">
+                <h2>11. Audits and Inspections</h2>
+                <p>PrivacyCrumb shall make available to the Controller, on request, all information necessary to demonstrate compliance with this DPA and allow for audits, including inspections, by the Controller or an auditor appointed by the Controller.</p>
+                <p>Audit requests must be provided with at least 30 days&rsquo; notice and shall be conducted during normal business hours, no more than once per year, unless required by a supervisory authority.</p>
+              </div>
+
+              <div class="dpa-block">
+                <h2>12. Duration and Termination</h2>
+                <p>This DPA shall remain in effect for the duration of the processing of personal data by PrivacyCrumb on behalf of the Controller. It automatically terminates when the service agreement between the parties ends.</p>
+                <p>Obligations that by their nature should survive termination of this DPA shall remain in effect, including confidentiality, data deletion, and cooperation with audits.</p>
+              </div>
+
+              <div class="dpa-block">
+                <h2>13. Contact Us</h2>
+                <p>For questions about this Data Processing Agreement or to exercise your rights, please contact our Data Protection team:</p>
+                <ul>
+                  <li><strong>Email:</strong> <a href="mailto:dpo@privacycrumb.com" style="color:#6c3ce0;">dpo@privacycrumb.com</a></li>
+                  <li><strong>Website:</strong> <a href="./contact.html" style="color:#6c3ce0;">Contact Us Page</a></li>
+                </ul>
               </div>
             </div>
           </div>
         </section>
-        <!--================= Values section end =================-->
-
-        <!--================= How It Works section start =================-->
-        <section class="section section-padding-top-bottom" style="background:#f5f5fa;">
-          <style>
-            .about-timeline {
-              position: relative;
-              max-width: 800px;
-              margin: 0 auto;
-            }
-
-            .about-timeline::before {
-              content: '';
-              position: absolute;
-              left: 30px;
-              top: 0;
-              bottom: 0;
-              width: 3px;
-              background: #1a1a2e;
-              border-radius: 99px;
-            }
-
-            @media (max-width: 575px) {
-              .about-timeline::before {
-                left: 22px;
-              }
-            }
-
-            .about-tl-item {
-              position: relative;
-              padding-left: 80px;
-              padding-bottom: 40px;
-            }
-
-            @media (max-width: 575px) {
-              .about-tl-item {
-                padding-left: 60px;
-              }
-            }
-
-            .about-tl-item:last-child {
-              padding-bottom: 0;
-            }
-
-            .about-tl-dot {
-              position: absolute;
-              left: 18px;
-              top: 4px;
-              width: 26px;
-              height: 26px;
-              border-radius: 50%;
-              background: #fff;
-              border: 3px solid #1a1a2e;
-              z-index: 1;
-            }
-
-            @media (max-width: 575px) {
-              .about-tl-dot {
-                left: 10px;
-                width: 24px;
-                height: 24px;
-              }
-            }
-
-            .about-tl-year {
-              font-size: 13px;
-              font-weight: 700;
-              color: #1a1a2e;
-              letter-spacing: 0.05em;
-              margin-bottom: 6px;
-            }
-
-            .about-tl-title {
-              font-size: 17px !important;
-              font-weight: 700 !important;
-              color: #1a1a2e !important;
-              margin-bottom: 8px !important;
-              line-height: 1.3 !important;
-            }
-
-            .about-tl-desc {
-              font-size: 14px !important;
-              color: #4a4a6a !important;
-              line-height: 1.6 !important;
-            }
-          </style>
-          <div class="container">
-            <div class="row justify-content-center" style="margin-bottom:48px;">
-              <div class="col-lg-7 text-center">
-                <div class="section-header-3">
-                  <span class="section-sub-title" style="color:#6c3ce0;">Our Journey</span>
-                  <h2 class="section-title text-anime" style="color:#1a1a2e;">The PrivacyCrumb Timeline</h2>
-                </div>
-              </div>
-            </div>
-            <div class="about-timeline">
-              <div class="about-tl-item">
-                <div class="about-tl-dot"></div>
-                <div class="about-tl-year">2022</div>
-                <h4 class="about-tl-title">The Idea Was Born</h4>
-                <p class="about-tl-desc">After seeing too many websites with fake cookie banners and no real compliance,
-                  our founders decided to build the platform they wish existed.</p>
-              </div>
-              <div class="about-tl-item">
-                <div class="about-tl-dot"></div>
-                <div class="about-tl-year">2023</div>
-                <h4 class="about-tl-title">First Beta Launch</h4>
-                <p class="about-tl-desc">We launched our beta with automated cookie scanning, consent banner
-                  customization, and GDPR compliance. Early adopters loved the simplicity.</p>
-              </div>
-              <div class="about-tl-item">
-                <div class="about-tl-dot"></div>
-                <div class="about-tl-year">2024</div>
-                <h4 class="about-tl-title">Global Expansion</h4>
-                <p class="about-tl-desc">Added support for CCPA, LGPD, POPIA, and Google Consent Mode v2. Reached 5,000+
-                  websites across 60+ countries.</p>
-              </div>
-              <div class="about-tl-item">
-                <div class="about-tl-dot"></div>
-                <div class="about-tl-year">2025</div>
-                <h4 class="about-tl-title">10K Milestone & Beyond</h4>
-                <p class="about-tl-desc">Crossed 10,000 protected websites. Launched IAB TCF v2.2, consent logging,
-                  policy generator, and WordPress / Shopify integrations.</p>
-              </div>
-              <div class="about-tl-item">
-                <div class="about-tl-dot"></div>
-                <div class="about-tl-year">2026</div>
-                <h4 class="about-tl-title">The Future of Privacy</h4>
-                <p class="about-tl-desc">Developing AI-powered compliance monitoring, multi-regulation engine, and
-                  enterprise SSO. The journey is just getting started.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!--================= How It Works section end =================-->
-
-        <!--================= Regulations section start =================-->
-        <section class="section section-padding-top-bottom">
-          <style>
-            .about-reg-grid {
-              display: grid;
-              grid-template-columns: repeat(3, 1fr);
-              gap: 20px;
-            }
-
-            @media (max-width: 991px) {
-              .about-reg-grid {
-                grid-template-columns: repeat(2, 1fr);
-              }
-            }
-
-            @media (max-width: 575px) {
-              .about-reg-grid {
-                grid-template-columns: 1fr;
-              }
-            }
-
-            .about-reg-card {
-              background: #fff;
-              border: 1px solid rgba(26, 26, 46, 0.06);
-              border-radius: 16px;
-              padding: 28px;
-              transition: transform 0.3s, box-shadow 0.3s;
-              box-shadow: 0 4px 24px rgba(108, 60, 224, 0.12), 0 0 40px rgba(108, 60, 224, 0.06);
-            }
-
-            .about-reg-card:hover {
-              transform: translateY(-6px);
-              box-shadow: 0 12px 40px rgba(108, 60, 224, 0.16), 0 0 60px rgba(108, 60, 224, 0.08);
-            }
-
-            .about-reg-badge {
-              width: 64px;
-              height: 64px;
-              border-radius: 16px;
-              background: #ffffff;
-              border: 2px solid rgba(26, 26, 46, 0.1);
-              box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              font-weight: 800;
-              font-size: 12px;
-              letter-spacing: 0.04em;
-              color: #1a1a2e;
-              margin-bottom: 20px;
-            }
-
-            .about-reg-title {
-              font-size: 17px !important;
-              font-weight: 700 !important;
-              color: #1a1a2e !important;
-              margin-bottom: 8px !important;
-              line-height: 1.3 !important;
-            }
-
-            .about-reg-desc {
-              font-size: 14px !important;
-              color: #4a4a6a !important;
-              line-height: 1.6 !important;
-              margin-bottom: 0 !important;
-            }
-          </style>
-          <div class="container">
-            <div class="row justify-content-center" style="margin-bottom:48px;">
-              <div class="col-lg-7 text-center">
-                <div class="section-header-3">
-                  <span class="section-sub-title" style="color:#6c3ce0;">Global Compliance</span>
-                  <h2 class="section-title text-anime" style="color:#1a1a2e;">Regulations We Cover</h2>
-                  <p style="color:#4a4a6a;max-width:560px;margin:0 auto;">
-                    One platform, every regulation. PrivacyCrumb automatically adapts to the visitor's location.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="about-reg-grid">
-              <div class="about-reg-card">
-                <div class="about-reg-badge">GDPR</div>
-                <h5 class="about-reg-title">EU & UK GDPR</h5>
-                <p class="about-reg-desc">Full compliance with the General Data Protection Regulation.</p>
-              </div>
-              <div class="about-reg-card">
-                <div class="about-reg-badge">CCPA</div>
-                <h5 class="about-reg-title">CCPA / CPRA</h5>
-                <p class="about-reg-desc">California Consumer Privacy Act with "Do Not Sell" support.</p>
-              </div>
-              <div class="about-reg-card">
-                <div class="about-reg-badge">LGPD</div>
-                <h5 class="about-reg-title">Brazil LGPD</h5>
-                <p class="about-reg-desc">Lei Geral de Proteção de Dados compliance for Brazilian visitors.</p>
-              </div>
-              <div class="about-reg-card">
-                <div class="about-reg-badge">POPIA</div>
-                <h5 class="about-reg-title">South Africa POPIA</h5>
-                <p class="about-reg-desc">Protection of Personal Information Act compliance.</p>
-              </div>
-              <div class="about-reg-card">
-                <div class="about-reg-badge">TCF</div>
-                <h5 class="about-reg-title">IAB TCF v2.2</h5>
-                <p class="about-reg-desc">Transparency & Consent Framework for ad-tech compliance.</p>
-              </div>
-              <div class="about-reg-card">
-                <div class="about-reg-badge">GCM</div>
-                <h5 class="about-reg-title">Google Consent Mode</h5>
-                <p class="about-reg-desc">v2 integration to preserve your analytics and ad performance.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!--================= Regulations section end =================-->
+        <!--================= DPA Content section end =================-->
 
         <!--================= CTA section start =================-->
         <section class="cta-3 section section-padding-top-bottom overflow-hidden"
@@ -1746,336 +1449,334 @@
           <div class="container">
             <div class="row g-4">
               <div class="cta-3__content">
-                <h2 class="content-title text-anime">Ready to Make Your Website<br>Truly Compliant?</h2>
-                <div class="buttons">
-                  <a href="./sign-up.html" class="saaslyn-4-btn v2">Start Free Trial <i
-                      class="fa-light fa-arrow-right-long"></i></a>
-                  <a href="./pricing.html" class="saaslyn-4-btn">View Pricing <i
-                      class="fa-light fa-arrow-right-long"></i></a>
-                </div>
+                <h2 class="content-title text-anime">Still Can't Find What<br />You're Looking For?</h2>
+                <div class="buttons"><a href="./contact.html" class="saaslyn-4-btn v2">Contact Support <i
+                      class="fa-light fa-arrow-right-long"></i></a><a href="./knowledge-base.html" class="saaslyn-4-btn">Read Our
+                    Knowledge Base <i class="fa-light fa-arrow-right-long"></i></a></div>
                 <div class="features-list">
                   <ul>
-                    <li><i class="fa-light fa-badge-check"></i>No credit card required</li>
-                    <li><i class="fa-light fa-badge-check"></i>Full features included in trial</li>
-                    <li><i class="fa-light fa-badge-check"></i>Setup in under 2 minutes</li>
+                    <li><i class="fa-light fa-badge-check"></i>Average response time under 4 hours</li>
+                    <li><i class="fa-light fa-badge-check"></i>Priority support for Pro & Enterprise</li>
+                    <li><i class="fa-light fa-badge-check"></i>Live chat available Mon-Fri</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <!--================= CTA section end =================-->
-      </main>
-      <!--=================footer section start=================-->
-      <footer class="footer-three section" data-bg-src="./assets/images/footer/footer-three-bg.svg">
-        <style>
-          /* ── Footer – Desktop Layout ── */
-          .footer-three__main .info-area {
-            display: grid !important;
-            grid-template-columns: repeat(4, 1fr) !important;
-            gap: 24px !important;
-          }
+        <!--=================cta section end=================-->
 
-          /* ── Footer – Mobile Layout Fix ── */
-          @media (max-width: 991.98px) {
-            .footer-three__main .info-area {
-              flex-wrap: wrap !important;
-              gap: 24px !important;
-            }
-
-            .footer-three__main .info-area .links-group {
-              min-width: 140px !important;
-              flex: 0 0 auto !important;
-            }
-
-            .footer-three__main .footer-info p {
-              font-size: 14px !important;
-            }
-
-            .footer-three__main .newsletter input {
-              font-size: 14px !important;
-            }
-          }
-
-          @media (max-width: 767.98px) {
-            .footer-three__main .row.g-5 {
-              gap: 30px !important;
-            }
-
+        <!--=================footer section start=================-->
+        <footer class="footer-three section" data-bg-src="./assets/images/footer/footer-three-bg.svg">
+          <style>
+            /* ── Footer – Desktop Layout ── */
             .footer-three__main .info-area {
               display: grid !important;
               grid-template-columns: repeat(4, 1fr) !important;
-              gap: 16px !important;
+              gap: 24px !important;
             }
 
-            .footer-three__main .info-area .links-group {
-              min-width: unset !important;
+            /* ── Footer – Mobile Layout Fix ── */
+            @media (max-width: 991.98px) {
+              .footer-three__main .info-area {
+                flex-wrap: wrap !important;
+                gap: 24px !important;
+              }
+
+              .footer-three__main .info-area .links-group {
+                min-width: 140px !important;
+                flex: 0 0 auto !important;
+              }
+
+              .footer-three__main .footer-info p {
+                font-size: 14px !important;
+              }
+
+              .footer-three__main .newsletter input {
+                font-size: 14px !important;
+              }
             }
 
-            .footer-three__main .info-area .links-group .link-title {
-              font-size: 16px !important;
-              margin-bottom: 10px !important;
+            @media (max-width: 767.98px) {
+              .footer-three__main .row.g-5 {
+                gap: 30px !important;
+              }
+
+              .footer-three__main .info-area {
+                display: grid !important;
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 16px !important;
+              }
+
+              .footer-three__main .info-area .links-group {
+                min-width: unset !important;
+              }
+
+              .footer-three__main .info-area .links-group .link-title {
+                font-size: 16px !important;
+                margin-bottom: 10px !important;
+              }
+
+              .footer-three__main .info-area .links-group .link-list ul li {
+                font-size: 13px !important;
+              }
+
+              .footer-three__main .info-area .links-group .link-list ul li a {
+                font-size: 13px !important;
+              }
+
+              .footer-three__main .footer-info p {
+                font-size: 13px !important;
+                line-height: 1.6 !important;
+              }
+
+              .footer-three__main .footer-logo span {
+                font-size: 18px !important;
+              }
+
+              .footer-crop-logo {
+                overflow: hidden !important;
+              }
+
+              .footer-crop-logo img {
+                max-height: 60px !important;
+                object-fit: contain;
+              }
+
+              .footer-three__bottom {
+                padding: 16px 0 !important;
+              }
+
+              .footer-three__bottom .copyright {
+                font-size: 12px !important;
+              }
+
+              .footer-three__bottom .terms {
+                font-size: 12px !important;
+              }
+
+              .footer-three .section-padding-top {
+                padding-top: 50px !important;
+              }
             }
 
-            .footer-three__main .info-area .links-group .link-list ul li {
-              font-size: 13px !important;
-            }
+            @media (max-width: 480px) {
+              .footer-three__main .info-area {
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 10px !important;
+              }
 
-            .footer-three__main .info-area .links-group .link-list ul li a {
-              font-size: 13px !important;
-            }
+              .footer-three__main .info-area .links-group .link-title {
+                font-size: 15px !important;
+              }
 
-            .footer-three__main .footer-info p {
-              font-size: 13px !important;
-              line-height: 1.6 !important;
-            }
+              .footer-three__main .info-area .links-group .link-list ul li a {
+                font-size: 12.5px !important;
+              }
 
-            .footer-three__main .footer-logo span {
-              font-size: 18px !important;
-            }
+              .footer-three__main .newsletter {
+                flex-direction: column !important;
+              }
 
-            .footer-crop-logo {
-              overflow: hidden !important;
-            }
+              .footer-three__main .newsletter input {
+                font-size: 13px !important;
+                width: 100% !important;
+              }
 
-            .footer-crop-logo img {
-              max-height: 60px !important;
-              object-fit: contain;
-            }
+              .footer-crop-logo img {
+                max-height: 45px !important;
+              }
 
-            .footer-three__bottom {
-              padding: 16px 0 !important;
-            }
+              .footer-three__bottom .copyright {
+                font-size: 11px !important;
+                line-height: 1.5;
+              }
 
-            .footer-three__bottom .copyright {
-              font-size: 12px !important;
+              .footer-three .section-padding-top {
+                padding-top: 40px !important;
+              }
             }
-
-            .footer-three__bottom .terms {
-              font-size: 12px !important;
-            }
-
-            .footer-three .section-padding-top {
-              padding-top: 50px !important;
-            }
-          }
-
-          @media (max-width: 480px) {
-            .footer-three__main .info-area {
-              grid-template-columns: repeat(4, 1fr) !important;
-              gap: 10px !important;
-            }
-
-            .footer-three__main .info-area .links-group .link-title {
-              font-size: 15px !important;
-            }
-
-            .footer-three__main .info-area .links-group .link-list ul li a {
-              font-size: 12.5px !important;
-            }
-
-            .footer-three__main .newsletter {
-              flex-direction: column !important;
-            }
-
-            .footer-three__main .newsletter input {
-              font-size: 13px !important;
-              width: 100% !important;
-            }
-
-            .footer-crop-logo img {
-              max-height: 45px !important;
-            }
-
-            .footer-three__bottom .copyright {
-              font-size: 11px !important;
-              line-height: 1.5;
-            }
-
-            .footer-three .section-padding-top {
-              padding-top: 40px !important;
-            }
-          }
-        </style>
-        <div class="footer-three__main section-padding-top">
-          <div class="container">
-            <div class="row g-5">
-              <div class="col-lg-3">
-                <div class="footer-info"><a href="./index.html" class="footer-logo"
-                    style="display:flex;align-items:center;text-decoration:none;"><img
-                      src="./assets/images/PrivacyCrumbLogo4.svg" alt="Privacy Crumb" class="logo-steady-glow"
-                      style="height:44px;width:auto;" /></a>
-                  <p>Stay up to date with all the recent news and great discounts by simply adding your
-                    email address
-                    to our list. </p>
+          </style>
+          <div class="footer-three__main section-padding-top">
+            <div class="container">
+              <div class="row g-5">
+                <div class="col-lg-3">
+                  <div class="footer-info"><a href="./index.html" class="footer-logo"
+                      style="display:flex;align-items:center;text-decoration:none;"><img
+                        src="./assets/images/PrivacyCrumbLogo4.svg" alt="Privacy Crumb" class="logo-steady-glow"
+                        style="height:44px;width:auto;" /></a>
+                    <p>Stay up to date with all the recent news and great discounts by simply adding your
+                      email address
+                      to our list. </p>
+                  </div>
+                  <form action="./index-3.html" class="newsletter"><input type="email" name="newsletter-email"
+                      id="newsletter-email" placeholder="Newsletter email" required /><button type="submit"><i
+                        class="fa-light fa-arrow-right-long"></i></button></form>
                 </div>
-                <form action="./index-3.html" class="newsletter"><input type="email" name="newsletter-email"
-                    id="newsletter-email" placeholder="Newsletter email" required /><button type="submit"><i
-                      class="fa-light fa-arrow-right-long"></i></button></form>
-              </div>
-              <div class="col-lg-9" style="border-left:2px solid rgba(26,26,46,0.12);padding-left:40px;">
-                <div class="info-area" style="display:grid;grid-template-columns:repeat(4,1fr);gap:30px;">
-                  <style>
-                    .info-area>div>.links-group {
-                      margin-bottom: 28px;
-                    }
+                <div class="col-lg-9" style="border-left:2px solid rgba(26,26,46,0.12);padding-left:40px;">
+                  <div class="info-area" style="display:grid;grid-template-columns:repeat(4,1fr);gap:30px;">
+                    <style>
+                      .info-area>div>.links-group {
+                        margin-bottom: 28px;
+                      }
 
-                    .info-area>div>.links-group:last-child {
-                      margin-bottom: 0;
-                    }
-                  </style>
-                  <!-- Column 1 -->
-                  <div>
-                    <div class="links-group v3">
-                      <h6 class="link-title">PrivacyCrumb</h6>
-                      <div class="link-list">
-                        <ul>
-                          <li><a href="./pricing.html">Pricing</a></li>
-                          <li><a href="./features.html">Features</a></li>
-                          <li><a href="#faq">FAQ</a></li>
-                        </ul>
+                      .info-area>div>.links-group:last-child {
+                        margin-bottom: 0;
+                      }
+                    </style>
+                    <!-- Column 1 -->
+                    <div>
+                      <div class="links-group v3">
+                        <h6 class="link-title">PrivacyCrumb</h6>
+                        <div class="link-list">
+                          <ul>
+                            <li><a href="./pricing.html">Pricing</a></li>
+                            <li><a href="./features.html">Features</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="links-group v3">
+                        <h6 class="link-title">Products</h6>
+                        <div class="link-list">
+                          <ul>
+                            <li><a href="#">Shopify App</a></li>
+                            <li><a href="#">Consent Management Platform</a></li>
+                            <li><a href="#">WordPress Plugin</a></li>
+                            <li><a href="#">Wix App</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="links-group v3">
+                        <h6 class="link-title">Use Cases</h6>
+                        <div class="link-list">
+                          <ul>
+                            <li><a href="./founder-use-caces.html">Founder</a></li>
+                            <li><a href="./developer-use-caces.html">Developer</a></li>
+                            <li><a href="./marketer-use-caces.html">Marketer</a></li>
+                            <li><a href="./agency-use-caces.html">Agency</a></li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
-                    <div class="links-group v3">
-                      <h6 class="link-title">Products</h6>
-                      <div class="link-list">
-                        <ul>
-                          <li><a href="#">Shopify App</a></li>
-                          <li><a href="#">Consent Management Platform</a></li>
-                          <li><a href="#">WordPress Plugin</a></li>
-                          <li><a href="#">Wix App</a></li>
-                        </ul>
+                    <!-- Column 2 -->
+                    <div>
+                      <div class="links-group v3">
+                        <h6 class="link-title">Free Tools ✨</h6>
+                        <div class="link-list">
+                          <ul>
+                            <li><a href="https://app.privacycrumb.com/free/privacy-policy-generator">Privacy Policy
+                                Generator</a></li>
+                            <li><a href="https://app.privacycrumb.com/free/cookie-policy-generator">Cookie Policy
+                                Generator</a></li>
+                            <li><a href="https://app.privacycrumb.com/free-scanner">Cookie Checker</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="links-group v3">
+                        <h6 class="link-title">Compare</h6>
+                        <div class="link-list">
+                          <ul>
+                            <li><a href="#">Cookiebot</a></li>
+                            <li><a href="#">Iubenda</a></li>
+                            <li><a href="#">Complianz</a></li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
-                    <div class="links-group v3">
-                      <h6 class="link-title">Use Cases</h6>
-                      <div class="link-list">
-                        <ul>
-                          <li><a href="./founder-use-caces.html">Founder</a></li>
-                          <li><a href="./developer-use-caces.html">Developer</a></li>
-                          <li><a href="./marketer-use-caces.html">Marketer</a></li>
-                          <li><a href="./agency-use-caces.html">Agency</a></li>
-                        </ul>
+                    <!-- Column 3 -->
+                    <div>
+                      <div class="links-group v3">
+                        <h6 class="link-title">Resources</h6>
+                        <div class="link-list">
+                          <ul>
+                            <li><a href="./knowledge-base.html">Knowledge Base</a></li>
+                            <li><a href="./Infographics.html">Infographics</a></li>
+                            <li><a href="./newsletter.html">Newsletter</a></li>
+                            <li><a href="./about.html">About</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="links-group v3">
+                        <h6 class="link-title">Solutions</h6>
+                        <div class="link-list">
+                          <ul>
+                            <li><a href="#">GDPR EU & UK</a></li>
+                            <li><a href="#">CCPA California</a></li>
+                            <li><a href="#">CPRA California</a></li>
+                            <li><a href="#">IAB TCF v2.2</a></li>
+                            <li><a href="#">Google Consent Mode</a></li>
+                            <li><a href="#">All regulations →</a></li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <!-- Column 2 -->
-                  <div>
-                    <div class="links-group v3">
-                      <h6 class="link-title">Free Tools ✨</h6>
-                      <div class="link-list">
-                        <ul>
-                          <li><a href="https://app.privacycrumb.com/free/privacy-policy-generator">Privacy Policy
-                              Generator</a></li>
-                          <li><a href="https://app.privacycrumb.com/free/cookie-policy-generator">Cookie Policy
-                              Generator</a></li>
-                          <li><a href="https://app.privacycrumb.com/free-scanner">Cookie Checker</a></li>
-                        </ul>
+                    <!-- Column 4 -->
+                    <div>
+                      <div class="links-group v3">
+                        <h6 class="link-title">Partners <span
+                            style="display:inline-block;padding:2px 10px;border-radius:20px;background:linear-gradient(135deg,#6c3ce0,#00c9a7);color:#fff;font-size:11px;font-weight:600;margin-left:6px;vertical-align:middle;">Join
+                            us!</span></h6>
+                        <div class="link-list">
+                          <ul>
+                            <li><a href="#">Agency Partner</a></li>
+                            <li><a href="#">Affiliate Partner</a></li>
+                            <li><a href="#">Strategic Partner</a></li>
+                            <li><a href="#">Partner Directory</a></li>
+                          </ul>
+                        </div>
                       </div>
-                    </div>
-                    <div class="links-group v3">
-                      <h6 class="link-title">Compare</h6>
-                      <div class="link-list">
-                        <ul>
-                          <li><a href="#">Cookiebot</a></li>
-                          <li><a href="#">Iubenda</a></li>
-                          <li><a href="#">Complianz</a></li>
-                        </ul>
+                      <div class="links-group v3">
+                        <h6 class="link-title">Support</h6>
+                        <div class="link-list">
+                          <ul>
+                            <li><a href="help-center.html">Help Center</a></li>
+                            <li><a href="./contact.html">Contact Us</a></li>
+                          </ul>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <!-- Column 3 -->
-                  <div>
-                    <div class="links-group v3">
-                      <h6 class="link-title">Resources</h6>
-                      <div class="link-list">
-                        <ul>
-                          <li><a href="./knowledge-base.html">Knowledge Base</a></li>
-                          <li><a href="./Infographics.html">Infographics</a></li>
-                          <li><a href="./newsletter.html">Newsletter</a></li>
-                          <li><a href="./about.html">About</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="links-group v3">
-                      <h6 class="link-title">Solutions</h6>
-                      <div class="link-list">
-                        <ul>
-                          <li><a href="#">GDPR EU & UK</a></li>
-                          <li><a href="#">CCPA California</a></li>
-                          <li><a href="#">CPRA California</a></li>
-                          <li><a href="#">IAB TCF v2.2</a></li>
-                          <li><a href="#">Google Consent Mode</a></li>
-                          <li><a href="#">All regulations →</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Column 4 -->
-                  <div>
-                    <div class="links-group v3">
-                      <h6 class="link-title">Partners <span
-                          style="display:inline-block;padding:2px 10px;border-radius:20px;background:linear-gradient(135deg,#6c3ce0,#00c9a7);color:#fff;font-size:11px;font-weight:600;margin-left:6px;vertical-align:middle;">Join
-                          us!</span></h6>
-                      <div class="link-list">
-                        <ul>
-                          <li><a href="#">Agency Partner</a></li>
-                          <li><a href="#">Affiliate Partner</a></li>
-                          <li><a href="#">Strategic Partner</a></li>
-                          <li><a href="#">Partner Directory</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="links-group v3">
-                      <h6 class="link-title">Support</h6>
-                      <div class="link-list">
-                        <ul>
-                          <li><a href="help-center.html">Help Center</a></li>
-                          <li><a href="./contact.html">Contact Us</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="links-group v3">
-                      <h6 class="link-title">Legal</h6>
-                      <div class="link-list">
-                        <ul>
-                          <li><a href="./privacypolicy.html">Privacy Policy</a></li>
-                          <li><a href="./cookies-policy.html">Cookie Policy</a></li>
-                          <li><a href="./terms-conditions.html">Terms and Conditions</a></li>
-                          <li><a href="./dpa.html">Data Processing Agreement</a></li>
-                          <li><a href="./accessibility-statement.html">Accessibility Statement</a></li>
-                        </ul>
+                      <div class="links-group v3">
+                        <h6 class="link-title">Legal</h6>
+                        <div class="link-list">
+                          <ul>
+                            <li><a href="./privacypolicy.html">Privacy Policy</a></li>
+                            <li><a href="./cookies-policy.html">Cookie Policy</a></li>
+                            <li><a href="./terms-conditions.html">Terms and Conditions</a></li>
+                            <li><a href="./dpa.html">Data Processing Agreement</a></li>
+                            <li><a href="./accessibility-statement.html">Accessibility Statement</a></li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <div class="footer-crop-logo" style="pointer-events:none;position:relative;z-index:0;
+              <div class="row">
+                <div class="col-12">
+                  <div class="footer-crop-logo" style="pointer-events:none;position:relative;z-index:0;
                   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 100%);
                   mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 100%);">
-                  <img src="./assets/images/footer/footer-3-logo.svg" alt="Privacy Crumb"
-                    style="filter: brightness(0) saturate(100%) invert(12%) sepia(90%) saturate(2500%) hue-rotate(15deg) brightness(90%) contrast(100%);" />
+                    <img src="./assets/images/footer/footer-3-logo.svg" alt="Privacy Crumb"
+                      style="filter: brightness(0) saturate(100%) invert(12%) sepia(90%) saturate(2500%) hue-rotate(15deg) brightness(90%) contrast(100%);" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="footer-three__bottom">
-          <div class="container">
-            <div class="row g-2 align-items-center justify-content-between text-center text-md-start">
-              <div class="col-md-auto">
-                <div class="copyright">Copyright <span class="current-year"></span> <a href="./">Privacy Crumb</a>. all
-                  rights reserved. Terms & Conditions </div>
-              </div>
+          <div class="footer-three__bottom">
+            <div class="container">
+              <div class="row g-2 align-items-center justify-content-between text-center text-md-start">
+                <div class="col-md-auto">
+                  <div class="copyright">Copyright <span class="current-year"></span> <a href="./">Privacy Crumb</a>.
+                    all
+                    rights reserved. Terms & Conditions </div>
+                </div>
 
+              </div>
             </div>
           </div>
-        </div>
-      </footer>
-      <!--=================footer section end=================-->
+        </footer>
+        <!--=================footer section end=================-->
     </div>
   </div>
   <!-- JS Files -->
