@@ -1218,7 +1218,8 @@
         <!--================= Infographics Hero section end =================-->
 
         <!--================= Infographics Grid section start =================-->
-        <section class="section section-padding-bottom">
+        <section class="section section-padding-bottom"
+          style="content-visibility:auto;contain-intrinsic-size:auto 1800px;">
           <style>
             .infographic-grid {
               display: grid;
@@ -1244,13 +1245,15 @@
               border-radius: 12px;
               overflow: hidden;
               margin-top: 70px;
-              box-shadow: 0 4px 20px rgba(108, 60, 224, 0.10), 0 0 30px rgba(108, 60, 224, 0.05);
-              transition: transform 0.3s, box-shadow 0.3s;
+              box-shadow: 0 4px 15px rgba(108, 60, 224, 0.08);
+              transition: transform 0.3s, border-color 0.3s;
+              transform: translateZ(0);
+              will-change: transform;
             }
 
             .info-card:hover {
-              transform: translateY(-4px);
-              box-shadow: 0 8px 30px rgba(108, 60, 224, 0.12);
+              transform: translateY(-4px) translateZ(0);
+              border-color: rgba(108, 60, 224, 0.2);
             }
 
             .info-card-img-wrap {
@@ -1269,6 +1272,7 @@
               max-height: 100%;
               object-fit: contain;
               transition: transform 0.4s ease;
+              transform: translateZ(0);
             }
 
             .info-card:hover .info-card-img-wrap img {
@@ -1631,11 +1635,11 @@
                       margin-bottom: 0;
                     }
                   </style>
-                                        <!-- Column 1 -->
+                  <!-- Column 1 -->
 
-                    <div>
+                  <div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">PrivacyCrumb</h6>
                       <div class="link-list">
                         <ul>
@@ -1646,7 +1650,7 @@
                       </div>
                     </div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Use Cases</h6>
                       <div class="link-list">
                         <ul>
@@ -1658,13 +1662,13 @@
                       </div>
                     </div>
 
-                    </div>
+                  </div>
 
-                    <!-- Column 2 -->
+                  <!-- Column 2 -->
 
-                    <div>
+                  <div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Solutions</h6>
                       <div class="link-list">
                         <ul>
@@ -1678,7 +1682,7 @@
                       </div>
                     </div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Compare</h6>
                       <div class="link-list">
                         <ul>
@@ -1689,13 +1693,13 @@
                       </div>
                     </div>
 
-                    </div>
+                  </div>
 
-                    <!-- Column 3 -->
+                  <!-- Column 3 -->
 
-                    <div>
+                  <div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Resources</h6>
                       <div class="link-list">
                         <ul>
@@ -1707,7 +1711,7 @@
                       </div>
                     </div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Support</h6>
                       <div class="link-list">
                         <ul>
@@ -1717,24 +1721,26 @@
                       </div>
                     </div>
 
-                    </div>
+                  </div>
 
-                    <!-- Column 4 -->
+                  <!-- Column 4 -->
 
-                    <div>
+                  <div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Free Tools &#10024;</h6>
                       <div class="link-list">
                         <ul>
-                          <li><a href="https://app.privacycrumb.com/free/privacy-policy-generator">Privacy Policy Generator</a></li>
-                          <li><a href="https://app.privacycrumb.com/free/cookie-policy-generator">Cookie Policy Generator</a></li>
+                          <li><a href="https://app.privacycrumb.com/free/privacy-policy-generator">Privacy Policy
+                              Generator</a></li>
+                          <li><a href="https://app.privacycrumb.com/free/cookie-policy-generator">Cookie Policy
+                              Generator</a></li>
                           <li><a href="https://app.privacycrumb.com/free-scanner">Cookie Checker</a></li>
                         </ul>
                       </div>
                     </div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Legal</h6>
                       <div class="link-list">
                         <ul>
@@ -1747,8 +1753,10 @@
                       </div>
                     </div>
 
-                      <div class="links-group v3">
-                      <h6 class="link-title">Partners <span style="display:inline-block;padding:2px 10px;border-radius:20px;background:linear-gradient(135deg,#6c3ce0,#00c9a7);color:#fff;font-size:11px;font-weight:600;margin-left:6px;vertical-align:middle;">Join us!</span></h6>
+                    <div class="links-group v3">
+                      <h6 class="link-title">Partners <span
+                          style="display:inline-block;padding:2px 10px;border-radius:20px;background:linear-gradient(135deg,#6c3ce0,#00c9a7);color:#fff;font-size:11px;font-weight:600;margin-left:6px;vertical-align:middle;">Join
+                          us!</span></h6>
                       <div class="link-list">
                         <ul>
                           <li><a href="#">Agency Partner</a></li>
@@ -1759,33 +1767,34 @@
                       </div>
                     </div>
 
-                    </div>
+                  </div>
 
 
 
-<div class="row">
-              <div class="col-12">
-                <div class="footer-crop-logo" style="pointer-events:none;position:relative;z-index:0;
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="footer-crop-logo" style="pointer-events:none;position:relative;z-index:0;
                   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 100%);
                   mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 100%);">
-                  <img src="./assets/images/footer/footer-3-logo.svg" alt="Privacy Crumb"
-                    style="filter: brightness(0) saturate(100%) invert(12%) sepia(90%) saturate(2500%) hue-rotate(15deg) brightness(90%) contrast(100%);" />
+                        <img src="./assets/images/footer/footer-3-logo.svg" alt="Privacy Crumb"
+                          style="filter: brightness(0) saturate(100%) invert(12%) sepia(90%) saturate(2500%) hue-rotate(15deg) brightness(90%) contrast(100%);" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="footer-three__bottom">
-          <div class="container">
-            <div class="row g-2 align-items-center justify-content-between text-center text-md-start">
-              <div class="col-md-auto">
-                <div class="copyright">Copyright <span class="current-year"></span> <a href="./">Privacy Crumb</a>. all
-                  rights reserved. Terms & Conditions </div>
-              </div>
+              <div class="footer-three__bottom">
+                <div class="container">
+                  <div class="row g-2 align-items-center justify-content-between text-center text-md-start">
+                    <div class="col-md-auto">
+                      <div class="copyright">Copyright <span class="current-year"></span> <a href="./">Privacy
+                          Crumb</a>. all
+                        rights reserved. Terms & Conditions </div>
+                    </div>
 
-            </div>
-          </div>
-        </div>
+                  </div>
+                </div>
+              </div>
       </footer>
       <!--=================footer section end=================-->
     </div>
