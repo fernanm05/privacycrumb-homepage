@@ -1224,7 +1224,8 @@
         <!--================= Help Center Hero section end =================-->
 
         <!--================= Help Categories section start =================-->
-        <section class="section section-padding-top-bottom" style="background:#ffffff;">
+        <section class="section section-padding-top-bottom"
+          style="background:#ffffff;content-visibility:auto;contain-intrinsic-size:auto 800px;">
           <style>
             .hc-cat-grid {
               display: grid;
@@ -1250,16 +1251,18 @@
               border-radius: 16px;
               padding: 28px;
               text-align: left;
-              transition: transform 0.3s, box-shadow 0.3s;
-              box-shadow: 0 4px 24px rgba(108, 60, 224, 0.10), 0 0 40px rgba(108, 60, 224, 0.05);
+              transition: transform 0.3s, border-color 0.3s;
+              box-shadow: 0 4px 15px rgba(108, 60, 224, 0.08);
               cursor: pointer;
               text-decoration: none !important;
               display: block;
+              transform: translateZ(0);
+              will-change: transform;
             }
 
             .hc-cat-card:hover {
-              transform: translateY(-6px);
-              box-shadow: 0 12px 40px rgba(108, 60, 224, 0.16), 0 0 60px rgba(108, 60, 224, 0.08);
+              transform: translateY(-6px) translateZ(0);
+              border-color: rgba(108, 60, 224, 0.2);
             }
 
             .hc-cat-icon {
@@ -1361,7 +1364,8 @@
         <!--================= Help Categories section end =================-->
 
         <!--================= Popular Articles section start =================-->
-        <section class="section section-padding-top-bottom" style="background:#f5f5fa;">
+        <section class="section section-padding-top-bottom"
+          style="background:#f5f5fa;content-visibility:auto;contain-intrinsic-size:auto 600px;">
           <style>
             .hc-article-list {
               list-style: none;
@@ -1378,13 +1382,14 @@
               display: flex;
               align-items: center;
               gap: 16px;
-              transition: transform 0.2s, box-shadow 0.2s;
+              transition: transform 0.2s, border-color 0.2s;
               text-decoration: none !important;
+              transform: translateZ(0);
             }
 
             .hc-article-item:hover {
-              transform: translateX(6px);
-              box-shadow: 0 4px 20px rgba(108, 60, 224, 0.10);
+              transform: translateX(6px) translateZ(0);
+              border-color: rgba(108, 60, 224, 0.15);
             }
 
             .hc-article-num {
@@ -1495,7 +1500,8 @@
         <!--================= Popular Articles section end =================-->
 
         <!--================= Quick Actions section start =================-->
-        <section class="section section-padding-top-bottom" style="background:#ffffff;">
+        <section class="section section-padding-top-bottom"
+          style="background:#ffffff;content-visibility:auto;contain-intrinsic-size:auto 500px;">
           <style>
             .hc-action-grid {
               display: grid;
@@ -1514,14 +1520,16 @@
               border-radius: 16px;
               padding: 32px;
               text-align: center;
-              transition: transform 0.3s, box-shadow 0.3s;
+              transition: transform 0.3s, border-color 0.3s;
               border: 1px solid rgba(26, 26, 46, 0.06);
-              box-shadow: 0 4px 24px rgba(108, 60, 224, 0.10), 0 0 40px rgba(108, 60, 224, 0.05);
+              box-shadow: 0 4px 15px rgba(108, 60, 224, 0.08);
+              transform: translateZ(0);
+              will-change: transform;
             }
 
             .hc-action-card:hover {
-              transform: translateY(-6px);
-              box-shadow: 0 12px 40px rgba(108, 60, 224, 0.16), 0 0 60px rgba(108, 60, 224, 0.08);
+              transform: translateY(-6px) translateZ(0);
+              border-color: rgba(108, 60, 224, 0.2);
             }
 
             .hc-action-icon {
@@ -1912,11 +1920,11 @@
                       margin-bottom: 0;
                     }
                   </style>
-                                        <!-- Column 1 -->
+                  <!-- Column 1 -->
 
-                    <div>
+                  <div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">PrivacyCrumb</h6>
                       <div class="link-list">
                         <ul>
@@ -1927,7 +1935,7 @@
                       </div>
                     </div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Use Cases</h6>
                       <div class="link-list">
                         <ul>
@@ -1939,13 +1947,13 @@
                       </div>
                     </div>
 
-                    </div>
+                  </div>
 
-                    <!-- Column 2 -->
+                  <!-- Column 2 -->
 
-                    <div>
+                  <div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Solutions</h6>
                       <div class="link-list">
                         <ul>
@@ -1959,7 +1967,7 @@
                       </div>
                     </div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Compare</h6>
                       <div class="link-list">
                         <ul>
@@ -1970,13 +1978,13 @@
                       </div>
                     </div>
 
-                    </div>
+                  </div>
 
-                    <!-- Column 3 -->
+                  <!-- Column 3 -->
 
-                    <div>
+                  <div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Resources</h6>
                       <div class="link-list">
                         <ul>
@@ -1988,7 +1996,7 @@
                       </div>
                     </div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Support</h6>
                       <div class="link-list">
                         <ul>
@@ -1998,24 +2006,26 @@
                       </div>
                     </div>
 
-                    </div>
+                  </div>
 
-                    <!-- Column 4 -->
+                  <!-- Column 4 -->
 
-                    <div>
+                  <div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Free Tools &#10024;</h6>
                       <div class="link-list">
                         <ul>
-                          <li><a href="https://app.privacycrumb.com/free/privacy-policy-generator">Privacy Policy Generator</a></li>
-                          <li><a href="https://app.privacycrumb.com/free/cookie-policy-generator">Cookie Policy Generator</a></li>
+                          <li><a href="https://app.privacycrumb.com/free/privacy-policy-generator">Privacy Policy
+                              Generator</a></li>
+                          <li><a href="https://app.privacycrumb.com/free/cookie-policy-generator">Cookie Policy
+                              Generator</a></li>
                           <li><a href="https://app.privacycrumb.com/free-scanner">Cookie Checker</a></li>
                         </ul>
                       </div>
                     </div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Legal</h6>
                       <div class="link-list">
                         <ul>
@@ -2028,8 +2038,10 @@
                       </div>
                     </div>
 
-                      <div class="links-group v3">
-                      <h6 class="link-title">Partners <span style="display:inline-block;padding:2px 10px;border-radius:20px;background:linear-gradient(135deg,#6c3ce0,#00c9a7);color:#fff;font-size:11px;font-weight:600;margin-left:6px;vertical-align:middle;">Join us!</span></h6>
+                    <div class="links-group v3">
+                      <h6 class="link-title">Partners <span
+                          style="display:inline-block;padding:2px 10px;border-radius:20px;background:linear-gradient(135deg,#6c3ce0,#00c9a7);color:#fff;font-size:11px;font-weight:600;margin-left:6px;vertical-align:middle;">Join
+                          us!</span></h6>
                       <div class="link-list">
                         <ul>
                           <li><a href="#">Agency Partner</a></li>
@@ -2040,33 +2052,34 @@
                       </div>
                     </div>
 
-                    </div>
+                  </div>
 
 
 
-<div class="row">
-              <div class="col-12">
-                <div class="footer-crop-logo" style="pointer-events:none;position:relative;z-index:0;
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="footer-crop-logo" style="pointer-events:none;position:relative;z-index:0;
                   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 100%);
                   mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 100%);">
-                  <img src="./assets/images/footer/footer-3-logo.svg" alt="Privacy Crumb"
-                    style="filter: brightness(0) saturate(100%) invert(12%) sepia(90%) saturate(2500%) hue-rotate(15deg) brightness(90%) contrast(100%);" />
+                        <img src="./assets/images/footer/footer-3-logo.svg" alt="Privacy Crumb"
+                          style="filter: brightness(0) saturate(100%) invert(12%) sepia(90%) saturate(2500%) hue-rotate(15deg) brightness(90%) contrast(100%);" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="footer-three__bottom">
-          <div class="container">
-            <div class="row g-2 align-items-center justify-content-between text-center text-md-start">
-              <div class="col-md-auto">
-                <div class="copyright">Copyright <span class="current-year"></span> <a href="./">Privacy Crumb</a>. all
-                  rights reserved. Terms & Conditions </div>
-              </div>
+              <div class="footer-three__bottom">
+                <div class="container">
+                  <div class="row g-2 align-items-center justify-content-between text-center text-md-start">
+                    <div class="col-md-auto">
+                      <div class="copyright">Copyright <span class="current-year"></span> <a href="./">Privacy
+                          Crumb</a>. all
+                        rights reserved. Terms & Conditions </div>
+                    </div>
 
-            </div>
-          </div>
-        </div>
+                  </div>
+                </div>
+              </div>
       </footer>
       <!--=================footer section end=================-->
     </div>
