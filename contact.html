@@ -78,16 +78,21 @@
     .header-three.section {
       background: rgba(255, 255, 255, 0.95) !important;
       backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
       position: fixed !important;
       top: 0 !important;
       left: 0 !important;
       right: 0 !important;
       z-index: 999 !important;
+      will-change: transform;
+      transform: translateZ(0);
     }
 
     .fix-menu.sticky {
       background-color: rgba(255, 255, 255, 0.95) !important;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08) !important;
+      will-change: transform;
+      transform: translateZ(0);
     }
 
     .header-one__main-menu nav ul li a {
@@ -739,6 +744,9 @@
       background: rgba(245, 245, 250, 0.95) !important;
       border: 1px solid rgba(26, 26, 46, 0.08) !important;
       backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+      will-change: transform;
+      transform: translateZ(0);
     }
 
     /* ── Fix any remaining white-on-white text ── */

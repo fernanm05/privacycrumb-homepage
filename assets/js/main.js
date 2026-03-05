@@ -11,21 +11,28 @@
   });
   const pinned_header = () => {
     var lastScrollTop = 500;
+    var ticking = false;
 
     windowOn.on("scroll", function () {
-      var currentScrollTop = $(this).scrollTop();
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          var currentScrollTop = $(window).scrollTop();
 
-      if (currentScrollTop > lastScrollTop) {
-        $(".fix-menu").removeClass("sticky");
-        $(".fix-menu").addClass("transformed");
-      } else if ($(this).scrollTop() <= 500) {
-        $(".fix-menu").removeClass("sticky");
-        $(".fix-menu").removeClass("transformed");
-      } else {
-        $(".fix-menu").addClass("sticky");
-        $(".fix-menu").removeClass("transformed");
+          if (currentScrollTop > lastScrollTop) {
+            $(".fix-menu").removeClass("sticky");
+            $(".fix-menu").addClass("transformed");
+          } else if (currentScrollTop <= 500) {
+            $(".fix-menu").removeClass("sticky");
+            $(".fix-menu").removeClass("transformed");
+          } else {
+            $(".fix-menu").addClass("sticky");
+            $(".fix-menu").removeClass("transformed");
+          }
+          lastScrollTop = currentScrollTop;
+          ticking = false;
+        });
+        ticking = true;
       }
-      lastScrollTop = currentScrollTop;
     });
   };
   pinned_header();
@@ -315,11 +322,11 @@
       loop: true,
       grabCursor: true,
       autoplay: {
-        delay: 1,
+        delay: 0,
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
       },
-      speed: 3000,
+      speed: 4000,
       freeMode: true,
     });
   };
@@ -1500,6 +1507,7 @@
         scrollTrigger: {
           trigger: element,
           start: "top 90%",
+          once: true,
         },
         x: 0,
         y: 0,
@@ -1609,7 +1617,8 @@
           trigger: item,
           start: "top bottom",
           end: "bottom top",
-          toggleActions: "play reverse play reverse",
+          toggleActions: "play none none none",
+          once: true,
         },
       });
     });
@@ -1626,7 +1635,8 @@
           trigger: img,
           start: "top bottom",
           end: "bottom top",
-          toggleActions: "play reverse play reverse",
+          toggleActions: "play none none none",
+          once: true,
         },
       });
     });
@@ -1689,7 +1699,8 @@
         animation_settings.scrollTrigger = {
           trigger: item,
           start: "top 85%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
+          once: true,
         };
       }
 

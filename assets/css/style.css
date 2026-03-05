@@ -7781,6 +7781,10 @@ p {
   overflow: hidden;
   background: linear-gradient(135deg, rgba(70, 66, 252, 0.075) 0%, rgba(173, 187, 254, 0.075) 100%);
   backdrop-filter: blur(301.4128417969px);
+  -webkit-backdrop-filter: blur(301.4128417969px);
+  will-change: transform;
+  transform: translateZ(0);
+  contain: layout style paint;
 }
 
 .pricing-3.section .circle-bg {
@@ -7792,10 +7796,12 @@ p {
   filter: blur(301.4128417969px);
   right: -170px;
   top: 50%;
-  -webkit-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%) translateZ(0);
   -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateZ(0);
   z-index: -1;
+  will-change: transform;
+  contain: strict;
 }
 
 .pricing-3__btns {
@@ -7808,8 +7814,10 @@ p {
   border-radius: 48px;
   border: 1px solid rgba(var(--color-white-rgb), 0.08);
   backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   padding: 7px 8px;
   gap: 21px;
+  transform: translateZ(0);
 }
 
 .pricing-3__btns .btn-border {
@@ -7823,11 +7831,9 @@ p {
   padding: 32px;
   border-radius: 52px;
   border: 1px solid rgba(var(--color-white-rgb), 0.11);
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
+  transition: border-color 0.5s ease, background-color 0.5s ease;
+  -webkit-transition: border-color 0.5s ease, background-color 0.5s ease;
+  transform: translateZ(0);
 }
 
 @media only screen and (max-width: 575.98px) {
@@ -7842,15 +7848,15 @@ p {
   border: 1px solid rgba(var(--color-white-rgb), 0.1);
   background: rgba(var(--color-white-rgb), 0.1);
   backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
   padding-inline: 32px;
   padding-block: 20px;
   z-index: 2;
   overflow: hidden;
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
+  transition: background 0.5s ease, border-color 0.5s ease;
+  -webkit-transition: background 0.5s ease, border-color 0.5s ease;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 @media only screen and (max-width: 575.98px) {
@@ -7871,11 +7877,10 @@ p {
   filter: blur(40px);
   top: 90px;
   left: 0;
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
+  transition: opacity 0.5s ease;
+  -webkit-transition: opacity 0.5s ease;
+  will-change: opacity;
+  transform: translateZ(0);
 }
 
 .pricing-3__item .item-header .header-inner {
@@ -9054,11 +9059,9 @@ p {
   background: #0f1313;
   overflow: hidden;
   user-select: none;
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
+  transition: border-color 0.5s ease;
+  -webkit-transition: border-color 0.5s ease;
+  transform: translateZ(0);
 }
 
 .brand-3__item::after {
@@ -9068,15 +9071,15 @@ p {
   opacity: 0.14;
   background: #527af4;
   filter: blur(40px);
+  will-change: transform;
+  transform: translateZ(0);
+  contain: strict;
 }
 
 .brand-3__item img {
   opacity: 0.6;
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
+  transition: opacity 0.5s ease;
+  -webkit-transition: opacity 0.5s ease;
 }
 
 .brand-3__item:hover {
