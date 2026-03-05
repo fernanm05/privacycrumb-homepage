@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -273,6 +273,9 @@
 
     .pricing-3__item .item-header {
       border-color: rgba(26, 26, 46, 0.08) !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(108, 60, 224, 0.06) !important;
     }
 
     .pricing-3__item .item-body .item-features ul li {
@@ -286,10 +289,14 @@
 
     .pricing-3__btns .buttons {
       background: #eef0f6 !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
     }
 
     .pricing-3.section .circle-bg {
-      opacity: 0.3 !important;
+      filter: none !important;
+      background: radial-gradient(circle, rgba(70, 66, 252, 0.12) 0%, rgba(173, 187, 254, 0.06) 40%, transparent 70%) !important;
+      opacity: 0.5 !important;
     }
 
     /* ── Testimonials ── */
@@ -325,11 +332,20 @@
       justify-content: center !important;
       margin: 0 2px !important;
       clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%) !important;
+      transform: translateZ(0);
+      will-change: transform;
     }
 
     /* ── CTA section ── */
     .cta-3.section {
       background: #f0f0fa !important;
+    }
+
+    .cta-3.section .circle-1,
+    .cta-3.section .circle-2 {
+      filter: none !important;
+      background: radial-gradient(circle, rgba(70, 66, 252, 0.08) 0%, transparent 60%) !important;
+      opacity: 0.3 !important;
     }
 
     .cta-3__content h2,
@@ -2057,7 +2073,8 @@
         <!--================= Features section end =================-->
 
         <!--================= Awesome Features section start =================-->
-        <section class="awesome-features section section-padding-top overflow-hidden">
+        <section class="awesome-features section section-padding-top overflow-hidden"
+          style="content-visibility:auto;contain-intrinsic-size:auto 1000px;contain:layout style paint;">
           <style>
             /* ── How It Works – Mobile Fix ── */
             @media (max-width: 991.98px) {
@@ -2775,7 +2792,8 @@
           </div><!-- /container -->
         </section>
         <!--=================Testimonial section start=================-->
-        <section class="testimonial-3 section section-padding-top-bottom overflow-hidden">
+        <section class="testimonial-3 section section-padding-top-bottom overflow-hidden"
+          style="content-visibility:auto;contain-intrinsic-size:auto 500px;">
           <div class="container">
             <div class="row g-2 justify-content-between align-items-end">
               <div class="col-md-6 col-lg-6 col-xl-6">
@@ -3299,7 +3317,8 @@
         </section>
         <!--=================Testimonial section end=================-->
         <!--=================FAQ section start=================-->
-        <section class="faq-3 section section-padding-top-bottom overflow-hidden">
+        <section class="faq-3 section section-padding-top-bottom overflow-hidden"
+          style="content-visibility:auto;contain-intrinsic-size:auto 600px;">
 
           <div class="container">
             <div class="row justify-content-center">
@@ -3411,7 +3430,8 @@
         </section>
         <!--=================FAQ section end=================-->
         <!--=================blog section start=================-->
-        <section class="blog-3 section section-padding-top-bottom overflow-hidden">
+        <section class="blog-3 section section-padding-top-bottom overflow-hidden"
+          style="content-visibility:auto;contain-intrinsic-size:auto 500px;">
           <div class="container">
             <div class="row g-4 gy-5 gy-lg-4 align-items-center">
               <div class="col-md-6 col-lg-4 col-xxl-4 d-flex align-items-center">
@@ -3454,6 +3474,7 @@
         <!--=================blog section end=================-->
         <!--=================cta section start=================-->
         <section class="cta-3 section section-padding-top-bottom overflow-hidden"
+          style="content-visibility:auto;contain-intrinsic-size:auto 400px;"
           data-bg-src="./assets/images/cta/cta-3-dot-bg.svg">
           <style>
             /* ── CTA Features List – Alignment ── */

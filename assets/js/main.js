@@ -1298,7 +1298,7 @@
 
     if (device_width > 767 && smoothWrapper) {
       const smoother = ScrollSmoother.create({
-        smooth: 1.5,
+        smooth: 1,
         effects: device_width < 1025 ? false : true,
         smoothTouch: 0.1,
         normalizeScroll: {
@@ -1470,7 +1470,7 @@
       scrollTrigger: {
         trigger: triggerSelector,
         start: start,
-        toggleActions: "play none none reverse",
+        once: true,
       },
     });
   }
