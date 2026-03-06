@@ -1187,6 +1187,28 @@
     <div id="smooth-content">
       <main>
         <!--================= Banner section start =================-->
+        <style>
+          .banner-three {
+            position: relative;
+          }
+
+          .banner-three::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #ffffff;
+            z-index: 0;
+            pointer-events: none;
+          }
+
+          .banner-three>.container {
+            position: relative;
+            z-index: 1;
+          }
+        </style>
         <section class="banner-three section section-padding-top-bottom"
           data-bg-src="./assets/images/banner/banner-three-bg.png">
 
@@ -1592,7 +1614,7 @@
                         }, 350);
                       }
                     }
-                    tick();
+                    tick()
                   }
                 </script>
               </div>
