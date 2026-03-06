@@ -1,1279 +1,1957 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <meta
-      name="description"
-      content="SaasLyn - A modern, responsive HTML template designed for SaaS, AI, and tech startups. Perfect for showcasing your product, features, and services."
-    />
-    <meta
-      name="keywords"
-      content="SaasLyn, SaaS template, AI startup, tech startup, technology, business, software, HTML5, CSS3, Bootstrap, responsive design, multipurpose, Sakebul Islam"
-    />
-    <meta name="author" content="wprealizer" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <meta
-      property="og:title"
-      content="SaasLyn - SaaS, AI & Tech Startup HTML Template"
-    />
-    <meta
-      property="og:description"
-      content="SaasLyn is a creative and responsive HTML template built for SaaS, AI, and tech startups. Designed with modern aesthetics and performance in mind."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://saaslyn-html.netlify.app" />
-    <meta
-      property="og:image"
-      content="http://saaslyn-html.netlify.app/assets/images/preview.png"
-    />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="SaasLyn - SaaS, AI & Tech Startup HTML Template"
-    />
-    <meta
-      name="twitter:description"
-      content="SaasLyn is a beautifully crafted HTML template for SaaS, AI, and tech startups."
-    />
-    <meta
-      name="twitter:image"
-      content="http://saaslyn-html.netlify.app/assets/images/preview.png"
-    />
-    <meta name="developer" content="Sakebul Islam" />
+  <meta name="description"
+    content="SaasLyn - A modern, responsive HTML template designed for SaaS, AI, and tech startups. Perfect for showcasing your product, features, and services." />
+  <meta name="keywords"
+    content="SaasLyn, SaaS template, AI startup, tech startup, technology, business, software, HTML5, CSS3, Bootstrap, responsive design, multipurpose, Sakebul Islam" />
+  <meta name="author" content="wprealizer" />
 
-    <title>SaasLyn - SaaS, AI & Tech Startup HTML Template</title>
+  <meta property="og:title" content="SaasLyn - SaaS, AI & Tech Startup HTML Template" />
+  <meta property="og:description"
+    content="SaasLyn is a creative and responsive HTML template built for SaaS, AI, and tech startups. Designed with modern aesthetics and performance in mind." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://saaslyn-html.netlify.app" />
+  <meta property="og:image" content="http://saaslyn-html.netlify.app/assets/images/preview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SaasLyn - SaaS, AI & Tech Startup HTML Template" />
+  <meta name="twitter:description"
+    content="SaasLyn is a beautifully crafted HTML template for SaaS, AI, and tech startups." />
+  <meta name="twitter:image" content="http://saaslyn-html.netlify.app/assets/images/preview.png" />
+  <meta name="developer" content="Sakebul Islam" />
 
-    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+  <title>PrivacyCrumb - FAQ</title>
+  <link rel="icon" type="image/png" href="./assets/images/Privacy-new-logo.png">
 
-    <link rel="stylesheet" href="assets/css/plugins.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
+  <link rel="stylesheet" href="assets/css/plugins.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 
-  <body class="home-one">
-    <!-- ================= Scroll to top Start ================= -->
-    <div class="progress-wrap">
-      <svg
-        class="progress-circle svg-content"
-        width="100%"
-        height="100%"
-        viewBox="-1 -1 102 102"
-      >
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
-      </svg>
+  <!-- ====== White Theme Override ====== -->
+  <style>
+    /* ── Root variable overrides ── */
+    :root {
+      --body-color: #ffffff;
+      --body-text-color: #1a1a2e;
+      --bg-color-1: #f5f5fa;
+      --bg-color-2: #ffffff;
+      --bg-color-2-rgb: 255, 255, 255;
+      --bg-color-3: #eef0f6;
+      --text-color-main: #1a1a2e;
+      --text-color-main-rgb: 26, 26, 46;
+      --color-black: #ffffff;
+      --color-black-rgb: 255, 255, 255;
+      --color-black-2: #ffffff;
+      --color-black-2-rgb: 255, 255, 255;
+    }
+
+    /* ── Body & typography ── */
+    .home-three {
+      color: #1a1a2e !important;
+      background: #ffffff !important;
+    }
+
+    .home-three h1,
+    .home-three h2,
+    .home-three h3,
+    .home-three h4,
+    .home-three h5,
+    .home-three h6 {
+      color: #1a1a2e !important;
+    }
+
+    .home-three p {
+      color: #3a3a5c !important;
+      opacity: 0.85 !important;
+    }
+
+    /* ── Preloader ── */
+    .preloader {
+      background-color: #ffffff !important;
+    }
+
+    /* ── Header ── */
+    .header-three.section {
+      background: rgba(255, 255, 255, 0.97) !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 999 !important;
+      will-change: transform;
+      transform: translateZ(0);
+    }
+
+    .fix-menu.sticky {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08) !important;
+      will-change: transform;
+      transform: translateZ(0);
+    }
+
+    .header-one__main-menu nav ul li a {
+      color: #1a1a2e !important;
+    }
+
+    .header-one__main-menu nav ul li a:hover {
+      color: #6c3ce0 !important;
+    }
+
+    .header-one__main-menu nav ul li .sub-menu {
+      background: #ffffff !important;
+      border: 1px solid rgba(0, 0, 0, 0.08) !important;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .header-one__main-menu nav ul li .sub-menu li a {
+      color: #1a1a2e !important;
+    }
+
+    .header-one__main-menu nav ul li .sub-menu li a:hover {
+      color: #6c3ce0 !important;
+      background: rgba(108, 60, 224, 0.06) !important;
+    }
+
+    /* Mega menu items */
+    .nav-item h6 {
+      color: #1a1a2e !important;
+    }
+
+    .saaslyn-5-btn {
+      color: #1a1a2e !important;
+      border-color: rgba(26, 26, 46, 0.2) !important;
+    }
+
+    .saaslyn-5-btn:hover {
+      color: #6c3ce0 !important;
+    }
+
+    .saaslyn-5-btn.v2 {
+      color: #ffffff !important;
+    }
+
+    /* ── Banner section ── */
+    .banner-three.section {
+      background-color: #f0f0fa !important;
+      background-image: none !important;
+      position: relative;
+    }
+
+    .banner-three.section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('./assets/images/banner/banner-three-bg.png') center/cover no-repeat;
+      filter: invert(1) contrast(3);
+      opacity: 140;
+      pointer-events: none;
+      z-index: 0;
+      transform: translateZ(0);
+      will-change: transform;
+    }
+
+    .banner-three.section>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .banner-three__content .section-sub-title {
+      color: #6c3ce0 !important;
+    }
+
+    .banner-three__content p {
+      color: #4a4a6a !important;
+    }
+
+    /* ── Section titles & subtitles ── */
+    .section-header-3 .section-sub-title {
+      color: #6c3ce0 !important;
+    }
+
+    .section-header-3 .section-title {
+      color: #1a1a2e !important;
+    }
+
+    .section-header-3 p {
+      color: #4a4a6a !important;
+    }
+
+    /* ── Process section (icons) ── */
+    .process-3__item .item-icon {
+      background: #f0f0fa !important;
+    }
+
+    .process-3__item .item-title {
+      color: #1a1a2e !important;
+    }
+
+    .process-3__item p {
+      color: #4a4a6a !important;
+    }
+
+    .process__item .item-icon {
+      color: #1a1a2e !important;
+      border: 2px solid #1a1a2e !important;
+      border-radius: 50% !important;
+    }
+
+    .process__item .item-icon svg {
+      color: #1a1a2e !important;
+    }
+
+    .process__item .item-title {
+      color: #1a1a2e !important;
+    }
+
+    .process__item p {
+      color: #4a4a6a !important;
+    }
+
+    /* ── Brand carousel ── */
+    .brand-3.section {
+      background: #ffffff !important;
+    }
+
+    .brand-3__content .brand-title {
+      color: #1a1a2e !important;
+    }
+
+    .brand-3__content .brand-title .line {
+      background: rgba(26, 26, 46, 0.15) !important;
+    }
+
+    .brand-3__item img {
+      opacity: 1 !important;
+    }
+
+    .brand-3__item::after {
+      display: none !important;
+    }
+
+    .brand-3__item {
+      background: #f5f5fa !important;
+      border-color: rgba(26, 26, 46, 0.08) !important;
+    }
+
+    .brand-3__item::after {
+      background: rgba(26, 26, 46, 0.05) !important;
+    }
+
+    /* ── Pricing section ── */
+    .pricing-3.section {
+      background: #f5f5fa !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+    .pricing-3__item {
+      background: #ffffff !important;
+      border-color: rgba(26, 26, 46, 0.1) !important;
+    }
+
+    .pricing-3__item .item-header {
+      border-color: rgba(26, 26, 46, 0.08) !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(108, 60, 224, 0.06) !important;
+    }
+
+    .pricing-3__item .item-body .item-features ul li {
+      color: #3a3a5c !important;
+      border-color: rgba(26, 26, 46, 0.06) !important;
+    }
+
+    .pricing-3__item .item-body .item-features ul li svg path {
+      fill: #6c3ce0 !important;
+    }
+
+    .pricing-3__btns .buttons {
+      background: #eef0f6 !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+    .pricing-3.section .circle-bg {
+      filter: none !important;
+      background: radial-gradient(circle, rgba(70, 66, 252, 0.12) 0%, rgba(173, 187, 254, 0.06) 40%, transparent 70%) !important;
+      opacity: 0.5 !important;
+    }
+
+    /* ── Testimonials ── */
+    .testimonial-3.section {
+      background: #ffffff !important;
+    }
+
+    .testimonial-3__item {
+      background: #f5f5fa !important;
+      border-color: rgba(26, 26, 46, 0.08) !important;
+    }
+
+    .testimonial-3__item .item-content p {
+      color: #3a3a5c !important;
+    }
+
+    .testimonial-3__item .item-content .item-header .author-name {
+      color: #1a1a2e !important;
+    }
+
+    .testimonial-3__item .item-content .item-header .author-designation,
+    .testimonial-3__item .item-content .item-author .author-designation {
+      color: #6a6a8a !important;
+    }
+
+    .testimonial-3__item .item-content .item-header .rating-stars ul li,
+    .testimonial-3__item .item-content .rating-stars ul li {
+      background: rgba(26, 26, 46, 0.25) !important;
+      width: 28px !important;
+      height: 28px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin: 0 2px !important;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%) !important;
+      transform: translateZ(0);
+      will-change: transform;
+    }
+
+    /* ── CTA section ── */
+    .cta-3.section {
+      background: #f0f0fa !important;
+    }
+
+    .cta-3.section .circle-1,
+    .cta-3.section .circle-2 {
+      filter: none !important;
+      background: radial-gradient(circle, rgba(70, 66, 252, 0.08) 0%, transparent 60%) !important;
+      opacity: 0.3 !important;
+    }
+
+    .cta-3__content h2,
+    .cta-3__content h3 {
+      color: #1a1a2e !important;
+    }
+
+    .cta-3__content p {
+      color: #4a4a6a !important;
+    }
+
+    .cta-3__content .features-list ul li {
+      color: #3a3a5c !important;
+    }
+
+    /* ── FAQ section ── */
+    .faq-3.section {
+      background: #ffffff !important;
+    }
+
+    .faq-3__accordion .accordion-item {
+      background: transparent !important;
+      border-color: rgba(26, 26, 46, 0.08) !important;
+    }
+
+    .faq-3__accordion .accordion-item .accordion-header .accordion-button {
+      color: #1a1a2e !important;
+      background: transparent !important;
+    }
+
+    .faq-3__accordion .accordion-item .accordion-body {
+      color: #3a3a5c !important;
+    }
+
+    /* ── Features / Benefits sections ── */
+    .features-3.section {
+      background: #f5f5fa !important;
+    }
+
+    .features-3.section::before {
+      opacity: 0.15 !important;
+    }
+
+    .features-3.section .circle-1,
+    .features-3.section .circle-2 {
+      filter: none !important;
+      background: radial-gradient(circle, rgba(70, 66, 252, 0.1) 0%, transparent 60%) !important;
+      opacity: 0.3 !important;
+    }
+
+    /* ── Footer ── */
+    .footer-three {
+      background: #f5f5fa !important;
+    }
+
+    .footer-three__main {
+      border-top: 1px solid rgba(26, 26, 46, 0.08) !important;
+    }
+
+    .footer-three__main .footer-info p {
+      color: #4a4a6a !important;
+    }
+
+    .footer-three__main .newsletter {
+      border-bottom: 2px solid #1a1a2e !important;
+    }
+
+    .footer-three__main .newsletter input {
+      background: transparent !important;
+      color: #1a1a2e !important;
+      border: none !important;
+      border-radius: 0 !important;
+    }
+
+    .footer-three__main .newsletter input::placeholder {
+      color: #6a6a8a !important;
+    }
+
+    .footer-three__main .newsletter button,
+    .footer-three__main .newsletter button i,
+    .footer-three__main .newsletter button svg,
+    .footer-three__main .newsletter .icon {
+      color: #1a1a2e !important;
+      fill: #1a1a2e !important;
+    }
+
+    .footer-three__main h5,
+    .footer-three__main h6 {
+      color: #1a1a2e !important;
+    }
+
+    .footer-three__main .link-list a {
+      color: #4a4a6a !important;
+    }
+
+    .footer-three__main .link-list a:hover {
+      color: #6c3ce0 !important;
+    }
+
+    .footer-three__bottom {
+      border-top: 1px solid rgba(26, 26, 46, 0.08) !important;
+    }
+
+    .footer-three__bottom p,
+    .footer-three__bottom a {
+      color: #4a4a6a !important;
+    }
+
+    .social-icons-2 ul li a {
+      border-color: rgba(26, 26, 46, 0.15) !important;
+      color: #1a1a2e !important;
+    }
+
+    .social-icons-2 ul li a:hover {
+      background: #6c3ce0 !important;
+      color: #ffffff !important;
+      border-color: #6c3ce0 !important;
+    }
+
+    /* ── Logo: adjust for light bg ── */
+    .logo-steady-glow {
+      filter: none !important;
+    }
+
+    /* ── Buttons keep purple accent ── */
+    .saaslyn-4-btn {
+      color: #ffffff !important;
+    }
+
+    .saaslyn-4-btn.v2 {
+      color: #ffffff !important;
+      border-color: #6c3ce0 !important;
+    }
+
+    .saaslyn-4-btn.v2:hover {
+      color: #ffffff !important;
+    }
+
+    /* ── Scroll progress ── */
+    .progress-wrap {
+      background: rgba(108, 60, 224, 0.15) !important;
+    }
+
+    /* ── Inline scan card ── */
+    .i3-scan-card {
+      background: rgba(245, 245, 250, 0.9) !important;
+    }
+
+    .i3-scan-label {
+      color: #6c3ce0 !important;
+    }
+
+    .i3-scan-input {
+      background: #ffffff !important;
+      color: #1a1a2e !important;
+      border-color: rgba(26, 26, 46, 0.12) !important;
+    }
+
+    .i3-scan-input::placeholder {
+      color: #8a8aaa !important;
+    }
+
+    /* ── Feature cards text ── */
+    .pc-feat-card .pc-feat-title {
+      color: #1a1a2e !important;
+    }
+
+    .pc-feat-card .pc-feat-desc {
+      color: #4a4a6a !important;
+    }
+
+    .pc-feat-card {
+      background: rgba(255, 255, 255, 0.85) !important;
+      border-color: rgba(26, 26, 46, 0.08) !important;
+    }
+
+    /* ── Trust counter section ── */
+    .i3-trust {
+      color: #1a1a2e !important;
+    }
+
+    .i3-trust span {
+      color: #6c3ce0 !important;
+    }
+
+    /* ── Hamburger menu ── */
+    .hamburger-menu span {
+      background: #1a1a2e !important;
+    }
+
+    /* ── Keep geometric/decorative bg shapes visible ── */
+    .banner-three.section .bottom-shape,
+    .banner-three.section .cube-shape,
+    .banner-three.section .bot-shape,
+    .banner-three.section .aichat-shape {
+      opacity: 0.4 !important;
+    }
+
+    /* ── Banner carousel override for light theme ── */
+    .banner-carousel-wrapper .swiper-slide {
+      box-shadow: 0 4px 20px rgba(108, 60, 224, 0.15) !important;
+    }
+
+    .banner-carousel-wrapper .swiper-slide-active {
+      box-shadow: 0 8px 30px rgba(108, 60, 224, 0.2), 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    /* ── Carousel controls ── */
+    .banner-carousel-controls .carousel-arrow {
+      color: #1a1a2e !important;
+      border-color: rgba(26, 26, 46, 0.15) !important;
+    }
+
+    .banner-carousel-controls .carousel-arrow:hover {
+      background: #6c3ce0 !important;
+      color: #ffffff !important;
+    }
+
+    .banner-carousel-controls .swiper-pagination-bullet {
+      background: rgba(26, 26, 46, 0.25) !important;
+    }
+
+    .banner-carousel-controls .swiper-pagination-bullet-active {
+      background: #6c3ce0 !important;
+    }
+
+    /* ── "Compliant in 3 Steps" / Awesome Features ── */
+    .awesome-features.section {
+      background-color: #ffffff !important;
+    }
+
+    .awesome-features__content .divider-line {
+      background: rgba(26, 26, 46, 0.1) !important;
+    }
+
+    .awesome-features__item .item-thumb img {
+      box-shadow: 0 8px 30px rgba(108, 60, 224, 0.2), 0 4px 15px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+    }
+
+    .awesome-features__item .item-content .item-number {
+      color: #ffffff !important;
+    }
+
+    .awesome-features__item .item-content .item-title {
+      color: #1a1a2e !important;
+    }
+
+    .awesome-features__item .item-content p {
+      color: #4a4a6a !important;
+    }
+
+    .awesome-features__item .item-content::before {
+      background: rgba(108, 60, 224, 0.06) !important;
+    }
+
+    /* ── Blog / Latest News section ── */
+    .blog-3.section {
+      background: #f5f5fa !important;
+    }
+
+    .blog-3.section .bg-shape {
+      opacity: 0.15 !important;
+    }
+
+    .blog-3__item {
+      background: transparent !important;
+      border: none !important;
+      margin-top: 30px !important;
+    }
+
+    .blog-3__item .item-thumb {
+      box-shadow: 0 4px 20px rgba(108, 60, 224, 0.12), 0 4px 15px rgba(0, 0, 0, 0.06) !important;
+      border-radius: 15px !important;
+    }
+
+    .blog-3__item .item-content .item-tags span {
+      color: #1a1a2e !important;
+    }
+
+    .blog-3__item .item-content h5,
+    .blog-3__item .item-content h6 {
+      color: #1a1a2e !important;
+    }
+
+    .blog-3__item .item-content p {
+      color: #4a4a6a !important;
+    }
+
+    .blog-3__item .item-content .saaslyn-4-btn {
+      color: #ffffff !important;
+    }
+
+    /* ── Pricing card header fix ── */
+    .pricing-3__item .item-header::before {
+      background: transparent !important;
+    }
+
+    .pricing-3__item .item-header {
+      background: rgba(108, 60, 224, 0.06) !important;
+    }
+
+    .pricing-3__item .item-header .header-inner .header-info .plan-title {
+      color: #1a1a2e !important;
+    }
+
+    .pricing-3__item .item-header .header-inner .header-info .plan-price {
+      color: #1a1a2e !important;
+    }
+
+    .pricing-3__item .item-header .header-inner .header-info .plan-price span {
+      color: #4a4a6a !important;
+    }
+
+    .pricing-3__item .item-header .header-inner .header-info p {
+      color: #4a4a6a !important;
+    }
+
+    .pricing-3__item .item-header .header-inner .icon {
+      background: rgba(108, 60, 224, 0.1) !important;
+      border: 1px solid rgba(108, 60, 224, 0.15) !important;
+      border-radius: 50% !important;
+      width: 50px !important;
+      height: 50px !important;
+      min-width: 50px !important;
+      min-height: 50px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .pricing-3__item .item-header .header-inner .icon i {
+      color: #6c3ce0 !important;
+    }
+
+    .pricing-3__item.active .item-header {
+      background: linear-gradient(135deg, #6c3ce0, #4642fc) !important;
+    }
+
+    .pricing-3__item.active .item-header .header-inner .header-info .plan-title,
+    .pricing-3__item.active .item-header .header-inner .header-info .plan-price,
+    .pricing-3__item.active .item-header .header-inner .header-info .plan-price span,
+    .pricing-3__item.active .item-header .header-inner .header-info p {
+      color: #ffffff !important;
+    }
+
+    .pricing-3__item:hover .item-header .header-inner .header-info .plan-title,
+    .pricing-3__item:hover .item-header .header-inner .header-info .plan-price,
+    .pricing-3__item:hover .item-header .header-inner .header-info .plan-price span,
+    .pricing-3__item:hover .item-header .header-inner .header-info p {
+      color: #ffffff !important;
+    }
+
+    .pricing-3__item:hover .item-header .header-inner .icon,
+    .pricing-3__item.active .item-header .header-inner .icon {
+      background: rgba(255, 255, 255, 0.15) !important;
+    }
+
+    .pricing-3__item:hover .item-header .header-inner .icon i,
+    .pricing-3__item.active .item-header .header-inner .icon i {
+      color: #ffffff !important;
+      background: transparent !important;
+    }
+
+    .pricing-3__item .item-footer .saaslyn-4-btn {
+      color: #ffffff !important;
+    }
+
+    /* ── Hamburger icon → black for white header ── */
+    .hamburger-menu span {
+      background: #1a1a2e !important;
+    }
+
+    .hamburger-menu-close {
+      color: #1a1a2e !important;
+      background-color: transparent !important;
+      background: transparent !important;
+      border: 1px solid rgba(26, 26, 46, 0.2) !important;
+    }
+
+    .hamburger-menu-close i {
+      color: #1a1a2e !important;
+    }
+
+    .header-one__menu-btns .hamburger-menu,
+    .hamburger-menu {
+      background-color: transparent !important;
+      background: transparent !important;
+      border: 1px solid rgba(26, 26, 46, 0.2) !important;
+    }
+
+    /* ── Offcanvas / Sidebar → white theme ── */
+    #offcanvasRight {
+      background: #ffffff !important;
+      color: #1a1a2e !important;
+    }
+
+    #offcanvasRight h4,
+    #offcanvasRight h5,
+    #offcanvasRight h6 {
+      color: #1a1a2e !important;
+    }
+
+    #offcanvasRight p,
+    #offcanvasRight .info,
+    #offcanvasRight a {
+      color: #4a4a6a !important;
+    }
+
+    #offcanvasRight .saaslyn-5-btn:not(.v2) {
+      color: #1a1a2e !important;
+    }
+
+    #offcanvasRight .saaslyn-5-btn.v2 {
+      color: #ffffff !important;
+    }
+
+    #offcanvasRight .header-one__menu-btns .divider {
+      background: rgba(26, 26, 46, 0.2) !important;
+      width: 2px !important;
+      height: 30px !important;
+      display: block !important;
+    }
+
+    #offcanvasRight .header-one__menu-btns .buttons {
+      justify-content: center !important;
+    }
+
+    /* ── CTA section decorative shapes ── */
+    .cta-3.section .circle-1,
+    .cta-3.section .circle-2,
+    .cta-3.section .box-1,
+    .cta-3.section .box-2 {
+      opacity: 0.3 !important;
+    }
+
+    /* ── Inline dark bg overrides for feature cards in HTML ── */
+    .pc-feat-card {
+      background: rgba(245, 245, 250, 0.97) !important;
+      border: 1px solid rgba(26, 26, 46, 0.08) !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      transform: translateZ(0);
+    }
+
+    /* ── Fix any remaining white-on-white text ── */
+    .home-three a {
+      color: inherit;
+    }
+
+    .section-sub-title {
+      color: #6c3ce0 !important;
+    }
+
+    @media only screen and (max-width: 991.98px) {
+      .pricing-3__item .item-header .header-inner .icon {
+        width: 60px;
+        height: 50px;
+      }
+    }
+  </style>
+
+  <script src="https://app.privacycrumb.com/policy.js?key=pc_master_key_1337"></script>
+</head>
+
+<body class="home-three">
+  <!-- ================= Preloader Start ================= -->
+  <div class="preloader">
+    <div class="loading-container">
+      <div class="loading"></div>
+      <div id="loading-icon">
+        <img src="./assets/images/Privacy-new-logo.png" alt="PrivacyCrumb" style="width:40px;height:40px;" />
+      </div>
     </div>
-    <!-- ================= Scroll to top End ================= -->
+  </div>
+  <!-- ================= Preloader Start ================= -->
+  <!-- ================= Scroll to top Start ================= -->
+  <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+    </svg>
+  </div>
+  <!-- ================= Scroll to top End ================= -->
 
-    <!-- ================= Header Section area Start ================= -->
-    <header class="header-one section">
-      <div class="fix-menu">
-        <div class="container">
-          <div class="header-one__main">
-            <a class="header-one__logo" href="./index.html">
-              <img src="./assets/images/logo.svg" alt="logo" />
-            </a>
-            <div class="header-one__main-menu menu-right">
-              <nav class="circle">
-                <ul>
-                  <li class="has-child-menu-mega-menu active">
-                    <a href="javascript:void(0)">Demo</a>
-                    <div class="sub-nav">
-                      <div class="container">
-                        <div class="row g-4">
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-1.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">CRM Software</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index.html"
-                              ></a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-2.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">Finance Apps</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index-2.html"
-                              ></a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-3.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">AI Chatbot</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index-3.html"
-                              ></a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-4.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">AI Agency</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index-4.html"
-                              ></a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-5.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">AI Image Generator</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index-5.html"
-                              ></a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-6.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">AI Image Generator 2</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index-6.html"
-                              ></a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-7.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">AI Image Generator 3</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index-7.html"
-                              ></a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-8.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">Photostock</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index-8.html"
-                              ></a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-9.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">Ai Customer Service</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index-9.html"
-                              ></a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-10.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">Ai Content Generator</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index-10.html"
-                              ></a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-11.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">Corporate Agency</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index-11.html"
-                              ></a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-12.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">Sass Application</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index-12.html"
-                              ></a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-13.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">AI Consultant</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index-13.html"
-                              ></a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-14.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">SEO Strategies</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index-14.html"
-                              ></a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-15.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">Mobile Apps</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index-15.html"
-                              ></a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-16.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">Finance Apps 2</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index-16.html"
-                              ></a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-17.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">AI Apps</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index-17.html"
-                              ></a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-18.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">Digital Marketing</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index-18.html"
-                              ></a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-19.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">Seo Marketing</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index-19.html"
-                              ></a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-20.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">Business Consultancy</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index-20.html"
-                              ></a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3">
-                            <div class="nav-item text-center position-relative">
-                              <div
-                                class="nav-item-img overflow-hidden position-relative"
-                              >
-                                <img
-                                  class="w-100"
-                                  src="assets/images/new-images-v2/menu-mega-21.png"
-                                  alt=""
-                                />
-                              </div>
-                              <h6 class="mt-3">Finance Consultancy</h6>
-                              <a
-                                class="position-absolute h-100 w-100 start-0 top-0 z-index-one"
-                                href="index-21.html"
-                              ></a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <a href="./about.html"> About </a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">Pages</a>
-                    <ul class="sub-menu">
-                      <li>
-                        <a href="./about.html"> About </a>
-                      </li>
-
-                      <li>
-                        <a href="./features.html">Features</a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)">
-                          Service
-                          <i class="fa-regular fa-angle-down"></i>
-                        </a>
-                        <ul class="sub-menu">
-                          <li>
-                            <a href="./service.html">Service</a>
-                          </li>
-                          <li>
-                            <a href="./service-details.html">Service Details</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)">
-                          Team
-                          <i class="fa-regular fa-angle-down"></i>
-                        </a>
-                        <ul class="sub-menu">
-                          <li><a href="./team.html">Team</a></li>
-                          <li>
-                            <a href="./team-details.html">Team Details</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="./pricing.html">Pricing</a>
-                      </li>
-                      <li>
-                        <a href="./faq.html">FAQ</a>
-                      </li>
-                      <li>
-                        <a href="./login.html">Login</a>
-                      </li>
-                      <li>
-                        <a href="./sign-up.html">Sign Up</a>
-                      </li>
-                      <li>
-                        <a href="./terms-condition.html">Terms Condition</a>
-                      </li>
-                      <li>
-                        <a href="./privacy-policy.html">Privacy Policy</a>
-                      </li>
-                      <li>
-                        <a href="./404.html">Error 404</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">Blogs</a>
-                    <ul class="sub-menu">
-                      <li>
-                        <a href="./blog.html">Blog</a>
-                      </li>
-                      <li>
-                        <a href="./blog-standard.html">Blog Standard</a>
-                      </li>
-                      <li>
-                        <a href="./blog-details.html">Blog Details</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="./contact.html">Contact</a>
-                  </li>
-                </ul>
-              </nav>
-              <div class="header-one__menu-btns">
-                <div class="buttons">
-                  <a href="./contact.html" class="saaslyn-2-btn"
-                    >Try for free</a
-                  >
-                  <a href="./login.html" class="saaslyn-1-btn v2">Login</a>
-                </div>
-                <button
-                  class="hamburger-menu"
-                  type="button"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvasRight"
-                  aria-controls="offcanvasRight"
-                >
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </button>
-              </div>
+  <!-- ================= Header Section Start ================= -->
+  <style>
+    .logo-steady-glow {
+      filter: brightness(1.6) contrast(1.1);
+    }
+  </style>
+  <header class="header-three section">
+    <div class="fix-menu">
+      <div class="container">
+        <div class="header-one__main">
+          <a class="header-one__logo" href="./index.html" style="display:flex;align-items:center;text-decoration:none;">
+            <img src="./assets/images/PrivacyCrumbLogo4.svg" alt="Privacy Crumb" class="logo-steady-glow"
+              style="height:30px;width:auto;" />
+          </a>
+          <div class="header-one__main-menu v3" style="margin-right:90px;">
+            <nav class="circle">
+              <ul>
+                <li>
+                  <a href="./features.html">Features</a>
+                </li>
+                <li>
+                  <a href="./pricing.html"> Pricing </a>
+                </li>
+                <li class="has-child-menu">
+                  <a href="javascript:void(0)">Solutions</a>
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="./gdpr.html">GDPR EU & UK</a>
+                    </li>
+                    <li>
+                      <a href="./ccpa.html">CCPA California</a>
+                    </li>
+                    <li>
+                      <a href="./cpra.html">CPRA California</a>
+                    </li>
+                    <li>
+                      <a href="./iab-tcf.html">IAB TCF v2.2</a>
+                    </li>
+                    <li>
+                      <a href="./google-consent-mode.html">Google Consent Mode</a>
+                    </li>
+                    <li>
+                      <a href="./regulations.html">All regulations →</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="has-child-menu">
+                  <a href="javascript:void(0)">Resources</a>
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="./knowledge-base.html">Knowledge Base</a>
+                    </li>
+                    <li>
+                      <a href="./infographics.html">Infographics</a>
+                    </li>
+                    <li>
+                      <a href="./newsletter.html">Newsletter</a>
+                    </li>
+                    <li>
+                      <a href="./about.html">About</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="has-child-menu">
+                  <a href="javascript:void(0)">Support</a>
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="./help-center.html">Help Center</a>
+                    </li>
+                    <li>
+                      <a href="./contact.html">Contact Us</a>
+                    </li>
+                    <li>
+                      <a href="./faq.html">FAQ</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header-one__menu-btns">
+            <div class="buttons">
+              <a href="./login.html" class="saaslyn-5-btn">Login</a>
+              <div class="divider"></div>
+              <a href="./sign-up.html" class="saaslyn-5-btn v2">Sign Up</a>
             </div>
+            <button class="hamburger-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
           </div>
         </div>
       </div>
-    </header>
-    <!-- ================= Header Section area End ================= -->
+    </div>
+  </header>
+  <!-- ================= Header Section End ================= -->
 
-    <!-- ================= Sidebar area start here ================= -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title">
-          <a class="header__logo" href="./index.html">
-            <img src="./assets/images/logo.svg" alt="logo" />
-          </a>
-        </h5>
-        <button
-          type="button"
-          class="hamburger-menu-close"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        >
-          <i class="fa-duotone fa-regular fa-xmark"></i>
-        </button>
-      </div>
-      <div class="offcanvas-menu">
-        <!-- Start Mobile Menu -->
-        <nav>
-          <ul class="saaslyn__nav-list">
-            <li class="saaslyn__nav-item">
-              <a href="#" class="saaslyn__nav-link" onclick="return false;">
-                Demo
-                <span class="saaslyn__toggle-btn"></span>
-              </a>
-              <ul class="saaslyn__submenu">
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index.html"
-                    >CRM Software</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index-2.html"
-                    >Finance Apps</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index-3.html"
-                    >AI Chatbot</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index-4.html"
-                    >AI Agency</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index-5.html"
-                    >AI Image Generator</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index-6.html"
-                    >AI Image Generator 2</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index-7.html"
-                    >AI Image Generator 3</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index-8.html"
-                    >Photostock</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index-9.html"
-                    >AI Customer Service</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index-10.html"
-                    >AI Content Generator</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index-11.html"
-                    >Corporate Agency</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index-12.html"
-                    >Sass Application</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index-13.html"
-                    >AI Consultant</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index-14.html"
-                    >SEO Strategies</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index-15.html"
-                    >Mobile Apps</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index-16.html"
-                    >Finance Apps 2</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index-17.html"
-                    >AI Apps</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index-18.html"
-                    >Digital Marketing</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index-19.html"
-                    >Seo Marketing</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index-20.html"
-                    >Business Consultancy</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./index-21.html"
-                    >Finance Consultancy</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li class="saaslyn__nav-item">
-              <a class="saaslyn__nav-link" href="./about.html">About</a>
-            </li>
-            <li class="saaslyn__nav-item">
-              <a href="#" class="saaslyn__nav-link" onclick="return false;">
-                Pages
-                <span class="saaslyn__toggle-btn"></span>
-              </a>
-              <ul class="saaslyn__submenu">
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./about.html">About</a>
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./features.html"
-                    >Features</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a href="#" class="saaslyn__nav-link" onclick="return false;">
-                    Services
-                    <span class="saaslyn__toggle-btn"></span>
-                  </a>
-                  <ul class="saaslyn__submenu">
-                    <li class="saaslyn__submenu-item">
-                      <a class="saaslyn__nav-link" href="./service.html"
-                        >Services</a
-                      >
-                    </li>
-                    <li class="saaslyn__submenu-item">
-                      <a class="saaslyn__nav-link" href="./service-details.html"
-                        >Service Details</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a href="#" class="saaslyn__nav-link" onclick="return false;">
-                    Team
-                    <span class="saaslyn__toggle-btn"></span>
-                  </a>
-                  <ul class="saaslyn__submenu">
-                    <li class="saaslyn__submenu-item">
-                      <a class="saaslyn__nav-link" href="./team.html">Team</a>
-                    </li>
-                    <li class="saaslyn__submenu-item">
-                      <a class="saaslyn__nav-link" href="./team-details.html"
-                        >Team Details</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./pricing.html">Pricing</a>
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./faq.html">FAQ</a>
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./login.html">Login</a>
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./sign-up.html">Sign Up</a>
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./terms-condition.html"
-                    >Terms & Condition</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./privacy-policy.html"
-                    >Privacy Policy.html</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./404.html">Error 404</a>
-                </li>
-              </ul>
-            </li>
+  <!-- ================= Sidebar area start here ================= -->
+  <style>
+    /* ── Sidebar accent color → violet ── */
+    #offcanvasRight,
+    .offcanvas.offcanvas-end {
+      border-left-color: rgba(108, 60, 224, 0.2) !important;
+      background: #ffffff !important;
+    }
 
-            <li class="saaslyn__nav-item">
-              <a href="#" class="saaslyn__nav-link" onclick="return false;">
-                Blogs
-                <span class="saaslyn__toggle-btn"></span>
-              </a>
-              <ul class="saaslyn__submenu">
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./blog.html">Blog</a>
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./blog-standard.html"
-                    >Blog Standard</a
-                  >
-                </li>
-                <li class="saaslyn__submenu-item">
-                  <a class="saaslyn__nav-link" href="./blog-details.html"
-                    >Blog Details</a
-                  >
-                </li>
-              </ul>
-            </li>
+    #offcanvasRight::before,
+    .offcanvas.offcanvas-end::before {
+      background: rgba(108, 60, 224, 0.05) !important;
+      background-color: rgba(108, 60, 224, 0.05) !important;
+    }
 
-            <li class="saaslyn__nav-item">
-              <a class="saaslyn__nav-link" href="./contact.html">Contact</a>
-            </li>
-          </ul>
-        </nav>
-        <!-- End Mobile Menu -->
-      </div>
-      <div class="offcanvas-body">
-        <p class="info">
-          SaasLyn is a modern and responsive HTML template built for SaaS, AI,
-          and tech startups. It helps you showcase your products, features, and
-          services with a sleek design and cutting-edge performance.
-        </p>
-        <div class="offcanvas-img">
-          <img
-            src="./assets/images/sideber/sideber.webp"
-            alt="sideber-img"
-            class="w-100"
-          />
-        </div>
+    #offcanvasRight .offcanvas-menu nav ul li a,
+    .offcanvas-menu .saaslyn__nav-list .saaslyn__nav-item .saaslyn__nav-link {
+      color: #1a1a2e !important;
+    }
 
-        <div class="contact-area">
-          <h4 class="title">Contact Info</h4>
-          <ul>
-            <li class="d-flex align-items-center">
-              <div class="icon">
-                <i class="fal fa-map-marker-alt"></i>
-              </div>
-              <div class="text">
-                <a target="_blank" href="#"
-                  >Main Street, Melbourne, Australia</a
-                >
-              </div>
-            </li>
-            <li class="d-flex align-items-center">
-              <div class="icon">
-                <i class="fal fa-envelope"></i>
-              </div>
-              <div class="text">
-                <a href="mailto:info@example.com"
-                  ><span class="mailto:info@example.com"
-                    >info@example.com</span
-                  ></a
-                >
-              </div>
-            </li>
-            <li class="d-flex align-items-center">
-              <div class="icon">
-                <i class="fal fa-clock"></i>
-              </div>
-              <div class="text">
-                <a target="_blank" href="#">Mod-friday, 09am -05pm</a>
-              </div>
-            </li>
-            <li class="d-flex align-items-center">
-              <div class="icon">
-                <i class="far fa-phone"></i>
-              </div>
-              <div class="text">
-                <a href="tel:+11002345909">+11002345909</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="social-area">
-          <h4 class="title">Social Share</h4>
-          <div class="social-icons v2">
-            <ul>
-              <li>
-                <a href="#">
-                  <i class="fa-brands fa-facebook-f"></i>
-                </a>
+    #offcanvasRight .offcanvas-menu nav ul li a::before,
+    .offcanvas-menu .saaslyn__nav-list .saaslyn__nav-item .saaslyn__nav-link::before {
+      background: #6c3ce0 !important;
+    }
+
+    /* Override any accent bar */
+    .offcanvas::after,
+    #offcanvasRight::after {
+      background: rgba(108, 60, 224, 0.1) !important;
+      background-color: rgba(108, 60, 224, 0.1) !important;
+    }
+
+    /* Contact Info icons → purple */
+    #offcanvasRight .contact-area .icon i,
+    .offcanvas .contact-area .icon i {
+      color: #6c3ce0 !important;
+    }
+
+    /* Social Share icons */
+    #offcanvasRight .social-icons ul li a,
+    .offcanvas .social-icons ul li a {
+      border-color: rgba(108, 60, 224, 0.3) !important;
+      color: #1a1a2e !important;
+    }
+
+    #offcanvasRight .social-icons ul li a:hover,
+    .offcanvas .social-icons ul li a:hover {
+      background: #6c3ce0 !important;
+      border-color: #6c3ce0 !important;
+      color: #fff !important;
+    }
+
+    /* Contact Info – proper alignment */
+    #offcanvasRight .contact-area ul li {
+      display: flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+      padding: 8px 0 !important;
+    }
+
+    #offcanvasRight .contact-area ul li .icon {
+      width: 24px !important;
+      min-width: 24px !important;
+      text-align: center !important;
+      flex-shrink: 0 !important;
+    }
+
+    #offcanvasRight .contact-area ul li .icon i {
+      font-size: 16px !important;
+    }
+
+    #offcanvasRight .contact-area ul li .text {
+      flex: 1 !important;
+    }
+
+    #offcanvasRight .contact-area ul li .text a {
+      font-size: 14px !important;
+      line-height: 1.4 !important;
+    }
+  </style>
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">
+        <a class="header__logo" href="./index.html" style="display:flex;align-items:center;text-decoration:none;">
+          <img src="./assets/images/PrivacyCrumbLogo4.svg" alt="Privacy Crumb" class="logo-steady-glow"
+            style="height:36px;width:auto;" />
+        </a>
+      </h5>
+      <button type="button" class="hamburger-menu-close" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="fa-duotone fa-regular fa-xmark"></i>
+      </button>
+    </div>
+    <div class="offcanvas-menu">
+      <!-- Start Mobile Menu -->
+      <nav>
+        <ul class="saaslyn__nav-list">
+          <li class="saaslyn__nav-item">
+            <a class="saaslyn__nav-link" href="./features.html">Features</a>
+          </li>
+          <li class="saaslyn__nav-item">
+            <a class="saaslyn__nav-link" href="./pricing.html">Pricing</a>
+          </li>
+          <li class="saaslyn__nav-item">
+            <a href="#" class="saaslyn__nav-link" onclick="return false;">
+              Solutions
+              <span class="saaslyn__toggle-btn"></span>
+            </a>
+            <ul class="saaslyn__submenu">
+              <li class="saaslyn__submenu-item">
+                <a class="saaslyn__nav-link" href="./gdpr.html">GDPR EU & UK</a>
               </li>
-              <li>
-                <a href="#">
-                  <i class="fa-brands fa-instagram"></i>
-                </a>
+              <li class="saaslyn__submenu-item">
+                <a class="saaslyn__nav-link" href="./ccpa.html">CCPA California</a>
               </li>
-              <li>
-                <a href="#">
-                  <i class="fa-brands fa-linkedin-in"></i>
-                </a>
+              <li class="saaslyn__submenu-item">
+                <a class="saaslyn__nav-link" href="./cpra.html">CPRA California</a>
               </li>
-              <li>
-                <a href="#">
-                  <i class="fa-brands fa-dribbble"></i>
-                </a>
+              <li class="saaslyn__submenu-item">
+                <a class="saaslyn__nav-link" href="./iab-tcf.html">IAB TCF v2.2</a>
+              </li>
+              <li class="saaslyn__submenu-item">
+                <a class="saaslyn__nav-link" href="./google-consent-mode.html">Google Consent Mode</a>
+              </li>
+              <li class="saaslyn__submenu-item">
+                <a class="saaslyn__nav-link" href="./regulations.html">All regulations →</a>
               </li>
             </ul>
-          </div>
-        </div>
-        <div class="saaslyn__mobile-menu-copyright">
-          <p class="saaslyn__mobile-menu-copyright-text">
-            © <span class="current-year"></span> <a href="./">SaasLyn</a> . All
-            Rights Reserved.
-          </p>
+          </li>
+
+          <li class="saaslyn__nav-item">
+            <a href="#" class="saaslyn__nav-link" onclick="return false;">
+              Resources
+              <span class="saaslyn__toggle-btn"></span>
+            </a>
+            <ul class="saaslyn__submenu">
+              <li class="saaslyn__submenu-item">
+                <a class="saaslyn__nav-link" href="./knowledge-base.html">Knowledge Base</a>
+              </li>
+              <li class="saaslyn__submenu-item">
+                <a class="saaslyn__nav-link" href="./infographics.html">Infographics</a>
+              </li>
+              <li class="saaslyn__submenu-item">
+                <a class="saaslyn__nav-link" href="./newsletter.html">Newsletter</a>
+              </li>
+              <li class="saaslyn__submenu-item">
+                <a class="saaslyn__nav-link" href="./about.html">About</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="saaslyn__nav-item">
+            <a href="#" class="saaslyn__nav-link" onclick="return false;">
+              Support
+              <span class="saaslyn__toggle-btn"></span>
+            </a>
+            <ul class="saaslyn__submenu">
+              <li class="saaslyn__submenu-item">
+                <a class="saaslyn__nav-link" href="./help-center.html">Help Center</a>
+              </li>
+              <li class="saaslyn__submenu-item">
+                <a class="saaslyn__nav-link" href="./contact.html">Contact Us</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- End Mobile Menu -->
+      <!-- Mobile Login/Signup Buttons -->
+      <div class="header-one__menu-btns"
+        style="padding:20px 80px 0;border-top:1px solid rgba(26,26,46,0.08);margin-top:16px;">
+        <div class="buttons" style="display:flex;align-items:center;justify-content:center;gap:8px;">
+          <a href="./login.html" class="saaslyn-5-btn">Login</a>
+          <div class="divider"></div>
+          <a href="./sign-up.html" class="saaslyn-5-btn v2">Sign Up</a>
         </div>
       </div>
     </div>
-    <!-- ================= Sidebar area end here ================= -->
+    <div class="offcanvas-body">
+      <p class="info">
+        PrivacyCrumb is an all-in-one cookie compliance platform that helps businesses stay GDPR, CCPA, and LGPD
+        compliant. From automated cookie scanning to policy generation, we make privacy simple.
+      </p>
+      <div class="offcanvas-img">
+        <img src="./assets/images/sideber/sideber.png" alt="PrivacyCrumb" class="w-100" />
+      </div>
 
-    <div id="smooth-wrapper">
-      <div id="smooth-content">
-        <main>
-          <!-- ================= Breadcrumb Section area Start ================= -->
-          <section class="breadcrumb-area section">
-            <div
-              class="breadcrumb-area__wrapper"
-              data-bg-src="./assets/images/breadcrumb/breadcrumb-bg.png"
-            >
-              <div class="container">
-                <div class="row">
-                  <div class="col-12">
-                    <div class="breadcrumb-area__content">
-                      <h1 class="breadcrumb-title text-anime">FAQ</h1>
-                      <nav class="breadcrumb-nav" aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                          <li class="breadcrumb-item">
-                            <a href="/index.html">Home</a>
-                          </li>
-                          <li
-                            class="breadcrumb-item active"
-                            aria-current="page"
-                          >
-                            Faq
-                          </li>
-                        </ol>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      <div class="contact-area">
+        <h4 class="title">Contact Info</h4>
+        <ul>
+          <li class="d-flex align-items-center">
+            <div class="icon">
+              <i class="fal fa-map-marker-alt"></i>
             </div>
-          </section>
-          <!-- ================= Breadcrumb Section area End ================= -->
+            <div class="text">
+              <a target="_blank" href="#">Main Street, DaanLungsod, Tuburan</a>
+            </div>
+          </li>
+          <li class="d-flex align-items-center">
+            <div class="icon">
+              <i class="fal fa-envelope"></i>
+            </div>
+            <div class="text">
+              <a href="mailto:privacy@gmail.com"><span class="mailto:privacy@gmail.com">privacy@gmail.com</span></a>
+            </div>
+          </li>
+          <li class="d-flex align-items-center">
+            <div class="icon">
+              <i class="fal fa-clock"></i>
+            </div>
+            <div class="text">
+              <a target="_blank" href="#">Mon-friday, 08am - 05pm</a>
+            </div>
+          </li>
+          <li class="d-flex align-items-center">
+            <div class="icon">
+              <i class="far fa-phone"></i>
+            </div>
+            <div class="text">
+              <a href="tel:+11002345909">+11002345909</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="social-area">
+        <h4 class="title">Social Share</h4>
+        <div class="social-icons v2">
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/">
+                <i class="fa-brands fa-facebook-f" style="color:#000;"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/">
+                <i class="fa-brands fa-instagram" style="color:#000;"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/">
+                <i class="fa-brands fa-linkedin-in" style="color:#000;"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-youtube" style="color:#000;"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="saaslyn__mobile-menu-copyright">
+        <p class="saaslyn__mobile-menu-copyright-text">
+          © <span class="current-year"></span> <a href="./">Privacy Crumb</a> . All
+          Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- ================= Sidebar area end here ================= -->
 
-          <!-- ================= FAQ Section area Start ================= -->
-          <section class="faq section section-padding-top-bottom">
-            <div class="container">
-              <div class="row g-3 justify-content-between align-items-end">
-                <div class="col-md-6 col-lg-5">
-                  <div class="section-header">
-                    <span class="section-sub-title">FAQ</span>
-                    <h2 class="section-title text-start text-anime">
-                      Frequently Asked Questions
-                    </h2>
-                  </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                  <div class="section-header">
-                    <p>
-                      Explore answers to commonly asked questions in Outgrid’s
-                      comprehensive FAQ section.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="row row-padding-top">
-                <div class="col-lg-12">
-                  <div class="faq__accordion accordion" id="faqExample">
-                    <div class="accordion-item">
-                      <h6 class="accordion-header">
-                        <button
-                          class="accordion-button"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseOne"
-                          aria-expanded="true"
-                          aria-controls="collapseOne"
-                        >
-                          How do I create a ticket in Outgrid?
-                        </button>
-                      </h6>
-                      <div
-                        id="collapseOne"
-                        class="accordion-collapse collapse show"
-                        data-bs-parent="#faqExample"
-                      >
-                        <div class="accordion-body">
-                          It is a long established fact that a reader will be
-                          distracted by the readable content of a page when
-                          looking at its layout. The point of using is that it
-                          has a more or less normal it look like readable
-                          English.
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item">
-                      <h6 class="accordion-header">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseTwo"
-                          aria-expanded="false"
-                          aria-controls="collapseTwo"
-                        >
-                          What channels does Outgrid support for customer
-                          queries?
-                        </button>
-                      </h6>
-                      <div
-                        id="collapseTwo"
-                        class="accordion-collapse collapse"
-                        data-bs-parent="#faqExample"
-                      >
-                        <div class="accordion-body">
-                          It is a long established fact that a reader will be
-                          distracted by the readable content of a page when
-                          looking at its layout. The point of using is that it
-                          has a more or less normal it look like readable
-                          English.
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item">
-                      <h6 class="accordion-header">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseThree"
-                          aria-expanded="false"
-                          aria-controls="collapseThree"
-                        >
-                          Can I integrate out grid with my existing rools and
-                          systems?
-                        </button>
-                      </h6>
-                      <div
-                        id="collapseThree"
-                        class="accordion-collapse collapse"
-                        data-bs-parent="#faqExample"
-                      >
-                        <div class="accordion-body">
-                          It is a long established fact that a reader will be
-                          distracted by the readable content of a page when
-                          looking at its layout. The point of using is that it
-                          has a more or less normal it look like readable
-                          English.
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item">
-                      <h6 class="accordion-header">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseFour"
-                          aria-expanded="false"
-                          aria-controls="collapseFour"
-                        >
-                          How does outgrid handle data security and privacy?
-                        </button>
-                      </h6>
-                      <div
-                        id="collapseFour"
-                        class="accordion-collapse collapse"
-                        data-bs-parent="#faqExample"
-                      >
-                        <div class="accordion-body">
-                          It is a long established fact that a reader will be
-                          distracted by the readable content of a page when
-                          looking at its layout. The point of using is that it
-                          has a more or less normal it look like readable
-                          English.
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- ================= FAQ Section area End ================= -->
-          <!-- ================= CTA Section area Start ================= -->
-          <section class="cta section section-padding-top-bottom">
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-12">
-                  <div
-                    class="section-header cta__content-wrapper"
-                    data-bg-src="./assets/images/cta/cta-bg.png"
-                  >
-                    <div class="cta__content">
-                      <h2 class="section-title text-anime">
-                        Store all Customer information one place for easy
-                        access.
-                      </h2>
-                      <p>
-                        Hendrerit fames tortor sociis phartra prottitor id in.
-                        Purus blandit scelerisque viverra libero.
-                      </p>
-                      <a href="./contact.html" class="saaslyn-1-btn v2"
-                        >Try for free</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- ================= CTA Section area End ================= -->
-        </main>
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <main>
+        <!--=================FAQ Hero section start=================-->
+        <section class="banner-three section section-padding-top-bottom features-hero-section"
+          data-bg-src="./assets/images/banner/banner-three-bg.png" style="position:relative;">
+          <style>
+            .features-hero-section {
+              overflow: visible !important;
+            }
 
-        <!--================= footer section start =================-->
-        <footer class="footer-one v2 section section-padding-top">
+            .features-hero-section::after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              height: 60%;
+              background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 40%, rgba(255, 255, 255, 1) 100%) !important;
+              pointer-events: none;
+              z-index: 1;
+            }
+
+            .features-hero-section>.container {
+              position: relative;
+              z-index: 2;
+            }
+          </style>
           <div class="container">
-            <div class="footer-one__wrapper">
-              <img
-                src="./assets/images/footer-long-text.svg"
-                alt="footer-long-text"
-                class="footer-long-text"
-              />
-              <div class="row g-4">
-                <div class="col-lg-5">
-                  <div class="footer-one__left">
-                    <a href="./index.html" class="logo">
-                      <img src="./assets/images/logo.svg" alt="SaasLyn" />
-                    </a>
-                    <h2 class="join-title text-anime">Join the circle.</h2>
-                    <a href="./contact.html" class="join-btn">
-                      <span class="text">Get Started</span>
-                      <span class="icon-box">
-                        <i class="fa-regular fa-arrow-right"></i>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-lg-7">
-                  <div
-                    class="footer-one__right"
-                    data-bg-src="./assets/images/footer/footer-content-bg.png"
-                  >
-                    <div class="info-area">
-                      <div class="links-group">
-                        <h6 class="link-title">Company</h6>
-
-                        <div class="link-list">
-                          <ul>
-                            <li><a href="./team.html">Meet Our Team</a></li>
-                            <li><a href="./faq.html">Faq’s</a></li>
-                            <li><a href="./blog.html">Latest News</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
-                            <li><a href="./#">Careers</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="links-group">
-                        <h6 class="link-title">Links</h6>
-
-                        <div class="link-list">
-                          <ul>
-                            <li><a href="./pricing.html">Pricing Plan</a></li>
-                            <li><a href="./about.html">About Us</a></li>
-                            <li><a href="./terms-condition.html">Term</a></li>
-                            <li><a href="#">Case Gallery</a></li>
-                            <li>
-                              <a href="./privacy-policy.html">Privacy Policy</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="links-group">
-                        <h6 class="link-title">Our Office</h6>
-
-                        <div class="link-list">
-                          <ul>
-                            <li>
-                              <a
-                                href="https://maps.app.goo.gl/nKez388NmcRRqRvQ7"
-                                >Suite 130 12300 Saint-Martin West Blvd. laval,
-                                Quebc USA</a
-                              >
-                            </li>
-                            <li>
-                              <a href="mailto:support@example.com"
-                                >Support@example.com</a
-                              >
-                            </li>
-                            <li>
-                              <a href="tel:+8812331233332"
-                                >(+88) 1233 123 333 2</a
-                              >
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="bottom-content">
-                      <p class="copy-right">
-                        &copy;&nbsp;Copyright&nbsp;<span
-                          class="current-year"
-                        ></span
-                        >&nbsp;<a href="./index.html">SaasLyn</a> . Inc.
-                      </p>
-                      <div class="social-icons">
-                        <ul>
-                          <li>
-                            <a href="#">
-                              <i class="fa-brands fa-facebook-f"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="fa-brands fa-instagram"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="fa-brands fa-linkedin-in"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="fa-brands fa-dribbble"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+            <div class="row justify-content-center">
+              <div class="col-lg-8 text-center">
+                <div class="section-header-3">
+                  <span class="section-sub-title" style="color:#6c3ce0;">Help & Support</span>
+                  <h1 class="section-title text-anime" style="color:#1a1a2e;">Frequently Asked Questions</h1>
+                  <p style="color:#4a4a6a;max-width:600px;margin:0 auto;">
+                    Find answers to common questions about PrivacyCrumb — from setup and compliance to pricing and
+                    advanced features.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
+        </section>
+        <!--=================FAQ Hero section end=================-->
+
+        <!--=================FAQ Categories section start=================-->
+        <section class="faq-3 section"
+          style="padding-top:60px;padding-bottom:40px;background:#ffffff !important;content-visibility:auto;contain-intrinsic-size:auto 800px;">
+          <div class="container">
+
+            <!-- ── Category 1: Getting Started ── -->
+            <div class="row justify-content-center" style="margin-bottom:50px;">
+              <div class="col-lg-8">
+                <div style="margin-bottom:24px;">
+                  <h3 style="font-size:22px;font-weight:700;color:#6c3ce0;margin-bottom:4px;"><i
+                      class="fa-light fa-rocket-launch" style="margin-right:8px;"></i> Getting Started</h3>
+                  <p style="color:#6a6a8a;font-size:15px;">Learn the basics of PrivacyCrumb and how to get up and
+                    running quickly.</p>
+                </div>
+                <div class="faq-3__accordion accordion" id="faqGettingStarted">
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#gs1" aria-expanded="true" aria-controls="gs1">What is
+                        PrivacyCrumb and how does it work?</button></h6>
+                    <div id="gs1" class="accordion-collapse collapse show" data-bs-parent="#faqGettingStarted">
+                      <div class="accordion-body">PrivacyCrumb is a cookie consent management platform that helps
+                        websites comply with global privacy regulations like GDPR, CCPA, and CPRA. It automatically
+                        scans your website for cookies, categorizes them, generates a compliant cookie banner, and
+                        manages user consent preferences — all with a simple code snippet you add to your site.</div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#gs2" aria-expanded="false" aria-controls="gs2">How do
+                        I install PrivacyCrumb on my website?</button></h6>
+                    <div id="gs2" class="accordion-collapse collapse" data-bs-parent="#faqGettingStarted">
+                      <div class="accordion-body">Installation is simple — just copy and paste a small JavaScript
+                        snippet into the head section of your website. PrivacyCrumb also provides dedicated plugins for
+                        popular platforms like WordPress, Shopify, and Wix, making integration even easier. The entire
+                        setup takes less than 5 minutes.</div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#gs3" aria-expanded="false" aria-controls="gs3">How
+                        does the free cookie scanner work?</button></h6>
+                    <div id="gs3" class="accordion-collapse collapse" data-bs-parent="#faqGettingStarted">
+                      <div class="accordion-body">Our free cookie scanner crawls your website and detects all cookies
+                        and trackers being used. It then classifies them into categories such as Necessary, Analytics,
+                        Marketing, and Functional. You'll receive a detailed report showing which cookies are compliant
+                        and which ones need attention — all without needing to sign up.</div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#gs4" aria-expanded="false" aria-controls="gs4">Is
+                        there a free plan available?</button></h6>
+                    <div id="gs4" class="accordion-collapse collapse" data-bs-parent="#faqGettingStarted">
+                      <div class="accordion-body">Yes, PrivacyCrumb offers a generous free plan that includes cookie
+                        scanning, a basic consent banner, and essential compliance features. For websites that need
+                        advanced features like detailed analytics, custom branding, multi-language support, and priority
+                        support, we offer affordable paid plans to fit every budget.</div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Category 2: Compliance & Regulations ── -->
+            <div class="row justify-content-center" style="margin-bottom:50px;">
+              <div class="col-lg-8">
+                <div style="margin-bottom:24px;">
+                  <h3 style="font-size:22px;font-weight:700;color:#6c3ce0;margin-bottom:4px;"><i
+                      class="fa-light fa-shield-check" style="margin-right:8px;"></i> Compliance & Regulations</h3>
+                  <p style="color:#6a6a8a;font-size:15px;">Understand how PrivacyCrumb keeps your website compliant with
+                    global privacy laws.</p>
+                </div>
+                <div class="faq-3__accordion accordion" id="faqCompliance">
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#comp1" aria-expanded="false" aria-controls="comp1">Is
+                        PrivacyCrumb compliant with GDPR and CCPA?</button></h6>
+                    <div id="comp1" class="accordion-collapse collapse" data-bs-parent="#faqCompliance">
+                      <div class="accordion-body">Yes, PrivacyCrumb is fully compliant with GDPR (EU & UK), CCPA
+                        (California), CPRA, and other major privacy regulations worldwide. Our platform automatically
+                        adapts the consent banner and cookie handling based on the visitor's location, ensuring your
+                        website meets legal requirements in every jurisdiction.</div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#comp2" aria-expanded="false"
+                        aria-controls="comp2">Does PrivacyCrumb support Google Consent Mode v2?</button></h6>
+                    <div id="comp2" class="accordion-collapse collapse" data-bs-parent="#faqCompliance">
+                      <div class="accordion-body">Yes, PrivacyCrumb fully supports Google Consent Mode v2. Our platform
+                        automatically signals user consent choices to Google services including Google Analytics, Google
+                        Ads, and Google Tag Manager. This allows you to maintain measurement accuracy while staying
+                        compliant — even before users grant consent, through cookieless pings and consent-aware
+                        conversion modeling.</div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#comp3" aria-expanded="false"
+                        aria-controls="comp3">Does PrivacyCrumb support the IAB TCF v2.2 framework?</button></h6>
+                    <div id="comp3" class="accordion-collapse collapse" data-bs-parent="#faqCompliance">
+                      <div class="accordion-body">Yes, PrivacyCrumb is a certified IAB TCF v2.2 Consent Management
+                        Platform (CMP). This means our consent signals are recognized by all major advertising platforms
+                        and demand-side vendors, enabling you to continue programmatic advertising compliantly within
+                        the European ecosystem.</div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#comp4" aria-expanded="false"
+                        aria-controls="comp4">Which privacy regulations does PrivacyCrumb cover?</button></h6>
+                    <div id="comp4" class="accordion-collapse collapse" data-bs-parent="#faqCompliance">
+                      <div class="accordion-body">PrivacyCrumb covers all major global privacy frameworks including GDPR
+                        (EU & UK), CCPA and CPRA (California), LGPD (Brazil), POPIA (South Africa), PDPA (Thailand &
+                        Singapore), PIPEDA (Canada), and many more. Our geo-targeting engine automatically detects each
+                        visitor's jurisdiction and presents the appropriate consent experience required by their local
+                        laws.</div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#comp5" aria-expanded="false"
+                        aria-controls="comp5">Does PrivacyCrumb help generate privacy and cookie policies?</button></h6>
+                    <div id="comp5" class="accordion-collapse collapse" data-bs-parent="#faqCompliance">
+                      <div class="accordion-body">Yes, PrivacyCrumb includes free generators for both Privacy Policies
+                        and Cookie Policies. These tools create legally-compliant documents tailored to your website's
+                        specific cookie usage and data practices. The generated policies are automatically kept up to
+                        date as your cookie usage changes.</div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Category 3: Features & Customization ── -->
+            <div class="row justify-content-center" style="margin-bottom:50px;">
+              <div class="col-lg-8">
+                <div style="margin-bottom:24px;">
+                  <h3 style="font-size:22px;font-weight:700;color:#6c3ce0;margin-bottom:4px;"><i
+                      class="fa-light fa-sliders" style="margin-right:8px;"></i> Features & Customization</h3>
+                  <p style="color:#6a6a8a;font-size:15px;">Explore how to tailor PrivacyCrumb to match your brand and
+                    workflow.</p>
+                </div>
+                <div class="faq-3__accordion accordion" id="faqFeatures">
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#feat1" aria-expanded="false"
+                        aria-controls="feat1">What cookie categories does PrivacyCrumb support?</button></h6>
+                    <div id="feat1" class="accordion-collapse collapse" data-bs-parent="#faqFeatures">
+                      <div class="accordion-body">PrivacyCrumb automatically classifies cookies into four main
+                        categories: Necessary (essential for site functionality), Analytics (tracking and performance),
+                        Marketing (advertising and retargeting), and Functional (enhanced features and preferences). You
+                        can also create custom categories to match your specific needs.</div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#feat2" aria-expanded="false"
+                        aria-controls="feat2">Can I customize the cookie consent banner?</button></h6>
+                    <div id="feat2" class="accordion-collapse collapse" data-bs-parent="#faqFeatures">
+                      <div class="accordion-body">Absolutely! PrivacyCrumb offers full customization of your cookie
+                        consent banner. You can adjust colors, fonts, layout, button text, and position to match your
+                        brand identity perfectly. Choose from pre-built templates or design your own banner from scratch
+                        using our visual editor.</div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#feat3" aria-expanded="false"
+                        aria-controls="feat3">Does PrivacyCrumb support multiple languages?</button></h6>
+                    <div id="feat3" class="accordion-collapse collapse" data-bs-parent="#faqFeatures">
+                      <div class="accordion-body">Yes, PrivacyCrumb supports 30+ languages out of the box. The consent
+                        banner automatically detects your visitor's browser language and displays the appropriate
+                        translation. You can also manually override translations or add custom language packs to match
+                        your brand's tone of voice.</div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#feat4" aria-expanded="false"
+                        aria-controls="feat4">Can I manage consent for multiple websites from one account?</button></h6>
+                    <div id="feat4" class="accordion-collapse collapse" data-bs-parent="#faqFeatures">
+                      <div class="accordion-body">Yes, our Pro and Enterprise plans include multi-site management. You
+                        can add unlimited domains to a single PrivacyCrumb account and manage consent banners, cookie
+                        scans, and compliance reports from a centralized dashboard. Each site can have its own
+                        customized banner and settings while sharing a unified analytics view.</div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#feat5" aria-expanded="false"
+                        aria-controls="feat5">Does PrivacyCrumb offer consent analytics and reports?</button></h6>
+                    <div id="feat5" class="accordion-collapse collapse" data-bs-parent="#faqFeatures">
+                      <div class="accordion-body">Yes, PrivacyCrumb provides a real-time analytics dashboard where you
+                        can monitor consent rates, opt-in/opt-out trends, and visitor behavior across all your sites.
+                        You can also export detailed audit-ready reports for regulators and filter analytics by date
+                        range, geography, and consent category.</div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Category 4: Pricing & Plans ── -->
+            <div class="row justify-content-center" style="margin-bottom:50px;">
+              <div class="col-lg-8">
+                <div style="margin-bottom:24px;">
+                  <h3 style="font-size:22px;font-weight:700;color:#6c3ce0;margin-bottom:4px;"><i
+                      class="fa-light fa-credit-card" style="margin-right:8px;"></i> Pricing & Plans</h3>
+                  <p style="color:#6a6a8a;font-size:15px;">Everything you need to know about our plans, billing, and
+                    upgrades.</p>
+                </div>
+                <div class="faq-3__accordion accordion" id="faqPricing">
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#price1" aria-expanded="false"
+                        aria-controls="price1">What plans does PrivacyCrumb offer?</button></h6>
+                    <div id="price1" class="accordion-collapse collapse" data-bs-parent="#faqPricing">
+                      <div class="accordion-body">PrivacyCrumb offers three plans: a <strong>Free</strong> plan with
+                        basic scanning and a consent banner for a single domain, a <strong>Pro</strong> plan with
+                        advanced analytics, multi-language support, custom branding, and multi-site management, and an
+                        <strong>Enterprise</strong> plan with dedicated support, SLA, and unlimited everything. Visit
+                        our <a href="./pricing.html" style="color:#6c3ce0;text-decoration:underline;">pricing page</a>
+                        for detailed comparisons.</div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#price2" aria-expanded="false"
+                        aria-controls="price2">Can I try PrivacyCrumb before committing to a paid plan?</button></h6>
+                    <div id="price2" class="accordion-collapse collapse" data-bs-parent="#faqPricing">
+                      <div class="accordion-body">Absolutely! Our Free plan gives you access to core features with no
+                        time limit. Additionally, all paid plans come with a 14-day free trial so you can explore
+                        advanced features like custom branding, analytics, and multi-site management before making a
+                        commitment. No credit card is required to start.</div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#price3" aria-expanded="false"
+                        aria-controls="price3">Can I cancel or change my plan at any time?</button></h6>
+                    <div id="price3" class="accordion-collapse collapse" data-bs-parent="#faqPricing">
+                      <div class="accordion-body">Yes, you can upgrade, downgrade, or cancel your plan at any time from
+                        your dashboard. If you cancel a paid plan, you'll retain access to paid features until the end
+                        of your current billing cycle. After that, your account will automatically revert to the Free
+                        plan — no data is ever deleted.</div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Category 5: Technical & Integration ── -->
+            <div class="row justify-content-center" style="margin-bottom:50px;">
+              <div class="col-lg-8">
+                <div style="margin-bottom:24px;">
+                  <h3 style="font-size:22px;font-weight:700;color:#6c3ce0;margin-bottom:4px;"><i
+                      class="fa-light fa-code" style="margin-right:8px;"></i> Technical & Integration</h3>
+                  <p style="color:#6a6a8a;font-size:15px;">Get answers about integrations, performance, and
+                    developer-facing features.</p>
+                </div>
+                <div class="faq-3__accordion accordion" id="faqTechnical">
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#tech1" aria-expanded="false"
+                        aria-controls="tech1">Which platforms and CMS does PrivacyCrumb integrate with?</button></h6>
+                    <div id="tech1" class="accordion-collapse collapse" data-bs-parent="#faqTechnical">
+                      <div class="accordion-body">PrivacyCrumb integrates with all major platforms including WordPress,
+                        Shopify, Wix, Squarespace, Webflow, Magento, and any custom-built website. We provide one-click
+                        plugins for WordPress and Shopify, and a simple JavaScript snippet for all other platforms. Our
+                        tag management integration works with Google Tag Manager, Segment, and Tealium.</div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#tech2" aria-expanded="false"
+                        aria-controls="tech2">Will PrivacyCrumb slow down my website?</button></h6>
+                    <div id="tech2" class="accordion-collapse collapse" data-bs-parent="#faqTechnical">
+                      <div class="accordion-body">No. PrivacyCrumb is designed for performance. Our script is less than
+                        30KB gzipped, loads asynchronously, and is served from a global CDN with 99.99% uptime. It has
+                        zero impact on your Core Web Vitals scores. In fact, by properly blocking third-party cookies
+                        until consent is given, PrivacyCrumb can actually <em>improve</em> your initial page load time.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#tech3" aria-expanded="false"
+                        aria-controls="tech3">Does PrivacyCrumb provide an API?</button></h6>
+                    <div id="tech3" class="accordion-collapse collapse" data-bs-parent="#faqTechnical">
+                      <div class="accordion-body">Yes, PrivacyCrumb offers a comprehensive REST API for developers. You
+                        can programmatically manage consent records, trigger cookie scans, retrieve analytics data, and
+                        configure banner settings. Full API documentation is available in our <a
+                          href="./knowledge-base.html" style="color:#6c3ce0;text-decoration:underline;">Knowledge
+                          Base</a>. API access is included in Pro and Enterprise plans.</div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h6 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#tech4" aria-expanded="false"
+                        aria-controls="tech4">How often does PrivacyCrumb re-scan my website for cookies?</button></h6>
+                    <div id="tech4" class="accordion-collapse collapse" data-bs-parent="#faqTechnical">
+                      <div class="accordion-body">PrivacyCrumb performs automatic weekly scans to detect any new cookies
+                        or trackers on your website. You can also trigger an on-demand scan at any time from your
+                        dashboard. If new cookies are detected, you'll receive an email alert and the cookie table in
+                        your consent banner will be automatically updated.</div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+        <!--=================FAQ Categories section end=================-->
+
+        <!--=================CTA section start=================-->
+        <section class="cta-3 section section-padding-top-bottom overflow-hidden"
+          style="content-visibility:auto;contain-intrinsic-size:auto 400px;"
+          data-bg-src="./assets/images/cta/cta-3-dot-bg.svg">
+          <style>
+            .cta-3 .features-list ul {
+              display: inline-flex !important;
+              flex-direction: column !important;
+              align-items: flex-start !important;
+              text-align: left !important;
+            }
+
+            .cta-3 .features-list {
+              display: flex !important;
+              justify-content: center !important;
+            }
+          </style>
+          <div class="container">
+            <div class="row g-4">
+              <div class="cta-3__content">
+                <h2 class="content-title text-anime">Still Have Questions?<br />We're Here to Help</h2>
+                <p style="max-width:550px;margin:0 auto 24px;color:#4a4a6a;">
+                  Can't find what you're looking for? Our support team is ready to assist you with any questions about
+                  PrivacyCrumb.
+                </p>
+                <div class="buttons"><a href="./contact.html" class="saaslyn-4-btn v2">Contact
+                    Us <i class="fa-light fa-arrow-right-long"></i></a><a href="./help-center.html"
+                    class="saaslyn-4-btn">Help
+                    Center <i class="fa-light fa-arrow-right-long"></i></a></div>
+                <div class="features-list">
+                  <ul>
+                    <li><i class="fa-light fa-badge-check"></i>Typical response within 24 hours</li>
+                    <li><i class="fa-light fa-badge-check"></i>Dedicated account manager on Enterprise</li>
+                    <li><i class="fa-light fa-badge-check"></i>Knowledge Base with 100+ articles</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--=================CTA section end=================-->
+
+
+        <!--=================footer section start=================-->
+        <footer class="footer-three section" data-bg-src="./assets/images/footer/footer-three-bg.svg">
+          <style>
+            /* ── Footer – Desktop Layout ── */
+            .footer-three__main .info-area {
+              display: grid !important;
+              grid-template-columns: repeat(4, 1fr) !important;
+              gap: 24px !important;
+            }
+
+            /* ── Footer – Mobile Layout Fix ── */
+            @media (max-width: 991.98px) {
+              .footer-three__main .info-area {
+                flex-wrap: wrap !important;
+                gap: 24px !important;
+              }
+
+              .footer-three__main .info-area .links-group {
+                min-width: 140px !important;
+                flex: 0 0 auto !important;
+              }
+
+              .footer-three__main .footer-info p {
+                font-size: 14px !important;
+              }
+
+              .footer-three__main .newsletter input {
+                font-size: 14px !important;
+              }
+            }
+
+            @media (max-width: 767.98px) {
+              .footer-three__main .row.g-5 {
+                gap: 30px !important;
+              }
+
+              .footer-three__main .info-area {
+                display: grid !important;
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 16px !important;
+              }
+
+              .footer-three__main .info-area .links-group {
+                min-width: unset !important;
+              }
+
+              .footer-three__main .info-area .links-group .link-title {
+                font-size: 16px !important;
+                margin-bottom: 10px !important;
+              }
+
+              .footer-three__main .info-area .links-group .link-list ul li {
+                font-size: 13px !important;
+              }
+
+              .footer-three__main .info-area .links-group .link-list ul li a {
+                font-size: 13px !important;
+              }
+
+              .footer-three__main .footer-info p {
+                font-size: 13px !important;
+                line-height: 1.6 !important;
+              }
+
+              .footer-three__main .footer-logo span {
+                font-size: 18px !important;
+              }
+
+              .footer-crop-logo {
+                overflow: hidden !important;
+              }
+
+              .footer-crop-logo img {
+                max-height: 60px !important;
+                object-fit: contain;
+              }
+
+              .footer-three__bottom {
+                padding: 16px 0 !important;
+              }
+
+              .footer-three__bottom .copyright {
+                font-size: 12px !important;
+              }
+
+              .footer-three__bottom .terms {
+                font-size: 12px !important;
+              }
+
+              .footer-three .section-padding-top {
+                padding-top: 50px !important;
+              }
+            }
+
+            @media (max-width: 480px) {
+              .footer-three__main .info-area {
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 10px !important;
+              }
+
+              .footer-three__main .info-area .links-group .link-title {
+                font-size: 15px !important;
+              }
+
+              .footer-three__main .info-area .links-group .link-list ul li a {
+                font-size: 12.5px !important;
+              }
+
+              .footer-three__main .newsletter {
+                flex-direction: column !important;
+              }
+
+              .footer-three__main .newsletter input {
+                font-size: 13px !important;
+                width: 100% !important;
+              }
+
+              .footer-crop-logo img {
+                max-height: 45px !important;
+              }
+
+              .footer-three__bottom .copyright {
+                font-size: 11px !important;
+                line-height: 1.5;
+              }
+
+              .footer-three .section-padding-top {
+                padding-top: 40px !important;
+              }
+            }
+          </style>
+          <div class="footer-three__main section-padding-top">
+            <div class="container">
+              <div class="row g-5">
+                <div class="col-lg-3">
+                  <div class="footer-info"><a href="./index.html" class="footer-logo"
+                      style="display:flex;align-items:center;text-decoration:none;"><img
+                        src="./assets/images/PrivacyCrumbLogo4.svg" alt="Privacy Crumb" class="logo-steady-glow"
+                        style="height:44px;width:auto;" /></a>
+                    <p>Stay up to date with all the recent news and great discounts by simply adding your
+                      email address
+                      to our list. </p>
+                  </div>
+                  <form action="./index-3.html" class="newsletter"><input type="email" name="newsletter-email"
+                      id="newsletter-email" placeholder="Newsletter email" required /><button type="submit"><i
+                        class="fa-light fa-arrow-right-long"></i></button></form>
+                </div>
+                <div class="col-lg-9" style="border-left:2px solid rgba(26,26,46,0.12);padding-left:40px;">
+                  <div class="info-area" style="display:grid;grid-template-columns:repeat(4,1fr);gap:30px;">
+                    <style>
+                      .info-area>div>.links-group {
+                        margin-bottom: 28px;
+                      }
+
+                      .info-area>div>.links-group:last-child {
+                        margin-bottom: 0;
+                      }
+                    </style>
+                    <!-- Column 1 -->
+
+                    <div>
+
+                      <div class="links-group v3">
+                        <h6 class="link-title">PrivacyCrumb</h6>
+                        <div class="link-list">
+                          <ul>
+                            <li><a href="./pricing.html">Pricing</a></li>
+                            <li><a href="./features.html">Features</a></li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="links-group v3">
+                        <h6 class="link-title">Use Cases</h6>
+                        <div class="link-list">
+                          <ul>
+                            <li><a href="./founder-use-caces.html">Founder</a></li>
+                            <li><a href="./developer-use-caces.html">Developer</a></li>
+                            <li><a href="./marketer-use-caces.html">Marketer</a></li>
+                            <li><a href="./agency-use-caces.html">Agency</a></li>
+                          </ul>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <!-- Column 2 -->
+
+                    <div>
+
+                      <div class="links-group v3">
+                        <h6 class="link-title">Solutions</h6>
+                        <div class="link-list">
+                          <ul>
+                            <li><a href="./gdpr.html">GDPR EU &amp; UK</a></li>
+                            <li><a href="./ccpa.html">CCPA California</a></li>
+                            <li><a href="./cpra.html">CPRA California</a></li>
+                            <li><a href="./iab-tcf.html">IAB TCF v2.2</a></li>
+                            <li><a href="./google-consent-mode.html">Google Consent Mode</a></li>
+                            <li><a href="./regulations.html">All regulations &rarr;</a></li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="links-group v3">
+                        <h6 class="link-title">Compare</h6>
+                        <div class="link-list">
+                          <ul>
+                            <li><a href="./cookiebot.html">Cookiebot</a></li>
+                            <li><a href="./lubenda.html">Iubenda</a></li>
+                            <li><a href="./complianz.html">Complianz</a></li>
+                          </ul>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <!-- Column 3 -->
+
+                    <div>
+
+                      <div class="links-group v3">
+                        <h6 class="link-title">Resources</h6>
+                        <div class="link-list">
+                          <ul>
+                            <li><a href="./knowledge-base.html">Knowledge Base</a></li>
+                            <li><a href="./infographics.html">Infographics</a></li>
+                            <li><a href="./newsletter.html">Newsletter</a></li>
+                            <li><a href="./about.html">About</a></li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="links-group v3">
+                        <h6 class="link-title">Support</h6>
+                        <div class="link-list">
+                          <ul>
+                            <li><a href="help-center.html">Help Center</a></li>
+                            <li><a href="./contact.html">Contact Us</a></li>
+                            <li><a href="./faq.html">FAQ</a></li>
+                          </ul>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <!-- Column 4 -->
+
+                    <div>
+
+                      <div class="links-group v3">
+                        <h6 class="link-title">Free Tools &#10024;</h6>
+                        <div class="link-list">
+                          <ul>
+                            <li><a href="https://app.privacycrumb.com/free/privacy-policy-generator">Privacy Policy
+                                Generator</a></li>
+                            <li><a href="https://app.privacycrumb.com/free/cookie-policy-generator">Cookie Policy
+                                Generator</a></li>
+                            <li><a href="https://app.privacycrumb.com/free-scanner">Cookie Checker</a></li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="links-group v3">
+                        <h6 class="link-title">Legal</h6>
+                        <div class="link-list">
+                          <ul>
+                            <li><a href="./privacypolicy.html">Privacy Policy</a></li>
+                            <li><a href="./cookies-policy.html">Cookie Policy</a></li>
+                            <li><a href="./terms-conditions.html">Terms and Conditions</a></li>
+                            <li><a href="./dpa.html">Data Processing Agreement</a></li>
+                            <li><a href="./accessibility-statement.html">Accessibility Statement</a></li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="links-group v3">
+                        <h6 class="link-title">Partners <span
+                            style="display:inline-block;padding:2px 10px;border-radius:20px;background:linear-gradient(135deg,#6c3ce0,#00c9a7);color:#fff;font-size:11px;font-weight:600;margin-left:6px;vertical-align:middle;">Join
+                            us!</span></h6>
+                        <div class="link-list">
+                          <ul>
+                            <li><a href="#">Agency Partner</a></li>
+                            <li><a href="#">Affiliate Partner</a></li>
+                            <li><a href="#">Strategic Partner</a></li>
+                            <li><a href="#">Partner Directory</a></li>
+                          </ul>
+                        </div>
+                      </div>
+
+                    </div>
+
+
+
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="footer-crop-logo" style="pointer-events:none;position:relative;z-index:0;
+                  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 100%);
+                  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 100%);">
+                          <img src="./assets/images/footer/footer-3-logo.svg" alt="Privacy Crumb"
+                            style="filter: brightness(0) saturate(100%) invert(12%) sepia(90%) saturate(2500%) hue-rotate(15deg) brightness(90%) contrast(100%);" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer-three__bottom">
+                  <div class="container">
+                    <div class="row g-2 align-items-center justify-content-between text-center text-md-start">
+                      <div class="col-md-auto">
+                        <div class="copyright">Copyright <span class="current-year"></span> <a href="./">Privacy
+                            Crumb</a>. all
+                          rights reserved. Terms & Conditions </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
         </footer>
-        <!--================= footer section end =================-->
-      </div>
+        <!--=================footer section end=================-->
     </div>
+  </div>
+  <!-- JS Files -->
+  <!-- jQuery -->
+  <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+  <!-- Counter JS -->
+  <script src="assets/js/vendor/counter.js"></script>
+  <!-- Bootstrap -->
+  <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+  <!-- jQuery meanMenu -->
+  <script src="assets/js/vendor/jquery.meanmenu.min.js"></script>
+  <!-- Swiper slider Plugin -->
+  <script src="assets/js/vendor/swiper-bundle.min.js"></script>
+  <!-- Swiper slider Plugin -->
+  <script src="assets/js/vendor/jquery.magnific-popup.min.js"></script>
+  <!-- ChartJS Plugin -->
+  <script src="assets/js/vendor/chart.js"></script>
+  <!-- GSAP -->
+  <script src="./assets/js/vendor/gsap.min.js"></script>
+  <script src="./assets/js/vendor/ScrollSmoother.min.js"></script>
+  <script src="./assets/js/vendor/ScrollTrigger.min.js"></script>
+  <script src="./assets/js/vendor/ScrollToPlugin.min.js"></script>
+  <script src="./assets/js/vendor/SplitText.min.js"></script>
+  <script src="./assets/js/vendor/split-types.min.js"></script>
+  <script src="./assets/js/vendor/MotionPathPlugin.min.js"></script>
+  <!-- BackToTop JavaScript File -->
+  <script src="assets/js/vendor/backToTop.js"></script>
+  <!-- Main JavaScript File -->
+  <script src="assets/js/main.js"></script>
+</body>
 
-    <!-- JS Files -->
-    <!-- jQuery -->
-    <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
-
-    <!-- Counter JS -->
-    <script src="assets/js/vendor/counter.js"></script>
-
-    <!-- Bootstrap -->
-    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
-
-    <!-- jQuery meanMenu -->
-    <script src="assets/js/vendor/jquery.meanmenu.min.js"></script>
-
-    <!-- Swiper slider Plugin -->
-    <script src="assets/js/vendor/swiper-bundle.min.js"></script>
-
-    <!-- Swiper slider Plugin -->
-    <script src="assets/js/vendor/jquery.magnific-popup.min.js"></script>
-
-    <!-- ChartJS Plugin -->
-    <script src="assets/js/vendor/chart.js"></script>
-
-    <!-- GSAP -->
-    <script src="./assets/js/vendor/gsap.min.js"></script>
-    <script src="./assets/js/vendor/ScrollSmoother.min.js"></script>
-    <script src="./assets/js/vendor/ScrollTrigger.min.js"></script>
-    <script src="./assets/js/vendor/ScrollToPlugin.min.js"></script>
-    <script src="./assets/js/vendor/SplitText.min.js"></script>
-    <script src="./assets/js/vendor/split-types.min.js"></script>
-    <script src="./assets/js/vendor/MotionPathPlugin.min.js"></script>
-
-    <!-- BackToTop JavaScript File -->
-    <script src="assets/js/vendor/backToTop.js"></script>
-
-    <!-- Main JavaScript File -->
-
-    <script src="assets/js/main.js"></script>
-  </body>
 </html>
