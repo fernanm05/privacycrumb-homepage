@@ -1141,111 +1141,230 @@
       <main>
 
         <!--================= Regulations Hub Hero start =================-->
-        <section class="banner-three section section-padding-top-bottom sol-hero-section"
+        <section class="banner-three section section-padding-top-bottom features-hero-section"
           data-bg-src="./assets/images/banner/banner-three-bg.png" style="position:relative;">
           <style>
-            .sol-hero-section { overflow: visible !important; }
-            .sol-hero-section::after {
-              content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60%;
-              background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 40%, rgba(255,255,255,1) 100%) !important;
-              pointer-events: none; z-index: 1;
+            .features-hero-section {
+              overflow: visible !important;
             }
-            .sol-hero-section>.container { position: relative; z-index: 2; }
+
+            .features-hero-section::after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              height: 60%;
+              background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 40%, rgba(255, 255, 255, 1) 100%) !important;
+              pointer-events: none;
+              z-index: 1;
+            }
+
+            .features-hero-section>.container {
+              position: relative;
+              z-index: 2;
+            }
           </style>
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-lg-8 text-center">
                 <div class="section-header-3">
                   <span class="section-sub-title" style="color:#6c3ce0;">Regulations</span>
-                  <h1 class="section-title text-anime" style="font-size:44px;color:#1a1a2e;margin-bottom:16px;">
+                  <h1 class="section-title text-anime" style="color:#1a1a2e;">
                     All Privacy Regulations
                   </h1>
                   <p style="color:#4a4a6a;max-width:620px;margin:0 auto;">
-                    Power your cookie consent across global privacy regulations with PrivacyCrumb. Choose a regulation to learn how we help you stay compliant.
+                    Power your cookie consent across global privacy regulations with PrivacyCrumb.
+                    Choose a regulation to learn how we help you stay compliant.
                   </p>
                 </div>
               </div>
             </div>
+
           </div>
         </section>
         <!--================= Regulations Hub Hero end =================-->
 
         <!--================= Regulations Grid start =================-->
-        <section class="section" style="padding:60px 0 100px;">
+        <section class="section section-padding-top-bottom"
+          style="content-visibility:auto;contain-intrinsic-size:auto 800px;">
           <style>
-            .sol-reg-grid {
-              display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+            .pc-reg-hub-grid {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 28px;
             }
-            @media (max-width: 991px) { .sol-reg-grid { grid-template-columns: repeat(2, 1fr); } }
-            @media (max-width: 575px) { .sol-reg-grid { grid-template-columns: 1fr; } }
-            .sol-reg-card {
-              background: #fff; border: 1px solid rgba(26,26,46,0.08);
-              border-radius: 16px; padding: 32px 28px; text-align: center;
-              transition: transform 0.3s, box-shadow 0.3s;
-              box-shadow: 0 4px 20px rgba(108,60,224,0.06);
-              position: relative; overflow: hidden;
+
+            @media (max-width: 991px) {
+              .pc-reg-hub-grid {
+                grid-template-columns: repeat(2, 1fr);
+              }
             }
-            .sol-reg-card:hover {
-              transform: translateY(-6px);
-              box-shadow: 0 12px 40px rgba(108,60,224,0.15);
+
+            @media (max-width: 575px) {
+              .pc-reg-hub-grid {
+                grid-template-columns: 1fr;
+              }
             }
-            .sol-reg-badge {
-              position: absolute; top: 14px; right: 14px;
-              font-size: 11px; font-weight: 600; color: #6c3ce0;
-              background: rgba(108,60,224,0.08); padding: 3px 10px;
-              border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;
+
+            .pc-reg-hub-card {
+              background: #ffffff;
+              border: 1px solid rgba(26, 26, 46, 0.08);
+              border-radius: 16px;
+              padding: 32px 28px;
+              text-align: center;
+              transition: transform 0.35s ease, border-color 0.35s ease;
+              position: relative;
+              overflow: hidden;
+              transform: translateZ(0);
+              will-change: transform;
             }
-            .sol-reg-card-icon {
-              font-size: 36px; color: #6c3ce0; margin-bottom: 16px;
-              width: 72px; height: 72px; display: inline-flex;
-              align-items: center; justify-content: center;
-              background: rgba(108,60,224,0.06); border-radius: 18px;
+
+            .pc-reg-hub-card::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              height: 3px;
+              background: linear-gradient(90deg, #1a1a2e, #2a2a4e, #1a1a2e);
+              opacity: 0;
+              transition: opacity 0.35s ease;
             }
-            .sol-reg-card-title { font-size: 20px; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
-            .sol-reg-card-desc { font-size: 14px; color: #4a4a6a; line-height: 1.7; margin-bottom: 18px; }
-            .sol-reg-card-link {
-              font-size: 14px; font-weight: 600; color: #6c3ce0; text-decoration: none;
-              display: inline-flex; align-items: center; gap: 6px; transition: gap 0.2s;
+
+            .pc-reg-hub-card:hover {
+              transform: translateY(-6px) translateZ(0);
+              border-color: rgba(26, 26, 46, 0.2);
             }
-            .sol-reg-card-link:hover { gap: 10px; color: #5030b0; }
+
+            .pc-reg-hub-card:hover::before {
+              opacity: 1;
+            }
+
+            .pc-reg-hub-badge {
+              position: absolute;
+              top: 14px;
+              right: 14px;
+              display: inline-block;
+              background: rgba(26, 26, 46, 0.08);
+              color: #1a1a2e;
+              font-size: 11px;
+              font-weight: 600;
+              padding: 3px 10px;
+              border-radius: 20px;
+              text-transform: uppercase;
+              letter-spacing: 0.3px;
+            }
+
+            .pc-reg-hub-icon {
+              width: 64px;
+              height: 64px;
+              border-radius: 50%;
+              background: #ffffff;
+              border: 2px solid rgba(108, 60, 224, 0.15);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin: 0 auto 18px;
+              box-shadow: 0 4px 15px rgba(108, 60, 224, 0.08);
+              transition: transform 0.35s ease;
+              font-size: 26px;
+              color: #1a1a2e;
+            }
+
+            .pc-reg-hub-card:hover .pc-reg-hub-icon {
+              transform: scale(1.08);
+            }
+
+            .pc-reg-hub-card h5 {
+              color: #1a1a2e;
+              font-size: 18px;
+              font-weight: 700;
+              margin-bottom: 10px;
+              font-family: inherit;
+            }
+
+            .pc-reg-hub-card p {
+              color: #4a4a6a;
+              font-size: 14px;
+              line-height: 1.7;
+              margin: 0 0 18px;
+              font-family: inherit;
+            }
+
+            .pc-reg-hub-link {
+              font-size: 14px;
+              font-weight: 600;
+              color: #6c3ce0;
+              text-decoration: none;
+              display: inline-flex;
+              align-items: center;
+              gap: 6px;
+              transition: gap 0.2s;
+            }
+
+            .pc-reg-hub-link:hover {
+              gap: 10px;
+              color: #5030b0;
+            }
           </style>
           <div class="container">
-            <div class="sol-reg-grid">
-                <div class="sol-reg-card">
-                  <div class="sol-reg-badge">Europe</div>
-                  <div class="sol-reg-card-icon"><i class="fa-light fa-flag-eu"></i></div>
-                  <h4 class="sol-reg-card-title">GDPR EU &amp; UK</h4>
-                  <p class="sol-reg-card-desc">General Data Protection Regulation for the European Union and United Kingdom.</p>
-                  <a href="./gdpr.html" class="sol-reg-card-link">Learn more <i class="fa-light fa-arrow-right-long"></i></a>
+            <div class="row justify-content-center" style="margin-bottom:48px;">
+              <div class="col-lg-7 text-center">
+                <div class="section-header-3">
+                  <span class="section-sub-title" style="color:#6c3ce0;">Choose a Regulation</span>
+                  <h2 class="section-title text-anime" style="color:#1a1a2e;">Compliant With Every Major Regulation</h2>
+                  <p style="color:#4a4a6a;">PrivacyCrumb supports all major global privacy frameworks.
+                    Click any regulation below to learn more.</p>
                 </div>
-                <div class="sol-reg-card">
-                  <div class="sol-reg-badge">United States</div>
-                  <div class="sol-reg-card-icon"><i class="fa-light fa-flag-usa"></i></div>
-                  <h4 class="sol-reg-card-title">CCPA California</h4>
-                  <p class="sol-reg-card-desc">California Consumer Privacy Act for California residents.</p>
-                  <a href="./ccpa.html" class="sol-reg-card-link">Learn more <i class="fa-light fa-arrow-right-long"></i></a>
-                </div>
-                <div class="sol-reg-card">
-                  <div class="sol-reg-badge">United States</div>
-                  <div class="sol-reg-card-icon"><i class="fa-light fa-scale-balanced"></i></div>
-                  <h4 class="sol-reg-card-title">CPRA California</h4>
-                  <p class="sol-reg-card-desc">California Privacy Rights Act — enhanced CCPA protections.</p>
-                  <a href="./cpra.html" class="sol-reg-card-link">Learn more <i class="fa-light fa-arrow-right-long"></i></a>
-                </div>
-                <div class="sol-reg-card">
-                  <div class="sol-reg-badge">Standards</div>
-                  <div class="sol-reg-card-icon"><i class="fa-light fa-rectangle-ad"></i></div>
-                  <h4 class="sol-reg-card-title">IAB TCF v2.2</h4>
-                  <p class="sol-reg-card-desc">Transparency &amp; Consent Framework for digital advertising.</p>
-                  <a href="./iab-tcf.html" class="sol-reg-card-link">Learn more <i class="fa-light fa-arrow-right-long"></i></a>
-                </div>
-                <div class="sol-reg-card">
-                  <div class="sol-reg-badge">Standards</div>
-                  <div class="sol-reg-card-icon"><i class="fa-light fa-chart-mixed"></i></div>
-                  <h4 class="sol-reg-card-title">Google Consent Mode</h4>
-                  <p class="sol-reg-card-desc">Integrate consent signals with Google Analytics &amp; Ads.</p>
-                  <a href="./google-consent-mode.html" class="sol-reg-card-link">Learn more <i class="fa-light fa-arrow-right-long"></i></a>
-                </div>
+              </div>
+            </div>
+            <div class="pc-reg-hub-grid">
+              <div class="pc-reg-hub-card">
+                <div class="pc-reg-hub-badge">Europe</div>
+                <div class="pc-reg-hub-icon"><i class="fa-light fa-shield-check"></i></div>
+                <h5>GDPR EU &amp; UK</h5>
+                <p>General Data Protection Regulation for the European Union and United Kingdom.
+                  The world's most comprehensive privacy law.</p>
+                <a href="./gdpr.html" class="pc-reg-hub-link">Learn more <i
+                    class="fa-light fa-arrow-right-long"></i></a>
+              </div>
+              <div class="pc-reg-hub-card">
+                <div class="pc-reg-hub-badge">United States</div>
+                <div class="pc-reg-hub-icon"><i class="fa-light fa-flag-usa"></i></div>
+                <h5>CCPA California</h5>
+                <p>California Consumer Privacy Act — giving California residents control over
+                  their personal information.</p>
+                <a href="./ccpa.html" class="pc-reg-hub-link">Learn more <i
+                    class="fa-light fa-arrow-right-long"></i></a>
+              </div>
+              <div class="pc-reg-hub-card">
+                <div class="pc-reg-hub-badge">United States</div>
+                <div class="pc-reg-hub-icon"><i class="fa-light fa-scale-balanced"></i></div>
+                <h5>CPRA California</h5>
+                <p>California Privacy Rights Act — enhanced CCPA with new data protections
+                  and the California Privacy Protection Agency.</p>
+                <a href="./cpra.html" class="pc-reg-hub-link">Learn more <i
+                    class="fa-light fa-arrow-right-long"></i></a>
+              </div>
+              <div class="pc-reg-hub-card">
+                <div class="pc-reg-hub-badge">Standards</div>
+                <div class="pc-reg-hub-icon"><i class="fa-light fa-rectangle-list"></i></div>
+                <h5>IAB TCF v2.2</h5>
+                <p>Transparency &amp; Consent Framework for digital advertising — managing
+                  vendor consent across the ad tech ecosystem.</p>
+                <a href="./iab-tcf.html" class="pc-reg-hub-link">Learn more <i
+                    class="fa-light fa-arrow-right-long"></i></a>
+              </div>
+              <div class="pc-reg-hub-card">
+                <div class="pc-reg-hub-badge">Standards</div>
+                <div class="pc-reg-hub-icon"><i class="fa-light fa-chart-mixed"></i></div>
+                <h5>Google Consent Mode</h5>
+                <p>Integrate consent signals with Google Analytics &amp; Ads — maintain
+                  measurement accuracy while respecting privacy.</p>
+                <a href="./google-consent-mode.html" class="pc-reg-hub-link">Learn more <i
+                    class="fa-light fa-arrow-right-long"></i></a>
+              </div>
             </div>
           </div>
         </section>
@@ -1256,18 +1375,26 @@
           data-bg-src="./assets/images/cta/cta-3-dot-bg.svg">
           <style>
             .cta-3 .features-list ul {
-              display: inline-flex !important; flex-direction: column !important;
-              align-items: flex-start !important; text-align: left !important;
+              display: inline-flex !important;
+              flex-direction: column !important;
+              align-items: flex-start !important;
+              text-align: left !important;
             }
-            .cta-3 .features-list { display: flex !important; justify-content: center !important; }
+
+            .cta-3 .features-list {
+              display: flex !important;
+              justify-content: center !important;
+            }
           </style>
           <div class="container">
             <div class="row g-4">
               <div class="cta-3__content">
                 <h2 class="content-title text-anime">Ready to Get Compliant<br>With PrivacyCrumb?</h2>
                 <div class="buttons">
-                  <a href="./sign-up.html" class="saaslyn-4-btn v2">Start Free Trial <i class="fa-light fa-arrow-right-long"></i></a>
-                  <a href="./pricing.html" class="saaslyn-4-btn">View Pricing <i class="fa-light fa-arrow-right-long"></i></a>
+                  <a href="./sign-up.html" class="saaslyn-4-btn v2">Start Free Trial <i
+                      class="fa-light fa-arrow-right-long"></i></a>
+                  <a href="./pricing.html" class="saaslyn-4-btn">View Pricing <i
+                      class="fa-light fa-arrow-right-long"></i></a>
                 </div>
                 <div class="features-list">
                   <ul>
@@ -1284,168 +1411,168 @@
 
       </main>
       <!--=================footer section start=================-->
-        <footer class="footer-three section" data-bg-src="./assets/images/footer/footer-three-bg.svg">
-          <style>
-            /* ── Footer – Desktop Layout ── */
+      <footer class="footer-three section" data-bg-src="./assets/images/footer/footer-three-bg.svg">
+        <style>
+          /* ── Footer – Desktop Layout ── */
+          .footer-three__main .info-area {
+            display: grid !important;
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 24px !important;
+          }
+
+          /* ── Footer – Mobile Layout Fix ── */
+          @media (max-width: 991.98px) {
             .footer-three__main .info-area {
-              display: grid !important;
-              grid-template-columns: repeat(4, 1fr) !important;
+              flex-wrap: wrap !important;
               gap: 24px !important;
             }
 
-            /* ── Footer – Mobile Layout Fix ── */
-            @media (max-width: 991.98px) {
-              .footer-three__main .info-area {
-                flex-wrap: wrap !important;
-                gap: 24px !important;
-              }
-
-              .footer-three__main .info-area .links-group {
-                min-width: 140px !important;
-                flex: 0 0 auto !important;
-              }
-
-              .footer-three__main .footer-info p {
-                font-size: 14px !important;
-              }
-
-              .footer-three__main .newsletter input {
-                font-size: 14px !important;
-              }
+            .footer-three__main .info-area .links-group {
+              min-width: 140px !important;
+              flex: 0 0 auto !important;
             }
 
-            @media (max-width: 767.98px) {
-              .footer-three__main .row.g-5 {
-                gap: 30px !important;
-              }
-
-              .footer-three__main .info-area {
-                display: grid !important;
-                grid-template-columns: repeat(4, 1fr) !important;
-                gap: 16px !important;
-              }
-
-              .footer-three__main .info-area .links-group {
-                min-width: unset !important;
-              }
-
-              .footer-three__main .info-area .links-group .link-title {
-                font-size: 16px !important;
-                margin-bottom: 10px !important;
-              }
-
-              .footer-three__main .info-area .links-group .link-list ul li {
-                font-size: 13px !important;
-              }
-
-              .footer-three__main .info-area .links-group .link-list ul li a {
-                font-size: 13px !important;
-              }
-
-              .footer-three__main .footer-info p {
-                font-size: 13px !important;
-                line-height: 1.6 !important;
-              }
-
-              .footer-three__main .footer-logo span {
-                font-size: 18px !important;
-              }
-
-              .footer-crop-logo {
-                overflow: hidden !important;
-              }
-
-              .footer-crop-logo img {
-                max-height: 60px !important;
-                object-fit: contain;
-              }
-
-              .footer-three__bottom {
-                padding: 16px 0 !important;
-              }
-
-              .footer-three__bottom .copyright {
-                font-size: 12px !important;
-              }
-
-              .footer-three__bottom .terms {
-                font-size: 12px !important;
-              }
-
-              .footer-three .section-padding-top {
-                padding-top: 50px !important;
-              }
+            .footer-three__main .footer-info p {
+              font-size: 14px !important;
             }
 
-            @media (max-width: 480px) {
-              .footer-three__main .info-area {
-                grid-template-columns: repeat(4, 1fr) !important;
-                gap: 10px !important;
-              }
-
-              .footer-three__main .info-area .links-group .link-title {
-                font-size: 15px !important;
-              }
-
-              .footer-three__main .info-area .links-group .link-list ul li a {
-                font-size: 12.5px !important;
-              }
-
-              .footer-three__main .newsletter {
-                flex-direction: column !important;
-              }
-
-              .footer-three__main .newsletter input {
-                font-size: 13px !important;
-                width: 100% !important;
-              }
-
-              .footer-crop-logo img {
-                max-height: 45px !important;
-              }
-
-              .footer-three__bottom .copyright {
-                font-size: 11px !important;
-                line-height: 1.5;
-              }
-
-              .footer-three .section-padding-top {
-                padding-top: 40px !important;
-              }
+            .footer-three__main .newsletter input {
+              font-size: 14px !important;
             }
-          </style>
-          <div class="footer-three__main section-padding-top">
-            <div class="container">
-              <div class="row g-5">
-                <div class="col-lg-3">
-                  <div class="footer-info"><a href="./index.html" class="footer-logo"
-                      style="display:flex;align-items:center;text-decoration:none;"><img
-                        src="./assets/images/PrivacyCrumbLogo4.svg" alt="Privacy Crumb" class="logo-steady-glow"
-                        style="height:44px;width:auto;" /></a>
-                    <p>Stay up to date with all the recent news and great discounts by simply adding your
-                      email address
-                      to our list. </p>
-                  </div>
-                  <form action="./index-3.html" class="newsletter"><input type="email" name="newsletter-email"
-                      id="newsletter-email" placeholder="Newsletter email" required /><button type="submit"><i
-                        class="fa-light fa-arrow-right-long"></i></button></form>
+          }
+
+          @media (max-width: 767.98px) {
+            .footer-three__main .row.g-5 {
+              gap: 30px !important;
+            }
+
+            .footer-three__main .info-area {
+              display: grid !important;
+              grid-template-columns: repeat(4, 1fr) !important;
+              gap: 16px !important;
+            }
+
+            .footer-three__main .info-area .links-group {
+              min-width: unset !important;
+            }
+
+            .footer-three__main .info-area .links-group .link-title {
+              font-size: 16px !important;
+              margin-bottom: 10px !important;
+            }
+
+            .footer-three__main .info-area .links-group .link-list ul li {
+              font-size: 13px !important;
+            }
+
+            .footer-three__main .info-area .links-group .link-list ul li a {
+              font-size: 13px !important;
+            }
+
+            .footer-three__main .footer-info p {
+              font-size: 13px !important;
+              line-height: 1.6 !important;
+            }
+
+            .footer-three__main .footer-logo span {
+              font-size: 18px !important;
+            }
+
+            .footer-crop-logo {
+              overflow: hidden !important;
+            }
+
+            .footer-crop-logo img {
+              max-height: 60px !important;
+              object-fit: contain;
+            }
+
+            .footer-three__bottom {
+              padding: 16px 0 !important;
+            }
+
+            .footer-three__bottom .copyright {
+              font-size: 12px !important;
+            }
+
+            .footer-three__bottom .terms {
+              font-size: 12px !important;
+            }
+
+            .footer-three .section-padding-top {
+              padding-top: 50px !important;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .footer-three__main .info-area {
+              grid-template-columns: repeat(4, 1fr) !important;
+              gap: 10px !important;
+            }
+
+            .footer-three__main .info-area .links-group .link-title {
+              font-size: 15px !important;
+            }
+
+            .footer-three__main .info-area .links-group .link-list ul li a {
+              font-size: 12.5px !important;
+            }
+
+            .footer-three__main .newsletter {
+              flex-direction: column !important;
+            }
+
+            .footer-three__main .newsletter input {
+              font-size: 13px !important;
+              width: 100% !important;
+            }
+
+            .footer-crop-logo img {
+              max-height: 45px !important;
+            }
+
+            .footer-three__bottom .copyright {
+              font-size: 11px !important;
+              line-height: 1.5;
+            }
+
+            .footer-three .section-padding-top {
+              padding-top: 40px !important;
+            }
+          }
+        </style>
+        <div class="footer-three__main section-padding-top">
+          <div class="container">
+            <div class="row g-5">
+              <div class="col-lg-3">
+                <div class="footer-info"><a href="./index.html" class="footer-logo"
+                    style="display:flex;align-items:center;text-decoration:none;"><img
+                      src="./assets/images/PrivacyCrumbLogo4.svg" alt="Privacy Crumb" class="logo-steady-glow"
+                      style="height:44px;width:auto;" /></a>
+                  <p>Stay up to date with all the recent news and great discounts by simply adding your
+                    email address
+                    to our list. </p>
                 </div>
-                <div class="col-lg-9" style="border-left:2px solid rgba(26,26,46,0.12);padding-left:40px;">
-                  <div class="info-area" style="display:grid;grid-template-columns:repeat(4,1fr);gap:30px;">
-                    <style>
-                      .info-area>div>.links-group {
-                        margin-bottom: 28px;
-                      }
+                <form action="./index-3.html" class="newsletter"><input type="email" name="newsletter-email"
+                    id="newsletter-email" placeholder="Newsletter email" required /><button type="submit"><i
+                      class="fa-light fa-arrow-right-long"></i></button></form>
+              </div>
+              <div class="col-lg-9" style="border-left:2px solid rgba(26,26,46,0.12);padding-left:40px;">
+                <div class="info-area" style="display:grid;grid-template-columns:repeat(4,1fr);gap:30px;">
+                  <style>
+                    .info-area>div>.links-group {
+                      margin-bottom: 28px;
+                    }
 
-                      .info-area>div>.links-group:last-child {
-                        margin-bottom: 0;
-                      }
-                    </style>
-                                        <!-- Column 1 -->
+                    .info-area>div>.links-group:last-child {
+                      margin-bottom: 0;
+                    }
+                  </style>
+                  <!-- Column 1 -->
 
-                    <div>
+                  <div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">PrivacyCrumb</h6>
                       <div class="link-list">
                         <ul>
@@ -1456,7 +1583,7 @@
                       </div>
                     </div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Use Cases</h6>
                       <div class="link-list">
                         <ul>
@@ -1468,13 +1595,13 @@
                       </div>
                     </div>
 
-                    </div>
+                  </div>
 
-                    <!-- Column 2 -->
+                  <!-- Column 2 -->
 
-                    <div>
+                  <div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Solutions</h6>
                       <div class="link-list">
                         <ul>
@@ -1488,7 +1615,7 @@
                       </div>
                     </div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Compare</h6>
                       <div class="link-list">
                         <ul>
@@ -1499,13 +1626,13 @@
                       </div>
                     </div>
 
-                    </div>
+                  </div>
 
-                    <!-- Column 3 -->
+                  <!-- Column 3 -->
 
-                    <div>
+                  <div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Resources</h6>
                       <div class="link-list">
                         <ul>
@@ -1517,7 +1644,7 @@
                       </div>
                     </div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Support</h6>
                       <div class="link-list">
                         <ul>
@@ -1527,24 +1654,26 @@
                       </div>
                     </div>
 
-                    </div>
+                  </div>
 
-                    <!-- Column 4 -->
+                  <!-- Column 4 -->
 
-                    <div>
+                  <div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Free Tools &#10024;</h6>
                       <div class="link-list">
                         <ul>
-                          <li><a href="https://app.privacycrumb.com/free/privacy-policy-generator">Privacy Policy Generator</a></li>
-                          <li><a href="https://app.privacycrumb.com/free/cookie-policy-generator">Cookie Policy Generator</a></li>
+                          <li><a href="https://app.privacycrumb.com/free/privacy-policy-generator">Privacy Policy
+                              Generator</a></li>
+                          <li><a href="https://app.privacycrumb.com/free/cookie-policy-generator">Cookie Policy
+                              Generator</a></li>
                           <li><a href="https://app.privacycrumb.com/free-scanner">Cookie Checker</a></li>
                         </ul>
                       </div>
                     </div>
 
-                      <div class="links-group v3">
+                    <div class="links-group v3">
                       <h6 class="link-title">Legal</h6>
                       <div class="link-list">
                         <ul>
@@ -1557,8 +1686,10 @@
                       </div>
                     </div>
 
-                      <div class="links-group v3">
-                      <h6 class="link-title">Partners <span style="display:inline-block;padding:2px 10px;border-radius:20px;background:linear-gradient(135deg,#6c3ce0,#00c9a7);color:#fff;font-size:11px;font-weight:600;margin-left:6px;vertical-align:middle;">Join us!</span></h6>
+                    <div class="links-group v3">
+                      <h6 class="link-title">Partners <span
+                          style="display:inline-block;padding:2px 10px;border-radius:20px;background:linear-gradient(135deg,#6c3ce0,#00c9a7);color:#fff;font-size:11px;font-weight:600;margin-left:6px;vertical-align:middle;">Join
+                          us!</span></h6>
                       <div class="link-list">
                         <ul>
                           <li><a href="#">Agency Partner</a></li>
@@ -1569,36 +1700,37 @@
                       </div>
                     </div>
 
-                    </div>
+                  </div>
 
 
 
-<div class="row">
-                <div class="col-12">
-                  <div class="footer-crop-logo" style="pointer-events:none;position:relative;z-index:0;
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="footer-crop-logo" style="pointer-events:none;position:relative;z-index:0;
                   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 100%);
                   mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 100%);">
-                    <img src="./assets/images/footer/footer-3-logo.svg" alt="Privacy Crumb"
-                      style="filter: brightness(0) saturate(100%) invert(12%) sepia(90%) saturate(2500%) hue-rotate(15deg) brightness(90%) contrast(100%);" />
+                        <img src="./assets/images/footer/footer-3-logo.svg" alt="Privacy Crumb"
+                          style="filter: brightness(0) saturate(100%) invert(12%) sepia(90%) saturate(2500%) hue-rotate(15deg) brightness(90%) contrast(100%);" />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="footer-three__bottom">
-            <div class="container">
-              <div class="row g-2 align-items-center justify-content-between text-center text-md-start">
-                <div class="col-md-auto">
-                  <div class="copyright">Copyright <span class="current-year"></span> <a href="./">Privacy Crumb</a>.
-                    all
-                    rights reserved. Terms & Conditions </div>
-                </div>
+              <div class="footer-three__bottom">
+                <div class="container">
+                  <div class="row g-2 align-items-center justify-content-between text-center text-md-start">
+                    <div class="col-md-auto">
+                      <div class="copyright">Copyright <span class="current-year"></span> <a href="./">Privacy
+                          Crumb</a>.
+                        all
+                        rights reserved. Terms & Conditions </div>
+                    </div>
 
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </footer>
-        <!--=================footer section end=================-->
+      </footer>
+      <!--=================footer section end=================-->
     </div>
   </div>
   <!-- JS Files -->
