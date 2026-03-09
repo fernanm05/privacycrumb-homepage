@@ -824,7 +824,8 @@
     <div class="fix-menu">
       <div class="container">
         <div class="header-one__main">
-          <a class="header-one__logo" href="./index-3.html" style="display:flex;align-items:center;text-decoration:none;">
+          <a class="header-one__logo" href="./index-3.html"
+            style="display:flex;align-items:center;text-decoration:none;">
             <img src="./assets/images/PrivacyCrumbLogo4.svg" alt="Privacy Crumb" class="logo-steady-glow"
               style="height:30px;width:auto;" />
           </a>
@@ -896,19 +897,101 @@
           </div>
           <div class="header-one__menu-btns">
             <style>
-              .pc-lang-wrap{position:relative;display:inline-flex;align-items:center;justify-content:center;margin-right:6px;width:34px;height:34px;background:rgba(26,26,46,0.06);border:1px solid rgba(26,26,46,0.15);border-radius:50%;transition:all 0.2s ease;cursor:pointer;}
-              .pc-lang-wrap:hover{background:rgba(26,26,46,0.1);border-color:rgba(26,26,46,0.25);}
-              .pc-lang-wrap .fa-globe{font-size:15px;color:#1a1a2e;transition:color 0.2s ease;}
-              .pc-lang-wrap.open{background:rgba(108,60,224,0.1);border-color:rgba(108,60,224,0.3);}
-              .pc-lang-wrap.open .fa-globe{color:#6c3ce0;}
-              .pc-lang-drop{position:absolute;top:calc(100% + 12px);right:0;min-width:160px;background:#fff;border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,0.1);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:all 0.25s ease;z-index:9999;pointer-events:none;}
-              .pc-lang-drop::before{content:'';position:absolute;top:-6px;right:12px;width:12px;height:12px;background:#fff;transform:rotate(45deg);border-radius:2px;box-shadow:-2px -2px 4px rgba(0,0,0,0.04);}
-              .pc-lang-wrap.open .pc-lang-drop{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}
-              .pc-lang-drop a{display:block;padding:8px 20px;font-size:14px;color:#1a1a2e;text-decoration:none;transition:all 0.15s ease;font-weight:400;}
-              .pc-lang-drop a:hover{color:#6c3ce0;background:rgba(108,60,224,0.04);padding-left:24px;}
-              .pc-lang-drop a.active{color:#6c3ce0;font-weight:500;}
+              .pc-lang-wrap {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 6px;
+                width: 34px;
+                height: 34px;
+                background: rgba(26, 26, 46, 0.06);
+                border: 1px solid rgba(26, 26, 46, 0.15);
+                border-radius: 50%;
+                transition: all 0.2s ease;
+                cursor: pointer;
+              }
+
+              .pc-lang-wrap:hover {
+                background: rgba(26, 26, 46, 0.1);
+                border-color: rgba(26, 26, 46, 0.25);
+              }
+
+              .pc-lang-wrap .fa-globe {
+                font-size: 15px;
+                color: #1a1a2e;
+                transition: color 0.2s ease;
+              }
+
+              .pc-lang-wrap.open {
+                background: rgba(108, 60, 224, 0.1);
+                border-color: rgba(108, 60, 224, 0.3);
+              }
+
+              .pc-lang-wrap.open .fa-globe {
+                color: #6c3ce0;
+              }
+
+              .pc-lang-drop {
+                position: absolute;
+                top: calc(100% + 12px);
+                right: 0;
+                min-width: 160px;
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+                padding: 8px 0;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(8px);
+                transition: all 0.25s ease;
+                z-index: 9999;
+                pointer-events: none;
+              }
+
+              .pc-lang-drop::before {
+                content: '';
+                position: absolute;
+                top: -6px;
+                right: 12px;
+                width: 12px;
+                height: 12px;
+                background: #fff;
+                transform: rotate(45deg);
+                border-radius: 2px;
+                box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.04);
+              }
+
+              .pc-lang-wrap.open .pc-lang-drop {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                pointer-events: auto;
+              }
+
+              .pc-lang-drop a {
+                display: block;
+                padding: 8px 20px;
+                font-size: 14px;
+                color: #1a1a2e;
+                text-decoration: none;
+                transition: all 0.15s ease;
+                font-weight: 400;
+              }
+
+              .pc-lang-drop a:hover {
+                color: #6c3ce0;
+                background: rgba(108, 60, 224, 0.04);
+                padding-left: 24px;
+              }
+
+              .pc-lang-drop a.active {
+                color: #6c3ce0;
+                font-weight: 500;
+              }
             </style>
-            <div class="pc-lang-wrap" title="Select language" onclick="event.stopPropagation();this.classList.toggle('open');">
+            <div class="pc-lang-wrap" title="Select language"
+              onclick="event.stopPropagation();this.classList.toggle('open');">
               <i class="fa-light fa-globe"></i>
               <div class="pc-lang-drop">
                 <a href="#" class="active" onclick="return false;">English</a>
@@ -920,7 +1003,7 @@
                 <a href="#" onclick="return false;">Svenska</a>
               </div>
             </div>
-            <script>document.addEventListener('click',function(){document.querySelectorAll('.pc-lang-wrap.open').forEach(function(e){e.classList.remove('open')})});</script>
+            <script>document.addEventListener('click', function () { document.querySelectorAll('.pc-lang-wrap.open').forEach(function (e) { e.classList.remove('open') }) });</script>
             <div class="buttons">
               <a href="./login.html" class="saaslyn-5-btn">Login</a>
               <div class="divider"></div>
@@ -1467,7 +1550,7 @@
               </div>
             </div>
             <div class="kb-cat-grid" id="kbCatGrid">
-              <a class="kb-cat-card kb-item" href="#">
+              <a class="kb-cat-card kb-item" href="./kb-cat-getting-started.html">
                 <div class="kb-cat-header">
                   <div class="kb-cat-icon"><i class="fa-light fa-rocket-launch"></i></div>
                   <div class="kb-cat-arrow"><i class="fa-light fa-arrow-right"></i></div>
@@ -1477,7 +1560,7 @@
                   banner in minutes.</p>
                 <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 8 articles</span>
               </a>
-              <a class="kb-cat-card kb-item" href="#">
+              <a class="kb-cat-card kb-item" href="./kb-cat-cookie-scanner.html">
                 <div class="kb-cat-header">
                   <div class="kb-cat-icon"><i class="fa-light fa-cookie-bite"></i></div>
                   <div class="kb-cat-arrow"><i class="fa-light fa-arrow-right"></i></div>
@@ -1487,7 +1570,7 @@
                   up to date.</p>
                 <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 6 articles</span>
               </a>
-              <a class="kb-cat-card kb-item" href="#">
+              <a class="kb-cat-card kb-item" href="./kb-cat-consent-banner.html">
                 <div class="kb-cat-header">
                   <div class="kb-cat-icon"><i class="fa-light fa-window-maximize"></i></div>
                   <div class="kb-cat-arrow"><i class="fa-light fa-arrow-right"></i></div>
@@ -1497,7 +1580,7 @@
                   geo-targeted rules.</p>
                 <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 12 articles</span>
               </a>
-              <a class="kb-cat-card kb-item" href="#">
+              <a class="kb-cat-card kb-item" href="./kb-cat-gdpr.html">
                 <div class="kb-cat-header">
                   <div class="kb-cat-icon"><i class="fa-light fa-shield-check"></i></div>
                   <div class="kb-cat-arrow"><i class="fa-light fa-arrow-right"></i></div>
@@ -1507,7 +1590,7 @@
                   you compliant.</p>
                 <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 10 articles</span>
               </a>
-              <a class="kb-cat-card kb-item" href="#">
+              <a class="kb-cat-card kb-item" href="./kb-cat-ccpa.html">
                 <div class="kb-cat-header">
                   <div class="kb-cat-icon"><i class="fa-light fa-flag-usa"></i></div>
                   <div class="kb-cat-arrow"><i class="fa-light fa-arrow-right"></i></div>
@@ -1517,7 +1600,7 @@
                   configuration guides.</p>
                 <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 5 articles</span>
               </a>
-              <a class="kb-cat-card kb-item" href="#">
+              <a class="kb-cat-card kb-item" href="./kb-cat-google-consent-mode.html">
                 <div class="kb-cat-header">
                   <div class="kb-cat-icon"><i class="fa-light fa-chart-mixed"></i></div>
                   <div class="kb-cat-arrow"><i class="fa-light fa-arrow-right"></i></div>
@@ -1527,7 +1610,7 @@
                   analytics data.</p>
                 <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 4 articles</span>
               </a>
-              <a class="kb-cat-card kb-item" href="#">
+              <a class="kb-cat-card kb-item" href="./kb-cat-policy-generator.html">
                 <div class="kb-cat-header">
                   <div class="kb-cat-icon"><i class="fa-light fa-file-contract"></i></div>
                   <div class="kb-cat-arrow"><i class="fa-light fa-arrow-right"></i></div>
@@ -1537,7 +1620,7 @@
                   actual cookie usage.</p>
                 <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 5 articles</span>
               </a>
-              <a class="kb-cat-card kb-item" href="#">
+              <a class="kb-cat-card kb-item" href="./kb-cat-consent-logging.html">
                 <div class="kb-cat-header">
                   <div class="kb-cat-icon"><i class="fa-light fa-clipboard-list-check"></i></div>
                   <div class="kb-cat-arrow"><i class="fa-light fa-arrow-right"></i></div>
@@ -1547,7 +1630,7 @@
                   settings.</p>
                 <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 4 articles</span>
               </a>
-              <a class="kb-cat-card kb-item" href="#">
+              <a class="kb-cat-card kb-item" href="./kb-cat-multi-language-geo.html">
                 <div class="kb-cat-header">
                   <div class="kb-cat-icon"><i class="fa-light fa-globe"></i></div>
                   <div class="kb-cat-arrow"><i class="fa-light fa-arrow-right"></i></div>
@@ -1557,7 +1640,7 @@
                   compliance.</p>
                 <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 7 articles</span>
               </a>
-              <a class="kb-cat-card kb-item" href="#">
+              <a class="kb-cat-card kb-item" href="./kb-cat-developer-api.html">
                 <div class="kb-cat-header">
                   <div class="kb-cat-icon"><i class="fa-light fa-code"></i></div>
                   <div class="kb-cat-arrow"><i class="fa-light fa-arrow-right"></i></div>
@@ -1567,7 +1650,7 @@
                   setup.</p>
                 <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 9 articles</span>
               </a>
-              <a class="kb-cat-card kb-item" href="#">
+              <a class="kb-cat-card kb-item" href="./kb-cat-account-billing.html">
                 <div class="kb-cat-header">
                   <div class="kb-cat-icon"><i class="fa-light fa-users-gear"></i></div>
                   <div class="kb-cat-arrow"><i class="fa-light fa-arrow-right"></i></div>
@@ -1577,7 +1660,7 @@
                   invoices.</p>
                 <span class="kb-cat-count"><i class="fa-light fa-file-lines"></i> 6 articles</span>
               </a>
-              <a class="kb-cat-card kb-item" href="#">
+              <a class="kb-cat-card kb-item" href="./kb-cat-integrations.html">
                 <div class="kb-cat-header">
                   <div class="kb-cat-icon"><i class="fa-light fa-puzzle-piece"></i></div>
                   <div class="kb-cat-arrow"><i class="fa-light fa-arrow-right"></i></div>
@@ -1687,7 +1770,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-8">
                 <ul class="kb-article-list" id="kbArticleList">
-                  <li><a class="kb-article-item kb-item" href="#">
+                  <li><a class="kb-article-item kb-item" href="./kb-install-script.html">
                       <div class="article-left">
                         <div class="article-icon"><i class="fa-light fa-code"></i></div>
                         <div>
@@ -1697,7 +1780,7 @@
                       </div>
                       <i class="fa-light fa-arrow-right article-arrow"></i>
                     </a></li>
-                  <li><a class="kb-article-item kb-item" href="#">
+                  <li><a class="kb-article-item kb-item" href="./kb-customize-banner.html">
                       <div class="article-left">
                         <div class="article-icon"><i class="fa-light fa-palette"></i></div>
                         <div>
@@ -1707,7 +1790,7 @@
                       </div>
                       <i class="fa-light fa-arrow-right article-arrow"></i>
                     </a></li>
-                  <li><a class="kb-article-item kb-item" href="#">
+                  <li><a class="kb-article-item kb-item" href="./kb-first-cookie-scan.html">
                       <div class="article-left">
                         <div class="article-icon"><i class="fa-light fa-scanner"></i></div>
                         <div>
@@ -1717,7 +1800,7 @@
                       </div>
                       <i class="fa-light fa-arrow-right article-arrow"></i>
                     </a></li>
-                  <li><a class="kb-article-item kb-item" href="#">
+                  <li><a class="kb-article-item kb-item" href="./kb-google-consent-mode.html">
                       <div class="article-left">
                         <div class="article-icon"><i class="fa-light fa-chart-mixed"></i></div>
                         <div>
@@ -1727,7 +1810,7 @@
                       </div>
                       <i class="fa-light fa-arrow-right article-arrow"></i>
                     </a></li>
-                  <li><a class="kb-article-item kb-item" href="#">
+                  <li><a class="kb-article-item kb-item" href="./kb-geo-targeting.html">
                       <div class="article-left">
                         <div class="article-icon"><i class="fa-light fa-globe"></i></div>
                         <div>
@@ -1737,7 +1820,7 @@
                       </div>
                       <i class="fa-light fa-arrow-right article-arrow"></i>
                     </a></li>
-                  <li><a class="kb-article-item kb-item" href="#">
+                  <li><a class="kb-article-item kb-item" href="./kb-privacy-policy-generator.html">
                       <div class="article-left">
                         <div class="article-icon"><i class="fa-light fa-file-contract"></i></div>
                         <div>
@@ -1747,7 +1830,7 @@
                       </div>
                       <i class="fa-light fa-arrow-right article-arrow"></i>
                     </a></li>
-                  <li><a class="kb-article-item kb-item" href="#">
+                  <li><a class="kb-article-item kb-item" href="./kb-wordpress-install.html">
                       <div class="article-left">
                         <div class="article-icon"><i class="fa-light fa-puzzle-piece"></i></div>
                         <div>
@@ -1757,7 +1840,7 @@
                       </div>
                       <i class="fa-light fa-arrow-right article-arrow"></i>
                     </a></li>
-                  <li><a class="kb-article-item kb-item" href="#">
+                  <li><a class="kb-article-item kb-item" href="./kb-export-consent-logs.html">
                       <div class="article-left">
                         <div class="article-icon"><i class="fa-light fa-download"></i></div>
                         <div>
@@ -2029,14 +2112,14 @@
                       <h6 class="link-title">Compare</h6>
                       <div class="link-list">
                         <ul>
-                          
-                          
+
+
                           <li><a href="./cookiebot.html">Cookiebot</a></li>
                           <li><a href="./lubenda.html">Iubenda</a></li>
                           <li><a href="./complianz.html">Complianz</a></li>
                           <li><a href="./compare.html">All comparisons &rarr;</a></li>
-                        
-                        
+
+
                         </ul>
                       </div>
                     </div>

@@ -824,7 +824,8 @@
     <div class="fix-menu">
       <div class="container">
         <div class="header-one__main">
-          <a class="header-one__logo" href="./index-3.html" style="display:flex;align-items:center;text-decoration:none;">
+          <a class="header-one__logo" href="./index-3.html"
+            style="display:flex;align-items:center;text-decoration:none;">
             <img src="./assets/images/PrivacyCrumbLogo4.svg" alt="Privacy Crumb" class="logo-steady-glow"
               style="height:30px;width:auto;" />
           </a>
@@ -896,19 +897,101 @@
           </div>
           <div class="header-one__menu-btns">
             <style>
-              .pc-lang-wrap{position:relative;display:inline-flex;align-items:center;justify-content:center;margin-right:6px;width:34px;height:34px;background:rgba(26,26,46,0.06);border:1px solid rgba(26,26,46,0.15);border-radius:50%;transition:all 0.2s ease;cursor:pointer;}
-              .pc-lang-wrap:hover{background:rgba(26,26,46,0.1);border-color:rgba(26,26,46,0.25);}
-              .pc-lang-wrap .fa-globe{font-size:15px;color:#1a1a2e;transition:color 0.2s ease;}
-              .pc-lang-wrap.open{background:rgba(108,60,224,0.1);border-color:rgba(108,60,224,0.3);}
-              .pc-lang-wrap.open .fa-globe{color:#6c3ce0;}
-              .pc-lang-drop{position:absolute;top:calc(100% + 12px);right:0;min-width:160px;background:#fff;border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,0.1);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:all 0.25s ease;z-index:9999;pointer-events:none;}
-              .pc-lang-drop::before{content:'';position:absolute;top:-6px;right:12px;width:12px;height:12px;background:#fff;transform:rotate(45deg);border-radius:2px;box-shadow:-2px -2px 4px rgba(0,0,0,0.04);}
-              .pc-lang-wrap.open .pc-lang-drop{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}
-              .pc-lang-drop a{display:block;padding:8px 20px;font-size:14px;color:#1a1a2e;text-decoration:none;transition:all 0.15s ease;font-weight:400;}
-              .pc-lang-drop a:hover{color:#6c3ce0;background:rgba(108,60,224,0.04);padding-left:24px;}
-              .pc-lang-drop a.active{color:#6c3ce0;font-weight:500;}
+              .pc-lang-wrap {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 6px;
+                width: 34px;
+                height: 34px;
+                background: rgba(26, 26, 46, 0.06);
+                border: 1px solid rgba(26, 26, 46, 0.15);
+                border-radius: 50%;
+                transition: all 0.2s ease;
+                cursor: pointer;
+              }
+
+              .pc-lang-wrap:hover {
+                background: rgba(26, 26, 46, 0.1);
+                border-color: rgba(26, 26, 46, 0.25);
+              }
+
+              .pc-lang-wrap .fa-globe {
+                font-size: 15px;
+                color: #1a1a2e;
+                transition: color 0.2s ease;
+              }
+
+              .pc-lang-wrap.open {
+                background: rgba(108, 60, 224, 0.1);
+                border-color: rgba(108, 60, 224, 0.3);
+              }
+
+              .pc-lang-wrap.open .fa-globe {
+                color: #6c3ce0;
+              }
+
+              .pc-lang-drop {
+                position: absolute;
+                top: calc(100% + 12px);
+                right: 0;
+                min-width: 160px;
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+                padding: 8px 0;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(8px);
+                transition: all 0.25s ease;
+                z-index: 9999;
+                pointer-events: none;
+              }
+
+              .pc-lang-drop::before {
+                content: '';
+                position: absolute;
+                top: -6px;
+                right: 12px;
+                width: 12px;
+                height: 12px;
+                background: #fff;
+                transform: rotate(45deg);
+                border-radius: 2px;
+                box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.04);
+              }
+
+              .pc-lang-wrap.open .pc-lang-drop {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                pointer-events: auto;
+              }
+
+              .pc-lang-drop a {
+                display: block;
+                padding: 8px 20px;
+                font-size: 14px;
+                color: #1a1a2e;
+                text-decoration: none;
+                transition: all 0.15s ease;
+                font-weight: 400;
+              }
+
+              .pc-lang-drop a:hover {
+                color: #6c3ce0;
+                background: rgba(108, 60, 224, 0.04);
+                padding-left: 24px;
+              }
+
+              .pc-lang-drop a.active {
+                color: #6c3ce0;
+                font-weight: 500;
+              }
             </style>
-            <div class="pc-lang-wrap" title="Select language" onclick="event.stopPropagation();this.classList.toggle('open');">
+            <div class="pc-lang-wrap" title="Select language"
+              onclick="event.stopPropagation();this.classList.toggle('open');">
               <i class="fa-light fa-globe"></i>
               <div class="pc-lang-drop">
                 <a href="#" class="active" onclick="return false;">English</a>
@@ -920,7 +1003,7 @@
                 <a href="#" onclick="return false;">Svenska</a>
               </div>
             </div>
-            <script>document.addEventListener('click',function(){document.querySelectorAll('.pc-lang-wrap.open').forEach(function(e){e.classList.remove('open')})});</script>
+            <script>document.addEventListener('click', function () { document.querySelectorAll('.pc-lang-wrap.open').forEach(function (e) { e.classList.remove('open') }) });</script>
             <div class="buttons">
               <a href="./login.html" class="saaslyn-5-btn">Login</a>
               <div class="divider"></div>
@@ -1268,6 +1351,12 @@
               }
             }
 
+            a.info-card-link {
+              text-decoration: none;
+              color: inherit;
+              display: block;
+            }
+
             .info-card {
               background: #ffffff;
               border: 1px solid rgba(26, 26, 46, 0.08);
@@ -1278,6 +1367,7 @@
               transition: transform 0.3s, border-color 0.3s;
               transform: translateZ(0);
               will-change: transform;
+              cursor: pointer;
             }
 
             .info-card:hover {
@@ -1368,99 +1458,206 @@
 
             <div class="infographic-grid">
               <!-- Card 1 -->
-              <div class="info-card">
-                <div class="info-card-img-wrap">
-                  <img src="./assets/images/infographics/info_gdpr.png" alt="GDPR Compliance">
+              <a href="./info-gdpr-checklist.html" class="info-card-link">
+                <div class="info-card">
+                  <div class="info-card-img-wrap">
+                    <img src="./assets/images/infographics/info_gdpr.png" alt="GDPR Compliance">
+                  </div>
+                  <div class="info-card-content">
+                    <div class="info-cat">GDPR Compliance</div>
+                    <h4 class="info-title">The Ultimate GDPR Checklist for 2024</h4>
+                    <p class="info-desc">A comprehensive visual guide to ensuring your website meets all current
+                      European
+                      data protection standards.</p>
+                    <span class="info-download-btn">View Infographic <i
+                        class="fa-regular fa-arrow-down-to-bracket"></i></span>
+                  </div>
                 </div>
-                <div class="info-card-content">
-                  <div class="info-cat">GDPR Compliance</div>
-                  <h4 class="info-title">The Ultimate GDPR Checklist for 2024</h4>
-                  <p class="info-desc">A comprehensive visual guide to ensuring your website meets all current European
-                    data protection standards.</p>
-                  <a href="#" class="info-download-btn">View Infographic <i
-                      class="fa-regular fa-arrow-down-to-bracket"></i></a>
-                </div>
-              </div>
+              </a>
 
               <!-- Card 2 -->
-              <div class="info-card">
-                <div class="info-card-img-wrap">
-                  <img src="./assets/images/infographics/info_ccpa.png" alt="CCPA / CPRA">
+              <a href="./info-california-privacy.html" class="info-card-link">
+                <div class="info-card">
+                  <div class="info-card-img-wrap">
+                    <img src="./assets/images/infographics/info_ccpa.png" alt="CCPA / CPRA">
+                  </div>
+                  <div class="info-card-content">
+                    <div class="info-cat">CCPA / CPRA</div>
+                    <h4 class="info-title">California Privacy Laws Explained</h4>
+                    <p class="info-desc">Understand the key differences between CCPA and CPRA, and what businesses need
+                      to
+                      do to stay compliant.</p>
+                    <span class="info-download-btn">View Infographic <i
+                        class="fa-regular fa-arrow-down-to-bracket"></i></span>
+                  </div>
                 </div>
-                <div class="info-card-content">
-                  <div class="info-cat">CCPA / CPRA</div>
-                  <h4 class="info-title">California Privacy Laws Explained</h4>
-                  <p class="info-desc">Understand the key differences between CCPA and CPRA, and what businesses need to
-                    do to stay compliant.</p>
-                  <a href="#" class="info-download-btn">View Infographic <i
-                      class="fa-regular fa-arrow-down-to-bracket"></i></a>
-                </div>
-              </div>
+              </a>
 
               <!-- Card 3 -->
-              <div class="info-card">
+              <a href="./info-secure-data.html" class="info-card-link">
+                <div class="info-card">
+                  <div class="info-card-img-wrap">
+                    <img src="./assets/images/infographics/info_security.png" alt="Data Security">
+                  </div>
+                  <div class="info-card-content">
+                    <div class="info-cat">Data Security</div>
+                    <h4 class="info-title">5 Steps to Secure User Data</h4>
+                    <p class="info-desc">Visualizing the best practices for encrypting, storing, and managing sensitive
+                      user information securely.</p>
+                    <span class="info-download-btn">View Infographic <i
+                        class="fa-regular fa-arrow-down-to-bracket"></i></span>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Card 4 -->
+              <a href="./info-how-cookies-work.html" class="info-card-link">
+                <div class="info-card">
+                  <div class="info-card-img-wrap">
+                    <img src="./assets/images/infographics/info_cookies.png" alt="Cookie Policies">
+                  </div>
+                  <div class="info-card-content">
+                    <div class="info-cat">Cookie Policies</div>
+                    <h4 class="info-title">How Cookies Actually Work</h4>
+                    <p class="info-desc">A simplified breakdown of first-party vs third-party cookies and what consent
+                      looks like in practice.</p>
+                    <span class="info-download-btn">View Infographic <i
+                        class="fa-regular fa-arrow-down-to-bracket"></i></span>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Card 5 -->
+              <a href="./info-privacy-laws-world.html" class="info-card-link">
+                <div class="info-card">
+                  <div class="info-card-img-wrap">
+                    <img src="./assets/images/infographics/info_global.png" alt="Global Compliance">
+                  </div>
+                  <div class="info-card-content">
+                    <div class="info-cat">Global Compliance</div>
+                    <h4 class="info-title">Privacy Laws Around the World</h4>
+                    <p class="info-desc">An interactive map showing the various data privacy regulations across
+                      different
+                      countries and regions.</p>
+                    <span class="info-download-btn">View Infographic <i
+                        class="fa-regular fa-arrow-down-to-bracket"></i></span>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Card 6 -->
+              <a href="./info-consent-management.html" class="info-card-link">
+                <div class="info-card">
+                  <div class="info-card-img-wrap">
+                    <img src="./assets/images/infographics/info_dev.png" alt="For Developers">
+                  </div>
+                  <div class="info-card-content">
+                    <div class="info-cat">For Developers</div>
+                    <h4 class="info-title">Implementing Consent Management</h4>
+                    <p class="info-desc">Technical flowcharts demonstrating how to integrate consent management
+                      platforms
+                      via API and SDKs.</p>
+                    <span class="info-download-btn">View Infographic <i
+                        class="fa-regular fa-arrow-down-to-bracket"></i></span>
+                  </div>
+                </div>
+              </a>
+
+
+              <!-- Card 7 -->
+              <a href="./info-cookie-consent-flow.html" class="info-card-link info-card-extra" style="display:none;">
+              <div class="info-card" style="margin-top:20px;">
                 <div class="info-card-img-wrap">
-                  <img src="./assets/images/infographics/info_security.png" alt="Data Security">
+                  <img src="./assets/images/infographics/info_consent_flow.png" alt="Technical">
+                </div>
+                <div class="info-card-content">
+                  <div class="info-cat">Technical</div>
+                  <h4 class="info-title">The Cookie Consent Decision Flow</h4>
+                  <p class="info-desc">A detailed flowchart showing the entire consent decision process from page load to script management.</p>
+                  <span class="info-download-btn">View Infographic <i class="fa-regular fa-arrow-down-to-bracket"></i></span>
+                </div>
+              </div>
+              </a>
+
+              <!-- Card 8 -->
+              <a href="./info-data-breach-response.html" class="info-card-link info-card-extra" style="display:none;">
+              <div class="info-card" style="margin-top:20px;">
+                <div class="info-card-img-wrap">
+                  <img src="./assets/images/infographics/info_breach_response.png" alt="Data Security">
                 </div>
                 <div class="info-card-content">
                   <div class="info-cat">Data Security</div>
-                  <h4 class="info-title">5 Steps to Secure User Data</h4>
-                  <p class="info-desc">Visualizing the best practices for encrypting, storing, and managing sensitive
-                    user information securely.</p>
-                  <a href="#" class="info-download-btn">View Infographic <i
-                      class="fa-regular fa-arrow-down-to-bracket"></i></a>
+                  <h4 class="info-title">Data Breach Response Timeline</h4>
+                  <p class="info-desc">Critical steps and deadlines for responding to a data breach under GDPR, CCPA, and other regulations.</p>
+                  <span class="info-download-btn">View Infographic <i class="fa-regular fa-arrow-down-to-bracket"></i></span>
                 </div>
               </div>
+              </a>
 
-              <!-- Card 4 -->
-              <div class="info-card">
+              <!-- Card 9 -->
+              <a href="./info-consent-rates.html" class="info-card-link info-card-extra" style="display:none;">
+              <div class="info-card" style="margin-top:20px;">
                 <div class="info-card-img-wrap">
-                  <img src="./assets/images/infographics/info_cookies.png" alt="Cookie Policies">
+                  <img src="./assets/images/infographics/info_consent_rates.png" alt="Analytics">
                 </div>
                 <div class="info-card-content">
-                  <div class="info-cat">Cookie Policies</div>
-                  <h4 class="info-title">How Cookies Actually Work</h4>
-                  <p class="info-desc">A simplified breakdown of first-party vs third-party cookies and what consent
-                    looks like in practice.</p>
-                  <a href="#" class="info-download-btn">View Infographic <i
-                      class="fa-regular fa-arrow-down-to-bracket"></i></a>
+                  <div class="info-cat">Analytics</div>
+                  <h4 class="info-title">Consent Rates by Industry</h4>
+                  <p class="info-desc">Data-driven benchmarks showing cookie consent acceptance rates across different industries and sectors.</p>
+                  <span class="info-download-btn">View Infographic <i class="fa-regular fa-arrow-down-to-bracket"></i></span>
                 </div>
               </div>
+              </a>
 
-              <!-- Card 5 -->
-              <div class="info-card">
+              <!-- Card 10 -->
+              <a href="./info-third-party-cookies.html" class="info-card-link info-card-extra" style="display:none;">
+              <div class="info-card" style="margin-top:20px;">
                 <div class="info-card-img-wrap">
-                  <img src="./assets/images/infographics/info_global.png" alt="Global Compliance">
+                  <img src="./assets/images/infographics/info_third_party.png" alt="Industry Trends">
                 </div>
                 <div class="info-card-content">
-                  <div class="info-cat">Global Compliance</div>
-                  <h4 class="info-title">Privacy Laws Around the World</h4>
-                  <p class="info-desc">An interactive map showing the various data privacy regulations across different
-                    countries and regions.</p>
-                  <a href="#" class="info-download-btn">View Infographic <i
-                      class="fa-regular fa-arrow-down-to-bracket"></i></a>
+                  <div class="info-cat">Industry Trends</div>
+                  <h4 class="info-title">The Death of Third-Party Cookies</h4>
+                  <p class="info-desc">What's changing, the browser timeline, and how businesses should prepare for a cookie-less future.</p>
+                  <span class="info-download-btn">View Infographic <i class="fa-regular fa-arrow-down-to-bracket"></i></span>
                 </div>
               </div>
+              </a>
 
-              <!-- Card 6 -->
-              <div class="info-card">
+              <!-- Card 11 -->
+              <a href="./info-consent-banner-ux.html" class="info-card-link info-card-extra" style="display:none;">
+              <div class="info-card" style="margin-top:20px;">
                 <div class="info-card-img-wrap">
-                  <img src="./assets/images/infographics/info_dev.png" alt="For Developers">
+                  <img src="./assets/images/infographics/info_banner_ux.png" alt="Design">
                 </div>
                 <div class="info-card-content">
-                  <div class="info-cat">For Developers</div>
-                  <h4 class="info-title">Implementing Consent Management</h4>
-                  <p class="info-desc">Technical flowcharts demonstrating how to integrate consent management platforms
-                    via API and SDKs.</p>
-                  <a href="#" class="info-download-btn">View Infographic <i
-                      class="fa-regular fa-arrow-down-to-bracket"></i></a>
+                  <div class="info-cat">Design</div>
+                  <h4 class="info-title">Consent Banner UX Best Practices</h4>
+                  <p class="info-desc">Design a consent banner that's legally compliant and user-friendly, maximizing consent rates without dark patterns.</p>
+                  <span class="info-download-btn">View Infographic <i class="fa-regular fa-arrow-down-to-bracket"></i></span>
                 </div>
               </div>
+              </a>
+
+              <!-- Card 12 -->
+              <a href="./info-privacy-by-design.html" class="info-card-link info-card-extra" style="display:none;">
+              <div class="info-card" style="margin-top:20px;">
+                <div class="info-card-img-wrap">
+                  <img src="./assets/images/infographics/info_privacy_design.png" alt="Best Practices">
+                </div>
+                <div class="info-card-content">
+                  <div class="info-cat">Best Practices</div>
+                  <h4 class="info-title">Privacy by Design: 7 Principles</h4>
+                  <p class="info-desc">The 7 foundational principles of Privacy by Design, now enshrined in GDPR Article 25.</p>
+                  <span class="info-download-btn">View Infographic <i class="fa-regular fa-arrow-down-to-bracket"></i></span>
+                </div>
+              </div>
+              </a>
 
             </div>
 
             <div style="text-align:center;margin-top:60px;">
-              <a href="#" class="saaslyn-4-btn">Load More Infographics</a>
+              <a href="#" class="saaslyn-4-btn" id="loadMoreBtn" onclick="document.querySelectorAll('.info-card-extra').forEach(function(el){el.style.display='block'});this.style.display='none';return false;">Load More Infographics</a>
             </div>
 
           </div>
@@ -1714,14 +1911,14 @@
                       <h6 class="link-title">Compare</h6>
                       <div class="link-list">
                         <ul>
-                          
-                          
+
+
                           <li><a href="./cookiebot.html">Cookiebot</a></li>
                           <li><a href="./lubenda.html">Iubenda</a></li>
                           <li><a href="./complianz.html">Complianz</a></li>
                           <li><a href="./compare.html">All comparisons &rarr;</a></li>
-                        
-                        
+
+
                         </ul>
                       </div>
                     </div>
