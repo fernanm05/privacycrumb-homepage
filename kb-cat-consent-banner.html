@@ -25,7 +25,7 @@
   <meta name="twitter:image" content="http://saaslyn-html.netlify.app/assets/images/preview.png" />
   <meta name="developer" content="Sakebul Islam" />
 
-  <title>PrivacyCrumb - Consent Banner | Knowledge Base</title>
+  <title>PrivacyCrumb - Banner Customization | Knowledge Base</title>
   <link rel="icon" type="image/png" href="./assets/images/Privacy-new-logo.png">
 
   <link rel="stylesheet" href="assets/css/plugins.css" />
@@ -1283,25 +1283,132 @@
   <!-- ================= Sidebar area end here ================= -->
 
   <style>
-    .kb-cat-hero { padding: 140px 0 60px; background: #f5f5fa; }
-    .kb-breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #6a6a8a; margin-bottom: 20px; }
-    .kb-breadcrumb a { color: #6c3ce0; text-decoration: none; font-weight: 500; }
-    .kb-breadcrumb a:hover { text-decoration: underline; }
-    .kb-breadcrumb .sep { color: #b0b0c0; }
-    .kb-cat-hero-meta { display: flex; align-items: center; gap: 16px; margin-top: 16px; font-size: 13px; color: #6a6a8a; }
-    .kb-cat-hero-meta .meta-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 14px; border-radius: 20px; background: rgba(108,60,224,0.08); color: #6c3ce0; font-weight: 600; }
-    .kb-cat-body { padding: 60px 0 80px; }
-    .kb-article-list { list-style: none; padding: 0; margin: 0; }
-    .kb-article-item { background: #ffffff; border: 1px solid rgba(26,26,46,0.06); border-radius: 12px; padding: 20px 24px; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; color: inherit; }
-    .kb-article-item:hover { transform: translateX(4px); box-shadow: 0 4px 16px rgba(108,60,224,0.06); }
-    .kb-article-item .article-left { display: flex; align-items: center; gap: 14px; flex: 1; }
-    .kb-article-item .article-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(26,26,46,0.06); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .kb-article-item .article-icon i { color: #1a1a2e; font-size: 16px; }
-    .kb-article-item .article-title { font-size: 15px; font-weight: 600; color: #1a1a2e; }
-    .kb-article-item .article-arrow { color: #1a1a2e; font-size: 16px; flex-shrink: 0; opacity: 0; transition: opacity 0.2s; }
-    .kb-article-item:hover .article-arrow { opacity: 1; }
-    @media (max-width: 575px) { .kb-article-item { flex-direction: column; align-items: flex-start; } }
-</style>
+    .kb-cat-hero {
+      padding: 140px 0 60px;
+      background: #f5f5fa;
+    }
+
+    .kb-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #6a6a8a;
+      margin-bottom: 20px;
+    }
+
+    .kb-breadcrumb a {
+      color: #6c3ce0;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .kb-breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .kb-breadcrumb .sep {
+      color: #b0b0c0;
+    }
+
+    .kb-cat-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #6a6a8a;
+    }
+
+    .kb-cat-hero-meta .meta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      background: rgba(108, 60, 224, 0.08);
+      color: #6c3ce0;
+      font-weight: 600;
+    }
+
+    .kb-cat-body {
+      padding: 60px 0 80px;
+    }
+
+    .kb-article-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .kb-article-item {
+      background: #ffffff;
+      border: 1px solid rgba(26, 26, 46, 0.06);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .kb-article-item:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 16px rgba(108, 60, 224, 0.06);
+    }
+
+    .kb-article-item .article-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 1;
+    }
+
+    .kb-article-item .article-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(26, 26, 46, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .kb-article-item .article-icon i {
+      color: #1a1a2e;
+      font-size: 16px;
+    }
+
+    .kb-article-item .article-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1a1a2e;
+    }
+
+    .kb-article-item .article-arrow {
+      color: #1a1a2e;
+      font-size: 16px;
+      flex-shrink: 0;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .kb-article-item:hover .article-arrow {
+      opacity: 1;
+    }
+
+    @media (max-width: 575px) {
+      .kb-article-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 
   <div id="smooth-wrapper">
     <div id="smooth-content">
@@ -1313,12 +1420,14 @@
                 <div class="kb-breadcrumb">
                   <a href="./knowledge-base.html">Knowledge Base</a>
                   <span class="sep">›</span>
-                  <span>Consent Banner</span>
+                  <span>Banner Customization</span>
                 </div>
-                <h1 style="color:#1a1a2e;font-size:32px;font-weight:800;line-height:1.3;margin:0;">Consent Banner</h1>
-                <p style="color:#4a4a6a;font-size:15px;line-height:1.7;margin-top:12px;max-width:600px;">Customize your banner design, configure consent categories, and set up geo-targeted rules.</p>
+                <h1 style="color:#1a1a2e;font-size:32px;font-weight:800;line-height:1.3;margin:0;">Banner Customization
+                </h1>
+                <p style="color:#4a4a6a;font-size:15px;line-height:1.7;margin-top:12px;max-width:600px;">Customize your
+                  banner design, configure consent categories, and set up geo-targeted rules.</p>
                 <div class="kb-cat-hero-meta">
-                  <span class="meta-badge"><i class="fa-light fa-window-maximize"></i> Consent Banner</span>
+                  <span class="meta-badge"><i class="fa-light fa-window-maximize"></i> Banner Customization</span>
                   <span><i class="fa-light fa-file-lines" style="margin-right:4px;"></i> 12 articles</span>
                 </div>
               </div>
@@ -1334,84 +1443,108 @@
                   <li><a class="kb-article-item" href="./kb-customize-banner.html">
                       <div class="article-left">
                         <div class="article-icon"><i class="fa-light fa-palette"></i></div>
-                        <div><div class="article-title">How to Customize Your Cookie Consent Banner Design</div></div>
+                        <div>
+                          <div class="article-title">How to Customize Your Cookie Consent Banner Design</div>
+                        </div>
                       </div>
                       <i class="fa-light fa-arrow-right article-arrow"></i>
                     </a></li>
                   <li><a class="kb-article-item" href="./kb-cb-layout.html">
                       <div class="article-left">
                         <div class="article-icon"><i class="fa-light fa-objects-column"></i></div>
-                        <div><div class="article-title">Choosing the Right Banner Layout for Your Site</div></div>
+                        <div>
+                          <div class="article-title">Choosing the Right Banner Layout for Your Site</div>
+                        </div>
                       </div>
                       <i class="fa-light fa-arrow-right article-arrow"></i>
                     </a></li>
                   <li><a class="kb-article-item" href="./kb-cb-categories.html">
                       <div class="article-left">
                         <div class="article-icon"><i class="fa-light fa-layer-group"></i></div>
-                        <div><div class="article-title">Configuring Consent Categories</div></div>
+                        <div>
+                          <div class="article-title">Configuring Consent Categories</div>
+                        </div>
                       </div>
                       <i class="fa-light fa-arrow-right article-arrow"></i>
                     </a></li>
                   <li><a class="kb-article-item" href="./kb-cb-logo.html">
                       <div class="article-left">
                         <div class="article-icon"><i class="fa-light fa-image"></i></div>
-                        <div><div class="article-title">Adding Your Brand Logo to the Banner</div></div>
+                        <div>
+                          <div class="article-title">Adding Your Brand Logo to the Banner</div>
+                        </div>
                       </div>
                       <i class="fa-light fa-arrow-right article-arrow"></i>
                     </a></li>
                   <li><a class="kb-article-item" href="./kb-cb-buttons.html">
                       <div class="article-left">
                         <div class="article-icon"><i class="fa-light fa-toggle-on"></i></div>
-                        <div><div class="article-title">Setting Up Accept, Reject, and Preferences Buttons</div></div>
+                        <div>
+                          <div class="article-title">Setting Up Accept, Reject, and Preferences Buttons</div>
+                        </div>
                       </div>
                       <i class="fa-light fa-arrow-right article-arrow"></i>
                     </a></li>
                   <li><a class="kb-article-item" href="./kb-cb-text.html">
                       <div class="article-left">
                         <div class="article-icon"><i class="fa-light fa-language"></i></div>
-                        <div><div class="article-title">Customizing Banner Text and Translations</div></div>
+                        <div>
+                          <div class="article-title">Customizing Banner Text and Translations</div>
+                        </div>
                       </div>
                       <i class="fa-light fa-arrow-right article-arrow"></i>
                     </a></li>
                   <li><a class="kb-article-item" href="./kb-cb-custom-css.html">
                       <div class="article-left">
                         <div class="article-icon"><i class="fa-light fa-code"></i></div>
-                        <div><div class="article-title">Using Custom CSS for Advanced Styling</div></div>
+                        <div>
+                          <div class="article-title">Using Custom CSS for Advanced Styling</div>
+                        </div>
                       </div>
                       <i class="fa-light fa-arrow-right article-arrow"></i>
                     </a></li>
                   <li><a class="kb-article-item" href="./kb-cb-dark-mode.html">
                       <div class="article-left">
                         <div class="article-icon"><i class="fa-light fa-moon"></i></div>
-                        <div><div class="article-title">Enabling Dark Mode for Your Banner</div></div>
+                        <div>
+                          <div class="article-title">Enabling Dark Mode for Your Banner</div>
+                        </div>
                       </div>
                       <i class="fa-light fa-arrow-right article-arrow"></i>
                     </a></li>
                   <li><a class="kb-article-item" href="./kb-cb-mobile.html">
                       <div class="article-left">
                         <div class="article-icon"><i class="fa-light fa-mobile"></i></div>
-                        <div><div class="article-title">Mobile-Responsive Banner Configuration</div></div>
+                        <div>
+                          <div class="article-title">Mobile-Responsive Banner Configuration</div>
+                        </div>
                       </div>
                       <i class="fa-light fa-arrow-right article-arrow"></i>
                     </a></li>
                   <li><a class="kb-article-item" href="./kb-cb-ab-testing.html">
                       <div class="article-left">
                         <div class="article-icon"><i class="fa-light fa-split"></i></div>
-                        <div><div class="article-title">A/B Testing Different Banner Designs</div></div>
+                        <div>
+                          <div class="article-title">A/B Testing Different Banner Designs</div>
+                        </div>
                       </div>
                       <i class="fa-light fa-arrow-right article-arrow"></i>
                     </a></li>
                   <li><a class="kb-article-item" href="./kb-cb-accessibility.html">
                       <div class="article-left">
                         <div class="article-icon"><i class="fa-light fa-universal-access"></i></div>
-                        <div><div class="article-title">Banner Accessibility (WCAG) Best Practices</div></div>
+                        <div>
+                          <div class="article-title">Banner Accessibility (WCAG) Best Practices</div>
+                        </div>
                       </div>
                       <i class="fa-light fa-arrow-right article-arrow"></i>
                     </a></li>
                   <li><a class="kb-article-item" href="./kb-cb-preview.html">
                       <div class="article-left">
                         <div class="article-icon"><i class="fa-light fa-eye"></i></div>
-                        <div><div class="article-title">Previewing Your Banner Before Publishing</div></div>
+                        <div>
+                          <div class="article-title">Previewing Your Banner Before Publishing</div>
+                        </div>
                       </div>
                       <i class="fa-light fa-arrow-right article-arrow"></i>
                     </a></li>
@@ -1421,18 +1554,30 @@
           </div>
         </section>
 
-        <section class="cta-3 section section-padding-top-bottom overflow-hidden" data-bg-src="./assets/images/cta/cta-3-dot-bg.svg">
+        <section class="cta-3 section section-padding-top-bottom overflow-hidden"
+          data-bg-src="./assets/images/cta/cta-3-dot-bg.svg">
           <style>
-            .cta-3 .features-list ul { display: inline-flex !important; flex-direction: column !important; align-items: flex-start !important; text-align: left !important; }
-            .cta-3 .features-list { display: flex !important; justify-content: center !important; }
+            .cta-3 .features-list ul {
+              display: inline-flex !important;
+              flex-direction: column !important;
+              align-items: flex-start !important;
+              text-align: left !important;
+            }
+
+            .cta-3 .features-list {
+              display: flex !important;
+              justify-content: center !important;
+            }
           </style>
           <div class="container">
             <div class="row g-4">
               <div class="cta-3__content">
                 <h2 class="content-title text-anime">Need More Help?</h2>
                 <div class="buttons">
-                  <a href="./contact.html" class="saaslyn-4-btn v2">Contact Support <i class="fa-light fa-arrow-right-long"></i></a>
-                  <a href="./knowledge-base.html" class="saaslyn-4-btn">Browse All Topics <i class="fa-light fa-arrow-right-long"></i></a>
+                  <a href="./contact.html" class="saaslyn-4-btn v2">Contact Support <i
+                      class="fa-light fa-arrow-right-long"></i></a>
+                  <a href="./knowledge-base.html" class="saaslyn-4-btn">Browse All Topics <i
+                      class="fa-light fa-arrow-right-long"></i></a>
                 </div>
                 <div class="features-list">
                   <ul>
@@ -1594,8 +1739,11 @@
                     id="newsletter-email" placeholder="Newsletter email" required /><button type="submit"><i
                       class="fa-light fa-arrow-right-long"></i></button></form>
                 <div style="display:flex;align-items:flex-start;gap:6px;margin-top:8px;">
-                  <input type="checkbox" id="footerNlConsent" required style="margin-top:3px;accent-color:#6c3ce0;width:14px;height:14px;flex-shrink:0;">
-                  <label for="footerNlConsent" style="font-size:11px;color:#6a6a8a;line-height:1.5;cursor:pointer;">I agree to receive newsletters from PrivacyCrumb and accept the <a href="./privacypolicy.html" style="color:#1a1a2e;text-decoration:underline;">privacy policy</a>.</label>
+                  <input type="checkbox" id="footerNlConsent" required
+                    style="margin-top:3px;accent-color:#6c3ce0;width:14px;height:14px;flex-shrink:0;">
+                  <label for="footerNlConsent" style="font-size:11px;color:#6a6a8a;line-height:1.5;cursor:pointer;">I
+                    agree to receive newsletters from PrivacyCrumb and accept the <a href="./privacypolicy.html"
+                      style="color:#1a1a2e;text-decoration:underline;">privacy policy</a>.</label>
                 </div>
               </div>
               <div class="col-lg-9" style="border-left:2px solid rgba(26,26,46,0.12);padding-left:40px;">
@@ -1764,27 +1912,39 @@
                   </div>
                 </div>
               </div>
-                            <div class="footer-three__bottom">
+              <div class="footer-three__bottom">
                 <div class="container">
                   <div class="row g-2 align-items-center justify-content-between text-center text-md-start">
                     <div class="col-md-8">
-                      <div class="copyright" style="margin-bottom:12px;">© <span class="current-year"></span> PrivacyCrumb. All rights reserved. PrivacyCrumb is registered in the Philippines.</div>
-                      <p style="font-size:12px;color:#6a6a8a;line-height:1.6;margin:0;max-width:700px;">Any information, whether oral or written, obtained from the PrivacyCrumb website, services, tools, or comments does not constitute any form of legal and/or regulatory advice. If any kind of legal assistance is required, users should consult with an attorney, a lawyer, or a law firm.</p>
+                      <div class="copyright" style="margin-bottom:12px;">© <span class="current-year"></span>
+                        PrivacyCrumb. All rights reserved. PrivacyCrumb is registered in the Philippines.</div>
+                      <p style="font-size:12px;color:#6a6a8a;line-height:1.6;margin:0;max-width:700px;">Any information,
+                        whether oral or written, obtained from the PrivacyCrumb website, services, tools, or comments
+                        does not constitute any form of legal and/or regulatory advice. If any kind of legal assistance
+                        is required, users should consult with an attorney, a lawyer, or a law firm.</p>
                     </div>
                     <div class="col-md-4" style="text-align:right;padding-right:60px;">
                       <div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:10px;">Follow Us</div>
                       <div style="display:flex;gap:8px;justify-content:flex-end;">
-                        <a href="https://www.facebook.com/" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i class="fa-brands fa-facebook-f" style="font-size:14px;"></i></a>
-                        <a href="https://www.instagram.com/" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i class="fa-brands fa-instagram" style="font-size:14px;"></i></a>
-                        <a href="https://www.linkedin.com/" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i class="fa-brands fa-linkedin-in" style="font-size:14px;"></i></a>
-                        <a href="#" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i class="fa-brands fa-youtube" style="font-size:14px;"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank"
+                          style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i
+                            class="fa-brands fa-facebook-f" style="font-size:14px;"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"
+                          style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i
+                            class="fa-brands fa-instagram" style="font-size:14px;"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank"
+                          style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i
+                            class="fa-brands fa-linkedin-in" style="font-size:14px;"></i></a>
+                        <a href="#" target="_blank"
+                          style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i
+                            class="fa-brands fa-youtube" style="font-size:14px;"></i></a>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-                </div>
-              </div>
+            </div>
+          </div>
       </footer>
       <!--=================footer section end=================-->
     </div>

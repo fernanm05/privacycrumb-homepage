@@ -824,7 +824,8 @@
     <div class="fix-menu">
       <div class="container">
         <div class="header-one__main">
-          <a class="header-one__logo" href="./index-3.html" style="display:flex;align-items:center;text-decoration:none;">
+          <a class="header-one__logo" href="./index-3.html"
+            style="display:flex;align-items:center;text-decoration:none;">
             <img src="./assets/images/PrivacyCrumbLogo4.svg" alt="Privacy Crumb" class="logo-steady-glow"
               style="height:30px;width:auto;" />
           </a>
@@ -896,19 +897,101 @@
           </div>
           <div class="header-one__menu-btns">
             <style>
-              .pc-lang-wrap{position:relative;display:inline-flex;align-items:center;justify-content:center;margin-right:6px;width:34px;height:34px;background:rgba(26,26,46,0.06);border:1px solid rgba(26,26,46,0.15);border-radius:50%;transition:all 0.2s ease;cursor:pointer;}
-              .pc-lang-wrap:hover{background:rgba(26,26,46,0.1);border-color:rgba(26,26,46,0.25);}
-              .pc-lang-wrap .fa-globe{font-size:15px;color:#1a1a2e;transition:color 0.2s ease;}
-              .pc-lang-wrap.open{background:rgba(108,60,224,0.1);border-color:rgba(108,60,224,0.3);}
-              .pc-lang-wrap.open .fa-globe{color:#6c3ce0;}
-              .pc-lang-drop{position:absolute;top:calc(100% + 12px);right:0;min-width:160px;background:#fff;border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,0.1);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:all 0.25s ease;z-index:9999;pointer-events:none;}
-              .pc-lang-drop::before{content:'';position:absolute;top:-6px;right:12px;width:12px;height:12px;background:#fff;transform:rotate(45deg);border-radius:2px;box-shadow:-2px -2px 4px rgba(0,0,0,0.04);}
-              .pc-lang-wrap.open .pc-lang-drop{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}
-              .pc-lang-drop a{display:block;padding:8px 20px;font-size:14px;color:#1a1a2e;text-decoration:none;transition:all 0.15s ease;font-weight:400;}
-              .pc-lang-drop a:hover{color:#6c3ce0;background:rgba(108,60,224,0.04);padding-left:24px;}
-              .pc-lang-drop a.active{color:#6c3ce0;font-weight:500;}
+              .pc-lang-wrap {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 6px;
+                width: 34px;
+                height: 34px;
+                background: rgba(26, 26, 46, 0.06);
+                border: 1px solid rgba(26, 26, 46, 0.15);
+                border-radius: 50%;
+                transition: all 0.2s ease;
+                cursor: pointer;
+              }
+
+              .pc-lang-wrap:hover {
+                background: rgba(26, 26, 46, 0.1);
+                border-color: rgba(26, 26, 46, 0.25);
+              }
+
+              .pc-lang-wrap .fa-globe {
+                font-size: 15px;
+                color: #1a1a2e;
+                transition: color 0.2s ease;
+              }
+
+              .pc-lang-wrap.open {
+                background: rgba(108, 60, 224, 0.1);
+                border-color: rgba(108, 60, 224, 0.3);
+              }
+
+              .pc-lang-wrap.open .fa-globe {
+                color: #6c3ce0;
+              }
+
+              .pc-lang-drop {
+                position: absolute;
+                top: calc(100% + 12px);
+                right: 0;
+                min-width: 160px;
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+                padding: 8px 0;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(8px);
+                transition: all 0.25s ease;
+                z-index: 9999;
+                pointer-events: none;
+              }
+
+              .pc-lang-drop::before {
+                content: '';
+                position: absolute;
+                top: -6px;
+                right: 12px;
+                width: 12px;
+                height: 12px;
+                background: #fff;
+                transform: rotate(45deg);
+                border-radius: 2px;
+                box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.04);
+              }
+
+              .pc-lang-wrap.open .pc-lang-drop {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                pointer-events: auto;
+              }
+
+              .pc-lang-drop a {
+                display: block;
+                padding: 8px 20px;
+                font-size: 14px;
+                color: #1a1a2e;
+                text-decoration: none;
+                transition: all 0.15s ease;
+                font-weight: 400;
+              }
+
+              .pc-lang-drop a:hover {
+                color: #6c3ce0;
+                background: rgba(108, 60, 224, 0.04);
+                padding-left: 24px;
+              }
+
+              .pc-lang-drop a.active {
+                color: #6c3ce0;
+                font-weight: 500;
+              }
             </style>
-            <div class="pc-lang-wrap" title="Select language" onclick="event.stopPropagation();this.classList.toggle('open');">
+            <div class="pc-lang-wrap" title="Select language"
+              onclick="event.stopPropagation();this.classList.toggle('open');">
               <i class="fa-light fa-globe"></i>
               <div class="pc-lang-drop">
                 <a href="#" class="active" onclick="return false;">English</a>
@@ -920,7 +1003,7 @@
                 <a href="#" onclick="return false;">Svenska</a>
               </div>
             </div>
-            <script>document.addEventListener('click',function(){document.querySelectorAll('.pc-lang-wrap.open').forEach(function(e){e.classList.remove('open')})});</script>
+            <script>document.addEventListener('click', function () { document.querySelectorAll('.pc-lang-wrap.open').forEach(function (e) { e.classList.remove('open') }) });</script>
             <div class="buttons">
               <a href="./login.html" class="saaslyn-5-btn">Login</a>
               <div class="divider"></div>
@@ -1343,49 +1426,94 @@
               <div class="col-lg-7 text-center">
                 <div class="section-header-3">
                   <span class="section-sub-title" style="color:#6c3ce0;">Browse Topics</span>
-                  <h2 class="section-title text-anime" style="color:#1a1a2e;">Help Categories</h2>
+                  <h2 class="section-title text-anime" style="color:#1a1a2e;">Popular Categories</h2>
                 </div>
               </div>
             </div>
             <div class="hc-cat-grid">
-              <a href="./knowledge-base.html" class="hc-cat-card">
+              <a href="./kb-cat-getting-started.html" class="hc-cat-card">
                 <div class="hc-cat-icon"><i class="fa-light fa-rocket-launch"></i></div>
                 <h5 class="hc-cat-title">Getting Started</h5>
-                <p class="hc-cat-desc">Set up your account, install the snippet, and launch your first cookie banner in
-                  minutes.</p>
+                <p class="hc-cat-desc">Set up your account, install the script, and launch your first cookie consent
+                  banner in minutes.</p>
                 <span class="hc-cat-count">8 articles</span>
               </a>
-              <a href="./knowledge-base.html" class="hc-cat-card">
+              <a href="./kb-cat-cookie-scanner.html" class="hc-cat-card">
                 <div class="hc-cat-icon"><i class="fa-light fa-cookie-bite"></i></div>
-                <h5 class="hc-cat-title">Cookie Scanning</h5>
-                <p class="hc-cat-desc">How our scanner works, scheduling scans, and understanding your cookie audit
-                  reports.</p>
+                <h5 class="hc-cat-title">Cookie Scanner</h5>
+                <p class="hc-cat-desc">Learn how to run scans, understand scan results, and keep your cookie inventory
+                  up to date.</p>
                 <span class="hc-cat-count">6 articles</span>
               </a>
-              <a href="./knowledge-base.html" class="hc-cat-card">
-                <div class="hc-cat-icon"><i class="fa-light fa-palette"></i></div>
+              <a href="./kb-cat-consent-banner.html" class="hc-cat-card">
+                <div class="hc-cat-icon"><i class="fa-light fa-window-maximize"></i></div>
                 <h5 class="hc-cat-title">Banner Customization</h5>
-                <p class="hc-cat-desc">Design your consent banner — colors, layout, text, positioning, and advanced CSS
-                  overrides.</p>
+                <p class="hc-cat-desc">Customize your banner design, configure consent categories, and set up
+                  geo-targeted rules.</p>
                 <span class="hc-cat-count">12 articles</span>
               </a>
-              <a href="./knowledge-base.html" class="hc-cat-card">
+              <a href="./kb-cat-gdpr.html" class="hc-cat-card">
                 <div class="hc-cat-icon"><i class="fa-light fa-shield-check"></i></div>
-                <h5 class="hc-cat-title">Compliance & Regulations</h5>
-                <p class="hc-cat-desc">Learn about GDPR, CCPA, CPRA, LGPD, and how PrivacyCrumb keeps you compliant.</p>
+                <h5 class="hc-cat-title">GDPR Compliance</h5>
+                <p class="hc-cat-desc">Understand GDPR requirements, legal basis for cookies, and how PrivacyCrumb keeps
+                  you compliant.</p>
                 <span class="hc-cat-count">10 articles</span>
               </a>
-              <a href="./knowledge-base.html" class="hc-cat-card">
-                <div class="hc-cat-icon"><i class="fa-light fa-plug"></i></div>
-                <h5 class="hc-cat-title">Integrations</h5>
-                <p class="hc-cat-desc">Connect with WordPress, Shopify, Wix, Google Tag Manager, and more platforms.</p>
+              <a href="./kb-cat-ccpa.html" class="hc-cat-card">
+                <div class="hc-cat-icon"><i class="fa-light fa-flag-usa"></i></div>
+                <h5 class="hc-cat-title">CCPA / CPRA</h5>
+                <p class="hc-cat-desc">California privacy law requirements, "Do Not Sell" links, and opt-out
+                  configuration guides.</p>
+                <span class="hc-cat-count">5 articles</span>
+              </a>
+              <a href="./kb-cat-google-consent-mode.html" class="hc-cat-card">
+                <div class="hc-cat-icon"><i class="fa-light fa-chart-mixed"></i></div>
+                <h5 class="hc-cat-title">Google Consent Mode</h5>
+                <p class="hc-cat-desc">Set up Google Consent Mode v2, configure tag behavior, and preserve your
+                  analytics data.</p>
+                <span class="hc-cat-count">4 articles</span>
+              </a>
+              <a href="./kb-cat-policy-generator.html" class="hc-cat-card">
+                <div class="hc-cat-icon"><i class="fa-light fa-file-contract"></i></div>
+                <h5 class="hc-cat-title">Policy Generator</h5>
+                <p class="hc-cat-desc">Auto-generate privacy policies and cookie policies that stay current with your
+                  actual cookie usage.</p>
+                <span class="hc-cat-count">5 articles</span>
+              </a>
+              <a href="./kb-cat-consent-logging.html" class="hc-cat-card">
+                <div class="hc-cat-icon"><i class="fa-light fa-clipboard-list-check"></i></div>
+                <h5 class="hc-cat-title">Consent Logging</h5>
+                <p class="hc-cat-desc">How consent records are stored, how to export audit logs, and retention period
+                  settings.</p>
+                <span class="hc-cat-count">4 articles</span>
+              </a>
+              <a href="./kb-cat-multi-language-geo.html" class="hc-cat-card">
+                <div class="hc-cat-icon"><i class="fa-light fa-globe"></i></div>
+                <h5 class="hc-cat-title">Multi-Language & Geo</h5>
+                <p class="hc-cat-desc">Add languages to your banner, configure geo-targeting rules, and manage regional
+                  compliance.</p>
+                <span class="hc-cat-count">7 articles</span>
+              </a>
+              <a href="./kb-cat-developer-api.html" class="hc-cat-card">
+                <div class="hc-cat-icon"><i class="fa-light fa-code"></i></div>
+                <h5 class="hc-cat-title">Developer & API</h5>
+                <p class="hc-cat-desc">JavaScript API reference, callback events, custom integration guides, and webhook
+                  setup.</p>
                 <span class="hc-cat-count">9 articles</span>
               </a>
-              <a href="./knowledge-base.html" class="hc-cat-card">
-                <div class="hc-cat-icon"><i class="fa-light fa-credit-card"></i></div>
-                <h5 class="hc-cat-title">Billing & Account</h5>
-                <p class="hc-cat-desc">Manage your subscription, invoices, team members, and account settings.</p>
-                <span class="hc-cat-count">7 articles</span>
+              <a href="./kb-cat-account-billing.html" class="hc-cat-card">
+                <div class="hc-cat-icon"><i class="fa-light fa-users-gear"></i></div>
+                <h5 class="hc-cat-title">Account & Billing</h5>
+                <p class="hc-cat-desc">Manage your subscription, add team members, update payment methods, and view
+                  invoices.</p>
+                <span class="hc-cat-count">6 articles</span>
+              </a>
+              <a href="./kb-cat-integrations.html" class="hc-cat-card">
+                <div class="hc-cat-icon"><i class="fa-light fa-puzzle-piece"></i></div>
+                <h5 class="hc-cat-title">Integrations</h5>
+                <p class="hc-cat-desc">Connect with WordPress, Shopify, Google Tag Manager, and other popular platforms.
+                </p>
+                <span class="hc-cat-count">8 articles</span>
               </a>
             </div>
           </div>
@@ -1938,8 +2066,11 @@
                     id="newsletter-email" placeholder="Newsletter email" required /><button type="submit"><i
                       class="fa-light fa-arrow-right-long"></i></button></form>
                 <div style="display:flex;align-items:flex-start;gap:6px;margin-top:8px;">
-                  <input type="checkbox" id="footerNlConsent" required style="margin-top:3px;accent-color:#6c3ce0;width:14px;height:14px;flex-shrink:0;">
-                  <label for="footerNlConsent" style="font-size:11px;color:#6a6a8a;line-height:1.5;cursor:pointer;">I agree to receive newsletters from PrivacyCrumb and accept the <a href="./privacypolicy.html" style="color:#1a1a2e;text-decoration:underline;">privacy policy</a>.</label>
+                  <input type="checkbox" id="footerNlConsent" required
+                    style="margin-top:3px;accent-color:#6c3ce0;width:14px;height:14px;flex-shrink:0;">
+                  <label for="footerNlConsent" style="font-size:11px;color:#6a6a8a;line-height:1.5;cursor:pointer;">I
+                    agree to receive newsletters from PrivacyCrumb and accept the <a href="./privacypolicy.html"
+                      style="color:#1a1a2e;text-decoration:underline;">privacy policy</a>.</label>
                 </div>
               </div>
               <div class="col-lg-9" style="border-left:2px solid rgba(26,26,46,0.12);padding-left:40px;">
@@ -2003,14 +2134,14 @@
                       <h6 class="link-title">Compare</h6>
                       <div class="link-list">
                         <ul>
-                          
-                          
+
+
                           <li><a href="./cookiebot.html">Cookiebot</a></li>
                           <li><a href="./lubenda.html">Iubenda</a></li>
                           <li><a href="./complianz.html">Complianz</a></li>
                           <li><a href="./compare.html">All comparisons &rarr;</a></li>
-                        
-                        
+
+
                         </ul>
                       </div>
                     </div>
@@ -2108,27 +2239,39 @@
                   </div>
                 </div>
               </div>
-                            <div class="footer-three__bottom">
+              <div class="footer-three__bottom">
                 <div class="container">
                   <div class="row g-2 align-items-center justify-content-between text-center text-md-start">
                     <div class="col-md-8">
-                      <div class="copyright" style="margin-bottom:12px;">© <span class="current-year"></span> PrivacyCrumb. All rights reserved. PrivacyCrumb is registered in the Philippines.</div>
-                      <p style="font-size:12px;color:#6a6a8a;line-height:1.6;margin:0;max-width:700px;">Any information, whether oral or written, obtained from the PrivacyCrumb website, services, tools, or comments does not constitute any form of legal and/or regulatory advice. If any kind of legal assistance is required, users should consult with an attorney, a lawyer, or a law firm.</p>
+                      <div class="copyright" style="margin-bottom:12px;">© <span class="current-year"></span>
+                        PrivacyCrumb. All rights reserved. PrivacyCrumb is registered in the Philippines.</div>
+                      <p style="font-size:12px;color:#6a6a8a;line-height:1.6;margin:0;max-width:700px;">Any information,
+                        whether oral or written, obtained from the PrivacyCrumb website, services, tools, or comments
+                        does not constitute any form of legal and/or regulatory advice. If any kind of legal assistance
+                        is required, users should consult with an attorney, a lawyer, or a law firm.</p>
                     </div>
                     <div class="col-md-4" style="text-align:right;padding-right:60px;">
                       <div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:10px;">Follow Us</div>
                       <div style="display:flex;gap:8px;justify-content:flex-end;">
-                        <a href="https://www.facebook.com/" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i class="fa-brands fa-facebook-f" style="font-size:14px;"></i></a>
-                        <a href="https://www.instagram.com/" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i class="fa-brands fa-instagram" style="font-size:14px;"></i></a>
-                        <a href="https://www.linkedin.com/" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i class="fa-brands fa-linkedin-in" style="font-size:14px;"></i></a>
-                        <a href="#" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i class="fa-brands fa-youtube" style="font-size:14px;"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank"
+                          style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i
+                            class="fa-brands fa-facebook-f" style="font-size:14px;"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"
+                          style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i
+                            class="fa-brands fa-instagram" style="font-size:14px;"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank"
+                          style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i
+                            class="fa-brands fa-linkedin-in" style="font-size:14px;"></i></a>
+                        <a href="#" target="_blank"
+                          style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i
+                            class="fa-brands fa-youtube" style="font-size:14px;"></i></a>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-                </div>
-              </div>
+            </div>
+          </div>
       </footer>
       <!--=================footer section end=================-->
     </div>

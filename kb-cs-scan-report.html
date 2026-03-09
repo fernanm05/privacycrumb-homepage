@@ -1282,30 +1282,226 @@
   </div>
   <!-- ================= Sidebar area end here ================= -->
   <style>
-    .kb-article-hero { padding: 140px 0 60px; background: #f5f5fa; }
-    .kb-breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #6a6a8a; margin-bottom: 20px; }
-    .kb-breadcrumb a { color: #6c3ce0; text-decoration: none; font-weight: 500; }
-    .kb-breadcrumb a:hover { text-decoration: underline; }
-    .kb-breadcrumb .sep { color: #b0b0c0; }
-    .kb-article-meta { display: flex; align-items: center; gap: 16px; margin-top: 16px; font-size: 13px; color: #6a6a8a; }
-    .kb-article-meta .meta-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 14px; border-radius: 20px; background: rgba(108,60,224,0.08); color: #6c3ce0; font-weight: 600; }
-    .kb-article-body { padding: 60px 0 80px; }
-    .kb-article-content { max-width: 760px; margin: 0 auto; }
-    .kb-article-content h2 { font-size: 22px !important; font-weight: 700; color: #1a1a2e !important; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid rgba(108,60,224,0.1); }
-    .kb-article-content h2:first-child { margin-top: 0; }
-    .kb-article-content p { font-size: 15px !important; line-height: 1.8 !important; color: #3a3a5c !important; margin-bottom: 16px; }
-    .kb-checklist { list-style: none; padding: 0; margin: 0 0 20px; }
-    .kb-checklist li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; font-size: 15px; color: #3a3a5c; line-height: 1.6; }
-    .kb-checklist li i { color: #6c3ce0; font-size: 16px; margin-top: 3px; flex-shrink: 0; }
-    .kb-code-block { background: #1a1a2e; color: #e0e0f0; border-radius: 10px; padding: 18px 20px; margin: 16px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.7; }
-    .kb-code-block code { color: #a5b4fc; background: transparent; padding: 0; }
-    .kb-article-nav { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(26,26,46,0.08); }
-    .kb-article-nav a { display: flex; align-items: center; gap: 10px; padding: 14px 20px; border: 1px solid rgba(26,26,46,0.08); border-radius: 12px; text-decoration: none; color: #1a1a2e; font-weight: 600; font-size: 14px; transition: all 0.2s; flex: 1; max-width: 48%; }
-    .kb-article-nav a:hover { border-color: #6c3ce0; background: rgba(108,60,224,0.04); }
-    .kb-article-nav a:last-child { text-align: right; justify-content: flex-end; }
-    .kb-article-nav .nav-label { font-size: 12px; color: #6a6a8a; font-weight: 400; }
-    @media (max-width:575px) { .kb-article-nav { flex-direction: column; } .kb-article-nav a { max-width: 100%; } }
-</style>
+    .kb-article-hero {
+      padding: 140px 0 60px;
+      background: #f5f5fa;
+    }
+
+    .kb-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #6a6a8a;
+      margin-bottom: 20px;
+    }
+
+    .kb-breadcrumb a {
+      color: #6c3ce0;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .kb-breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .kb-breadcrumb .sep {
+      color: #b0b0c0;
+    }
+
+    .kb-article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #6a6a8a;
+    }
+
+    .kb-article-meta .meta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      background: rgba(108, 60, 224, 0.08);
+      color: #6c3ce0;
+      font-weight: 600;
+    }
+
+    .kb-article-body {
+      padding: 60px 0 80px;
+    }
+
+    .kb-article-content {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .kb-article-content h2 {
+      font-size: 22px !important;
+      font-weight: 700;
+      color: #1a1a2e !important;
+      margin: 40px 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(108, 60, 224, 0.1);
+    }
+
+    .kb-article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .kb-article-content p {
+      font-size: 15px !important;
+      line-height: 1.8 !important;
+      color: #3a3a5c !important;
+      margin-bottom: 16px;
+    }
+
+    .kb-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+    }
+
+    .kb-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      font-size: 15px;
+      color: #3a3a5c;
+      line-height: 1.6;
+    }
+
+    .kb-checklist li i {
+      color: #6c3ce0;
+      font-size: 16px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .kb-code-block {
+      background: #1a1a2e;
+      color: #e0e0f0;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin: 16px 0;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .kb-code-block code {
+      color: #a5b4fc;
+      background: transparent;
+      padding: 0;
+    }
+
+    .kb-article-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(26, 26, 46, 0.08);
+    }
+
+    .kb-article-nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border: 1px solid rgba(26, 26, 46, 0.08);
+      border-radius: 12px;
+      text-decoration: none;
+      color: #1a1a2e;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    .kb-article-nav a:hover {
+      border-color: #6c3ce0;
+      background: rgba(108, 60, 224, 0.04);
+    }
+
+    .kb-article-nav a:last-child {
+      justify-content: flex-end;
+    }
+
+    @media (max-width:575px) {
+      .kb-article-nav {
+        flex-direction: column;
+      }
+
+      .kb-article-nav a {
+        max-width: 100%;
+      }
+    }
+
+    /* Report tables */
+    .kb-ts-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 28px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(26, 26, 46, 0.08);
+    }
+
+    .kb-ts-table th {
+      background: #f5f5fa;
+      color: #1a1a2e;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 12px 18px;
+      text-align: left;
+      border-bottom: 2px solid rgba(108, 60, 224, 0.12);
+    }
+
+    .kb-ts-table td {
+      padding: 14px 18px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #3a3a5c;
+      border-bottom: 1px solid rgba(26, 26, 46, 0.06);
+      vertical-align: top;
+    }
+
+    .kb-ts-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .kb-ts-table td:first-child {
+      font-weight: 600;
+      color: #1a1a2e;
+      white-space: nowrap;
+      width: 220px;
+    }
+
+    .kb-ts-table td:first-child i {
+      color: #6c3ce0;
+      margin-right: 8px;
+    }
+
+    @media (max-width:575px) {
+      .kb-ts-table td:first-child {
+        white-space: normal;
+        width: auto;
+      }
+
+      .kb-ts-table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
 
   <div id="smooth-wrapper">
     <div id="smooth-content">
@@ -1321,7 +1517,8 @@
                   <span class="sep">›</span>
                   <span>Understanding Your Cookie Scan Report</span>
                 </div>
-                <h1 style="color:#1a1a2e;font-size:32px;font-weight:800;line-height:1.3;margin:0;">Understanding Your Cookie Scan Report</h1>
+                <h1 style="color:#1a1a2e;font-size:32px;font-weight:800;line-height:1.3;margin:0;">Understanding Your
+                  Cookie Scan Report</h1>
                 <div class="kb-article-meta">
                   <span class="meta-badge"><i class="fa-light fa-chart-pie"></i> Cookie Scanner</span>
                   <span><i class="fa-light fa-clock" style="margin-right:4px;"></i> 5 min read</span>
@@ -1337,23 +1534,141 @@
               <div class="col-lg-8">
                 <div class="kb-article-content">
                   <h2>Overview</h2>
-                  <p>After running a cookie scan, PrivacyCrumb generates a comprehensive report detailing every cookie, tracker, and script found on your website. Understanding this report is key to maintaining compliance.</p>
+                  <p>After running a cookie scan, PrivacyCrumb generates a comprehensive report detailing every cookie,
+                    tracker, and script found on your website. Understanding this report is key to maintaining
+                    compliance.</p>
+
                   <h2>Report Summary</h2>
-                  <p>The top of your report shows key metrics at a glance:</p><ul class="kb-checklist"><li><i class="fa-light fa-check"></i> <strong>Total Cookies Found:</strong> The number of unique cookies detected across all scanned pages</li><li><i class="fa-light fa-check"></i> <strong>Pages Scanned:</strong> How many pages the crawler visited</li><li><i class="fa-light fa-check"></i> <strong>Third-Party Cookies:</strong> Cookies set by external domains (ad networks, analytics, etc.)</li><li><i class="fa-light fa-check"></i> <strong>Uncategorized:</strong> Cookies that need manual review and categorization</li></ul>
+                  <p>The top of your report shows key metrics at a glance:</p>
+                  <table class="kb-ts-table">
+                    <thead>
+                      <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><i class="fa-light fa-check"></i> Total Cookies Found</td>
+                        <td>The number of unique cookies detected across all scanned pages</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-check"></i> Pages Scanned</td>
+                        <td>How many pages the crawler visited</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-check"></i> Third-Party Cookies</td>
+                        <td>Cookies set by external domains (ad networks, analytics, etc.)</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-check"></i> Uncategorized</td>
+                        <td>Cookies that need manual review and categorization</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
                   <h2>Cookie Categories Breakdown</h2>
-                  <p>Each cookie is assigned to one of four categories:</p><ul class="kb-checklist"><li><i class="fa-light fa-check"></i> <strong>Strictly Necessary:</strong> Essential cookies like session IDs, CSRF tokens, and load balancer cookies. These cannot be blocked.</li><li><i class="fa-light fa-check"></i> <strong>Analytics:</strong> Cookies from tools like Google Analytics, Hotjar, and Mixpanel that measure website usage.</li><li><i class="fa-light fa-check"></i> <strong>Marketing:</strong> Cookies used for advertising, retargeting, and social media tracking (Facebook Pixel, Google Ads, etc.).</li><li><i class="fa-light fa-check"></i> <strong>Preferences:</strong> Cookies that remember user settings such as language, theme, or region.</li></ul>
+                  <p>Each cookie is assigned to one of four categories:</p>
+                  <table class="kb-ts-table">
+                    <thead>
+                      <tr>
+                        <th>Category</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><i class="fa-light fa-check"></i> Strictly Necessary</td>
+                        <td>Essential cookies like session IDs, CSRF tokens, and load balancer cookies. These cannot be
+                          blocked.</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-check"></i> Analytics</td>
+                        <td>Cookies from tools like Google Analytics, Hotjar, and Mixpanel that measure website usage.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-check"></i> Marketing</td>
+                        <td>Cookies used for advertising, retargeting, and social media tracking (Facebook Pixel, Google
+                          Ads, etc.).</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-check"></i> Preferences</td>
+                        <td>Cookies that remember user settings such as language, theme, or region.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
                   <h2>Cookie Details Table</h2>
-                  <p>Click on any cookie in the report to see its full details:</p><ul class="kb-checklist"><li><i class="fa-light fa-check"></i> <strong>Name:</strong> The cookie identifier (e.g., <code>_ga</code>, <code>_fbp</code>)</li><li><i class="fa-light fa-check"></i> <strong>Domain:</strong> Which domain sets the cookie</li><li><i class="fa-light fa-check"></i> <strong>Duration:</strong> How long the cookie persists (session, 30 days, 2 years, etc.)</li><li><i class="fa-light fa-check"></i> <strong>Type:</strong> First-party or third-party</li><li><i class="fa-light fa-check"></i> <strong>Purpose:</strong> Auto-generated description of what the cookie does</li></ul>
+                  <p>Click on any cookie in the report to see its full details:</p>
+                  <table class="kb-ts-table">
+                    <thead>
+                      <tr>
+                        <th>Field</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><i class="fa-light fa-check"></i> Name</td>
+                        <td>The cookie identifier (e.g., <code>_ga</code>, <code>_fbp</code>)</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-check"></i> Domain</td>
+                        <td>Which domain sets the cookie</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-check"></i> Duration</td>
+                        <td>How long the cookie persists (session, 30 days, 2 years, etc.)</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-check"></i> Type</td>
+                        <td>First-party or third-party</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-check"></i> Purpose</td>
+                        <td>Auto-generated description of what the cookie does</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
                   <h2>Third-Party Tracker Analysis</h2>
-                  <p>The <strong>Third-Party Trackers</strong> tab shows external services that set cookies on your site. Each tracker includes the service name, number of cookies it sets, data sent, and a compliance risk rating. Pay special attention to trackers with a <strong>High Risk</strong> rating.</p>
+                  <p>The <strong>Third-Party Trackers</strong> tab shows external services that set cookies on your
+                    site. Each tracker includes the service name, number of cookies it sets, data sent, and a compliance
+                    risk rating. Pay special attention to trackers with a <strong>High Risk</strong> rating.</p>
+
                   <h2>Exporting Your Report</h2>
-                  <ul class="kb-checklist"><li><i class="fa-light fa-check"></i> <strong>PDF:</strong> A formatted report suitable for sharing with legal teams or auditors</li><li><i class="fa-light fa-check"></i> <strong>CSV:</strong> Raw data for spreadsheet analysis</li><li><i class="fa-light fa-check"></i> <strong>JSON:</strong> Machine-readable format for integration with other tools</li></ul>
+                  <table class="kb-ts-table">
+                    <thead>
+                      <tr>
+                        <th>Format</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><i class="fa-light fa-check"></i> PDF</td>
+                        <td>A formatted report suitable for sharing with legal teams or auditors</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-check"></i> CSV</td>
+                        <td>Raw data for spreadsheet analysis</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-check"></i> JSON</td>
+                        <td>Machine-readable format for integration with other tools</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
                   <h2>Comparing Scan Results</h2>
-                  <p>PrivacyCrumb stores historical scan data so you can compare results over time. Navigate to <strong>Scanner → History</strong> to see a timeline of changes — new cookies added, cookies removed, and category changes. Set up email alerts to be notified when new cookies appear.</p>
+                  <p>PrivacyCrumb stores historical scan data so you can compare results over time. Navigate to
+                    <strong>Scanner → History</strong> to see a timeline of changes — new cookies added, cookies
+                    removed, and category changes. Set up email alerts to be notified when new cookies appear.</p>
 
                   <div class="kb-article-nav">
-                    <a href="./kb-first-cookie-scan.html"><i class="fa-light fa-arrow-left"></i><div><div class="nav-label">Previous</div>Running Your First Cookie Scan: A Step-by-Step Gui...</div></a>
-                    <a href="./kb-cs-scheduled-scans.html"><div><div class="nav-label">Next</div>Scheduling Automatic Cookie Scans</div><i class="fa-light fa-arrow-right"></i></a>
+                    <a href="./kb-cs-first-scan.html"><i class="fa-light fa-arrow-left"></i> Previous</a>
+                    <a href="./kb-cs-scheduled-scans.html">Next <i class="fa-light fa-arrow-right"></i></a>
                   </div>
                 </div>
               </div>
@@ -1361,18 +1676,30 @@
           </div>
         </section>
 
-        <section class="cta-3 section section-padding-top-bottom overflow-hidden" data-bg-src="./assets/images/cta/cta-3-dot-bg.svg">
+        <section class="cta-3 section section-padding-top-bottom overflow-hidden"
+          data-bg-src="./assets/images/cta/cta-3-dot-bg.svg">
           <style>
-            .cta-3 .features-list ul { display: inline-flex !important; flex-direction: column !important; align-items: flex-start !important; text-align: left !important; }
-            .cta-3 .features-list { display: flex !important; justify-content: center !important; }
+            .cta-3 .features-list ul {
+              display: inline-flex !important;
+              flex-direction: column !important;
+              align-items: flex-start !important;
+              text-align: left !important;
+            }
+
+            .cta-3 .features-list {
+              display: flex !important;
+              justify-content: center !important;
+            }
           </style>
           <div class="container">
             <div class="row g-4">
               <div class="cta-3__content">
                 <h2 class="content-title text-anime">Need More Help?</h2>
                 <div class="buttons">
-                  <a href="./contact.html" class="saaslyn-4-btn v2">Contact Support <i class="fa-light fa-arrow-right-long"></i></a>
-                  <a href="./kb-cat-cookie-scanner.html" class="saaslyn-4-btn">Back to Cookie Scanner <i class="fa-light fa-arrow-right-long"></i></a>
+                  <a href="./contact.html" class="saaslyn-4-btn v2">Contact Support <i
+                      class="fa-light fa-arrow-right-long"></i></a>
+                  <a href="./kb-cat-cookie-scanner.html" class="saaslyn-4-btn">Back to Cookie Scanner <i
+                      class="fa-light fa-arrow-right-long"></i></a>
                 </div>
                 <div class="features-list">
                   <ul>
@@ -1534,8 +1861,11 @@
                     id="newsletter-email" placeholder="Newsletter email" required /><button type="submit"><i
                       class="fa-light fa-arrow-right-long"></i></button></form>
                 <div style="display:flex;align-items:flex-start;gap:6px;margin-top:8px;">
-                  <input type="checkbox" id="footerNlConsent" required style="margin-top:3px;accent-color:#6c3ce0;width:14px;height:14px;flex-shrink:0;">
-                  <label for="footerNlConsent" style="font-size:11px;color:#6a6a8a;line-height:1.5;cursor:pointer;">I agree to receive newsletters from PrivacyCrumb and accept the <a href="./privacypolicy.html" style="color:#1a1a2e;text-decoration:underline;">privacy policy</a>.</label>
+                  <input type="checkbox" id="footerNlConsent" required
+                    style="margin-top:3px;accent-color:#6c3ce0;width:14px;height:14px;flex-shrink:0;">
+                  <label for="footerNlConsent" style="font-size:11px;color:#6a6a8a;line-height:1.5;cursor:pointer;">I
+                    agree to receive newsletters from PrivacyCrumb and accept the <a href="./privacypolicy.html"
+                      style="color:#1a1a2e;text-decoration:underline;">privacy policy</a>.</label>
                 </div>
               </div>
               <div class="col-lg-9" style="border-left:2px solid rgba(26,26,46,0.12);padding-left:40px;">
@@ -1704,27 +2034,39 @@
                   </div>
                 </div>
               </div>
-                            <div class="footer-three__bottom">
+              <div class="footer-three__bottom">
                 <div class="container">
                   <div class="row g-2 align-items-center justify-content-between text-center text-md-start">
                     <div class="col-md-8">
-                      <div class="copyright" style="margin-bottom:12px;">© <span class="current-year"></span> PrivacyCrumb. All rights reserved. PrivacyCrumb is registered in the Philippines.</div>
-                      <p style="font-size:12px;color:#6a6a8a;line-height:1.6;margin:0;max-width:700px;">Any information, whether oral or written, obtained from the PrivacyCrumb website, services, tools, or comments does not constitute any form of legal and/or regulatory advice. If any kind of legal assistance is required, users should consult with an attorney, a lawyer, or a law firm.</p>
+                      <div class="copyright" style="margin-bottom:12px;">© <span class="current-year"></span>
+                        PrivacyCrumb. All rights reserved. PrivacyCrumb is registered in the Philippines.</div>
+                      <p style="font-size:12px;color:#6a6a8a;line-height:1.6;margin:0;max-width:700px;">Any information,
+                        whether oral or written, obtained from the PrivacyCrumb website, services, tools, or comments
+                        does not constitute any form of legal and/or regulatory advice. If any kind of legal assistance
+                        is required, users should consult with an attorney, a lawyer, or a law firm.</p>
                     </div>
                     <div class="col-md-4" style="text-align:right;padding-right:60px;">
                       <div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:10px;">Follow Us</div>
                       <div style="display:flex;gap:8px;justify-content:flex-end;">
-                        <a href="https://www.facebook.com/" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i class="fa-brands fa-facebook-f" style="font-size:14px;"></i></a>
-                        <a href="https://www.instagram.com/" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i class="fa-brands fa-instagram" style="font-size:14px;"></i></a>
-                        <a href="https://www.linkedin.com/" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i class="fa-brands fa-linkedin-in" style="font-size:14px;"></i></a>
-                        <a href="#" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i class="fa-brands fa-youtube" style="font-size:14px;"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank"
+                          style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i
+                            class="fa-brands fa-facebook-f" style="font-size:14px;"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"
+                          style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i
+                            class="fa-brands fa-instagram" style="font-size:14px;"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank"
+                          style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i
+                            class="fa-brands fa-linkedin-in" style="font-size:14px;"></i></a>
+                        <a href="#" target="_blank"
+                          style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i
+                            class="fa-brands fa-youtube" style="font-size:14px;"></i></a>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-                </div>
-              </div>
+            </div>
+          </div>
       </footer>
       <!--=================footer section end=================-->
     </div>

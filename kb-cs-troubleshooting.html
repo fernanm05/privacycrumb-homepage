@@ -1282,30 +1282,226 @@
   </div>
   <!-- ================= Sidebar area end here ================= -->
   <style>
-    .kb-article-hero { padding: 140px 0 60px; background: #f5f5fa; }
-    .kb-breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #6a6a8a; margin-bottom: 20px; }
-    .kb-breadcrumb a { color: #6c3ce0; text-decoration: none; font-weight: 500; }
-    .kb-breadcrumb a:hover { text-decoration: underline; }
-    .kb-breadcrumb .sep { color: #b0b0c0; }
-    .kb-article-meta { display: flex; align-items: center; gap: 16px; margin-top: 16px; font-size: 13px; color: #6a6a8a; }
-    .kb-article-meta .meta-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 14px; border-radius: 20px; background: rgba(108,60,224,0.08); color: #6c3ce0; font-weight: 600; }
-    .kb-article-body { padding: 60px 0 80px; }
-    .kb-article-content { max-width: 760px; margin: 0 auto; }
-    .kb-article-content h2 { font-size: 22px !important; font-weight: 700; color: #1a1a2e !important; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid rgba(108,60,224,0.1); }
-    .kb-article-content h2:first-child { margin-top: 0; }
-    .kb-article-content p { font-size: 15px !important; line-height: 1.8 !important; color: #3a3a5c !important; margin-bottom: 16px; }
-    .kb-checklist { list-style: none; padding: 0; margin: 0 0 20px; }
-    .kb-checklist li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; font-size: 15px; color: #3a3a5c; line-height: 1.6; }
-    .kb-checklist li i { color: #6c3ce0; font-size: 16px; margin-top: 3px; flex-shrink: 0; }
-    .kb-code-block { background: #1a1a2e; color: #e0e0f0; border-radius: 10px; padding: 18px 20px; margin: 16px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.7; }
-    .kb-code-block code { color: #a5b4fc; background: transparent; padding: 0; }
-    .kb-article-nav { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(26,26,46,0.08); }
-    .kb-article-nav a { display: flex; align-items: center; gap: 10px; padding: 14px 20px; border: 1px solid rgba(26,26,46,0.08); border-radius: 12px; text-decoration: none; color: #1a1a2e; font-weight: 600; font-size: 14px; transition: all 0.2s; flex: 1; max-width: 48%; }
-    .kb-article-nav a:hover { border-color: #6c3ce0; background: rgba(108,60,224,0.04); }
-    .kb-article-nav a:last-child { text-align: right; justify-content: flex-end; }
-    .kb-article-nav .nav-label { font-size: 12px; color: #6a6a8a; font-weight: 400; }
-    @media (max-width:575px) { .kb-article-nav { flex-direction: column; } .kb-article-nav a { max-width: 100%; } }
-</style>
+    .kb-article-hero {
+      padding: 140px 0 60px;
+      background: #f5f5fa;
+    }
+
+    .kb-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #6a6a8a;
+      margin-bottom: 20px;
+    }
+
+    .kb-breadcrumb a {
+      color: #6c3ce0;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .kb-breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .kb-breadcrumb .sep {
+      color: #b0b0c0;
+    }
+
+    .kb-article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #6a6a8a;
+    }
+
+    .kb-article-meta .meta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      background: rgba(108, 60, 224, 0.08);
+      color: #6c3ce0;
+      font-weight: 600;
+    }
+
+    .kb-article-body {
+      padding: 60px 0 80px;
+    }
+
+    .kb-article-content {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .kb-article-content h2 {
+      font-size: 22px !important;
+      font-weight: 700;
+      color: #1a1a2e !important;
+      margin: 40px 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(108, 60, 224, 0.1);
+    }
+
+    .kb-article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .kb-article-content p {
+      font-size: 15px !important;
+      line-height: 1.8 !important;
+      color: #3a3a5c !important;
+      margin-bottom: 16px;
+    }
+
+    .kb-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+    }
+
+    .kb-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      font-size: 15px;
+      color: #3a3a5c;
+      line-height: 1.6;
+    }
+
+    .kb-checklist li i {
+      color: #6c3ce0;
+      font-size: 16px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .kb-code-block {
+      background: #1a1a2e;
+      color: #e0e0f0;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin: 16px 0;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .kb-code-block code {
+      color: #a5b4fc;
+      background: transparent;
+      padding: 0;
+    }
+
+    .kb-article-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(26, 26, 46, 0.08);
+    }
+
+    .kb-article-nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border: 1px solid rgba(26, 26, 46, 0.08);
+      border-radius: 12px;
+      text-decoration: none;
+      color: #1a1a2e;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    .kb-article-nav a:hover {
+      border-color: #6c3ce0;
+      background: rgba(108, 60, 224, 0.04);
+    }
+
+    .kb-article-nav a:last-child {
+      justify-content: flex-end;
+    }
+
+    @media (max-width:575px) {
+      .kb-article-nav {
+        flex-direction: column;
+      }
+
+      .kb-article-nav a {
+        max-width: 100%;
+      }
+    }
+
+    /* Troubleshooting tables */
+    .kb-ts-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 28px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(26, 26, 46, 0.08);
+    }
+
+    .kb-ts-table th {
+      background: #f5f5fa;
+      color: #1a1a2e;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 12px 18px;
+      text-align: left;
+      border-bottom: 2px solid rgba(108, 60, 224, 0.12);
+    }
+
+    .kb-ts-table td {
+      padding: 14px 18px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #3a3a5c;
+      border-bottom: 1px solid rgba(26, 26, 46, 0.06);
+      vertical-align: top;
+    }
+
+    .kb-ts-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .kb-ts-table td:first-child {
+      font-weight: 600;
+      color: #1a1a2e;
+      white-space: nowrap;
+      width: 220px;
+    }
+
+    .kb-ts-table td:first-child i {
+      color: #6c3ce0;
+      margin-right: 8px;
+    }
+
+    @media (max-width:575px) {
+      .kb-ts-table td:first-child {
+        white-space: normal;
+        width: auto;
+      }
+
+      .kb-ts-table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
 
   <div id="smooth-wrapper">
     <div id="smooth-content">
@@ -1321,7 +1517,8 @@
                   <span class="sep">›</span>
                   <span>Troubleshooting Common Scan Issues</span>
                 </div>
-                <h1 style="color:#1a1a2e;font-size:32px;font-weight:800;line-height:1.3;margin:0;">Troubleshooting Common Scan Issues</h1>
+                <h1 style="color:#1a1a2e;font-size:32px;font-weight:800;line-height:1.3;margin:0;">Troubleshooting
+                  Common Scan Issues</h1>
                 <div class="kb-article-meta">
                   <span class="meta-badge"><i class="fa-light fa-wrench"></i> Cookie Scanner</span>
                   <span><i class="fa-light fa-clock" style="margin-right:4px;"></i> 5 min read</span>
@@ -1337,21 +1534,125 @@
               <div class="col-lg-8">
                 <div class="kb-article-content">
                   <h2>Overview</h2>
-                  <p>Most cookie scans complete without issues, but occasionally you may encounter problems. This guide covers the most common scan issues and how to resolve them.</p>
+                  <p>Most cookie scans complete without issues, but occasionally you may encounter problems. This guide
+                    covers the most common scan issues and how to resolve them.</p>
+
                   <h2>Scan Stuck or Taking Too Long</h2>
-                  <ul class="kb-checklist"><li><i class="fa-light fa-triangle-exclamation"></i> <strong>Large sites (500+ pages):</strong> Deep scans on large sites can take 30+ minutes. This is normal — do not cancel the scan.</li><li><i class="fa-light fa-triangle-exclamation"></i> <strong>Slow server response:</strong> If your hosting server responds slowly, the scan will take longer. Try scanning during off-peak hours.</li><li><i class="fa-light fa-triangle-exclamation"></i> <strong>Infinite redirects:</strong> Check for redirect loops in your site's URL structure. PrivacyCrumb will time out after 5 redirect hops.</li></ul>
+                  <table class="kb-ts-table">
+                    <thead>
+                      <tr>
+                        <th>Issue</th>
+                        <th>Solution</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><i class="fa-light fa-triangle-exclamation"></i> Large sites (500+ pages)</td>
+                        <td>Deep scans on large sites can take 30+ minutes. This is normal — do not cancel the scan.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-triangle-exclamation"></i> Slow server response</td>
+                        <td>If your hosting server responds slowly, the scan will take longer. Try scanning during
+                          off-peak hours.</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-triangle-exclamation"></i> Infinite redirects</td>
+                        <td>Check for redirect loops in your site's URL structure. PrivacyCrumb will time out after 5
+                          redirect hops.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
                   <h2>Scan Returns 0 Cookies</h2>
-                  <ul class="kb-checklist"><li><i class="fa-light fa-triangle-exclamation"></i> <strong>Login-protected pages:</strong> If your site requires authentication, the scanner can't access cookies behind the login. Configure authenticated scanning in <strong>Scanner → Advanced → Authentication</strong>.</li><li><i class="fa-light fa-triangle-exclamation"></i> <strong>JavaScript-rendered content:</strong> PrivacyCrumb's scanner executes JavaScript, but some dynamically-loaded scripts may need extra wait time. Increase the <strong>Page Load Timeout</strong> in scanner settings.</li><li><i class="fa-light fa-triangle-exclamation"></i> <strong>IP blocking:</strong> Your server's firewall may be blocking the scanner. Whitelist PrivacyCrumb's scanner IPs listed in <strong>Settings → Scanner → IP Addresses</strong>.</li></ul>
+                  <table class="kb-ts-table">
+                    <thead>
+                      <tr>
+                        <th>Issue</th>
+                        <th>Solution</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><i class="fa-light fa-triangle-exclamation"></i> Login-protected pages</td>
+                        <td>If your site requires authentication, the scanner can't access cookies behind the login.
+                          Configure authenticated scanning in <strong>Scanner → Advanced → Authentication</strong>.</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-triangle-exclamation"></i> JavaScript-rendered content</td>
+                        <td>PrivacyCrumb's scanner executes JavaScript, but some dynamically-loaded scripts may need
+                          extra wait time. Increase the <strong>Page Load Timeout</strong> in scanner settings.</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-triangle-exclamation"></i> IP blocking</td>
+                        <td>Your server's firewall may be blocking the scanner. Whitelist PrivacyCrumb's scanner IPs
+                          listed in <strong>Settings → Scanner → IP Addresses</strong>.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
                   <h2>Missing Cookies in Results</h2>
-                  <ul class="kb-checklist"><li><i class="fa-light fa-triangle-exclamation"></i> <strong>Conditional cookies:</strong> Some cookies only appear after user interactions (clicking a button, playing a video). Use <strong>Interactive Scan</strong> mode to capture these.</li><li><i class="fa-light fa-triangle-exclamation"></i> <strong>Third-party script delays:</strong> Some ad scripts load cookies after a delay. Increase the <strong>Wait After Load</strong> setting to 10+ seconds.</li><li><i class="fa-light fa-triangle-exclamation"></i> <strong>Geo-restricted cookies:</strong> Some cookies only appear for visitors from specific regions. Run scans simulating different geographic locations.</li></ul>
+                  <table class="kb-ts-table">
+                    <thead>
+                      <tr>
+                        <th>Issue</th>
+                        <th>Solution</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><i class="fa-light fa-triangle-exclamation"></i> Conditional cookies</td>
+                        <td>Some cookies only appear after user interactions (clicking a button, playing a video). Use
+                          <strong>Interactive Scan</strong> mode to capture these.</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-triangle-exclamation"></i> Third-party script delays</td>
+                        <td>Some ad scripts load cookies after a delay. Increase the <strong>Wait After Load</strong>
+                          setting to 10+ seconds.</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-triangle-exclamation"></i> Geo-restricted cookies</td>
+                        <td>Some cookies only appear for visitors from specific regions. Run scans simulating different
+                          geographic locations.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
                   <h2>Scan Fails with Error</h2>
-                  <ul class="kb-checklist"><li><i class="fa-light fa-triangle-exclamation"></i> <strong>SSL/TLS errors:</strong> Ensure your SSL certificate is valid and not expired</li><li><i class="fa-light fa-triangle-exclamation"></i> <strong>DNS resolution failure:</strong> Verify your domain's DNS settings are correct</li><li><i class="fa-light fa-triangle-exclamation"></i> <strong>403 Forbidden:</strong> Your server is blocking the scanner — check firewall or WAF rules</li><li><i class="fa-light fa-triangle-exclamation"></i> <strong>500 Server Error:</strong> Your server encountered an error — check your server logs</li></ul>
+                  <table class="kb-ts-table">
+                    <thead>
+                      <tr>
+                        <th>Error</th>
+                        <th>Solution</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><i class="fa-light fa-triangle-exclamation"></i> SSL/TLS errors</td>
+                        <td>Ensure your SSL certificate is valid and not expired</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-triangle-exclamation"></i> DNS resolution failure</td>
+                        <td>Verify your domain's DNS settings are correct</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-triangle-exclamation"></i> 403 Forbidden</td>
+                        <td>Your server is blocking the scanner — check firewall or WAF rules</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-light fa-triangle-exclamation"></i> 500 Server Error</td>
+                        <td>Your server encountered an error — check your server logs</td>
+                      </tr>
+                    </tbody>
+                  </table>
                   <h2>Getting Help</h2>
-                  <p>If you're still experiencing issues after trying these solutions, contact our support team at <a href="./contact.html" style="color:#6c3ce0;font-weight:600;">privacycrumb.com/contact</a>. Include your scan ID (found in <strong>Scanner → History</strong>) for faster troubleshooting.</p>
+                  <p>If you're still experiencing issues after trying these solutions, contact our support team at <a
+                      href="./contact.html" style="color:#6c3ce0;font-weight:600;">privacycrumb.com/contact</a>. Include
+                    your scan ID (found in <strong>Scanner → History</strong>) for faster troubleshooting.</p>
 
                   <div class="kb-article-nav">
-                    <a href="./kb-cs-subdomains.html"><i class="fa-light fa-arrow-left"></i><div><div class="nav-label">Previous</div>Scanning Subdomains and Multi-Domain Websites</div></a>
-                    <a href="./kb-cat-cookie-scanner.html"><div><div class="nav-label">Back to</div>Cookie Scanner</div><i class="fa-light fa-arrow-right"></i></a>
+                    <a href="./kb-cs-subdomains.html"><i class="fa-light fa-arrow-left"></i> Previous</a>
+                    <a href="./kb-cat-cookie-scanner.html">Next <i class="fa-light fa-arrow-right"></i></a>
                   </div>
                 </div>
               </div>
@@ -1359,18 +1660,30 @@
           </div>
         </section>
 
-        <section class="cta-3 section section-padding-top-bottom overflow-hidden" data-bg-src="./assets/images/cta/cta-3-dot-bg.svg">
+        <section class="cta-3 section section-padding-top-bottom overflow-hidden"
+          data-bg-src="./assets/images/cta/cta-3-dot-bg.svg">
           <style>
-            .cta-3 .features-list ul { display: inline-flex !important; flex-direction: column !important; align-items: flex-start !important; text-align: left !important; }
-            .cta-3 .features-list { display: flex !important; justify-content: center !important; }
+            .cta-3 .features-list ul {
+              display: inline-flex !important;
+              flex-direction: column !important;
+              align-items: flex-start !important;
+              text-align: left !important;
+            }
+
+            .cta-3 .features-list {
+              display: flex !important;
+              justify-content: center !important;
+            }
           </style>
           <div class="container">
             <div class="row g-4">
               <div class="cta-3__content">
                 <h2 class="content-title text-anime">Need More Help?</h2>
                 <div class="buttons">
-                  <a href="./contact.html" class="saaslyn-4-btn v2">Contact Support <i class="fa-light fa-arrow-right-long"></i></a>
-                  <a href="./kb-cat-cookie-scanner.html" class="saaslyn-4-btn">Back to Cookie Scanner <i class="fa-light fa-arrow-right-long"></i></a>
+                  <a href="./contact.html" class="saaslyn-4-btn v2">Contact Support <i
+                      class="fa-light fa-arrow-right-long"></i></a>
+                  <a href="./kb-cat-cookie-scanner.html" class="saaslyn-4-btn">Back to Cookie Scanner <i
+                      class="fa-light fa-arrow-right-long"></i></a>
                 </div>
                 <div class="features-list">
                   <ul>
@@ -1532,8 +1845,11 @@
                     id="newsletter-email" placeholder="Newsletter email" required /><button type="submit"><i
                       class="fa-light fa-arrow-right-long"></i></button></form>
                 <div style="display:flex;align-items:flex-start;gap:6px;margin-top:8px;">
-                  <input type="checkbox" id="footerNlConsent" required style="margin-top:3px;accent-color:#6c3ce0;width:14px;height:14px;flex-shrink:0;">
-                  <label for="footerNlConsent" style="font-size:11px;color:#6a6a8a;line-height:1.5;cursor:pointer;">I agree to receive newsletters from PrivacyCrumb and accept the <a href="./privacypolicy.html" style="color:#1a1a2e;text-decoration:underline;">privacy policy</a>.</label>
+                  <input type="checkbox" id="footerNlConsent" required
+                    style="margin-top:3px;accent-color:#6c3ce0;width:14px;height:14px;flex-shrink:0;">
+                  <label for="footerNlConsent" style="font-size:11px;color:#6a6a8a;line-height:1.5;cursor:pointer;">I
+                    agree to receive newsletters from PrivacyCrumb and accept the <a href="./privacypolicy.html"
+                      style="color:#1a1a2e;text-decoration:underline;">privacy policy</a>.</label>
                 </div>
               </div>
               <div class="col-lg-9" style="border-left:2px solid rgba(26,26,46,0.12);padding-left:40px;">
@@ -1702,27 +2018,39 @@
                   </div>
                 </div>
               </div>
-                            <div class="footer-three__bottom">
+              <div class="footer-three__bottom">
                 <div class="container">
                   <div class="row g-2 align-items-center justify-content-between text-center text-md-start">
                     <div class="col-md-8">
-                      <div class="copyright" style="margin-bottom:12px;">© <span class="current-year"></span> PrivacyCrumb. All rights reserved. PrivacyCrumb is registered in the Philippines.</div>
-                      <p style="font-size:12px;color:#6a6a8a;line-height:1.6;margin:0;max-width:700px;">Any information, whether oral or written, obtained from the PrivacyCrumb website, services, tools, or comments does not constitute any form of legal and/or regulatory advice. If any kind of legal assistance is required, users should consult with an attorney, a lawyer, or a law firm.</p>
+                      <div class="copyright" style="margin-bottom:12px;">© <span class="current-year"></span>
+                        PrivacyCrumb. All rights reserved. PrivacyCrumb is registered in the Philippines.</div>
+                      <p style="font-size:12px;color:#6a6a8a;line-height:1.6;margin:0;max-width:700px;">Any information,
+                        whether oral or written, obtained from the PrivacyCrumb website, services, tools, or comments
+                        does not constitute any form of legal and/or regulatory advice. If any kind of legal assistance
+                        is required, users should consult with an attorney, a lawyer, or a law firm.</p>
                     </div>
                     <div class="col-md-4" style="text-align:right;padding-right:60px;">
                       <div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:10px;">Follow Us</div>
                       <div style="display:flex;gap:8px;justify-content:flex-end;">
-                        <a href="https://www.facebook.com/" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i class="fa-brands fa-facebook-f" style="font-size:14px;"></i></a>
-                        <a href="https://www.instagram.com/" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i class="fa-brands fa-instagram" style="font-size:14px;"></i></a>
-                        <a href="https://www.linkedin.com/" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i class="fa-brands fa-linkedin-in" style="font-size:14px;"></i></a>
-                        <a href="#" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i class="fa-brands fa-youtube" style="font-size:14px;"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank"
+                          style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i
+                            class="fa-brands fa-facebook-f" style="font-size:14px;"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"
+                          style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i
+                            class="fa-brands fa-instagram" style="font-size:14px;"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank"
+                          style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i
+                            class="fa-brands fa-linkedin-in" style="font-size:14px;"></i></a>
+                        <a href="#" target="_blank"
+                          style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i
+                            class="fa-brands fa-youtube" style="font-size:14px;"></i></a>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-                </div>
-              </div>
+            </div>
+          </div>
       </footer>
       <!--=================footer section end=================-->
     </div>

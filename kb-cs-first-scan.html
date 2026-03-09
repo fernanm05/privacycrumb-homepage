@@ -25,7 +25,7 @@
   <meta name="twitter:image" content="http://saaslyn-html.netlify.app/assets/images/preview.png" />
   <meta name="developer" content="Sakebul Islam" />
 
-  <title>PrivacyCrumb - Cookie Scanner | Knowledge Base</title>
+  <title>PrivacyCrumb - Running Your First Cookie Scan</title>
   <link rel="icon" type="image/png" href="./assets/images/Privacy-new-logo.png">
 
   <link rel="stylesheet" href="assets/css/plugins.css" />
@@ -1283,7 +1283,7 @@
   <!-- ================= Sidebar area end here ================= -->
 
   <style>
-    .kb-cat-hero {
+    .kb-article-hero {
       padding: 140px 0 60px;
       background: #f5f5fa;
     }
@@ -1311,7 +1311,7 @@
       color: #b0b0c0;
     }
 
-    .kb-cat-hero-meta {
+    .kb-article-meta {
       display: flex;
       align-items: center;
       gap: 16px;
@@ -1320,7 +1320,7 @@
       color: #6a6a8a;
     }
 
-    .kb-cat-hero-meta .meta-badge {
+    .kb-article-meta .meta-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -1331,81 +1331,116 @@
       font-weight: 600;
     }
 
-    .kb-cat-body {
+    .kb-article-body {
       padding: 60px 0 80px;
     }
 
-    .kb-article-list {
+    .kb-article-content {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .kb-article-content h2 {
+      font-size: 22px !important;
+      font-weight: 700;
+      color: #1a1a2e !important;
+      margin: 40px 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(108, 60, 224, 0.1);
+    }
+
+    .kb-article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .kb-article-content p {
+      font-size: 15px !important;
+      line-height: 1.8 !important;
+      color: #3a3a5c !important;
+      margin-bottom: 16px;
+    }
+
+    .kb-checklist {
       list-style: none;
       padding: 0;
-      margin: 0;
+      margin: 0 0 20px;
     }
 
-    .kb-article-item {
-      background: #ffffff;
-      border: 1px solid rgba(26, 26, 46, 0.06);
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin-bottom: 10px;
+    .kb-checklist li {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      transition: transform 0.2s, box-shadow 0.2s;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .kb-article-item:hover {
-      transform: translateX(4px);
-      box-shadow: 0 4px 16px rgba(108, 60, 224, 0.06);
-    }
-
-    .kb-article-item .article-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      flex: 1;
-    }
-
-    .kb-article-item .article-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: rgba(26, 26, 46, 0.06);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .kb-article-item .article-icon i {
-      color: #1a1a2e;
-      font-size: 16px;
-    }
-
-    .kb-article-item .article-title {
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
       font-size: 15px;
-      font-weight: 600;
-      color: #1a1a2e;
+      color: #3a3a5c;
+      line-height: 1.6;
     }
 
-    .kb-article-item .article-arrow {
-      color: #1a1a2e;
+    .kb-checklist li i {
+      color: #6c3ce0;
       font-size: 16px;
+      margin-top: 3px;
       flex-shrink: 0;
-      opacity: 0;
-      transition: opacity 0.2s;
     }
 
-    .kb-article-item:hover .article-arrow {
-      opacity: 1;
+    .kb-code-block {
+      background: #1a1a2e;
+      color: #e0e0f0;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin: 16px 0;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.7;
     }
 
-    @media (max-width: 575px) {
-      .kb-article-item {
+    .kb-code-block code {
+      color: #a5b4fc;
+      background: transparent;
+      padding: 0;
+    }
+
+    .kb-article-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(26, 26, 46, 0.08);
+    }
+
+    .kb-article-nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border: 1px solid rgba(26, 26, 46, 0.08);
+      border-radius: 12px;
+      text-decoration: none;
+      color: #1a1a2e;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    .kb-article-nav a:hover {
+      border-color: #6c3ce0;
+      background: rgba(108, 60, 224, 0.04);
+    }
+
+    .kb-article-nav a:last-child {
+      justify-content: flex-end;
+    }
+
+    @media (max-width:575px) {
+      .kb-article-nav {
         flex-direction: column;
-        align-items: flex-start;
+      }
+
+      .kb-article-nav a {
+        max-width: 100%;
       }
     }
   </style>
@@ -1413,87 +1448,69 @@
   <div id="smooth-wrapper">
     <div id="smooth-content">
       <main>
-        <section class="kb-cat-hero">
+        <section class="kb-article-hero">
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-lg-8">
                 <div class="kb-breadcrumb">
                   <a href="./knowledge-base.html">Knowledge Base</a>
                   <span class="sep">›</span>
-                  <span>Cookie Scanner</span>
+                  <a href="./kb-cat-cookie-scanner.html">Cookie Scanner</a>
+                  <span class="sep">›</span>
+                  <span>Running Your First Cookie Scan</span>
                 </div>
-                <h1 style="color:#1a1a2e;font-size:32px;font-weight:800;line-height:1.3;margin:0;">Cookie Scanner</h1>
-                <p style="color:#4a4a6a;font-size:15px;line-height:1.7;margin-top:12px;max-width:600px;">Learn how to
-                  run scans, understand scan results, and keep your cookie inventory up to date.</p>
-                <div class="kb-cat-hero-meta">
-                  <span class="meta-badge"><i class="fa-light fa-cookie-bite"></i> Cookie Scanner</span>
-                  <span><i class="fa-light fa-file-lines" style="margin-right:4px;"></i> 6 articles</span>
+                <h1 style="color:#1a1a2e;font-size:32px;font-weight:800;line-height:1.3;margin:0;">
+                  Running Your First Cookie Scan
+                </h1>
+                <div class="kb-article-meta">
+                  <span class="meta-badge"><i class="fa-light fa-scanner"></i> Cookie Scanner</span>
+                  <span><i class="fa-light fa-clock" style="margin-right:4px;"></i> 6 min read</span>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section class="kb-cat-body">
+        <section class="kb-article-body">
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-lg-8">
-                <ul class="kb-article-list">
-                  <li><a class="kb-article-item" href="./kb-cs-first-scan.html">
-                      <div class="article-left">
-                        <div class="article-icon"><i class="fa-light fa-scanner"></i></div>
-                        <div>
-                          <div class="article-title">Running Your First Cookie Scan: A Step-by-Step Guide</div>
-                        </div>
-                      </div>
-                      <i class="fa-light fa-arrow-right article-arrow"></i>
-                    </a></li>
-                  <li><a class="kb-article-item" href="./kb-cs-scan-report.html">
-                      <div class="article-left">
-                        <div class="article-icon"><i class="fa-light fa-chart-pie"></i></div>
-                        <div>
-                          <div class="article-title">Understanding Your Cookie Scan Report</div>
-                        </div>
-                      </div>
-                      <i class="fa-light fa-arrow-right article-arrow"></i>
-                    </a></li>
-                  <li><a class="kb-article-item" href="./kb-cs-scheduled-scans.html">
-                      <div class="article-left">
-                        <div class="article-icon"><i class="fa-light fa-calendar-clock"></i></div>
-                        <div>
-                          <div class="article-title">Scheduling Automatic Cookie Scans</div>
-                        </div>
-                      </div>
-                      <i class="fa-light fa-arrow-right article-arrow"></i>
-                    </a></li>
-                  <li><a class="kb-article-item" href="./kb-cs-uncategorized.html">
-                      <div class="article-left">
-                        <div class="article-icon"><i class="fa-light fa-circle-question"></i></div>
-                        <div>
-                          <div class="article-title">Managing Unknown or Uncategorized Cookies</div>
-                        </div>
-                      </div>
-                      <i class="fa-light fa-arrow-right article-arrow"></i>
-                    </a></li>
-                  <li><a class="kb-article-item" href="./kb-cs-subdomains.html">
-                      <div class="article-left">
-                        <div class="article-icon"><i class="fa-light fa-globe"></i></div>
-                        <div>
-                          <div class="article-title">Scanning Subdomains and Multi-Domain Websites</div>
-                        </div>
-                      </div>
-                      <i class="fa-light fa-arrow-right article-arrow"></i>
-                    </a></li>
-                  <li><a class="kb-article-item" href="./kb-cs-troubleshooting.html">
-                      <div class="article-left">
-                        <div class="article-icon"><i class="fa-light fa-wrench"></i></div>
-                        <div>
-                          <div class="article-title">Troubleshooting Common Scan Issues</div>
-                        </div>
-                      </div>
-                      <i class="fa-light fa-arrow-right article-arrow"></i>
-                    </a></li>
-                </ul>
+                <div class="kb-article-content">
+                  <h2>Overview</h2>
+                  <p>The PrivacyCrumb cookie scanner automatically crawls your website and identifies every cookie,
+                    local storage item, and tracking pixel in use.</p>
+                  <h2>How the Scanner Works</h2>
+                  <ul class="kb-checklist">
+                    <li><i class="fa-light fa-check"></i> <strong>Strictly Necessary:</strong> Essential for the website
+                      to function</li>
+                    <li><i class="fa-light fa-check"></i> <strong>Analytics:</strong> Used for measuring website
+                      performance</li>
+                    <li><i class="fa-light fa-check"></i> <strong>Marketing:</strong> Used for advertising and
+                      retargeting</li>
+                    <li><i class="fa-light fa-check"></i> <strong>Preferences:</strong> Remember user settings like
+                      language or theme</li>
+                  </ul>
+                  <h2>Step 1: Start a New Scan</h2>
+                  <p>Go to <strong>Dashboard → Cookie Scanner</strong> and click <strong>Run New Scan</strong>.</p>
+                  <h2>Step 2: Configure Scan Settings</h2>
+                  <ul class="kb-checklist">
+                    <li><i class="fa-light fa-check"></i> <strong>Quick Scan:</strong> Homepage only (1 minute)</li>
+                    <li><i class="fa-light fa-check"></i> <strong>Standard Scan:</strong> Up to 50 pages (5-10 minutes)
+                    </li>
+                    <li><i class="fa-light fa-check"></i> <strong>Deep Scan:</strong> Entire site and subdomains (15-30
+                      minutes)</li>
+                  </ul>
+                  <h2>Step 3: Review Results</h2>
+                  <p>After the scan completes, you'll see a detailed report showing total cookies found grouped by
+                    category.</p>
+                  <h2>Scheduling Automatic Scans</h2>
+                  <p>Enable <strong>Auto-Scan</strong> under Scanner Settings. We recommend weekly scans.</p>
+
+                  <div class="kb-article-nav">
+                    <div></div>
+                    <a href="./kb-cs-scan-report.html">Next <i class="fa-light fa-arrow-right"></i></a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1521,7 +1538,7 @@
                 <div class="buttons">
                   <a href="./contact.html" class="saaslyn-4-btn v2">Contact Support <i
                       class="fa-light fa-arrow-right-long"></i></a>
-                  <a href="./knowledge-base.html" class="saaslyn-4-btn">Browse All Topics <i
+                  <a href="./kb-cat-cookie-scanner.html" class="saaslyn-4-btn">Back to Cookie Scanner <i
                       class="fa-light fa-arrow-right-long"></i></a>
                 </div>
                 <div class="features-list">
