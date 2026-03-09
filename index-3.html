@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -834,7 +834,8 @@
     <div class="fix-menu">
       <div class="container">
         <div class="header-one__main">
-          <a class="header-one__logo" href="./index-3.html" style="display:flex;align-items:center;text-decoration:none;">
+          <a class="header-one__logo" href="./index-3.html"
+            style="display:flex;align-items:center;text-decoration:none;">
             <img src="./assets/images/PrivacyCrumbLogo4.svg" alt="Privacy Crumb" class="logo-steady-glow"
               style="height:30px;width:auto;" />
           </a>
@@ -906,17 +907,101 @@
           </div>
           <div class="header-one__menu-btns">
             <style>
-              .pc-lang-wrap{position:relative;display:inline-flex;align-items:center;justify-content:center;margin-right:6px;width:34px;height:34px;background:rgba(108,60,224,0.08);border:1px solid rgba(108,60,224,0.18);border-radius:50%;transition:all 0.2s ease;cursor:pointer;}
-              .pc-lang-wrap:hover{background:rgba(108,60,224,0.14);border-color:rgba(108,60,224,0.3);}
-              .pc-lang-wrap .fa-globe{font-size:15px;color:#6c3ce0;}
-              .pc-lang-drop{position:absolute;top:calc(100% + 12px);right:0;min-width:160px;background:#fff;border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,0.1);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:all 0.25s ease;z-index:9999;pointer-events:none;}
-              .pc-lang-drop::before{content:'';position:absolute;top:-6px;right:12px;width:12px;height:12px;background:#fff;transform:rotate(45deg);border-radius:2px;box-shadow:-2px -2px 4px rgba(0,0,0,0.04);}
-              .pc-lang-wrap.open .pc-lang-drop{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}
-              .pc-lang-drop a{display:block;padding:8px 20px;font-size:14px;color:#1a1a2e;text-decoration:none;transition:all 0.15s ease;font-weight:400;}
-              .pc-lang-drop a:hover{color:#6c3ce0;background:rgba(108,60,224,0.04);padding-left:24px;}
-              .pc-lang-drop a.active{color:#6c3ce0;font-weight:500;}
+              .pc-lang-wrap {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 6px;
+                width: 34px;
+                height: 34px;
+                background: rgba(26, 26, 46, 0.06);
+                border: 1px solid rgba(26, 26, 46, 0.15);
+                border-radius: 50%;
+                transition: all 0.2s ease;
+                cursor: pointer;
+              }
+
+              .pc-lang-wrap:hover {
+                background: rgba(26, 26, 46, 0.1);
+                border-color: rgba(26, 26, 46, 0.25);
+              }
+
+              .pc-lang-wrap .fa-globe {
+                font-size: 15px;
+                color: #1a1a2e;
+                transition: color 0.2s ease;
+              }
+
+              .pc-lang-wrap.open {
+                background: rgba(108, 60, 224, 0.1);
+                border-color: rgba(108, 60, 224, 0.3);
+              }
+
+              .pc-lang-wrap.open .fa-globe {
+                color: #6c3ce0;
+              }
+
+              .pc-lang-drop {
+                position: absolute;
+                top: calc(100% + 12px);
+                right: 0;
+                min-width: 160px;
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+                padding: 8px 0;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(8px);
+                transition: all 0.25s ease;
+                z-index: 9999;
+                pointer-events: none;
+              }
+
+              .pc-lang-drop::before {
+                content: '';
+                position: absolute;
+                top: -6px;
+                right: 12px;
+                width: 12px;
+                height: 12px;
+                background: #fff;
+                transform: rotate(45deg);
+                border-radius: 2px;
+                box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.04);
+              }
+
+              .pc-lang-wrap.open .pc-lang-drop {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                pointer-events: auto;
+              }
+
+              .pc-lang-drop a {
+                display: block;
+                padding: 8px 20px;
+                font-size: 14px;
+                color: #1a1a2e;
+                text-decoration: none;
+                transition: all 0.15s ease;
+                font-weight: 400;
+              }
+
+              .pc-lang-drop a:hover {
+                color: #6c3ce0;
+                background: rgba(108, 60, 224, 0.04);
+                padding-left: 24px;
+              }
+
+              .pc-lang-drop a.active {
+                color: #6c3ce0;
+                font-weight: 500;
+              }
             </style>
-            <div class="pc-lang-wrap" title="Select language" onclick="event.stopPropagation();this.classList.toggle('open');">
+            <div class="pc-lang-wrap" title="Select language"
+              onclick="event.stopPropagation();this.classList.toggle('open');">
               <i class="fa-light fa-globe"></i>
               <div class="pc-lang-drop">
                 <a href="#" class="active" onclick="return false;">English</a>
@@ -928,7 +1013,7 @@
                 <a href="#" onclick="return false;">Svenska</a>
               </div>
             </div>
-            <script>document.addEventListener('click',function(){document.querySelectorAll('.pc-lang-wrap.open').forEach(function(e){e.classList.remove('open')})});</script>
+            <script>document.addEventListener('click', function () { document.querySelectorAll('.pc-lang-wrap.open').forEach(function (e) { e.classList.remove('open') }) });</script>
             <div class="buttons">
               <a href="./login.html" class="saaslyn-5-btn">Login</a>
               <div class="divider"></div>
@@ -3769,14 +3854,14 @@
                       <h6 class="link-title">Compare</h6>
                       <div class="link-list">
                         <ul>
-                          
-                          
+
+
                           <li><a href="./cookiebot.html">Cookiebot</a></li>
                           <li><a href="./lubenda.html">Iubenda</a></li>
                           <li><a href="./complianz.html">Complianz</a></li>
                           <li><a href="./compare.html">All comparisons &rarr;</a></li>
-                        
-                        
+
+
                         </ul>
                       </div>
                     </div>
