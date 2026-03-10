@@ -1820,13 +1820,14 @@
               .pc-compare-table {
                 font-size: 12px;
                 border-radius: 14px;
-                min-width: 520px;
+                min-width: 580px;
               }
 
               .pc-compare-table th,
               .pc-compare-table td {
                 padding: 10px 8px;
                 font-size: 12px;
+                text-align: center;
               }
 
               .pc-compare-table thead th {
@@ -1846,10 +1847,12 @@
               .pc-compare-table td:first-child {
                 padding-left: 12px;
                 min-width: 110px;
+                text-align: left;
                 position: sticky;
                 left: 0;
                 background: #ffffff;
                 z-index: 2;
+                box-shadow: 2px 0 6px rgba(0, 0, 0, 0.04);
               }
 
               .pc-compare-table thead th:first-child {
@@ -1865,6 +1868,10 @@
                 padding: 14px 8px;
               }
 
+              .pc-compare-table .cta-row td:first-child {
+                background: #f8f8fc;
+              }
+
               .pc-compare-table .cta-row .cta-link {
                 padding: 6px 12px;
                 font-size: 11px;
@@ -1873,6 +1880,7 @@
               .pc-compare-table .yes {
                 font-size: 15px;
               }
+
             }
           </style>
           <div class="container">
@@ -1884,7 +1892,7 @@
                 </div>
               </div>
             </div>
-            <div style="overflow-x:auto;">
+            <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
               <table class="pc-compare-table">
                 <thead>
                   <tr>
