@@ -25,7 +25,7 @@
   <meta name="twitter:image" content="http://saaslyn-html.netlify.app/assets/images/preview.png" />
   <meta name="developer" content="Sakebul Islam" />
 
-  <title>PrivacyCrumb vs Cookiebot — Better Alternative</title>
+  <title>PrivacyCrumb vs ConsentManager — Better Alternative</title>
   <link rel="icon" type="image/png" href="./assets/images/Privacy-new-logo.png">
 
   <link rel="stylesheet" href="assets/css/plugins.css" />
@@ -897,19 +897,101 @@
           </div>
           <div class="header-one__menu-btns">
             <style>
-              .pc-lang-wrap{position:relative;display:inline-flex;align-items:center;justify-content:center;margin-right:6px;width:34px;height:34px;background:rgba(26,26,46,0.06);border:1px solid rgba(26,26,46,0.15);border-radius:50%;transition:all 0.2s ease;cursor:pointer;}
-              .pc-lang-wrap:hover{background:rgba(26,26,46,0.1);border-color:rgba(26,26,46,0.25);}
-              .pc-lang-wrap .fa-globe{font-size:15px;color:#1a1a2e;transition:color 0.2s ease;}
-              .pc-lang-wrap.open{background:rgba(108,60,224,0.1);border-color:rgba(108,60,224,0.3);}
-              .pc-lang-wrap.open .fa-globe{color:#6c3ce0;}
-              .pc-lang-drop{position:absolute;top:calc(100% + 12px);right:0;min-width:160px;background:#fff;border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,0.1);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:all 0.25s ease;z-index:9999;pointer-events:none;}
-              .pc-lang-drop::before{content:'';position:absolute;top:-6px;right:12px;width:12px;height:12px;background:#fff;transform:rotate(45deg);border-radius:2px;box-shadow:-2px -2px 4px rgba(0,0,0,0.04);}
-              .pc-lang-wrap.open .pc-lang-drop{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}
-              .pc-lang-drop a{display:block;padding:8px 20px;font-size:14px;color:#1a1a2e;text-decoration:none;transition:all 0.15s ease;font-weight:400;}
-              .pc-lang-drop a:hover{color:#6c3ce0;background:rgba(108,60,224,0.04);padding-left:24px;}
-              .pc-lang-drop a.active{color:#6c3ce0;font-weight:500;}
+              .pc-lang-wrap {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 6px;
+                width: 34px;
+                height: 34px;
+                background: rgba(26, 26, 46, 0.06);
+                border: 1px solid rgba(26, 26, 46, 0.15);
+                border-radius: 50%;
+                transition: all 0.2s ease;
+                cursor: pointer;
+              }
+
+              .pc-lang-wrap:hover {
+                background: rgba(26, 26, 46, 0.1);
+                border-color: rgba(26, 26, 46, 0.25);
+              }
+
+              .pc-lang-wrap .fa-globe {
+                font-size: 15px;
+                color: #1a1a2e;
+                transition: color 0.2s ease;
+              }
+
+              .pc-lang-wrap.open {
+                background: rgba(108, 60, 224, 0.1);
+                border-color: rgba(108, 60, 224, 0.3);
+              }
+
+              .pc-lang-wrap.open .fa-globe {
+                color: #6c3ce0;
+              }
+
+              .pc-lang-drop {
+                position: absolute;
+                top: calc(100% + 12px);
+                right: 0;
+                min-width: 160px;
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+                padding: 8px 0;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(8px);
+                transition: all 0.25s ease;
+                z-index: 9999;
+                pointer-events: none;
+              }
+
+              .pc-lang-drop::before {
+                content: '';
+                position: absolute;
+                top: -6px;
+                right: 12px;
+                width: 12px;
+                height: 12px;
+                background: #fff;
+                transform: rotate(45deg);
+                border-radius: 2px;
+                box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.04);
+              }
+
+              .pc-lang-wrap.open .pc-lang-drop {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                pointer-events: auto;
+              }
+
+              .pc-lang-drop a {
+                display: block;
+                padding: 8px 20px;
+                font-size: 14px;
+                color: #1a1a2e;
+                text-decoration: none;
+                transition: all 0.15s ease;
+                font-weight: 400;
+              }
+
+              .pc-lang-drop a:hover {
+                color: #6c3ce0;
+                background: rgba(108, 60, 224, 0.04);
+                padding-left: 24px;
+              }
+
+              .pc-lang-drop a.active {
+                color: #6c3ce0;
+                font-weight: 500;
+              }
             </style>
-            <div class="pc-lang-wrap" title="Select language" onclick="event.stopPropagation();this.classList.toggle('open');">
+            <div class="pc-lang-wrap" title="Select language"
+              onclick="event.stopPropagation();this.classList.toggle('open');">
               <i class="fa-light fa-globe"></i>
               <div class="pc-lang-drop">
                 <a href="#" class="active" onclick="return false;">English</a>
@@ -921,7 +1003,7 @@
                 <a href="#" onclick="return false;">Svenska</a>
               </div>
             </div>
-            <script>document.addEventListener('click',function(){document.querySelectorAll('.pc-lang-wrap.open').forEach(function(e){e.classList.remove('open')})});</script>
+            <script>document.addEventListener('click', function () { document.querySelectorAll('.pc-lang-wrap.open').forEach(function (e) { e.classList.remove('open') }) });</script>
             <div class="buttons">
               <a href="./login.html" class="saaslyn-5-btn">Login</a>
               <div class="divider"></div>
@@ -1234,10 +1316,12 @@
               <div class="col-lg-7">
                 <div class="section-header-3" style="text-align:left;">
                   <h1 class="section-title text-anime" style="color:#1a1a2e;font-size:38px;line-height:1.3;">
-                    The smarter way to manage cookie consent — <span style="color:#6c3ce0;">Cookiebot</span> alternative
+                    The smarter way to manage cookie consent — <span style="color:#6c3ce0;">ConsentManager</span>
+                    alternative
                   </h1>
                   <p style="color:#4a4a6a;max-width:520px;margin:16px 0 28px;font-size:16px;line-height:1.7;">
-                    PrivacyCrumb gives you more features, better pricing, and simpler setup than Cookiebot. Switch to a
+                    PrivacyCrumb gives you more features, better pricing, and simpler setup than ConsentManager. Switch
+                    to a
                     consent platform built for speed and compliance.
                   </p>
                 </div>
@@ -1360,7 +1444,7 @@
 
             <!-- 1: Google-certified CMP Partner -->
             <div class="cb-detail-row">
-              <div class="cb-detail-visual"><img src="./assets/images/compare-certified.png"
+              <div class="cb-detail-visual"><img src="./assets/images/compare-consentmgr-certified.png"
                   alt="Google-certified CMP" /></div>
               <div class="cb-detail-text">
                 <h3>Google-certified CMP Partner</h3>
@@ -1377,7 +1461,8 @@
 
             <!-- 2: Easy to set up -->
             <div class="cb-detail-row reverse">
-              <div class="cb-detail-visual"><img src="./assets/images/compare-setup.png" alt="Easy Setup" /></div>
+              <div class="cb-detail-visual"><img src="./assets/images/compare-consentmgr-setup.png" alt="Easy Setup" />
+              </div>
               <div class="cb-detail-text">
                 <h3>Easy to Set Up</h3>
                 <p>Set up a cookie banner in 5 simple steps and access all the advanced features in a simple dashboard.
@@ -1393,7 +1478,7 @@
 
             <!-- 3: Free policy generators -->
             <div class="cb-detail-row">
-              <div class="cb-detail-visual"><img src="./assets/images/compare-policy.png"
+              <div class="cb-detail-visual"><img src="./assets/images/compare-consentmgr-policy.png"
                   alt="Free Policy Generators" /></div>
               <div class="cb-detail-text">
                 <h3>Free Policy Generators</h3>
@@ -1410,7 +1495,8 @@
 
             <!-- 4: Extensive support -->
             <div class="cb-detail-row reverse">
-              <div class="cb-detail-visual"><img src="./assets/images/compare-support.png" alt="Extensive Support" />
+              <div class="cb-detail-visual"><img src="./assets/images/compare-consentmgr-support.png"
+                  alt="Extensive Support" />
               </div>
               <div class="cb-detail-text">
                 <h3>Extensive Support</h3>
@@ -1786,10 +1872,14 @@
                   <form action="./index-3.html" class="newsletter"><input type="email" name="newsletter-email"
                       id="newsletter-email" placeholder="Newsletter email" required /><button type="submit"><i
                         class="fa-light fa-arrow-right-long"></i></button></form>
-                <div style="display:flex;align-items:flex-start;gap:6px;margin-top:8px;">
-                  <input type="checkbox" id="footerNlConsent" required style="margin-top:3px;accent-color:#6c3ce0;width:14px;height:14px;flex-shrink:0;">
-                  <label for="footerNlConsent" style="font-size:11px;color:#6a6a8a;line-height:1.5;cursor:pointer;">I agree to receive newsletters from PrivacyCrumb and accept the <a href="./privacypolicy.html" style="color:#1a1a2e;text-decoration:underline;">privacy policy</a>.</label>
-                </div>
+                  <div style="display:flex;align-items:flex-start;gap:6px;margin-top:8px;">
+                    <input type="checkbox" id="footerNlConsent" required
+                      style="margin-top:3px;accent-color:#6c3ce0;width:14px;height:14px;flex-shrink:0;">
+                    <label for="footerNlConsent" style="font-size:11px;color:#6a6a8a;line-height:1.5;cursor:pointer;">I
+                      agree to receive newsletters from PrivacyCrumb and accept the <a href="./privacypolicy.html"
+                        style="color:#1a1a2e;text-decoration:underline;" onmouseover="this.style.color='#6c3ce0'"
+                        onmouseout="this.style.color='#1a1a2e'">privacy policy</a>.</label>
+                  </div>
                 </div>
                 <div class="col-lg-9" style="border-left:2px solid rgba(26,26,46,0.12);padding-left:40px;">
                   <div class="info-area" style="display:grid;grid-template-columns:repeat(4,1fr);gap:30px;">
@@ -1852,14 +1942,14 @@
                         <h6 class="link-title">Compare</h6>
                         <div class="link-list">
                           <ul>
-                            
-                          
-                          <li><a href="./cookiebot.html">Cookiebot</a></li>
-                          <li><a href="./lubenda.html">Iubenda</a></li>
-                          <li><a href="./complianz.html">Complianz</a></li>
-                          <li><a href="./compare.html">All comparisons &rarr;</a></li>
-                        
-                        
+
+
+                            <li><a href="./cookiebot.html">Cookiebot</a></li>
+                            <li><a href="./lubenda.html">Iubenda</a></li>
+                            <li><a href="./complianz.html">Complianz</a></li>
+                            <li><a href="./compare.html">All comparisons &rarr;</a></li>
+
+
                           </ul>
                         </div>
                       </div>
@@ -1957,27 +2047,40 @@
                     </div>
                   </div>
                 </div>
-                              <div class="footer-three__bottom">
-                <div class="container">
-                  <div class="row g-2 align-items-center justify-content-between text-center text-md-start">
-                    <div class="col-md-8">
-                      <div class="copyright" style="margin-bottom:12px;">© <span class="current-year"></span> PrivacyCrumb. All rights reserved. PrivacyCrumb is registered in the Philippines.</div>
-                      <p style="font-size:12px;color:#6a6a8a;line-height:1.6;margin:0;max-width:700px;">Any information, whether oral or written, obtained from the PrivacyCrumb website, services, tools, or comments does not constitute any form of legal and/or regulatory advice. If any kind of legal assistance is required, users should consult with an attorney, a lawyer, or a law firm.</p>
-                    </div>
-                    <div class="col-md-4" style="text-align:right;padding-right:60px;">
-                      <div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:10px;">Follow Us</div>
-                      <div style="display:flex;gap:8px;justify-content:flex-end;">
-                        <a href="https://www.facebook.com/" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i class="fa-brands fa-facebook-f" style="font-size:14px;"></i></a>
-                        <a href="https://www.instagram.com/" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i class="fa-brands fa-instagram" style="font-size:14px;"></i></a>
-                        <a href="https://www.linkedin.com/" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i class="fa-brands fa-linkedin-in" style="font-size:14px;"></i></a>
-                        <a href="#" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i class="fa-brands fa-youtube" style="font-size:14px;"></i></a>
+                <div class="footer-three__bottom">
+                  <div class="container">
+                    <div class="row g-2 align-items-center justify-content-between text-center text-md-start">
+                      <div class="col-md-8">
+                        <div class="copyright" style="margin-bottom:12px;">© <span class="current-year"></span>
+                          PrivacyCrumb. All rights reserved. PrivacyCrumb is registered in the Philippines.</div>
+                        <p style="font-size:12px;color:#6a6a8a;line-height:1.6;margin:0;max-width:700px;">Any
+                          information, whether oral or written, obtained from the PrivacyCrumb website, services, tools,
+                          or comments does not constitute any form of legal and/or regulatory advice. If any kind of
+                          legal assistance is required, users should consult with an attorney, a lawyer, or a law firm.
+                        </p>
+                      </div>
+                      <div class="col-md-4" style="text-align:right;padding-right:60px;">
+                        <div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:10px;">Follow Us</div>
+                        <div style="display:flex;gap:8px;justify-content:flex-end;">
+                          <a href="https://www.facebook.com/" target="_blank"
+                            style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i
+                              class="fa-brands fa-facebook-f" style="font-size:14px;"></i></a>
+                          <a href="https://www.instagram.com/" target="_blank"
+                            style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i
+                              class="fa-brands fa-instagram" style="font-size:14px;"></i></a>
+                          <a href="https://www.linkedin.com/" target="_blank"
+                            style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i
+                              class="fa-brands fa-linkedin-in" style="font-size:14px;"></i></a>
+                          <a href="#" target="_blank"
+                            style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(26,26,46,0.15);display:flex;align-items:center;justify-content:center;color:#1a1a2e;text-decoration:none;transition:all 0.2s;"><i
+                              class="fa-brands fa-youtube" style="font-size:14px;"></i></a>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-                  </div>
-                </div>
+            </div>
         </footer>
         <!--=================footer section end=================-->
     </div>
