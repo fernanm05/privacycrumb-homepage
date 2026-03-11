@@ -2166,6 +2166,42 @@
         <section class="awesome-features section section-padding-top overflow-hidden"
           style="content-visibility:auto;contain-intrinsic-size:auto 1000px;contain:layout style paint;">
           <style>
+            /* ── How It Works – Image Size Constraint ── */
+            .awesome-features__content .item-row .item-thumb img {
+              max-width: 420px;
+              width: 100%;
+              height: auto;
+              display: block;
+              margin: 0 auto;
+              border-radius: 16px;
+            }
+
+            /* ── How It Works – Vertical Center + Tighter Gap ── */
+            .awesome-features__content .item-row {
+              align-items: center !important;
+              gap: 32px !important;
+            }
+
+            .awesome-features__content .item-row .awesome-features__item {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .awesome-features__content .item-row .awesome-features__item .item-content {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            }
+
+            .awesome-features__item {
+              padding-top: 40px !important;
+            }
+
+            .awesome-features__content .item-row:last-of-type .awesome-features__item {
+              padding-bottom: 40px !important;
+            }
+
             /* ── How It Works – Mobile Fix ── */
             @media (max-width: 991.98px) {
               .awesome-features__content .item-row {
@@ -3402,6 +3438,47 @@
         <section class="pricing-3 section section-padding-top-bottom overflow-hidden"
           style="content-visibility:auto;contain-intrinsic-size:auto 800px;">
           <style>
+            /* ── Pricing Cards – Desktop Compact ── */
+            .pricing-3.section {
+              padding-top: 50px !important;
+              padding-bottom: 50px !important;
+            }
+
+            .pricing-3__item {
+              padding: 22px 20px !important;
+              border-radius: 14px !important;
+            }
+
+            .pricing-3__item .item-header .header-inner .header-info .plan-price {
+              font-size: 30px !important;
+            }
+
+            .pricing-3__item .item-header .header-inner .header-info .plan-title {
+              font-size: 17px !important;
+            }
+
+            .pricing-3__item .item-body .item-features ul li {
+              font-size: 13px !important;
+              padding: 4px 0 !important;
+            }
+
+            .pricing-3__item .item-body .item-features ul li i {
+              font-size: 13px !important;
+            }
+
+            .pricing-3__item .item-footer {
+              margin-top: 12px !important;
+            }
+
+            .pricing-3__item .item-footer .saaslyn-4-btn {
+              font-size: 13px !important;
+              padding: 10px 18px !important;
+            }
+
+            .pricing-3 .row-padding-top {
+              padding-top: 20px !important;
+            }
+
             /* ── Pricing Cards – Mobile Compact ── */
             @media (max-width: 991.98px) {
               .pricing-3__item {
