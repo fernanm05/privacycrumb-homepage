@@ -1,27 +1,27 @@
 "use client";
-import { LayoutGrid, Bot, Workflow, Radio, ListTodo, Shapes, Bell, HelpCircle, Search, TrendingUp, Clock, Brain, Activity, Timer, History } from "lucide-react";
+import { LayoutGrid, Cookie, Shield, FileText, Globe, BarChart3, Bell, HelpCircle, Search, TrendingUp, Clock, ShieldCheck, Activity, Timer, History } from "lucide-react";
 import FadeIn from "./FadeIn";
 
 const stats = [
-  { v: "128", l: "Active agents", Icon: Bot, bg: "bg-orange-50", ic: "text-coral" },
-  { v: "96.7%", l: "Task success rate", t: "4% ↑", tc: "text-green-500", Icon: TrendingUp, bg: "bg-green-50", ic: "text-green-500" },
-  { v: "12.4s", l: "Average execution time", t: "27% ↓", tc: "text-coral", Icon: Clock, bg: "bg-yellow-50", ic: "text-amber-500" },
-  { v: "GPT-4o", l: "Most used model", Icon: Brain, bg: "bg-purple-50", ic: "text-purple-500" },
+  { v: "2,847", l: "Cookies detected", Icon: Cookie, bg: "bg-orange-50", ic: "text-coral" },
+  { v: "94.2%", l: "Consent rate", t: "6% ↑", tc: "text-green-500", Icon: TrendingUp, bg: "bg-green-50", ic: "text-green-500" },
+  { v: "1.8s", l: "Avg. scan time", t: "18% ↓", tc: "text-coral", Icon: Clock, bg: "bg-yellow-50", ic: "text-amber-500" },
+  { v: "GDPR", l: "Top regulation", Icon: ShieldCheck, bg: "bg-purple-50", ic: "text-purple-500" },
 ];
-const agents = [
-  { name: "deploy-agent-7", model: "GPT-4o mini", modelIcon: "⊛", mic: "text-green-600", status: "Running", dot: "bg-green-500", lat: "8.2s", time: "14 min ago" },
-  { name: "sales-sync-bot", model: "Llama3.1 8B", modelIcon: "∞", mic: "text-blue-500", status: "Paused", dot: "bg-amber-500", lat: "11.4s", time: "32 min ago" },
-  { name: "social-marketing", model: "Llama3.1 70B", modelIcon: "∞", mic: "text-blue-500", status: "Running", dot: "bg-green-500", lat: "6.7s", time: "47 min ago" },
+const domains = [
+  { name: "privacycrumb.com", type: "GDPR", typeIcon: "🇪🇺", mic: "text-blue-600", status: "Compliant", dot: "bg-green-500", cookies: "142", time: "2 min ago" },
+  { name: "store.example.io", type: "CCPA", typeIcon: "🇺🇸", mic: "text-red-500", status: "Review", dot: "bg-amber-500", cookies: "89", time: "15 min ago" },
+  { name: "blog.startup.co", type: "LGPD", typeIcon: "🇧🇷", mic: "text-green-500", status: "Compliant", dot: "bg-green-500", cookies: "56", time: "1 hr ago" },
 ];
 const bars = [[18,12],[14,16],[20,10],[16,18],[22,14],[12,20],[24,16],[18,14],[20,22],[14,12],[16,18],[22,20],[18,24],[20,16]];
 const sidebarItems = [
   { Icon: LayoutGrid, label: "Dashboard" },
-  { Icon: Bot, label: "Agents" },
-  { Icon: Workflow, label: "Workflows" },
-  { Icon: Radio, label: "Simulations" },
-  { Icon: ListTodo, label: "Tasks" },
-  { Icon: Shapes, label: "Apps" },
-  { Icon: Bell, label: "Notifications" },
+  { Icon: Cookie, label: "Cookie Scanner" },
+  { Icon: Shield, label: "Consent Logs" },
+  { Icon: ShieldCheck, label: "Regulations" },
+  { Icon: Globe, label: "Domains" },
+  { Icon: BarChart3, label: "Reports" },
+  { Icon: Bell, label: "Alerts" },
 ];
 
 export default function Dashboard() {
@@ -31,8 +31,8 @@ export default function Dashboard() {
         <div className="flex min-h-[520px]">
           <div className="w-[190px] border-r border-neutral-100 dark:border-neutral-800 p-4 flex-shrink-0 hidden md:block">
             <div className="flex items-center gap-2 font-semibold text-sm mb-6 pb-4 border-b border-neutral-100 dark:border-neutral-800 dark:text-white">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13 3a2 2 0 012 2v6h4a2 2 0 012 2v6a2 2 0 01-2 2h-6a2 2 0 01-2-2v-4H5a2 2 0 01-2-2V5a2 2 0 012-2h8zm0 2H5v8h6V7a2 2 0 012-2zm6 8h-4v6h6v-6h-2z"/></svg>
-              Nodus
+              <img src="/Privacy-new-logo.png" alt="PrivacyCrumb" className="w-5 h-5" />
+              PrivacyCrumb
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="ml-auto text-neutral-400"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8"/></svg>
             </div>
             {sidebarItems.map((item, i) => (
@@ -75,32 +75,32 @@ export default function Dashboard() {
             </div>
             {/* Workflow monitor */}
             <div className="px-5 pb-3">
-              <div className="font-semibold text-sm mb-3 dark:text-white">Workflow monitor</div>
+              <div className="font-semibold text-sm mb-3 dark:text-white">Cookie monitor</div>
               <table className="w-full">
                 <thead>
                   <tr>
                     <th className="text-left p-2 text-neutral-400 font-medium text-[12px] border-b border-neutral-100 w-6"></th>
-                    <th className="text-left p-2 text-neutral-400 font-medium text-[12px] border-b border-neutral-100 dark:border-neutral-800">Agent name</th>
+                    <th className="text-left p-2 text-neutral-400 font-medium text-[12px] border-b border-neutral-100 dark:border-neutral-800">Domain</th>
                     <th className="text-left p-2 text-neutral-400 font-medium text-[12px] border-b border-neutral-100 dark:border-neutral-800">
-                      <span className="flex items-center gap-1"><Bot size={11} /> Model used <span className="text-[10px] px-1.5 py-0.5 bg-blue-50 dark:bg-blue-900/30 text-blue-500 rounded ml-1">AI</span></span>
+                      <span className="flex items-center gap-1"><Shield size={11} /> Regulation</span>
                     </th>
                     <th className="text-left p-2 text-neutral-400 font-medium text-[12px] border-b border-neutral-100 dark:border-neutral-800"><span className="flex items-center gap-1"><Activity size={11} /> Status</span></th>
-                    <th className="text-left p-2 text-neutral-400 font-medium text-[12px] border-b border-neutral-100 dark:border-neutral-800"><span className="flex items-center gap-1"><Timer size={11} /> Latency</span></th>
-                    <th className="text-left p-2 text-neutral-400 font-medium text-[12px] border-b border-neutral-100 dark:border-neutral-800"><span className="flex items-center gap-1"><History size={11} /> Last run</span></th>
+                    <th className="text-left p-2 text-neutral-400 font-medium text-[12px] border-b border-neutral-100 dark:border-neutral-800"><span className="flex items-center gap-1"><Cookie size={11} /> Cookies</span></th>
+                    <th className="text-left p-2 text-neutral-400 font-medium text-[12px] border-b border-neutral-100 dark:border-neutral-800"><span className="flex items-center gap-1"><History size={11} /> Last scan</span></th>
                   </tr>
                 </thead>
                 <tbody>
-                  {agents.map((a) => (
+                  {domains.map((a) => (
                     <tr key={a.name} className="hover:bg-neutral-50/50 dark:hover:bg-neutral-800/50">
                       <td className="p-2.5 border-b border-neutral-50 dark:border-neutral-800"><div className="w-3.5 h-3.5 rounded border border-neutral-300 dark:border-neutral-600" /></td>
                       <td className="p-2.5 text-[13px] border-b border-neutral-50 dark:border-neutral-800 font-medium dark:text-neutral-200">{a.name}</td>
                       <td className="p-2.5 text-[13px] border-b border-neutral-50 dark:border-neutral-800">
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-neutral-50 dark:bg-neutral-800 text-xs dark:text-neutral-300"><span className={a.mic}>{a.modelIcon}</span> {a.model}</span>
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-neutral-50 dark:bg-neutral-800 text-xs dark:text-neutral-300"><span>{a.typeIcon}</span> {a.type}</span>
                       </td>
                       <td className="p-2.5 text-[13px] border-b border-neutral-50 dark:border-neutral-800">
                         <span className={`inline-block w-1.5 h-1.5 rounded-full ${a.dot} mr-1.5`} /><span className="dark:text-neutral-200">{a.status}</span>
                       </td>
-                      <td className="p-2.5 text-[13px] border-b border-neutral-50 dark:border-neutral-800 text-neutral-500 dark:text-neutral-400">{a.lat}</td>
+                      <td className="p-2.5 text-[13px] border-b border-neutral-50 dark:border-neutral-800 text-neutral-500 dark:text-neutral-400">{a.cookies}</td>
                       <td className="p-2.5 text-[13px] border-b border-neutral-50 dark:border-neutral-800 text-neutral-400">{a.time}</td>
                     </tr>
                   ))}
@@ -111,7 +111,7 @@ export default function Dashboard() {
             <div className="grid md:grid-cols-2 gap-3 px-5 pb-5">
               <div className="border border-neutral-100 dark:border-neutral-800 rounded-xl p-4">
                 <div className="flex justify-between items-center mb-4">
-                  <span className="font-semibold text-sm dark:text-white">Agents by status</span>
+                  <span className="font-semibold text-sm dark:text-white">Consent by type</span>
                   <span className="text-xs text-neutral-400 px-2.5 py-1 border border-neutral-100 dark:border-neutral-700 rounded-md cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800">Past 7 days ▾</span>
                 </div>
                 <div className="flex items-center justify-center gap-6">
@@ -119,11 +119,11 @@ export default function Dashboard() {
                     <circle cx="60" cy="60" r="48" fill="none" stroke="#FECACA" strokeWidth="16"/>
                     <circle cx="60" cy="60" r="48" fill="none" stroke="#F26C4F" strokeWidth="16" strokeDasharray="200 302" strokeDashoffset="-75" strokeLinecap="round"/>
                     <circle cx="60" cy="60" r="48" fill="none" stroke="#E5E7EB" strokeWidth="16" strokeDasharray="50 452" strokeDashoffset="-280" strokeLinecap="round"/>
-                    <text x="60" y="56" textAnchor="middle" fontSize="22" fontWeight="700" fill="currentColor" className="text-neutral-900 dark:text-white">87</text>
-                    <text x="60" y="72" textAnchor="middle" fontSize="11" fill="#9CA3AF">Agents</text>
+                    <text x="60" y="56" textAnchor="middle" fontSize="22" fontWeight="700" fill="currentColor" className="text-neutral-900 dark:text-white">87%</text>
+                    <text x="60" y="72" textAnchor="middle" fontSize="11" fill="#9CA3AF">Consent</text>
                   </svg>
                   <div className="flex flex-col gap-2 text-xs text-neutral-500">
-                    {[{c:"#F26C4F",l:"Active"},{c:"#FECACA",l:"Idle"},{c:"#E5E7EB",l:"Offline"}].map(i => (
+                    {[{c:"#F26C4F",l:"Accepted"},{c:"#FECACA",l:"Partial"},{c:"#E5E7EB",l:"Rejected"}].map(i => (
                       <div key={i.l} className="flex items-center gap-1.5">
                         <span className="w-2 h-2 rounded-full flex-shrink-0" style={{background:i.c}} />{i.l}
                       </div>
@@ -133,7 +133,7 @@ export default function Dashboard() {
               </div>
               <div className="border border-neutral-100 dark:border-neutral-800 rounded-xl p-4">
                 <div className="flex justify-between items-center mb-4">
-                  <span className="font-semibold text-sm dark:text-white">Tasks breakdown</span>
+                  <span className="font-semibold text-sm dark:text-white">Cookie breakdown</span>
                   <span className="text-xs text-neutral-400 px-2.5 py-1 border border-neutral-100 dark:border-neutral-700 rounded-md cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800">Past 7 days ▾</span>
                 </div>
                 <div className="relative">

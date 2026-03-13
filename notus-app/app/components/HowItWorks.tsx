@@ -1,16 +1,16 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { SquarePen, Brain, Video, Globe, Sparkles } from "lucide-react";
+import { Search, Shield, BarChart3, Globe, Cookie } from "lucide-react";
 import FadeIn, { SectionHeader } from "./FadeIn";
 
 const tabs = [
-  { icon: SquarePen, title: "Design your Workflow", desc: "A drag-and-drop interface to create, connect, and configure agents into logical workflows" },
-  { icon: Brain, title: "Connect your Tools", desc: "Agents operate independently and coordinate tasks to complete all complex goals together" },
-  { icon: Video, title: "Deploy & Scale", desc: "Run agent workflows in a sandbox to preview behavior, debug logic, and test interactions" },
+  { icon: Search, title: "Scan Your Website", desc: "Automatically detect all cookies and trackers on your website with our intelligent scanner" },
+  { icon: Shield, title: "Configure Consent", desc: "Set up GDPR, CCPA, and LGPD compliant consent banners that match your brand" },
+  { icon: BarChart3, title: "Monitor & Comply", desc: "Track consent rates in real-time and receive alerts when new cookies are detected" },
 ];
 
-/* ========== TAB 0: Design your Workflow ========== */
+/* ========== TAB 0: Scan Your Website ========== */
 function PreviewDesign() {
   return (
     <div
@@ -31,18 +31,18 @@ function PreviewDesign() {
         <div className="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-4 shadow-sm w-[220px]">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M14.5 2a2.5 2.5 0 000 5H17V4.5A2.5 2.5 0 0014.5 2z" fill="#E01E5A"/><path d="M2 14.5a2.5 2.5 0 005 0V12H4.5A2.5 2.5 0 002 14.5z" fill="#36C5F0"/><path d="M9.5 22a2.5 2.5 0 000-5H7v2.5A2.5 2.5 0 009.5 22z" fill="#2EB67D"/><path d="M22 9.5a2.5 2.5 0 00-5 0V12h2.5A2.5 2.5 0 0022 9.5z" fill="#ECB22E"/><rect x="7" y="7" width="5" height="5" fill="#36C5F0"/><rect x="12" y="7" width="5" height="5" fill="#2EB67D"/><rect x="7" y="12" width="5" height="5" fill="#E01E5A"/><rect x="12" y="12" width="5" height="5" fill="#ECB22E"/></svg>
-              <span className="text-sm font-semibold dark:text-white">Slack</span>
+              <Globe size={16} className="text-coral" />
+              <span className="text-sm font-semibold dark:text-white">Website Scanner</span>
             </div>
-            <span className="text-[11px] text-neutral-400">#standups</span>
+            <span className="text-[11px] text-neutral-400">v2.1</span>
           </div>
           <motion.span
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3, delay: 0.5 }}
-            className="inline-block text-[11px] px-2.5 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800 rounded-md font-medium"
+            className="inline-block text-[11px] px-2.5 py-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 border border-green-200 dark:border-green-800 rounded-md font-medium"
           >
-            Connected
+            Scanning...
           </motion.span>
         </div>
       </motion.div>
@@ -83,9 +83,9 @@ function PreviewDesign() {
       {/* Model cards row */}
       <div className="grid grid-cols-3 gap-3">
         {[
-          { brand: "Anthropic", model: "Claude 4", label: "Summarizer", labelColor: "bg-orange-50 text-orange-500 border-orange-200", icon: "✦" },
-          { brand: "Meta", model: "Llama 2", label: "Text Generator", labelColor: "bg-blue-50 text-blue-500 border-blue-200", icon: "∞" },
-          { brand: "OpenAI", model: "", label: "Code Generator", labelColor: "bg-neutral-100 text-neutral-500 border-neutral-200", icon: "◎" },
+          { brand: "Analytics", model: "Google, Meta", label: "18 cookies", labelColor: "bg-orange-50 text-orange-500 border-orange-200", icon: "📊" },
+          { brand: "Marketing", model: "HubSpot, Mailchimp", label: "12 cookies", labelColor: "bg-blue-50 text-blue-500 border-blue-200", icon: "📢" },
+          { brand: "Functional", model: "", label: "6 cookies", labelColor: "bg-green-50 text-green-500 border-green-200", icon: "⚙️" },
         ].map((m, i) => (
           <motion.div
             key={m.brand}
@@ -117,7 +117,7 @@ function PreviewDesign() {
   );
 }
 
-/* ========== TAB 1: Connect your Tools ========== */
+/* ========== TAB 1: Configure Consent ========== */
 function PreviewConnect() {
   return (
     <div className="w-full relative">
@@ -136,7 +136,7 @@ function PreviewConnect() {
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#a3a3a3" strokeWidth="1.5">
                 <rect x="1" y="1" width="14" height="14" rx="3" />
               </svg>
-              <span className="text-[12px] font-semibold text-neutral-700 dark:text-neutral-200">Tasks</span>
+              <span className="text-[12px] font-semibold text-neutral-700 dark:text-neutral-200">Consent Rules</span>
             </div>
             <motion.p
               initial={{ opacity: 0 }}
@@ -144,7 +144,7 @@ function PreviewConnect() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-[11px] text-neutral-500 leading-relaxed mb-3"
             >
-              Write the first and second rule of it using Claude and ChatGPT.
+              Accept or reject cookies by category. Auto-block until consent is given.
             </motion.p>
             {/* Typing cursor animation */}
             <motion.div
@@ -205,9 +205,9 @@ function PreviewConnect() {
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-1.5">
                 <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="#a3a3a3" strokeWidth="1.5"><rect x="1" y="1" width="14" height="14" rx="3" /><path d="M5 8h6M8 5v6" /></svg>
-                <span className="text-[11px] font-semibold text-neutral-700 dark:text-neutral-200">Integrations</span>
+                <span className="text-[11px] font-semibold text-neutral-700 dark:text-neutral-200">Regulations</span>
               </div>
-              <span className="text-[10px] text-neutral-400 bg-neutral-100 dark:bg-neutral-700 px-1.5 py-0.5 rounded">200</span>
+              <span className="text-[10px] text-neutral-400 bg-neutral-100 dark:bg-neutral-700 px-1.5 py-0.5 rounded">3</span>
             </div>
 
             {/* ChatGPT */}
@@ -219,10 +219,10 @@ function PreviewConnect() {
             >
               <span className="flex items-center gap-2 text-[11px] font-medium text-neutral-700 dark:text-neutral-200">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="10" stroke="#10a37f" strokeWidth="2"/>
-                  <path d="M12 7v5l3 3" stroke="#10a37f" strokeWidth="2" strokeLinecap="round"/>
+                  <circle cx="12" cy="12" r="10" stroke="#3b82f6" strokeWidth="2"/>
+                  <path d="M8 12h8M12 8v8" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
-                ChatGPT
+                GDPR
               </span>
               <motion.span
                 initial={{ opacity: 0, scale: 0.7 }}
@@ -243,10 +243,10 @@ function PreviewConnect() {
             >
               <span className="flex items-center gap-2 text-[11px] font-medium text-neutral-700 dark:text-neutral-200">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 3L3 8v8l9 5 9-5V8l-9-5z" stroke="#cc785c" strokeWidth="2" strokeLinejoin="round"/>
-                  <circle cx="12" cy="12" r="2" fill="#cc785c"/>
+                  <rect x="2" y="2" width="20" height="20" rx="4" stroke="#ef4444" strokeWidth="2"/>
+                  <path d="M7 12h10" stroke="#ef4444" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
-                Claude 4 Opus
+                CCPA
               </span>
               <motion.span
                 initial={{ opacity: 0, scale: 0.7 }}
@@ -295,16 +295,16 @@ function PreviewConnect() {
   );
 }
 
-/* ========== TAB 2: Deploy & Scale — Conveyor belt with depth effect ========== */
+/* ========== TAB 2: Monitor & Comply — Conveyor belt with depth effect ========== */
 const allDeploys = [
-  { name: "deploy-prod-eu-128", time: "10m ago", branch: "main", color: "#a3a3a3" },
-  { name: "deploy-dev-us-445", time: "45m ago", branch: "feature/auth", color: "#fbbf24" },
-  { name: "deploy-prod-ap-223", time: "1h ago", branch: "main", color: "#f87171" },
-  { name: "deploy-dev-eu-891", time: "2h ago", branch: "fix/cache", color: "#a3a3a3" },
-  { name: "deploy-prod-us-337", time: "3h ago", branch: "main", color: "#4ade80" },
-  { name: "deploy-dev-ap-556", time: "4h ago", branch: "feat/api", color: "#fbbf24" },
-  { name: "deploy-dev-eu-672", time: "5h ago", branch: "feat/search", color: "#a3a3a3" },
-  { name: "deploy-prod-ap-445", time: "6h ago", branch: "main", color: "#f87171" },
+  { name: "scan-gdpr-eu-west", time: "2m ago", branch: "compliant", color: "#4ade80" },
+  { name: "scan-ccpa-us-east", time: "15m ago", branch: "review", color: "#fbbf24" },
+  { name: "scan-lgpd-br-south", time: "30m ago", branch: "compliant", color: "#4ade80" },
+  { name: "alert-new-cookie", time: "1h ago", branch: "detected", color: "#f87171" },
+  { name: "scan-gdpr-eu-north", time: "2h ago", branch: "compliant", color: "#4ade80" },
+  { name: "scan-ccpa-us-west", time: "3h ago", branch: "review", color: "#fbbf24" },
+  { name: "alert-tracker-found", time: "4h ago", branch: "blocked", color: "#f87171" },
+  { name: "scan-gdpr-eu-east", time: "5h ago", branch: "compliant", color: "#4ade80" },
 ];
 
 function PreviewDeploy() {
@@ -399,8 +399,7 @@ function PreviewDeploy() {
                   style={{ backgroundColor: d.color }}
                 >
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M7 8l-4 4 4 4" />
-                    <path d="M17 8l4 4-4 4" />
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                   </svg>
                 </div>
                 <span
@@ -451,7 +450,7 @@ export default function HowItWorks() {
   return (
     <section className="py-20 bg-neutral-50/50 dark:bg-neutral-950">
       <div className="max-w-5xl mx-auto px-6">
-        <SectionHeader label="How it works" title="Integrates easily" subtitle="We empower developers and technical teams to create, simulate, and manage AI-driven workflows visually" />
+        <SectionHeader label="How it works" title="Simple setup, total compliance" subtitle="Get your website compliant in minutes — scan cookies, configure consent, and monitor compliance automatically" />
         <div className="grid md:grid-cols-2 gap-16 items-start">
           <div className="flex flex-col gap-1">
             {tabs.map((t, i) => (

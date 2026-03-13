@@ -5,12 +5,12 @@ import { ChevronDown } from "lucide-react";
 import FadeIn, { SectionHeader } from "./FadeIn";
 
 const faqs = [
-  { q: "What exactly does this platform do?", a: "Our platform provides a visual interface for building, testing, and deploying AI agent workflows. You can create complex multi-agent systems using a drag-and-drop builder, connect them to your existing tools, and monitor their performance in real-time." },
-  { q: "How do I get started with creating my first workflow?", a: "Getting started is simple. Sign up for a free account, open the visual builder, and drag your first agent node onto the canvas. Connect it to a trigger and an action, then hit deploy. Our onboarding guide walks you through the entire process." },
-  { q: "What tools and services can I integrate?", a: "We support 50+ integrations including Slack, GitHub, Notion, Linear, Jira, and more. You can also build custom connectors using our SDK to connect to any service with an API." },
-  { q: "Is my data secure when using AI agents?", a: "Yes. We're SOC 2 Type II certified, GDPR compliant, and CCPA compliant. All data is encrypted at rest and in transit. We never train on your data, and you maintain full ownership of all outputs." },
-  { q: "Can I test workflows before they go live?", a: "Absolutely. Our simulation environment lets you test workflows with sample data before deploying to production. You can step through each action, inspect intermediate results, and debug any issues." },
-  { q: "What's the difference between automated and manual steps?", a: "Automated steps are executed by AI agents without human intervention. Manual steps pause the workflow and wait for human review or input before continuing. You can mix both in a single workflow." },
+  { q: "What does PrivacyCrumb do?", a: "PrivacyCrumb is a cookie consent management platform that helps websites comply with privacy laws like GDPR, CCPA, and ePrivacy. It automatically scans your site for cookies, deploys customizable consent banners, and maintains audit-ready consent logs — all with a simple script install." },
+  { q: "How do I get started?", a: "Getting started takes less than 5 minutes. Sign up for a free account, add your domain, and paste our lightweight script tag into your site's header. PrivacyCrumb will automatically scan your cookies and deploy a consent banner. No coding required." },
+  { q: "What platforms does PrivacyCrumb support?", a: "PrivacyCrumb works with any website platform including WordPress, Shopify, Webflow, Squarespace, Next.js, and custom-built sites. We also integrate with Google Analytics, Google Tag Manager, HubSpot, and 50+ other tools." },
+  { q: "Is PrivacyCrumb compliant with GDPR and CCPA?", a: "Yes. PrivacyCrumb is fully compliant with GDPR, CCPA, LGPD, PIPEDA, and other major privacy regulations. Our consent banners, cookie blocking, and logging are designed to meet the strictest requirements. We also auto-update when regulations change." },
+  { q: "Can I customize the consent banner?", a: "Absolutely. You can fully customize the banner's colors, text, position, button styles, and behavior to match your brand. Our Pro and Enterprise plans also let you remove PrivacyCrumb branding entirely." },
+  { q: "How does cookie blocking work?", a: "PrivacyCrumb blocks non-essential cookies (analytics, marketing, etc.) before the user gives consent. Once consent is granted for specific categories, those cookies are unblocked automatically. This ensures privacy-by-default compliance." },
 ];
 
 export default function FAQ() {
@@ -18,7 +18,7 @@ export default function FAQ() {
   return (
     <section className="py-20" id="faq">
       <div className="max-w-3xl mx-auto px-6">
-        <SectionHeader label="FAQs" title="Frequently Asked Questions" subtitle="Find all your doubts and questions in one place. Still couldn't find what you're looking for?" />
+        <SectionHeader label="FAQs" title="Frequently Asked Questions" subtitle="Everything you need to know about PrivacyCrumb and cookie compliance" />
         <div className="flex justify-center gap-3 mb-10">
           <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
             className="bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 px-7 py-3 rounded-xl text-sm font-medium hover:bg-black dark:hover:bg-neutral-100 transition-colors">Read Docs</motion.button>

@@ -50,14 +50,14 @@ const ISOIcon = () => (
 export default function Security() {
   return (
     <section className="py-16 bg-neutral-50/50 dark:bg-neutral-950">
-      <p className="text-center text-xs uppercase tracking-[0.2em] text-neutral-400 font-medium mb-6">For Security First Teams</p>
+      <p className="text-center text-xs uppercase tracking-[0.2em] text-neutral-400 font-medium mb-6">For Privacy-First Teams</p>
       <FadeIn>
         <div className="max-w-5xl mx-auto px-6">
           <div className="border border-neutral-200/80 dark:border-neutral-800 rounded-3xl bg-white dark:bg-neutral-900 p-10 md:p-12 grid md:grid-cols-2 gap-10 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-4 leading-tight text-neutral-900 dark:text-white">Scale securely with confidence</h2>
-              <p className="text-neutral-500 dark:text-neutral-400 text-[15px] leading-relaxed mb-6">Our AI assistant is designed with enterprise-grade security practices and compliant with global data protection standards.</p>
-              <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 px-7 py-3 rounded-xl text-sm font-medium hover:bg-black dark:hover:bg-neutral-100 transition-colors">Start for free</motion.button>
+              <h2 className="text-3xl font-bold mb-4 leading-tight text-neutral-900 dark:text-white">Stay compliant with confidence</h2>
+              <p className="text-neutral-500 dark:text-neutral-400 text-[15px] leading-relaxed mb-6">PrivacyCrumb is built with enterprise-grade security and fully compliant with global privacy regulations. Your consent data is encrypted, audit-ready, and always under your control.</p>
+              <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 px-7 py-3 rounded-xl text-sm font-medium hover:bg-black dark:hover:bg-neutral-100 transition-colors">Get started free</motion.button>
             </div>
             <div className="flex gap-12 justify-center">
               {[

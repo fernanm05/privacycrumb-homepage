@@ -1,48 +1,46 @@
 "use client";
 import { motion } from "framer-motion";
-import { Globe, SquarePen, Wrench, Fingerprint, RefreshCw, Terminal, Sparkles, Layout, Paperclip, SendHorizontal, Monitor, Code2, Phone } from "lucide-react";
+import { Cookie, Shield, Wrench, Lock, FileText, Terminal, Sparkles, Layout, Paperclip, SendHorizontal, Globe, ShieldCheck, ScrollText } from "lucide-react";
 import FadeIn, { SectionHeader } from "./FadeIn";
 
-/* ========== BRAND SVG ICONS ========== */
-const NotusLogo = ({ size = 24 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor"><path d="M13 3a2 2 0 012 2v6h4a2 2 0 012 2v6a2 2 0 01-2 2h-6a2 2 0 01-2-2v-4H5a2 2 0 01-2-2V5a2 2 0 012-2h8zm0 2H5v8h6V7a2 2 0 012-2zm6 8h-4v6h6v-6h-2z"/></svg>
-);
+/* ========== BRAND SVG ICONS (privacy-related platforms) ========== */
 
-/* Notion - actual "N" logo with bracket (bold filled) */
-const NotionIcon = () => (
-  <svg width="22" height="22" viewBox="0 0 100 100" fill="none">
-    <path d="M6.017 4.313l55.333-4.087c6.797-.583 8.543-.19 12.817 2.917l17.663 12.443c2.913 2.14 3.883 2.723 3.883 5.053v68.243c0 4.277-1.553 6.807-6.99 7.193L24.467 99.967c-4.08.193-6.023-.39-8.16-3.113L3.3 79.94c-2.333-3.113-3.3-5.443-3.3-8.167V11.113c0-3.497 1.553-6.413 6.017-6.8z" fill="#fff"/>
-    <path fillRule="evenodd" clipRule="evenodd" d="M61.35.227l-55.333 4.087C1.553 4.7 0 7.617 0 11.113v60.66c0 2.723.967 5.053 3.3 8.167l13.007 16.913c2.137 2.723 4.08 3.307 8.16 3.113l64.257-3.89c5.433-.387 6.99-2.917 6.99-7.193V20.64c0-2.21-.873-2.847-3.443-4.733L75.343 3.57l-.257-.18C71.657.097 69.837-.38 63.037.2l-1.687.027zM25.92 19.523c-5.247.353-6.437.433-9.417-1.99L8.927 11.507c-1.167-1.167-.583-2.527 6.03-3.11l51.89-3.693c5.44-.39 8.163 1.36 10.303 3.107l9.91 7.19c.583.39 1.943 2.527.39 2.527l-53.6 3.107-.39.003-7.54.885z" fill="#000"/>
-    <path d="M25.92 19.523v70.15c0 4.077 2.14 5.443 6.99 5.247l56.113-3.303c4.857-.197 5.827-3.11 5.827-6.607V21.27c0-3.5-1.357-5.25-4.467-4.86l-58.823 3.5c-3.5.193-5.64 1.113-5.64 4.47v-4.857z" fill="#fff"/>
-    <path d="M53.22 37.933l-22.74 1.36c-.97.06-1.167.583-1.167 1.36v1.75c0 .78.583 1.363 1.36 1.363h8.557v25.67l-8.557 1.363c-.78.39-1.36.97-1.36 1.75v1.75c0 .78.58 1.167 1.36 1.167l24.887-1.553c.78 0 1.36-.387 1.36-1.167v-1.75c0-.78-.58-1.36-1.36-1.75l-8.557-.58V41.43h.58l11.083 33.247c.39.78.97 1.167 1.75 1.167h2.333c.78 0 1.36-.387 1.75-1.167L74.5 43.183h.39v29.513l-8.36 1.167c-.973.39-1.553.97-1.553 1.75v1.75c0 .78.58 1.167 1.36 1.167l23.333-1.36c.78 0 1.167-.387 1.167-1.167v-1.75c0-.78-.387-1.36-1.167-1.75l-7.583-.78V39.1c0-.78-.39-1.36-1.167-1.36l-5.637.39c-.78 0-1.36.39-1.75 1.167l-10.5 29.12h-.39l-10.11-30.093c-.39-.78-.97-1.167-1.75-1.167l-.003.777z" fill="#000"/>
+/* WordPress - W logo */
+const WordPressIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="#21759B">
+    <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zM3.009 12c0-1.36.308-2.648.856-3.8l4.72 12.932A8.996 8.996 0 013.009 12zM12 20.991a8.963 8.963 0 01-2.773-.437l2.943-8.546 3.015 8.258.02.046a8.965 8.965 0 01-3.205.679zM13.45 7.19c.59-.031 1.12-.093 1.12-.093.528-.063.466-.838-.062-.808 0 0-1.588.125-2.612.125-.962 0-2.581-.125-2.581-.125-.528-.03-.59.776-.063.808 0 0 .5.062 1.028.093l1.527 4.185-2.146 6.434L6.18 7.19c.59-.031 1.12-.093 1.12-.093.527-.063.466-.838-.063-.808 0 0-1.587.125-2.612.125-.184 0-.4-.005-.627-.013A8.966 8.966 0 0112 3.009c2.34 0 4.471.895 6.071 2.36-.038-.002-.076-.008-.116-.008-1.006 0-1.72.935-1.72 1.72 0 .699.371 1.257.774 1.923.309.543.587 1.134.587 2.141 0 .665-.256 1.436-.59 2.512l-.774 2.586-2.802-8.053zM16.4 19.82l2.86-8.262c.534-1.334.712-2.402.712-3.352 0-.345-.023-.665-.065-.963A8.954 8.954 0 0120.991 12a8.994 8.994 0 01-4.591 7.82z" />
   </svg>
 );
 
-/* Slack - colored hash logo */
-const SlackIcon = () => (
+/* Shopify - S bag logo */
+const ShopifyIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="#95BF47">
+    <path d="M15.337 3.199c-.147-.047-.31 0-.387.16-.062.128-1.073 2.036-1.073 2.036s-1.201-.53-1.36-.593c-.497-.21-1.201-.257-1.809-.13-.624.13-1.176.498-1.616 1.024-.816 1.005-1.153 2.426-1.153 2.426l-2.09.643S6.016 8.828 5.923 8.86c-.093.032-.155.097-.186.193L3.92 16.04l8.29 1.56L17.83 4.367c0-.032-.016-.065-.032-.097a.253.253 0 00-.129-.128c-.367-.193-1.504-.66-2.332-.943zM12.73 6.327l-.56 1.78s-.608-.304-1.376-.24c-1.12.08-1.136.768-1.12.96.064.96 2.594 1.168 2.738 3.424.112 1.776-1.04 2.992-2.642 3.088-1.921.112-2.977-1.008-2.977-1.008l.417-1.712s1.072.768 1.936.72c.56-.032.768-.48.752-.8-.08-1.248-2.13-1.168-2.258-3.248-.112-1.744 1.04-3.52 3.568-3.68.976-.064 1.472.192 1.472.192l.05.524z" />
+  </svg>
+);
+
+/* Google Analytics - chart icon */
+const GoogleAnalyticsIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-    <path d="M14.5 2a2.5 2.5 0 000 5H17V4.5A2.5 2.5 0 0014.5 2z" fill="#E01E5A"/>
-    <path d="M2 14.5a2.5 2.5 0 005 0V12H4.5A2.5 2.5 0 002 14.5z" fill="#36C5F0"/>
-    <path d="M9.5 22a2.5 2.5 0 000-5H7v2.5A2.5 2.5 0 009.5 22z" fill="#2EB67D"/>
-    <path d="M22 9.5a2.5 2.5 0 00-5 0V12h2.5A2.5 2.5 0 0022 9.5z" fill="#ECB22E"/>
-    <rect x="7" y="7" width="5" height="5" fill="#36C5F0"/>
-    <rect x="12" y="7" width="5" height="5" fill="#2EB67D"/>
-    <rect x="7" y="12" width="5" height="5" fill="#E01E5A"/>
-    <rect x="12" y="12" width="5" height="5" fill="#ECB22E"/>
+    <rect x="17" y="3" width="4" height="18" rx="2" fill="#F9AB00" />
+    <rect x="10" y="9" width="4" height="12" rx="2" fill="#E37400" />
+    <circle cx="5" cy="19" r="2.5" fill="#E37400" />
   </svg>
 );
 
-/* ChatGPT - actual OpenAI swirl/flower logo */
-const ChatGPTIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-[#404040] dark:text-neutral-400">
-    <path d="M22.282 9.821a5.985 5.985 0 00-.516-4.91 6.046 6.046 0 00-6.51-2.9A6.065 6.065 0 0011.78.178 6.029 6.029 0 005.47 1.567 5.985 5.985 0 001.394 5.7a6.046 6.046 0 00.742 7.048 5.98 5.98 0 00.51 4.911 6.051 6.051 0 006.516 2.9A6.056 6.056 0 0013.647 23.82a6.03 6.03 0 006.31-1.39 5.98 5.98 0 004.076-4.133 6.043 6.043 0 00-.742-7.048l-.009-1.428zM13.647 21.63a4.508 4.508 0 01-2.895-1.053l.143-.082 4.806-2.775a.779.779 0 00.394-.678v-6.78l2.033 1.174a.073.073 0 01.039.052v5.614a4.526 4.526 0 01-4.52 4.528zm-9.712-4.145a4.494 4.494 0 01-.538-3.026l.144.085 4.806 2.774a.788.788 0 00.788 0l5.868-3.387v2.348a.07.07 0 01-.029.057l-4.86 2.806a4.527 4.527 0 01-6.179-1.657zm-1.264-10.49a4.503 4.503 0 012.356-1.979l-.003.165v5.55a.78.78 0 00.394.677l5.868 3.386-2.033 1.175a.073.073 0 01-.068.005l-4.86-2.807A4.529 4.529 0 012.671 6.994zm16.672 3.878l-5.868-3.387 2.034-1.175a.072.072 0 01.068-.005l4.86 2.807a4.524 4.524 0 01-.7 8.15v-5.712a.78.78 0 00-.394-.678zm2.022-3.04l-.144-.085-4.806-2.775a.786.786 0 00-.787 0l-5.869 3.387V6.01a.072.072 0 01.029-.057l4.86-2.805a4.526 4.526 0 016.717 4.684zm-12.72 4.177l-2.034-1.175a.073.073 0 01-.039-.052V5.168a4.525 4.525 0 017.414-3.472l-.143.082-4.806 2.775a.78.78 0 00-.394.678l.002 6.778zm1.105-2.383l2.614-1.51 2.614 1.51v3.017l-2.614 1.51-2.614-1.51V9.626z"/>
+/* Google Tag Manager - tag icon */
+const TagManagerIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+    <path d="M13.646 22.058l-8.29-8.29a2.5 2.5 0 010-3.536l8.29-8.29a2.5 2.5 0 013.536 0l.094.094-5.569 5.569a1.5 1.5 0 000 2.121l3.182 3.182a1.5 1.5 0 002.121 0l5.569-5.569.094.094a2.5 2.5 0 010 3.536l-8.29 8.29a2.5 2.5 0 01-3.537-.001z" fill="#8AB4F8" />
+    <path d="M13.646 22.058l8.29-8.29a2.5 2.5 0 000-3.536l-3.841-3.841-5.569 5.569a1.5 1.5 0 01-2.121 0L7.223 8.778 3.356 12.646a2.5 2.5 0 000 3.536l8.29 8.29a2.5 2.5 0 002.121-.414h-2.121z" fill="#4285F4" opacity="0.6" />
+    <circle cx="12" cy="12" r="2" fill="#fff" />
   </svg>
 );
 
-/* Linear - actual Linear logo (tilted mark) */
-const LinearIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 100 100" fill="#5E6AD2">
-    <path d="M1.22541 61.5228c-.97658-1.5224-.97658-3.5228 0-5.048L45.5 0l44.27 56.475c.977 1.525.977 3.525 0 5.048L45.5 100 1.22541 61.5228z" opacity="0.9"/>
+/* HubSpot - sprocket logo */
+const HubSpotIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="#FF7A59">
+    <path d="M16.5 7.56V4.5a1.5 1.5 0 10-1.5 0v3.06A4.49 4.49 0 0012.18 10H7.5l-3 3.75L7.5 17.5h4.68a4.5 4.5 0 102.82-2.94 4.48 4.48 0 001.5-7zM16.5 16a2.5 2.5 0 11-2.5-2.5 2.5 2.5 0 012.5 2.5z" />
   </svg>
 );
 
@@ -50,17 +48,17 @@ export default function Features() {
   return (
     <section className="py-20 dark:bg-neutral-950" id="features">
       <div className="max-w-5xl mx-auto px-6">
-        <SectionHeader label="Features" title="Built for Agentic Intelligence" subtitle="Build, test and deploy AI agents with a powerful visual interface designed for technical teams" />
+        <SectionHeader label="Features" title="Complete Privacy Toolkit" subtitle="Everything you need to scan, manage, and stay compliant with global cookie privacy regulations" />
         {/* Bento grid: 2 cols top */}
         <div className="grid md:grid-cols-2 gap-4">
           {/* LLM Model Selector */}
           <FadeIn>
             <div className="border border-neutral-200/80 dark:border-neutral-800 rounded-3xl p-8 bg-white dark:bg-neutral-900 h-full">
               <div className="flex items-center gap-2 mb-2">
-                <Globe size={18} className="text-neutral-700 dark:text-neutral-300" />
-                <h3 className="text-base font-semibold dark:text-white">LLM Model Selector</h3>
+                <Cookie size={18} className="text-neutral-700 dark:text-neutral-300" />
+                <h3 className="text-base font-semibold dark:text-white">Cookie Scanner</h3>
               </div>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-6">Track real-time activity of agents with detailed records of triggers, tools used, outcomes, and timestamps.</p>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-6">Automatically detect and categorize every cookie and tracker on your website with detailed classification reports.</p>
               <div className="bg-neutral-50 dark:bg-neutral-800 rounded-2xl p-5">
                 <div className="bg-white dark:bg-neutral-900 rounded-xl p-4 shadow-sm border border-neutral-100 dark:border-neutral-700">
                   <div className="flex gap-1.5 mb-4">
@@ -75,14 +73,14 @@ export default function Features() {
                     transition={{ duration: 0.4 }}
                     className="flex justify-between text-xs text-neutral-500 dark:text-neutral-400 pb-2.5 border-b border-neutral-100 dark:border-neutral-700 mb-3"
                   >
-                    <span className="flex items-center gap-1.5"><Layout size={12} /> All Models</span>
-                    <span className="font-semibold text-neutral-700 dark:text-neutral-200">69,420</span>
+                    <span className="flex items-center gap-1.5"><Layout size={12} /> All Cookies</span>
+                    <span className="font-semibold text-neutral-700 dark:text-neutral-200">2,847</span>
                   </motion.div>
                   {[
-                    { n: "Claude 4 Opus", Icon: Sparkles, ic: "text-orange-500", s: "Unavailable", c: "bg-red-50 text-red-600 border border-red-200" },
-                    { n: "ChatGPT", Icon: Globe, ic: "text-green-600", s: "Connected", c: "bg-green-50 text-green-600 border border-green-200" },
-                    { n: "Llama 3.2", Icon: Globe, ic: "text-blue-500", s: "Connected", c: "bg-green-50 text-green-600 border border-green-200" },
-                    { n: "Gemma", Icon: Globe, ic: "text-purple-500", s: "Waiting", c: "bg-amber-50 text-amber-600 border border-amber-200" },
+                    { n: "Analytics", Icon: Sparkles, ic: "text-orange-500", s: "18 found", c: "bg-orange-50 text-orange-600 border border-orange-200" },
+                    { n: "Marketing", Icon: Globe, ic: "text-blue-500", s: "12 found", c: "bg-blue-50 text-blue-600 border border-blue-200" },
+                    { n: "Functional", Icon: Cookie, ic: "text-green-600", s: "6 found", c: "bg-green-50 text-green-600 border border-green-200" },
+                    { n: "Essential", Icon: Lock, ic: "text-purple-500", s: "3 found", c: "bg-purple-50 text-purple-600 border border-purple-200" },
                   ].map((m, i) => (
                     <motion.div
                       key={m.n}
@@ -112,10 +110,10 @@ export default function Features() {
           <FadeIn delay={0.1}>
             <div className="border border-neutral-200/80 dark:border-neutral-800 rounded-3xl p-8 bg-white dark:bg-neutral-900 h-full">
               <div className="flex items-center gap-2 mb-2">
-                <SquarePen size={18} className="text-neutral-700 dark:text-neutral-300" />
-                <h3 className="text-base font-semibold dark:text-white">Text to workflow builder</h3>
+                <Shield size={18} className="text-neutral-700 dark:text-neutral-300" />
+                <h3 className="text-base font-semibold dark:text-white">AI Privacy Assistant</h3>
               </div>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-6">Preview and debug workflow logic in a safe sandbox before deploying, helping you iterate with confidence.</p>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-6">Ask questions about cookie compliance, generate privacy policies, and get regulation guidance instantly.</p>
               <div className="bg-neutral-50 dark:bg-neutral-800 rounded-2xl p-5 flex flex-col gap-3">
                 {/* Bot greeting */}
                 <motion.div
@@ -126,10 +124,10 @@ export default function Features() {
                   className="flex items-start gap-2"
                 >
                   <div className="w-7 h-7 rounded-md bg-neutral-200 dark:bg-neutral-700 flex-shrink-0 mt-0.5 flex items-center justify-center">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="8" r="4" /><path d="M20 21a8 8 0 10-16 0" /></svg>
                   </div>
                   <div className="bg-white dark:bg-neutral-900 text-neutral-400 text-sm px-4 py-2.5 rounded-2xl rounded-tl-sm border border-neutral-100 dark:border-neutral-700 max-w-[85%]">
-                    I&apos;m good, thank you! How can I help you today?
+                    Hi! I can help you with cookie compliance. What do you need?
                   </div>
                 </motion.div>
                 {/* User message */}
@@ -141,10 +139,10 @@ export default function Features() {
                   className="flex items-start gap-2 self-end flex-row-reverse"
                 >
                   <div className="w-7 h-7 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex-shrink-0 mt-0.5 flex items-center justify-center">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round"><circle cx="12" cy="8" r="4" /><path d="M20 21a8 8 0 10-16 0" /></svg>
                   </div>
                   <div className="bg-blue-500 text-white text-sm px-4 py-2.5 rounded-2xl rounded-tr-sm max-w-[85%]">
-                    I want to create a workflow that will send an email to all my clients
+                    Is my website GDPR compliant? I have analytics cookies.
                   </div>
                 </motion.div>
                 {/* Bot response */}
@@ -156,7 +154,7 @@ export default function Features() {
                   className="flex items-start gap-2"
                 >
                   <div className="w-7 h-7 rounded-md bg-neutral-200 dark:bg-neutral-700 flex-shrink-0 mt-0.5 flex items-center justify-center">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="8" r="4" /><path d="M20 21a8 8 0 10-16 0" /></svg>
                   </div>
                   <div className="text-sm text-neutral-500 dark:text-neutral-400 bg-white dark:bg-neutral-900 px-4 py-2.5 rounded-2xl rounded-tl-sm border border-neutral-100 dark:border-neutral-700">
                     <motion.span
@@ -165,7 +163,7 @@ export default function Features() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: 1.2 }}
                     >
-                      Nah, do it yourself.
+                      You need a consent banner that blocks analytics cookies until the user opts in. I can generate one for you!
                     </motion.span>
                   </div>
                 </motion.div>
@@ -178,7 +176,7 @@ export default function Features() {
                   className="flex items-center border border-neutral-200 dark:border-neutral-700 rounded-xl bg-white dark:bg-neutral-900 px-4 py-2.5 mt-2"
                 >
                   <span className="text-sm text-neutral-400 flex-1 flex items-center gap-1">
-                    Ask Notus AI
+                    Ask PrivacyCrumb AI
                     <motion.span
                       animate={{ opacity: [1, 0] }}
                       transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
@@ -200,73 +198,122 @@ export default function Features() {
           <div className="border border-neutral-200/80 dark:border-neutral-800 rounded-3xl p-8 bg-white dark:bg-neutral-900">
             <div className="flex items-center gap-2 mb-2">
               <Wrench size={18} className="text-neutral-700 dark:text-neutral-300" />
-              <h3 className="text-base font-semibold dark:text-white">Native Tools Integration</h3>
+              <h3 className="text-base font-semibold dark:text-white">Platform Integrations</h3>
             </div>
-            <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-6">Track real-time activity of agents with detailed records of triggers, tools used, outcomes, and timestamps.</p>
-            
-            {/* Node diagram - positions matched to original screenshot */}
-            <div className="bg-neutral-50 dark:bg-neutral-800 rounded-2xl relative overflow-hidden [--dot-color:#d4d4d4] dark:[--dot-color:#404040]" style={{backgroundImage:'radial-gradient(circle, var(--dot-color) 1px, transparent 1px)', backgroundSize:'20px 20px', height:'380px'}}>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-6">Connect PrivacyCrumb with your favorite tools — CMS platforms, analytics, and marketing services.</p>
 
-              {/* === LEFT: Agent labels === */}
+            {/* Node diagram - positions matched to original screenshot */}
+            <div className="bg-neutral-50 dark:bg-neutral-800 rounded-2xl relative overflow-hidden [--dot-color:#d4d4d4] dark:[--dot-color:#404040]" style={{ backgroundImage: 'radial-gradient(circle, var(--dot-color) 1px, transparent 1px)', backgroundSize: '20px 20px', height: '380px' }}>
+
+              {/* === LEFT: Scanner labels === */}
               <div className="absolute left-[3%] top-[17%] flex items-center gap-2 z-10">
-                <Monitor size={15} className="text-neutral-400" />
-                <span className="text-[13px] font-medium text-neutral-700 dark:text-neutral-200">Meeting Summarizer</span>
+                <Globe size={15} className="text-neutral-400" />
+                <span className="text-[13px] font-medium text-neutral-700 dark:text-neutral-200">Website Scanner</span>
               </div>
               <div className="absolute left-[3%] top-[47%] flex items-center gap-2 z-10">
-                <Code2 size={15} className="text-neutral-400" />
-                <span className="text-[13px] font-medium text-neutral-700 dark:text-neutral-200">Code Reviewer</span>
+                <Shield size={15} className="text-neutral-400" />
+                <span className="text-[13px] font-medium text-neutral-700 dark:text-neutral-200">Consent Banner</span>
               </div>
               <div className="absolute left-[3%] top-[77%] flex items-center gap-2 z-10">
-                <Phone size={15} className="text-neutral-400" />
-                <span className="text-[13px] font-medium text-neutral-700 dark:text-neutral-200">Customer Support</span>
+                <ScrollText size={15} className="text-neutral-400" />
+                <span className="text-[13px] font-medium text-neutral-700 dark:text-neutral-200">Cookie Policy</span>
               </div>
 
-              {/* === CENTER: Notus logo === */}
-              <div className="absolute z-10" style={{ left: '42%', top: '50%', transform: 'translate(-50%, -50%)' }}>
-                <div className="w-[60px] h-[60px] bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 flex items-center justify-center shadow-xl">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" className="text-neutral-900 dark:text-neutral-100"><path d="M13 3a2 2 0 012 2v6h4a2 2 0 012 2v6a2 2 0 01-2 2h-6a2 2 0 01-2-2v-4H5a2 2 0 01-2-2V5a2 2 0 012-2h8zm0 2H5v8h6V7a2 2 0 012-2zm6 8h-4v6h6v-6h-2z"/></svg>
+              {/* === CENTER: PrivacyCrumb logo with orbiting glow === */}
+              <div className="absolute z-10" style={{ left: '40%', top: '50%', transform: 'translate(-50%, -50%)' }}>
+                <div className="relative">
+                  {/* Orbiting glow dot 1 */}
+                  <div
+                    className="absolute inset-[-1px] rounded-2xl"
+                    style={{
+                      background: 'conic-gradient(from var(--orbit-angle, 0deg), transparent 0%, transparent 92%, #F26C4F 96%, #FBBF24 98%, transparent 100%)',
+                      animation: 'orbitSpin 6s linear infinite',
+                      filter: 'blur(1px)',
+                      opacity: 0.8,
+                    }}
+                  />
+                  <div
+                    className="absolute inset-[-1px] rounded-2xl"
+                    style={{
+                      background: 'conic-gradient(from var(--orbit-angle, 0deg), transparent 0%, transparent 92%, #F26C4F 96%, #FBBF24 98%, transparent 100%)',
+                      animation: 'orbitSpin 6s linear infinite',
+                    }}
+                  />
+                  {/* Orbiting glow dot 2 (180° offset via delay) */}
+                  <div
+                    className="absolute inset-[-1px] rounded-2xl"
+                    style={{
+                      background: 'conic-gradient(from var(--orbit-angle, 0deg), transparent 0%, transparent 92%, #60A5FA 96%, #818CF8 98%, transparent 100%)',
+                      animation: 'orbitSpin 6s linear infinite',
+                      animationDelay: '-3s',
+                      filter: 'blur(1px)',
+                      opacity: 0.8,
+                    }}
+                  />
+                  <div
+                    className="absolute inset-[-1px] rounded-2xl"
+                    style={{
+                      background: 'conic-gradient(from var(--orbit-angle, 0deg), transparent 0%, transparent 92%, #60A5FA 96%, #818CF8 98%, transparent 100%)',
+                      animation: 'orbitSpin 6s linear infinite',
+                      animationDelay: '-3s',
+                    }}
+                  />
+                  <div className="relative w-[60px] h-[60px] bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 flex items-center justify-center shadow-xl">
+                    <img src="/Privacy-new-logo.png" alt="PrivacyCrumb" className="w-7 h-7" />
+                  </div>
                 </div>
+                <style>{`
+                  @property --orbit-angle {
+                    syntax: '<angle>';
+                    initial-value: 0deg;
+                    inherits: false;
+                  }
+                  @keyframes orbitSpin {
+                    from { --orbit-angle: 0deg; }
+                    to { --orbit-angle: 360deg; }
+                  }
+                `}</style>
               </div>
 
-              {/* === "Connected" badge === */}
-              <div className="absolute z-10" style={{ left: '56%', top: '47%' }}>
-                <span className="text-[11px] px-2.5 py-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 border border-green-200 dark:border-green-800 rounded font-medium">Connected</span>
+              {/* === "Connected" badge - at the T-junction where horizontal meets vertical trunk === */}
+              <div className="absolute z-10" style={{ left: '70%', top: '50%', transform: 'translate(-50%, -50%)' }}>
+                <span className="text-[11px] px-2.5 py-1 bg-white dark:bg-neutral-800 text-green-600 dark:text-green-400 border border-green-200 dark:border-green-800 rounded font-medium shadow-sm">Connected</span>
               </div>
 
               {/* === RIGHT SIDE: Brand icons === */}
-              {/* Notion - upper on vertical trunk */}
-              <div className="absolute z-10" style={{ left: '68%', top: '12%', transform: 'translate(-50%, -50%)' }}>
+              {/* WordPress - upper on vertical trunk */}
+              <div className="absolute z-10" style={{ left: '70%', top: '12%', transform: 'translate(-50%, -50%)' }}>
                 <div className="w-12 h-12 bg-white dark:bg-neutral-800 rounded-xl border border-neutral-100 dark:border-neutral-700 shadow-md flex items-center justify-center">
-                  <NotionIcon />
+                  <WordPressIcon />
                 </div>
               </div>
-              {/* Green bolt - top right */}
-              <div className="absolute z-10" style={{ left: '82%', top: '12%', transform: 'translate(-50%, -50%)' }}>
+              {/* Shopify - top right */}
+              <div className="absolute z-10" style={{ left: '84%', top: '12%', transform: 'translate(-50%, -50%)' }}>
                 <div className="w-12 h-12 bg-white dark:bg-neutral-800 rounded-xl border border-neutral-100 dark:border-neutral-700 shadow-md flex items-center justify-center">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#22C55E"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                  <ShopifyIcon />
                 </div>
               </div>
-              {/* Slack - middle right on vertical trunk */}
-              <div className="absolute z-10" style={{ left: '75%', top: '50%', transform: 'translate(-50%, -50%)' }}>
+              {/* Google Analytics - at the T-junction where bolt branches off */}
+              <div className="absolute z-10" style={{ left: '84%', top: '50%', transform: 'translate(-50%, -50%)' }}>
                 <div className="w-12 h-12 bg-white dark:bg-neutral-800 rounded-xl border border-neutral-100 dark:border-neutral-700 shadow-md flex items-center justify-center">
-                  <SlackIcon />
+                  <GoogleAnalyticsIcon />
                 </div>
               </div>
-              {/* ChatGPT - far right */}
-              <div className="absolute z-10" style={{ left: '90%', top: '50%', transform: 'translate(-50%, -50%)' }}>
+              {/* HubSpot - far right on horizontal line */}
+              <div className="absolute z-10" style={{ left: '92%', top: '50%', transform: 'translate(-50%, -50%)' }}>
                 <div className="w-12 h-12 bg-white dark:bg-neutral-800 rounded-xl border border-neutral-100 dark:border-neutral-700 shadow-md flex items-center justify-center">
-                  <ChatGPTIcon />
+                  <HubSpotIcon />
                 </div>
               </div>
-              {/* Linear - bottom on vertical trunk */}
-              <div className="absolute z-10" style={{ left: '68%', top: '88%', transform: 'translate(-50%, -50%)' }}>
+              {/* Google Tag Manager - bottom on vertical trunk */}
+              <div className="absolute z-10" style={{ left: '70%', top: '88%', transform: 'translate(-50%, -50%)' }}>
                 <div className="w-12 h-12 bg-white dark:bg-neutral-800 rounded-xl border border-neutral-100 dark:border-neutral-700 shadow-md flex items-center justify-center">
-                  <LinearIcon />
+                  <TagManagerIcon />
                 </div>
               </div>
 
               {/* === SVG CONNECTION LINES + ANIMATED BEAMS === */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none text-[#E5E5E5] dark:text-neutral-600" style={{zIndex:2}}>
+              <svg className="absolute inset-0 w-full h-full pointer-events-none text-[#E5E5E5] dark:text-neutral-600" viewBox="0 0 1000 380" preserveAspectRatio="none" style={{ zIndex: 2 }}>
                 <defs>
                   <filter id="glow-c" x="-100%" y="-100%" width="300%" height="300%">
                     <feGaussianBlur stdDeviation="3" result="b" />
@@ -280,75 +327,85 @@ export default function Features() {
                     <feGaussianBlur stdDeviation="3" result="b" />
                     <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
                   </filter>
+
+                  {/* Path definitions for animated dots to follow */}
+                  <path id="path-top" d="M 220,76 L 400,76 L 400,160" fill="none" />
+                  <path id="path-mid" d="M 200,190 L 360,190" fill="none" />
+                  <path id="path-bot" d="M 220,304 L 400,304 L 400,220" fill="none" />
+                  <path id="path-ctr" d="M 440,190 L 700,190" fill="none" />
+                  <path id="path-up" d="M 700,190 L 700,46" fill="none" />
+                  <path id="path-down" d="M 700,190 L 700,334" fill="none" />
+                  <path id="path-chat" d="M 700,190 L 920,190" fill="none" />
+                  <path id="path-bolt" d="M 840,190 L 840,46" fill="none" />
                 </defs>
 
-                {/* Left agent lines to center Notus box */}
-                {/* Meeting Summarizer → Notus (L-shaped: right then down) */}
-                <line x1="22%" y1="20%" x2="42%" y2="20%" stroke="currentColor" strokeWidth="1.5" />
-                <line x1="42%" y1="20%" x2="42%" y2="42%" stroke="currentColor" strokeWidth="1.5" />
-                {/* Code Reviewer → Notus (straight horizontal) */}
-                <line x1="20%" y1="50%" x2="38%" y2="50%" stroke="currentColor" strokeWidth="1.5" />
-                {/* Customer Support → Notus (L-shaped: right then up) */}
-                <line x1="22%" y1="80%" x2="42%" y2="80%" stroke="currentColor" strokeWidth="1.5" />
-                <line x1="42%" y1="80%" x2="42%" y2="58%" stroke="currentColor" strokeWidth="1.5" />
+                {/* Left labels → center PrivacyCrumb box */}
+                {/* Website Scanner → center (L-shaped: right then down) */}
+                <line x1="220" y1="76" x2="400" y2="76" stroke="currentColor" strokeWidth="1.5" />
+                <line x1="400" y1="76" x2="400" y2="160" stroke="currentColor" strokeWidth="1.5" />
+                {/* Consent Banner → center (straight horizontal) */}
+                <line x1="200" y1="190" x2="360" y2="190" stroke="currentColor" strokeWidth="1.5" />
+                {/* Cookie Policy → center (L-shaped: right then up) */}
+                <line x1="220" y1="304" x2="400" y2="304" stroke="currentColor" strokeWidth="1.5" />
+                <line x1="400" y1="304" x2="400" y2="220" stroke="currentColor" strokeWidth="1.5" />
 
-                {/* Center → right horizontal */}
-                <line x1="46%" y1="50%" x2="68%" y2="50%" stroke="currentColor" strokeWidth="1.5" />
+                {/* Center → right horizontal to Slack */}
+                <line x1="440" y1="190" x2="700" y2="190" stroke="currentColor" strokeWidth="1.5" />
                 {/* Vertical trunk on right */}
-                <line x1="68%" y1="12%" x2="68%" y2="88%" stroke="currentColor" strokeWidth="1.5" />
+                <line x1="700" y1="46" x2="700" y2="334" stroke="currentColor" strokeWidth="1.5" />
                 {/* Horizontal branch to ChatGPT */}
-                <line x1="68%" y1="50%" x2="90%" y2="50%" stroke="currentColor" strokeWidth="1.5" />
+                <line x1="700" y1="190" x2="920" y2="190" stroke="currentColor" strokeWidth="1.5" />
                 {/* Vertical to bolt */}
-                <line x1="82%" y1="50%" x2="82%" y2="12%" stroke="currentColor" strokeWidth="1.5" />
+                <line x1="840" y1="190" x2="840" y2="46" stroke="currentColor" strokeWidth="1.5" />
 
                 {/* ANIMATED BEAM DOTS */}
                 {/* Coral: top agent → center */}
                 <circle r="5" fill="#F26C4F" filter="url(#glow-c)">
-                  <animateMotion dur="2.8s" repeatCount="indefinite" begin="0s" path="M 0,0 L 200,0 L 200,84" />
-                  <set attributeName="cx" to="22%" />
-                  <set attributeName="cy" to="20%" />
+                  <animateMotion dur="5s" repeatCount="indefinite" begin="0s">
+                    <mpath href="#path-top" />
+                  </animateMotion>
                 </circle>
                 {/* Blue: middle agent → center */}
                 <circle r="5" fill="#60A5FA" filter="url(#glow-b)">
-                  <animateMotion dur="2.2s" repeatCount="indefinite" begin="0.7s" path="M 0,0 L 180,0" />
-                  <set attributeName="cx" to="20%" />
-                  <set attributeName="cy" to="50%" />
+                  <animateMotion dur="4s" repeatCount="indefinite" begin="0.7s">
+                    <mpath href="#path-mid" />
+                  </animateMotion>
                 </circle>
                 {/* Gold: bottom agent → center */}
                 <circle r="5" fill="#FBBF24" filter="url(#glow-g)">
-                  <animateMotion dur="2.8s" repeatCount="indefinite" begin="1.3s" path="M 0,0 L 200,0 L 200,-84" />
-                  <set attributeName="cx" to="22%" />
-                  <set attributeName="cy" to="80%" />
+                  <animateMotion dur="5s" repeatCount="indefinite" begin="1.3s">
+                    <mpath href="#path-bot" />
+                  </animateMotion>
                 </circle>
-                {/* Blue: center → right */}
+                {/* Blue: center → Slack */}
                 <circle r="4" fill="#60A5FA" opacity="0.85" filter="url(#glow-b)">
-                  <animateMotion dur="2.5s" repeatCount="indefinite" begin="0.4s" path="M 0,0 L 220,0" />
-                  <set attributeName="cx" to="46%" />
-                  <set attributeName="cy" to="50%" />
+                  <animateMotion dur="4.5s" repeatCount="indefinite" begin="0.4s">
+                    <mpath href="#path-ctr" />
+                  </animateMotion>
                 </circle>
-                {/* Gray: vertical up on trunk */}
+                {/* Gray: trunk up to Notion */}
                 <circle r="3.5" fill="#A1A1AA" opacity="0.7">
-                  <animateMotion dur="1.8s" repeatCount="indefinite" begin="0.9s" path="M 0,0 L 0,-144" />
-                  <set attributeName="cx" to="68%" />
-                  <set attributeName="cy" to="50%" />
+                  <animateMotion dur="3.5s" repeatCount="indefinite" begin="0.9s">
+                    <mpath href="#path-up" />
+                  </animateMotion>
                 </circle>
-                {/* Gray: vertical down on trunk */}
+                {/* Gray: trunk down to Linear */}
                 <circle r="3.5" fill="#A1A1AA" opacity="0.7">
-                  <animateMotion dur="1.8s" repeatCount="indefinite" begin="1.6s" path="M 0,0 L 0,144" />
-                  <set attributeName="cx" to="68%" />
-                  <set attributeName="cy" to="50%" />
+                  <animateMotion dur="3.5s" repeatCount="indefinite" begin="1.6s">
+                    <mpath href="#path-down" />
+                  </animateMotion>
                 </circle>
                 {/* Blue: to ChatGPT */}
                 <circle r="3.5" fill="#60A5FA" opacity="0.75">
-                  <animateMotion dur="1.5s" repeatCount="indefinite" begin="1.1s" path="M 0,0 L 220,0" />
-                  <set attributeName="cx" to="68%" />
-                  <set attributeName="cy" to="50%" />
+                  <animateMotion dur="3.5s" repeatCount="indefinite" begin="1.1s">
+                    <mpath href="#path-chat" />
+                  </animateMotion>
                 </circle>
                 {/* Green: up to bolt */}
                 <circle r="3.5" fill="#22C55E" opacity="0.75">
-                  <animateMotion dur="1.8s" repeatCount="indefinite" begin="0.5s" path="M 0,0 L 0,-144" />
-                  <set attributeName="cx" to="82%" />
-                  <set attributeName="cy" to="50%" />
+                  <animateMotion dur="3.5s" repeatCount="indefinite" begin="0.5s">
+                    <mpath href="#path-bolt" />
+                  </animateMotion>
                 </circle>
               </svg>
             </div>
@@ -358,9 +415,9 @@ export default function Features() {
         {/* 3 small feature cards */}
         <div className="grid md:grid-cols-3 gap-4 mt-4">
           {[
-            { Icon: Fingerprint, t: "One Click Auth", d: "A drag-and-drop interface to create, connect, and configure agents into logical workflows" },
-            { Icon: RefreshCw, t: "Realtime Sync", d: "Agents operate independently and coordinate tasks to complete complex all goals" },
-            { Icon: Terminal, t: "Custom Connector SDK", d: "Run agent workflows in a sandbox to preview behavior, debug logic, and test interactions" },
+            { Icon: Lock, t: "Auto Cookie Blocking", d: "Automatically block non-essential cookies until users give explicit consent via your banner" },
+            { Icon: FileText, t: "Consent Logging", d: "Record every consent action with timestamps, IPs, and preferences for full audit compliance" },
+            { Icon: Terminal, t: "Policy Generator", d: "Generate GDPR, CCPA, and LGPD compliant cookie and privacy policies in minutes" },
           ].map((f, idx) => (
             <FadeIn key={f.t} delay={idx * 0.1}>
               <motion.div whileHover={{ y: -2 }} className="border border-neutral-200/80 dark:border-neutral-800 rounded-3xl p-7 bg-white dark:bg-neutral-900 cursor-default transition-shadow hover:shadow-sm">

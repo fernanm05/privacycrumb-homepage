@@ -20,8 +20,9 @@ export default function Navbar() {
         : "bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md"
     } border-b border-neutral-100 dark:border-neutral-800`}>
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-14">
-        <a href="#" className="flex items-center">
-          <img src="/PrivacyCrumbLogo4.svg" alt="PrivacyCrumb" className="h-8 dark:brightness-0 dark:invert" />
+        <a href="#" className="flex items-center gap-1.5">
+          <img src="/Privacy-new-logo.png" alt="" className="h-5 w-5" />
+          <img src="/PrivacyCrumbText.svg" alt="PrivacyCrumb" className="h-4 dark:brightness-0 dark:invert" />
         </a>
         <div className="hidden md:flex gap-8">
           {["Pricing", "About", "Careers", "Blog"].map((l) => (
@@ -44,7 +45,7 @@ export default function Navbar() {
           </button>
           <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
             className="bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 px-6 py-2 rounded-xl text-sm font-medium hover:bg-black dark:hover:bg-neutral-100 transition-colors">
-            Start building
+            Get started
           </motion.button>
         </div>
       </div>

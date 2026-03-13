@@ -11,28 +11,28 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-4xl mx-auto">
         <FadeIn>
-          <p className="text-coral text-sm font-medium mb-6 tracking-wide">For fast moving engineering teams.</p>
+          <p className="text-coral text-sm font-medium mb-6 tracking-wide">Cookie consent made simple for every website.</p>
         </FadeIn>
         <FadeIn delay={0.1}>
           <h1 className="text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] font-semibold leading-[1.1] mb-6 tracking-tight text-neutral-900 dark:text-white">
-            Manage and simulate<br />agentic{" "}
-            <span className="bg-gradient-to-b from-[#F2A07A] to-coral bg-clip-text text-transparent">workflows</span>
+            Stay compliant with<br />cookie{" "}
+            <span className="bg-gradient-to-b from-[#F2A07A] to-coral bg-clip-text text-transparent">privacy laws</span>
           </h1>
         </FadeIn>
         <FadeIn delay={0.2}>
           <p className="text-neutral-500 dark:text-neutral-400 text-base md:text-[17px] max-w-lg mx-auto mb-8 leading-relaxed">
-            We empower developers and technical teams to create, simulate, and manage AI-driven workflows visually
+            An all-in-one cookie compliance platform that helps businesses stay GDPR, CCPA, and LGPD compliant — effortlessly
           </p>
         </FadeIn>
         <FadeIn delay={0.3}>
           <div className="flex gap-3 justify-center mb-12">
             <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
               className="bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 px-8 py-3 rounded-xl text-sm font-medium hover:bg-black dark:hover:bg-neutral-100 transition-colors">
-              Start building
+              Start for free
             </motion.button>
             <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
               className="bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 px-8 py-3 rounded-xl text-sm font-medium border border-neutral-200 dark:border-neutral-700 hover:border-neutral-400 dark:hover:border-neutral-500 transition-colors">
-              View pricing
+              Free cookie scan
             </motion.button>
           </div>
         </FadeIn>
@@ -45,8 +45,7 @@ export default function Hero() {
               ))}
             </div>
             <span className="w-px h-4 bg-neutral-200 dark:bg-neutral-700" />
-            <span>Innovative AI solution 2025 by</span>
-            <span className="font-semibold text-neutral-800 dark:text-neutral-200 text-[15px]">Gartner</span>
+            <span>Trusted by 10,000+ websites worldwide</span>
           </div>
         </FadeIn>
       </div>

@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "PrivacyCrumb — Build and Manage AI-Driven Agentic Workflows",
-  description: "Empower your technical teams to create, simulate and manage AI-driven workflows visually. PrivacyCrumb provides an intuitive platform for developing and testing agentic systems.",
+  title: "PrivacyCrumb — Cookie Consent & Privacy Compliance Made Simple",
+  description: "An all-in-one cookie compliance platform that helps businesses stay GDPR, CCPA, and LGPD compliant. Scan cookies, manage consent, and generate policies effortlessly.",
   icons: {
     icon: "/Privacy-new-logo.png",
   },

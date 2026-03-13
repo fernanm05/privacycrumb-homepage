@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import FadeIn from "./FadeIn";
+import { ShoppingCart, Globe, Building2, GraduationCap, Newspaper, HeartPulse, Landmark, Laptop } from "lucide-react";
 
 interface TestimonialData {
   brand: string;
@@ -15,87 +16,85 @@ interface TestimonialData {
 
 const testimonials: TestimonialData[] = [
   {
-    brand: "Replicate",
-    brandIcon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h6v6H4zM14 4h6v6h-6z"/><path d="M4 14h16v6H4z"/></svg>,
-    quote: "\u201cOur agents have become an essential part of our infrastructure. They handle complex workflows with a reliability that exceeds our expectations every time.\u201d",
+    brand: "Shopify Plus",
+    brandIcon: <ShoppingCart size={18} />,
+    quote: "\u201cPrivacyCrumb made GDPR compliance effortless for our 200+ storefronts. The auto cookie scanner detected trackers we didn\u2019t even know existed, and the consent banner deployed in minutes.\u201d",
     name: "Rachel Green",
-    title: "Technical Director, NextGen Solutions",
+    title: "Head of Compliance, Shopify Plus Agency",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face",
-    stats: [{ value: "5x", label: "Faster" }, { value: "10x", label: "Hours Saved" }, { value: "100%", label: "Reliability" }],
+    stats: [{ value: "200+", label: "Stores Protected" }, { value: "5 min", label: "Setup Time" }, { value: "100%", label: "GDPR Compliant" }],
   },
   {
-    brand: "Hippocratic AI",
-    brandIcon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2L2 19h20L12 2z"/><circle cx="12" cy="14" r="3"/></svg>,
-    quote: "\u201cNotus transformed how our medical AI team builds and deploys agent pipelines. The visual workflow builder alone saved us months of development time.\u201d",
+    brand: "MedPortal",
+    brandIcon: <HeartPulse size={18} />,
+    quote: "\u201cAs a healthcare platform, cookie compliance isn\u2019t optional \u2014 it\u2019s critical. PrivacyCrumb\u2019s HIPAA-aware cookie blocking and consent logging gave us peace of mind from day one.\u201d",
     name: "Dr. Sarah Chen",
-    title: "VP of Engineering, Hippocratic AI",
+    title: "VP of Engineering, MedPortal",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop&crop=face",
-    stats: [{ value: "3x", label: "Faster Deploys" }, { value: "40%", label: "Cost Reduction" }, { value: "99.9%", label: "Uptime" }],
+    stats: [{ value: "0", label: "Violations" }, { value: "48", label: "Cookies Blocked" }, { value: "99.9%", label: "Uptime" }],
   },
   {
-    brand: "ARCH",
-    brandIcon: null,
-    quote: "\u201cThe native tool integrations and real-time monitoring give us complete visibility into our agent ecosystem. It\u2019s become indispensable for our operations.\u201d",
+    brand: "WebFlow Studio",
+    brandIcon: <Globe size={18} />,
+    quote: "\u201cWe manage 50+ client websites and PrivacyCrumb\u2019s multi-domain dashboard lets us handle consent policies for all of them from one place. It\u2019s a game-changer for agencies.\u201d",
     name: "Marcus Webb",
-    title: "CTO, Arch Technologies",
+    title: "CTO, WebFlow Studio",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face",
-    stats: [{ value: "8x", label: "Throughput" }, { value: "50+", label: "Integrations" }, { value: "24/7", label: "Monitoring" }],
+    stats: [{ value: "50+", label: "Domains" }, { value: "10x", label: "Faster Setup" }, { value: "24/7", label: "Monitoring" }],
   },
   {
-    brand: "bill",
-    brandIcon: null,
-    quote: "\u201cWe migrated our entire agent infrastructure to Notus in under a week. The sandbox testing environment gave us confidence to ship faster than ever.\u201d",
+    brand: "FinEdge",
+    brandIcon: <Landmark size={18} />,
+    quote: "\u201cOur fintech platform handles sensitive financial data. PrivacyCrumb\u2019s audit-ready consent logs and automatic cookie blocking ensure we\u2019re always regulation-ready.\u201d",
     name: "Emily Torres",
-    title: "Lead Engineer, Bill.com",
+    title: "Lead Compliance Officer, FinEdge",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop&crop=face",
-    stats: [{ value: "7 days", label: "Migration" }, { value: "15x", label: "Faster Testing" }, { value: "0", label: "Downtime" }],
+    stats: [{ value: "100%", label: "Audit Ready" }, { value: "3x", label: "Faster Audits" }, { value: "0", label: "Penalties" }],
   },
   {
-    brand: "Attention",
-    brandIcon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>,
-    quote: "\u201cNotus\u2019s LLM model selector and the ability to switch between providers seamlessly has been a game-changer for our AI-powered attention analytics.\u201d",
+    brand: "CloudSaaS",
+    brandIcon: <Laptop size={18} />,
+    quote: "\u201cIntegrating PrivacyCrumb into our SaaS product was seamless. The API-first approach let us embed consent management directly into our onboarding flow.\u201d",
     name: "James Liu",
-    title: "Head of AI, Attention Inc.",
+    title: "Head of Product, CloudSaaS",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop&crop=face",
-    stats: [{ value: "12x", label: "Faster" }, { value: "90%", label: "Accuracy" }, { value: "4", label: "LLM Providers" }],
+    stats: [{ value: "5 min", label: "Integration" }, { value: "98%", label: "Consent Rate" }, { value: "12", label: "Regulations" }],
   },
   {
-    brand: "incident.io",
-    brandIcon: <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg>,
-    quote: "\u201cThe workflow automation capabilities have reduced our incident response time dramatically. Notus agents handle the heavy lifting so our team can focus on resolution.\u201d",
+    brand: "MediaHouse",
+    brandIcon: <Newspaper size={18} />,
+    quote: "\u201cWith millions of monthly visitors, cookie compliance was a nightmare. PrivacyCrumb\u2019s smart scanner handles our ad-tech cookies and keeps consent rates high.\u201d",
     name: "Alex Morgan",
-    title: "SRE Lead, incident.io",
+    title: "Director of Engineering, MediaHouse",
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop&crop=face",
-    stats: [{ value: "75%", label: "Faster Response" }, { value: "200+", label: "Workflows" }, { value: "99.99%", label: "SLA" }],
+    stats: [{ value: "10M+", label: "Visitors/mo" }, { value: "95%", label: "Consent Rate" }, { value: "150+", label: "Cookies Managed" }],
   },
   {
-    brand: "granola",
-    brandIcon: null,
-    quote: "\u201cAs a growing startup, we needed something that could scale with us. Notus\u2019s agent orchestration platform has been the backbone of our AI strategy.\u201d",
+    brand: "EduLearn",
+    brandIcon: <GraduationCap size={18} />,
+    quote: "\u201cProtecting student privacy is our top priority. PrivacyCrumb\u2019s COPPA and FERPA compliance features were exactly what our LMS platform needed.\u201d",
     name: "Priya Sharma",
-    title: "Co-founder, Granola",
+    title: "Co-founder, EduLearn",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=500&fit=crop&crop=face",
-    stats: [{ value: "10x", label: "Scale" }, { value: "60%", label: "Time Saved" }, { value: "3 mo", label: "ROI" }],
+    stats: [{ value: "500K", label: "Students Safe" }, { value: "100%", label: "COPPA Ready" }, { value: "3 mo", label: "ROI" }],
   },
   {
-    brand: "Modal",
-    brandIcon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.132-8-12.356-8-4.236 0-4.236 8 0 8 5.224 0 7.26-8 12.356-8z"/></svg>,
-    quote: "\u201cIntegrating Notus with our compute infrastructure was seamless. The custom connector SDK made it trivial to bridge our GPU clusters with intelligent agents.\u201d",
+    brand: "ScaleUp HQ",
+    brandIcon: <Building2 size={18} />,
+    quote: "\u201cAs we expanded into the EU market, PrivacyCrumb handled our entire cookie compliance strategy. The auto-updating regulation engine means we never fall behind.\u201d",
     name: "David Park",
-    title: "Infrastructure Lead, Modal",
+    title: "VP Operations, ScaleUp HQ",
     image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop&crop=face",
-    stats: [{ value: "20x", label: "GPU Efficiency" }, { value: "5 min", label: "Setup Time" }, { value: "∞", label: "Scalability" }],
+    stats: [{ value: "30+", label: "Countries" }, { value: "Auto", label: "Updates" }, { value: "∞", label: "Scalability" }],
   },
 ];
 
 const allBrands = [
-  ["Hippocratic AI", "ARCH", "bill", "Attention"],
-  ["incident.io", "granola", "Modal", "Replicate"],
+  ["Shopify Plus", "MedPortal", "WebFlow Studio", "FinEdge"],
+  ["CloudSaaS", "MediaHouse", "EduLearn", "ScaleUp HQ"],
 ];
 
 function renderBrandLabel(n: string) {
-  if (n === "ARCH") return <span className="tracking-[0.3em]">ARCH</span>;
-  if (n === "bill") return <span className="font-extrabold text-xl tracking-tighter">bill</span>;
   const t = testimonials.find(t => t.brand === n);
   if (t?.brandIcon) return <span className="flex items-center gap-1.5">{t.brandIcon}{n}</span>;
   return n;
@@ -107,7 +106,7 @@ export default function Testimonials() {
 
   return (
     <section className="py-12">
-      <p className="text-xs text-center uppercase tracking-[0.2em] text-neutral-400 font-medium mb-6">Trusted by fast growing startups</p>
+      <p className="text-xs text-center uppercase tracking-[0.2em] text-neutral-400 font-medium mb-6">Trusted by privacy-first companies</p>
       <FadeIn>
         <div className="max-w-5xl mx-auto px-6">
           <div className="border border-neutral-200/80 dark:border-neutral-800 rounded-3xl bg-white dark:bg-neutral-900 overflow-hidden">
