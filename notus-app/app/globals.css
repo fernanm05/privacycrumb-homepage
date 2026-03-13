@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-coral: #F26C4F;
+  --color-coral-light: #FDF2EF;
+  --color-coral-dark: #e05a3d;
+  --font-sans: var(--font-inter);
+}
+
+html { scroll-behavior: smooth; }
+body { -webkit-font-smoothing: antialiased; }
+
+/* Subtle grid background for hero */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 100px 100px;
+}
+.dark .grid-bg {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.float-anim { animation: float 3s ease-in-out infinite; }
+.float-anim-1 { animation: float 3.5s ease-in-out infinite 0.5s; }
+.float-anim-2 { animation: float 4s ease-in-out infinite 1s; }
+.float-anim-3 { animation: float 3.2s ease-in-out infinite 1.5s; }
+.float-anim-4 { animation: float 3.8s ease-in-out infinite 0.8s; }
+
+.stripe-bg {
+  background-image: repeating-linear-gradient(
+    45deg, transparent, transparent 8px,
+    rgba(0,0,0,0.02) 8px, rgba(0,0,0,0.02) 9px
+  );
+}
+.dark .stripe-bg {
+  background-image: repeating-linear-gradient(
+    45deg, transparent, transparent 8px,
+    rgba(255,255,255,0.03) 8px, rgba(255,255,255,0.03) 9px
+  );
+}
+
+/* Radial glow for CTA */
+.radial-glow {
+  background: radial-gradient(ellipse 60% 50% at 50% 60%, rgba(0,0,0,0.04) 0%, transparent 70%);
+}
+.dark .radial-glow {
+  background: radial-gradient(ellipse 60% 50% at 50% 60%, rgba(255,255,255,0.04) 0%, transparent 70%);
+}
+
+/* Animated beam pulse effect for Native Tools */
+@keyframes beam-pulse {
+  0% { offset-distance: 0%; opacity: 0; }
+  5% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+
+.beam-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  filter: blur(0px);
+  box-shadow: 0 0 8px 3px currentColor;
+  offset-rotate: 0deg;
+  animation: beam-pulse 3s ease-in-out infinite;
+}
+.beam-dot-1 { animation-delay: 0s; }
+.beam-dot-2 { animation-delay: 0.8s; }
+.beam-dot-3 { animation-delay: 1.6s; }
+.beam-dot-4 { animation-delay: 0.4s; }
+.beam-dot-5 { animation-delay: 1.2s; }
+
+@keyframes dotDrift {
+  0% { background-position: 0 0; }
+  100% { background-position: 16px 16px; }
+}

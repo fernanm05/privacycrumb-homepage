@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notus — Build and Manage AI-Driven Agentic Workflows</title>
+<meta name="description" content="Empower your technical teams to create, simulate and manage AI-driven workflows visually.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+      colors: { coral: { DEFAULT: '#E8795A', light: '#FDF2EF', dark: '#d66a4d' } }
+    }
+  }
+}
+</script>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://unpkg.com/framer-motion@11.0.3/dist/framer-motion.js"></script>
+<style>
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.dash-table{width:100%;border-collapse:collapse}
+.dash-table th{text-align:left;padding:8px 12px;color:#6b7280;font-weight:500;font-size:13px;border-bottom:1px solid #e5e7eb}
+.dash-table td{padding:10px 12px;font-size:13px;border-bottom:1px solid #f3f4f6}
+.stripe-bg{background-image:repeating-linear-gradient(45deg,transparent,transparent 8px,rgba(0,0,0,0.015) 8px,rgba(0,0,0,0.015) 9px)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.float-anim{animation:float 3s ease-in-out infinite}
+.float-anim-delay-1{animation:float 3.5s ease-in-out infinite 0.5s}
+.float-anim-delay-2{animation:float 4s ease-in-out infinite 1s}
+.float-anim-delay-3{animation:float 3.2s ease-in-out infinite 1.5s}
+.float-anim-delay-4{animation:float 3.8s ease-in-out infinite 0.8s}
+.float-anim-delay-5{animation:float 4.2s ease-in-out infinite 1.2s}
+</style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+<div id="root"></div>
+<script type="text/babel" data-type="module">
+const { useState, useEffect, useRef } = React;
+const { motion, AnimatePresence, useInView } = window["framer-motion"] || { motion: { div: 'div', h1: 'h1', p: 'p', button: 'button', section: 'section', span: 'span', a: 'a', nav: 'nav', li: 'li', img: 'img' }, AnimatePresence: ({children}) => children, useInView: () => true };
+
+// Wrapper for motion elements to handle CDN
+const M = typeof motion !== 'undefined' ? motion : {};
+const Mdiv = M.div || 'div';
+const Mh1 = M.h1 || 'h1';
+const Mh2 = M.h2 || 'h2';
+const Mp = M.p || 'p';
+const Mspan = M.span || 'span';
+const Ma = M.a || 'a';
+const Msection = M.section || 'section';
+const Mbutton = M.button || 'button';
+const Mnav = M.nav || 'nav';
+const Mimg = M.img || 'img';
+
+// ---- FADE IN COMPONENT ----
+function FadeIn({ children, delay = 0, className = "", direction = "up" }) {
+  const ref = useRef(null);
+  const inView = useInView ? useInView(ref, { once: true, margin: "-50px" }) : true;
+  const yVal = direction === "up" ? 30 : direction === "down" ? -30 : 0;
+  const xVal = direction === "left" ? 30 : direction === "right" ? -30 : 0;
+  return (
+    <Mdiv ref={ref} className={className}
+      initial={{ opacity: 0, y: yVal, x: xVal }}
+      animate={inView ? { opacity: 1, y: 0, x: 0 } : {}}
+      transition={{ duration: 0.6, delay, ease: [0.25, 0.46, 0.45, 0.94] }}>
+      {children}
+    </Mdiv>
+  );
+}
+
+// ---- SECTION HEADER ----
+function SectionHeader({ label, title, subtitle }) {
+  return (
+    <div className="text-center mb-12">
+      <FadeIn><p className="text-coral text-sm font-medium mb-3 tracking-wide">{label}</p></FadeIn>
+      <FadeIn delay={0.1}><h2 className="text-3xl md:text-[42px] font-bold leading-tight mb-4">{title}</h2></FadeIn>
+      {subtitle && <FadeIn delay={0.2}><p className="text-gray-500 text-base max-w-xl mx-auto leading-relaxed">{subtitle}</p></FadeIn>}
+    </div>
+  );
+}
+
+// ---- NAVBAR ----
+function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+  return (
+    <nav className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-xl shadow-sm' : 'bg-white/80 backdrop-blur-md'} border-b border-gray-100`}>
+      <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-16">
+        <a href="#" className="flex items-center gap-2 font-bold text-lg">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2zm1 4v4l3-2-3-2zm5 0v4l3-2-3-2z"/></svg>
+          Notus
+        </a>
+        <div className="hidden md:flex gap-8">
+          {['Pricing','About','Careers','Blog'].map(l => (
+            <a key={l} href={`#${l.toLowerCase()}`} className="text-gray-500 text-sm hover:text-gray-900 transition-colors">{l}</a>
+          ))}
+        </div>
+        <div className="flex items-center gap-4">
+          <button className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          </button>
+          <Mbutton whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="bg-gray-900 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-black transition-colors">Start building</Mbutton>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+// ---- HERO ----
+function Hero() {
+  return (
+    <section className="text-center pt-20 pb-10 px-6 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage:'linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px)', backgroundSize:'60px 60px'}}></div>
+      <div className="relative z-10">
+        <FadeIn><p className="text-coral text-[15px] mb-5">For fast moving engineering teams.</p></FadeIn>
+        <FadeIn delay={0.1}>
+          <h1 className="text-4xl md:text-6xl lg:text-[64px] font-bold leading-[1.08] mb-6">
+            Manage and simulate<br/>agentic <span className="bg-gradient-to-b from-coral to-coral-dark bg-clip-text text-transparent">workflows</span>
+          </h1>
+        </FadeIn>
+        <FadeIn delay={0.2}><p className="text-gray-500 text-[17px] max-w-[560px] mx-auto mb-8 leading-relaxed">We empower developers and technical teams to create, simulate, and manage AI-driven workflows visually</p></FadeIn>
+        <FadeIn delay={0.3}>
+          <div className="flex gap-3 justify-center mb-10">
+            <Mbutton whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="bg-gray-900 text-white px-7 py-3 rounded-full text-sm font-medium hover:bg-black transition-colors">Start building</Mbutton>
+            <Mbutton whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="bg-white text-gray-900 px-7 py-3 rounded-full text-sm font-medium border border-gray-200 hover:border-gray-400 transition-colors">View pricing</Mbutton>
+          </div>
+        </FadeIn>
+        <FadeIn delay={0.4}>
+          <div className="flex items-center justify-center gap-3 text-sm text-gray-500">
+            <span className="font-semibold text-gray-900">G</span>
+            <span className="text-gray-900 tracking-tighter">★★★★★</span>
+            <span className="w-px h-4 bg-gray-200"></span>
+            <span>Innovative AI solution 2025 by</span>
+            <span className="font-semibold text-gray-900 text-[15px]">Gartner</span>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  );
+}
+
+// ---- DASHBOARD ----
+function Dashboard() {
+  const bars = [[18,12],[14,16],[20,10],[16,18],[22,14],[12,20],[24,16],[18,14],[20,22],[14,12],[16,18],[22,20],[18,24],[20,16]];
+  return (
+    <FadeIn className="max-w-[1100px] mx-auto px-6 pb-16">
+      <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.06)]">
+        <div className="flex min-h-[500px]">
+          {/* Sidebar */}
+          <div className="w-[200px] border-r border-gray-200 p-4 flex-shrink-0 hidden md:block">
+            <div className="flex items-center gap-2 font-bold text-[15px] mb-6 pb-4 border-b border-gray-200">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2zm1 4v4l3-2-3-2zm5 0v4l3-2-3-2z"/></svg>Nodus
+            </div>
+            {[{n:'Dashboard',a:true},{n:'Agents'},{n:'Workflows'},{n:'Simulations'},{n:'Tasks'},{n:'Apps'},{n:'Notifications'}].map(i => (
+              <div key={i.n} className={`flex items-center gap-2.5 px-2.5 py-2 rounded-lg text-[13px] cursor-pointer mb-0.5 transition-colors ${i.a ? 'bg-gray-50 text-gray-900 font-medium' : 'text-gray-500 hover:bg-gray-50'}`}>{i.n}</div>
+            ))}
+          </div>
+          {/* Main */}
+          <div className="flex-1 flex flex-col">
+            <div className="flex items-center justify-between px-5 py-3 border-b border-gray-200">
+              <span className="font-semibold text-[15px]">Dashboard</span>
+              <div className="flex items-center gap-2 px-4 py-1.5 rounded-lg border border-gray-200 bg-gray-50 text-[13px] text-gray-500">🔍 Search for anything... <span className="ml-5 opacity-50">⌘K</span></div>
+              <div className="w-8 h-8 rounded-full bg-gray-200"></div>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 p-4">
+              {[{v:'128',l:'Active agents'},{v:'96.7%',l:'Task success rate',t:'4% ↑',c:'text-green-500'},{v:'12.4s',l:'Average execution time',t:'27% ↓',c:'text-coral'},{v:'GPT-4o',l:'Most used model'}].map(s => (
+                <div key={s.l} className="p-3.5 rounded-xl border border-gray-200">
+                  <div className="text-xl font-bold flex items-center gap-1.5">{s.v}{s.t && <span className={`text-xs font-medium ${s.c}`}>{s.t}</span>}</div>
+                  <div className="text-xs text-gray-500 mt-1">{s.l}</div>
+                </div>
+              ))}
+            </div>
+            <div className="px-5 pb-4">
+              <div className="font-semibold text-sm mb-3">Workflow monitor</div>
+              <table className="dash-table"><thead><tr><th>Agent name</th><th>Model used</th><th>Status</th><th>Latency</th><th>Last run</th></tr></thead>
+              <tbody>
+                <tr><td>deploy-agent-7</td><td><span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-gray-50 text-xs">🟢 GPT-4o mini</span></td><td><span className="inline-block w-2 h-2 rounded-full bg-green-500 mr-1.5"></span>Running</td><td>8.2s</td><td>14 min ago</td></tr>
+                <tr><td>sales-sync-bot</td><td><span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-gray-50 text-xs">🔵 Llama3.1 8B</span></td><td><span className="inline-block w-2 h-2 rounded-full bg-amber-500 mr-1.5"></span>Paused</td><td>11.4s</td><td>32 min ago</td></tr>
+                <tr><td>social-marketing</td><td><span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-gray-50 text-xs">🔵 Llama3.1 70B</span></td><td><span className="inline-block w-2 h-2 rounded-full bg-green-500 mr-1.5"></span>Running</td><td>6.7s</td><td>47 min ago</td></tr>
+              </tbody></table>
+            </div>
+            <div className="grid md:grid-cols-2 gap-3 px-5 pb-5">
+              <div className="border border-gray-200 rounded-xl p-4">
+                <div className="flex justify-between items-center mb-4"><span className="font-semibold text-sm">Agents by status</span><span className="text-xs text-gray-500 px-2.5 py-1 border border-gray-200 rounded-md">Past 7 days ▾</span></div>
+                <div className="flex items-center justify-center gap-6">
+                  <svg width="120" height="120" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#FECACA" strokeWidth="18"/><circle cx="60" cy="60" r="48" fill="none" stroke="#E8795A" strokeWidth="18" strokeDasharray="200 302" strokeDashoffset="-75" strokeLinecap="round"/><circle cx="60" cy="60" r="48" fill="none" stroke="#E5E7EB" strokeWidth="18" strokeDasharray="50 452" strokeDashoffset="-280" strokeLinecap="round"/><text x="60" y="56" textAnchor="middle" fontSize="22" fontWeight="700" fill="#111">87</text><text x="60" y="72" textAnchor="middle" fontSize="11" fill="#6B7280">Agents</text></svg>
+                  <div className="flex flex-col gap-2 text-xs">{[{c:'#E8795A',l:'Active'},{c:'#FECACA',l:'Idle'},{c:'#E5E7EB',l:'Offline'}].map(i=><div key={i.l} className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full" style={{background:i.c}}></span>{i.l}</div>)}</div>
+                </div>
+              </div>
+              <div className="border border-gray-200 rounded-xl p-4">
+                <div className="flex justify-between items-center mb-4"><span className="font-semibold text-sm">Tasks breakdown</span><span className="text-xs text-gray-500 px-2.5 py-1 border border-gray-200 rounded-md">Past 7 days ▾</span></div>
+                <div className="flex items-end gap-1.5 h-[120px]">
+                  {bars.map((d,i) => <div key={i} className="flex gap-0.5 flex-1 items-end h-full"><div className="w-full rounded-t bg-coral" style={{height:d[0]*4}}></div><div className="w-full rounded-t bg-red-200" style={{height:d[1]*4}}></div></div>)}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </FadeIn>
+  );
+}
+
+// ---- LOGOS ----
+function LogosGrid({ className = "" }) {
+  const logos = ['incident.io','Primer','Hippocratic AI','bill','Bridge','granola','ARCH','Modal'];
+  return (
+    <FadeIn className={className}>
+      <div className="max-w-[1100px] mx-auto grid grid-cols-2 md:grid-cols-4 border border-gray-200 rounded-xl overflow-hidden">
+        {logos.map((l,i) => (
+          <div key={l} className={`flex items-center justify-center py-8 px-6 text-lg font-bold text-gray-700 opacity-70 ${i%4!==3?'border-r border-gray-200':''} ${i<4?'border-b border-gray-200':''}`}>{l}</div>
+        ))}
+      </div>
+    </FadeIn>
+  );
+}
+
+// ---- HOW IT WORKS ----
+function HowItWorks() {
+  const [active, setActive] = useState(0);
+  const tabs = [
+    { icon: '🔲', title: 'Design your Workflow', desc: 'A drag-and-drop interface to create, connect, and configure agents into logical workflows' },
+    { icon: '🌐', title: 'Connect your Tools', desc: 'Agents operate independently and coordinate tasks to complete all complex goals together' },
+    { icon: '⚡', title: 'Deploy & Scale', desc: 'Run agent workflows in a sandbox to preview behavior, debug logic, and test interactions' }
+  ];
+  const previews = [
+    <div className="flex items-center gap-2"><div className="px-3 py-1.5 border border-gray-200 rounded-lg text-xs bg-white">⬡ Start</div><div className="w-10 h-px bg-gray-300"></div><div className="px-3 py-1.5 border border-gray-200 rounded-lg text-xs bg-white">⚡ Process</div><div className="w-10 h-px bg-gray-300"></div><div className="px-3 py-1.5 rounded-lg text-xs bg-coral text-white">Complete</div></div>,
+    <div className="flex flex-col gap-2 text-sm text-gray-600"><div className="flex items-center gap-2">🔗 Slack <span className="text-green-600 text-xs">Connected</span></div><div className="flex items-center gap-2">📝 Notion <span className="text-green-600 text-xs">Connected</span></div><div className="flex items-center gap-2">🐙 GitHub <span className="text-amber-500 text-xs">Pending</span></div></div>,
+    <div className="flex flex-col gap-2 text-sm text-gray-600"><div className="flex items-center gap-2">🚀 Production <span className="text-xs px-2 py-0.5 bg-green-100 text-green-700 rounded">Live</span></div><div className="flex items-center gap-2">🧪 Staging <span className="text-xs px-2 py-0.5 bg-amber-100 text-amber-700 rounded">Testing</span></div></div>
+  ];
+  return (
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <SectionHeader label="How it works" title="Integrates easily" subtitle="We empower developers and technical teams to create, simulate, and manage AI-driven workflows visually" />
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div className="flex flex-col gap-1">
+            {tabs.map((t, i) => (
+              <Mdiv key={i} onClick={() => setActive(i)} whileHover={{ x: 4 }}
+                className={`p-5 rounded-xl cursor-pointer transition-all border-l-[3px] ${active === i ? 'bg-gray-100 border-coral' : 'border-transparent hover:bg-gray-100/50'}`}>
+                <h3 className="text-base font-semibold mb-1 flex items-center gap-2"><span>{t.icon}</span>{t.title}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed">{t.desc}</p>
+              </Mdiv>
+            ))}
+          </div>
+          <div className="bg-gray-100 rounded-xl p-10 min-h-[300px] flex items-center justify-center">
+            <AnimatePresence mode="wait">
+              <Mdiv key={active} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}>
+                {previews[active]}
+              </Mdiv>
+            </AnimatePresence>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+// ---- LLM MODEL SELECTOR ANIMATION ----
+function LLMModelSelectorAnim() {
+  const models = [
+    { n: '✴ Claude 4 Opus', s: 'Unavailable', c: 'bg-red-100 text-red-700', bc: 'border-red-200' },
+    { n: '⊛ ChatGPT', s: 'Connected', c: 'bg-green-100 text-green-700', bc: 'border-green-200' },
+    { n: '🔵 Llama 3.2', s: 'Connected', c: 'bg-green-100 text-green-700', bc: 'border-green-200' },
+    { n: '🟣 Gemini 2.5', s: 'Connected', c: 'bg-green-100 text-green-700', bc: 'border-green-200' },
+    { n: '🟡 Mistral Large', s: 'Pending', c: 'bg-amber-100 text-amber-700', bc: 'border-amber-200' },
+  ];
+  const [activeIdx, setActiveIdx] = useState(0);
+  const [selectedModel, setSelectedModel] = useState(models[1]);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIdx(prev => {
+        const next = (prev + 1) % models.length;
+        if (models[next].s === 'Connected') {
+          setSelectedModel(models[next]);
+        }
+        return next;
+      });
+    }, 1800);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="bg-gray-50 rounded-xl p-5">
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex justify-end mb-3">
+          <AnimatePresence mode="wait">
+            <Mdiv key={selectedModel.n}
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 8 }}
+              transition={{ duration: 0.3 }}
+              className="px-3 py-1.5 border border-gray-200 rounded-lg text-xs flex items-center gap-2">
+              {selectedModel.n.split(' ').slice(1).join(' ')} <span className="text-xs px-2 py-0.5 bg-green-100 text-green-700 rounded">Selected</span>
+            </Mdiv>
+          </AnimatePresence>
+        </div>
+        <div className="flex gap-1 mb-3">
+          <span className="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-green-500"></span>
+        </div>
+        <div className="flex justify-between text-xs text-gray-500 pb-2 border-b border-gray-200 mb-2">
+          <span>📁 All Models</span>
+          <Mdiv className="font-semibold text-gray-700"
+            key={models.length}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}>
+            {models.length} available
+          </Mdiv>
+        </div>
+        <div className="flex flex-col">
+          {models.map((m, i) => (
+            <Mdiv key={m.n}
+              animate={{
+                backgroundColor: activeIdx === i ? (m.s === 'Connected' ? 'rgba(220,252,231,0.5)' : m.s === 'Unavailable' ? 'rgba(254,226,226,0.3)' : 'rgba(254,243,199,0.3)') : 'rgba(255,255,255,0)',
+                scale: activeIdx === i ? 1.02 : 1,
+                x: activeIdx === i ? 4 : 0
+              }}
+              transition={{ duration: 0.4, ease: 'easeInOut' }}
+              className={`flex justify-between items-center py-2.5 px-2 text-xs rounded-lg mb-0.5 ${activeIdx === i ? 'shadow-sm' : ''}`}>
+              <span className="flex items-center gap-2">
+                {m.n}
+                {activeIdx === i && (
+                  <Mdiv initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} className="w-1.5 h-1.5 rounded-full bg-coral"></Mdiv>
+                )}
+              </span>
+              <Mdiv animate={{ opacity: activeIdx === i ? 1 : 0.6 }} transition={{ duration: 0.3 }}>
+                <span className={`px-2 py-0.5 rounded text-[10px] ${m.c}`}>{m.s}</span>
+              </Mdiv>
+            </Mdiv>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ---- TEXT TO WORKFLOW ANIMATION ----
+function TextToWorkflowAnim() {
+  const conversations = [
+    [
+      { type: 'bot', text: "Hi there! How can I help you today?" },
+      { type: 'user', text: "I want to create a workflow that sends emails to all my clients" },
+      { type: 'bot', text: "Sure! I'll create an email automation workflow for you.", isAction: true, action: "Creating → Email Blast Workflow" }
+    ],
+    [
+      { type: 'bot', text: "What would you like to build next?" },
+      { type: 'user', text: "A Slack bot that summarizes daily standup notes" },
+      { type: 'bot', text: "Got it! Setting up a Slack standup summarizer.", isAction: true, action: "Creating → Standup Bot" }
+    ],
+    [
+      { type: 'bot', text: "Ready for your next workflow!" },
+      { type: 'user', text: "Monitor GitHub PRs and auto-assign reviewers" },
+      { type: 'bot', text: "Setting up GitHub PR monitoring agent now.", isAction: true, action: "Creating → PR Review Agent" }
+    ]
+  ];
+  const [convIdx, setConvIdx] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(0);
+  const [isTyping, setIsTyping] = useState(false);
+
+  useEffect(() => {
+    const msgs = conversations[convIdx];
+    if (visibleCount < msgs.length) {
+      setIsTyping(true);
+      const delay = visibleCount === 0 ? 600 : 1200;
+      const timer = setTimeout(() => {
+        setIsTyping(false);
+        setVisibleCount(prev => prev + 1);
+      }, delay);
+      return () => clearTimeout(timer);
+    } else {
+      const resetTimer = setTimeout(() => {
+        setVisibleCount(0);
+        setConvIdx(prev => (prev + 1) % conversations.length);
+      }, 2500);
+      return () => clearTimeout(resetTimer);
+    }
+  }, [visibleCount, convIdx]);
+
+  const msgs = conversations[convIdx];
+
+  return (
+    <div className="bg-gray-50 rounded-xl p-5 flex flex-col gap-3 min-h-[180px]">
+      <AnimatePresence mode="wait">
+        <Mdiv key={convIdx} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }}>
+          <div className="flex flex-col gap-3">
+            {msgs.slice(0, visibleCount).map((msg, i) => (
+              <Mdiv key={i}
+                initial={{ opacity: 0, y: 12, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}>
+                {msg.type === 'bot' ? (
+                  <div className="flex items-start gap-2 self-start">
+                    <div className="w-6 h-6 bg-gray-900 rounded-md flex items-center justify-center flex-shrink-0">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
+                    </div>
+                    <div>
+                      <div className="bg-gray-100 text-gray-600 text-sm px-4 py-2.5 rounded-xl">{msg.text}</div>
+                      {msg.isAction && (
+                        <Mdiv initial={{ opacity: 0, width: 0 }} animate={{ opacity: 1, width: 'auto' }} transition={{ duration: 0.5, delay: 0.3 }}
+                          className="mt-1.5 inline-flex items-center gap-1.5 text-[11px] text-coral font-medium px-2.5 py-1 bg-coral/5 rounded-md border border-coral/15 overflow-hidden whitespace-nowrap">
+                          <Mdiv animate={{ rotate: 360 }} transition={{ duration: 2, repeat: Infinity, ease: 'linear' }} className="w-3 h-3 border border-coral border-t-transparent rounded-full"></Mdiv>
+                          {msg.action}
+                        </Mdiv>
+                      )}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-2 justify-end">
+                    <div className="bg-coral text-white text-sm px-4 py-2.5 rounded-xl rounded-br-sm max-w-[85%]">{msg.text}</div>
+                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex-shrink-0"></div>
+                  </div>
+                )}
+              </Mdiv>
+            ))}
+            {isTyping && visibleCount < msgs.length && (
+              <Mdiv initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.2 }}
+                className={`flex items-center gap-2 ${msgs[visibleCount].type === 'user' ? 'justify-end' : ''}`}>
+                {msgs[visibleCount].type === 'bot' && (
+                  <div className="w-6 h-6 bg-gray-900 rounded-md flex items-center justify-center flex-shrink-0">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
+                  </div>
+                )}
+                <div className={`px-4 py-3 rounded-xl flex gap-1 ${msgs[visibleCount].type === 'user' ? 'bg-coral/10' : 'bg-gray-100'}`}>
+                  {[0,1,2].map(d => (
+                    <Mdiv key={d} className={`w-1.5 h-1.5 rounded-full ${msgs[visibleCount].type === 'user' ? 'bg-coral' : 'bg-gray-400'}`}
+                      animate={{ opacity: [0.3, 1, 0.3] }}
+                      transition={{ duration: 1, repeat: Infinity, delay: d * 0.2 }}></Mdiv>
+                  ))}
+                </div>
+                {msgs[visibleCount].type === 'user' && (
+                  <div className="w-7 h-7 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex-shrink-0"></div>
+                )}
+              </Mdiv>
+            )}
+          </div>
+        </Mdiv>
+      </AnimatePresence>
+    </div>
+  );
+}
+
+
+function Features() {
+  return (
+    <section className="py-20" id="features">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <SectionHeader label="Features" title="Built for Agentic Intelligence" subtitle="Build, test and deploy AI agents with a powerful visual interface designed for technical teams" />
+        <div className="grid md:grid-cols-2 gap-4 max-w-[1100px] mx-auto">
+          {/* LLM Model Selector - Animated */}
+          <FadeIn>
+            <div className="border border-gray-200 rounded-xl p-8 bg-white hover:shadow-md transition-shadow h-full">
+              <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">🌐 LLM Model Selector</h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-5">Track real-time activity of agents with detailed records of triggers, tools used, outcomes, and timestamps.</p>
+              <LLMModelSelectorAnim />
+            </div>
+          </FadeIn>
+          {/* Text to Workflow - Animated */}
+          <FadeIn delay={0.1}>
+            <div className="border border-gray-200 rounded-xl p-8 bg-white hover:shadow-md transition-shadow h-full">
+              <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">🔲 Text to workflow builder</h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-5">Preview and debug workflow logic in a safe sandbox before deploying, helping you iterate with confidence.</p>
+              <TextToWorkflowAnim />
+            </div>
+          </FadeIn>
+          {/* Native Tools - Full Width */}
+          <FadeIn className="md:col-span-2">
+            <div className="border border-gray-200 rounded-xl p-8 bg-white hover:shadow-md transition-shadow">
+              <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">🔧 Native Tools Integration</h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-5">Track real-time activity of agents with detailed records of triggers, tools used, outcomes, and timestamps.</p>
+              <div className="bg-gray-50 rounded-xl p-8 flex items-center min-h-[240px]">
+                <div className="flex flex-col gap-3 w-[200px]">
+                  {['📋 Meeting Summarizer','⟨/⟩ Code Reviewer','📞 Customer Support'].map(t => <div key={t} className="text-sm font-medium text-coral">{t}</div>)}
+                </div>
+                <div className="flex-1 flex flex-wrap gap-5 justify-center items-center relative">
+                  {['📝','⚡','🔲','✧','🍎'].map((ic, i) => (
+                    <div key={i} className={`w-11 h-11 bg-white rounded-xl shadow-md flex items-center justify-center text-lg float-anim${i > 0 ? ` float-anim-delay-${i}` : ''}`}>{ic}</div>
+                  ))}
+                  <div className="w-[52px] h-[52px] border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center float-anim-delay-2">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="#333"><path d="M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
+                  </div>
+                  <span className="absolute right-[30%] bottom-[15%] text-xs px-2.5 py-0.5 bg-green-100 text-green-700 rounded font-medium">Connected</span>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+        {/* Small features row */}
+        <div className="grid md:grid-cols-3 gap-4 max-w-[1100px] mx-auto mt-4">
+          {[{i:'🛡',t:'One Click Auth',d:'A drag-and-drop interface to create, connect, and configure agents into logical workflows'},{i:'🔄',t:'Realtime Sync',d:'Agents operate independently and coordinate tasks to complete complex all goals'},{i:'🔧',t:'Custom Connector SDK',d:'Run agent workflows in a sandbox to preview behavior, debug logic, and test interactions'}].map((f, idx) => (
+            <FadeIn key={f.t} delay={idx * 0.1}>
+              <Mdiv whileHover={{ y: -2 }} className="border border-gray-200 rounded-xl p-7 bg-white hover:shadow-md transition-shadow cursor-default">
+                <h3 className="text-base font-semibold mb-1.5 flex items-center gap-2"><span>{f.i}</span>{f.t}</h3>
+                <p className="text-[13px] text-gray-500 leading-relaxed">{f.d}</p>
+              </Mdiv>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ---- USE CASES ----
+function UseCases() {
+  const cases = [{i:'🔧',t:'DevOps'},{i:'📊',t:'SalesOps'},{i:'🚛',t:'Supply Chain'},{i:'📞',t:'Customer Support'},{i:'📄',t:'DataOps'},{i:'💼',t:'FinOps'}];
+  return (
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <SectionHeader label="Use Cases" title="Across various Industries" subtitle="We empower developers and technical teams to create, simulate, and manage AI-driven workflows visually" />
+        <div className="grid md:grid-cols-3 gap-4 max-w-[1100px] mx-auto">
+          {cases.map((c, idx) => (
+            <FadeIn key={c.t} delay={idx * 0.08}>
+              <Mdiv whileHover={{ y: -3 }} className="border border-gray-200 rounded-xl p-7 bg-white hover:shadow-md transition-shadow relative overflow-hidden cursor-default">
+                <div className="absolute top-0 right-0 w-[60%] h-full stripe-bg pointer-events-none"></div>
+                <div className="relative z-10">
+                  <div className="text-coral text-2xl mb-4">{c.i}</div>
+                  <h3 className="text-base font-semibold mb-2">{c.t}</h3>
+                  <p className="text-[13px] text-gray-500 leading-relaxed">Visually orchestrate autonomous agents without writing boilerplate code</p>
+                </div>
+              </Mdiv>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ---- BENEFITS ----
+function Benefits() {
+  const items = [
+    [{i:'⚡',t:'Launch Faster'},{i:'🔄',t:'Iterate Rapidly'},{i:'📊',t:'Scale Smarter'}],
+    [{i:'🧠',t:'Reuse Intelligence'},{i:'✅',t:'Prevent Breakdowns'},{i:'🤖',t:'Automate More'}]
+  ];
+  return (
+    <section className="py-20">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <SectionHeader label="Benefits" title="Making Engineers 10x faster" subtitle="We empower developers and technical teams to create, simulate, and manage AI-driven workflows visually" />
+        <div className="grid md:grid-cols-3 gap-4 max-w-[1100px] mx-auto">
+          {/* Col 1 */}
+          <div className="flex flex-col gap-4">
+            {items[0].map((b, i) => (
+              <FadeIn key={b.t} delay={i * 0.1}>
+                <Mdiv whileHover={{ y: -2 }} className="border border-gray-200 rounded-xl p-7 bg-white hover:shadow-md transition-shadow">
+                  <div className="text-coral text-xl mb-3">{b.i}</div>
+                  <h3 className="text-base font-semibold mb-1.5">{b.t}</h3>
+                  <p className="text-[13px] text-gray-500 leading-relaxed">Visually orchestrate autonomous agents without writing boilerplate code</p>
+                </Mdiv>
+              </FadeIn>
+            ))}
+          </div>
+          {/* Center Animation */}
+          <FadeIn delay={0.15}>
+            <div className="bg-gray-50 border border-gray-200 rounded-xl flex items-center justify-center min-h-[300px] relative overflow-hidden">
+              <div className="flex gap-5 items-center">
+                <div className="w-11 h-11 bg-white rounded-xl shadow-md flex items-center justify-center text-lg float-anim">⊛</div>
+                <div className="w-[52px] h-[52px] border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center float-anim-delay-1">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#333"><path d="M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
+                </div>
+                <div className="w-11 h-11 bg-white rounded-xl shadow-md flex items-center justify-center text-lg float-anim-delay-2">✧</div>
+              </div>
+              <span className="absolute bottom-[38%] left-[55%] text-xs px-2.5 py-0.5 bg-green-100 text-green-700 rounded font-medium">Connected</span>
+            </div>
+          </FadeIn>
+          {/* Col 3 */}
+          <div className="flex flex-col gap-4">
+            {items[1].map((b, i) => (
+              <FadeIn key={b.t} delay={i * 0.1 + 0.1}>
+                <Mdiv whileHover={{ y: -2 }} className="border border-gray-200 rounded-xl p-7 bg-white hover:shadow-md transition-shadow">
+                  <div className="text-coral text-xl mb-3">{b.i}</div>
+                  <h3 className="text-base font-semibold mb-1.5">{b.t}</h3>
+                  <p className="text-[13px] text-gray-500 leading-relaxed">Visually orchestrate autonomous agents without writing boilerplate code</p>
+                </Mdiv>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ---- TESTIMONIALS ----
+function Testimonials() {
+  return (
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <p className="text-center text-xs uppercase tracking-[3px] text-gray-500 font-medium mb-8">Trusted by Fast Growing Startups</p>
+        <FadeIn>
+          <div className="grid md:grid-cols-[2fr_1fr] border border-gray-200 rounded-xl overflow-hidden bg-white max-w-[1100px] mx-auto">
+            <div className="grid md:grid-cols-[auto_1fr]">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop" alt="Rachel Green" className="w-full md:w-[320px] h-[240px] md:h-full object-cover"/>
+              <div className="p-8 md:p-10 flex flex-col justify-center">
+                <div className="text-xl font-bold mb-6 tracking-tight">Replicate</div>
+                <p className="text-lg md:text-xl font-medium leading-relaxed mb-8">"Our agents have become an essential part of our infrastructure. They handle complex workflows with a reliability that exceeds our expectations every time."</p>
+                <p className="font-semibold text-[15px]">Rachel Green</p>
+                <p className="text-sm text-gray-500">Technical Director, NextGen Solutions</p>
+              </div>
+            </div>
+            <div className="flex md:flex-col border-l border-t md:border-t-0 border-gray-200">
+              {[{v:'100%',l:'Reliability'},{v:'5x',l:'Faster'},{v:'10x',l:'Hours Saved'}].map((s,i) => (
+                <div key={s.l} className={`flex-1 flex flex-col items-center justify-center p-6 ${i<2?'border-b border-gray-200':''}`}>
+                  <span className="text-4xl md:text-5xl font-extrabold leading-none">{s.v}</span>
+                  <span className="text-sm text-gray-500 mt-1">{s.l}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+        <LogosGrid className="mt-6 max-w-[1100px] mx-auto" />
+      </div>
+    </section>
+  );
+}
+
+
+// ---- PRICING ----
+function Pricing() {
+  const [yearly, setYearly] = useState(false);
+  const plans = [
+    { name: 'Growth', sub: 'Early stage teams', m: 8, y: 6, btn: 'Start building', style: 'btn-outline', features: ['Up to 5 active agents','50 simulation runs','Visual builder access','GitHub + Zapier integration','Basic support','1 team workspace','Workflow APIs','Community Slack access'] },
+    { name: 'Scale', sub: 'Fast moving startups', m: 12, y: 10, btn: 'Start for free', style: 'btn-coral', highlight: true, features: ['Up to 25 active agents','150 simulation runs','Visual builder access','GitHub + Zapier integration','Priority support','3 team workspace','Workflow APIs','Priority Slack access'] },
+    { name: 'Enterprise', sub: 'Large enterprises', m: 25, y: 20, btn: 'Contact sales', style: 'btn-outline', features: ['Unlimited active agents','Unlimited simulation runs','Visual builder access','GitHub + Zapier integration','Priority support','Unlimited team workspace','Workflow APIs','Priority Slack access','Access to Fight Club'] }
+  ];
+  return (
+    <section className="py-20" id="pricing">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <SectionHeader label="Pricing" title="Simple and Feasible Pricing" />
+        <FadeIn>
+          <div className="flex justify-center mb-12">
+            <div className="flex bg-gray-50 border border-gray-200 rounded-full p-1">
+              <button onClick={() => setYearly(false)} className={`px-7 py-2.5 rounded-full text-sm font-medium transition-all ${!yearly ? 'bg-white shadow-sm text-gray-900' : 'text-gray-500'}`}>Monthly</button>
+              <button onClick={() => setYearly(true)} className={`px-7 py-2.5 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${yearly ? 'bg-white shadow-sm text-gray-900' : 'text-gray-500'}`}>Yearly <span className="text-coral text-xs font-semibold">Save 20%</span></button>
+            </div>
+          </div>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <div className="grid md:grid-cols-3 border border-gray-200 rounded-xl overflow-hidden max-w-[1000px] mx-auto">
+            {plans.map((p, i) => (
+              <div key={p.name} className={`p-8 ${i < 2 ? 'border-r border-gray-200' : ''} ${p.highlight ? 'bg-gray-50' : 'bg-white'}`}>
+                <h3 className="text-xl font-bold mb-1">{p.name}</h3>
+                <p className="text-sm text-gray-500 mb-5">{p.sub}</p>
+                <div className="text-4xl font-extrabold mb-1 flex items-baseline gap-1">
+                  <AnimatePresence mode="wait">
+                    <Mspan key={yearly ? 'y' : 'm'} initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} transition={{ duration: 0.2 }}>
+                      ${yearly ? p.y : p.m}
+                    </Mspan>
+                  </AnimatePresence>
+                  <span className="text-sm font-normal text-gray-500">/seat</span>
+                </div>
+                <Mbutton whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
+                  className={`w-full py-3 rounded-full text-sm font-medium my-5 transition-colors ${p.highlight ? 'bg-coral text-white hover:bg-coral-dark' : 'bg-white border border-gray-200 text-gray-900 hover:border-gray-400'}`}>
+                  {p.btn}
+                </Mbutton>
+                <ul className="flex flex-col gap-3.5">
+                  {p.features.map(f => (
+                    <li key={f} className="flex items-center gap-2 text-sm text-gray-500">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16" className="flex-shrink-0 text-gray-400"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  );
+}
+
+// ---- SECURITY ----
+function Security() {
+  return (
+    <section className="py-16 bg-gray-50">
+      <p className="text-center text-xs uppercase tracking-[3px] text-gray-500 font-medium mb-6">For Security First Teams</p>
+      <FadeIn>
+        <div className="max-w-[1100px] mx-auto px-6">
+          <div className="border border-gray-200 rounded-xl bg-white p-10 md:p-12 grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <h2 className="text-3xl font-bold mb-4 leading-tight">Scale securely with confidence</h2>
+              <p className="text-gray-500 text-[15px] leading-relaxed mb-6">Our AI assistant is designed with enterprise-grade security practices and compliant with global data protection standards.</p>
+              <Mbutton whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="bg-gray-900 text-white px-7 py-3 rounded-full text-sm font-medium hover:bg-black transition-colors">Start for free</Mbutton>
+            </div>
+            <div className="flex gap-8 justify-center">
+              {[{icon:'☎',label:'CCPA'},{icon:'✓✓✓',label:'GDPR'},{icon:'ISO\n27001',label:'ISO'}].map(b => (
+                <div key={b.label} className="flex flex-col items-center gap-2">
+                  <div className="w-14 h-14 rounded-full border-2 border-gray-200 flex items-center justify-center text-xs font-bold text-gray-500 whitespace-pre-line leading-tight text-center">{b.icon}</div>
+                  <div className="flex items-center gap-1.5 text-sm text-gray-500"><span className="w-1.5 h-1.5 rounded-full bg-gray-900"></span>{b.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </FadeIn>
+    </section>
+  );
+}
+
+// ---- FAQ ----
+function FAQ() {
+  const [openIdx, setOpenIdx] = useState(-1);
+  const items = [
+    { q: 'What exactly does this platform do?', a: 'Our platform provides a visual interface for building, testing, and deploying AI agent workflows. You can create autonomous agents that work together to complete complex tasks across your organization.' },
+    { q: 'How do I get started with creating my first workflow?', a: 'Simply sign up for a free account, and you\'ll be guided through creating your first workflow using our drag-and-drop builder. No coding required to get started.' },
+    { q: 'What tools and services can I integrate?', a: 'We support 100+ native integrations including Slack, GitHub, Notion, Zapier, and more. You can also build custom connectors using our SDK.' },
+    { q: 'Is my data secure when using AI agents?', a: 'Absolutely. We follow enterprise-grade security practices and are compliant with CCPA, GDPR, and ISO 27001 standards. All data is encrypted at rest and in transit.' },
+    { q: 'Can I test workflows before they go live?', a: 'Yes! Our sandbox environment lets you simulate and debug workflows before deploying them to production. You can preview behavior and iterate safely.' },
+    { q: "What's the difference between automated and manual steps?", a: 'Automated steps are executed by AI agents without human intervention, while manual steps pause the workflow and wait for human approval or input before proceeding.' }
+  ];
+  return (
+    <section className="py-20">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <SectionHeader label="FAQs" title="Frequently Asked Questions" subtitle="Find all your doubts and questions in one place. Still couldn't find what you're looking for?" />
+        <FadeIn>
+          <div className="flex gap-3 justify-center mb-10">
+            <Mbutton whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="bg-gray-900 text-white px-7 py-3 rounded-full text-sm font-medium">Read Docs</Mbutton>
+            <Mbutton whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="bg-white text-gray-900 px-7 py-3 rounded-full text-sm font-medium border border-gray-200 hover:border-gray-400 transition-colors">Contact Us</Mbutton>
+          </div>
+        </FadeIn>
+        <div className="max-w-[800px] mx-auto">
+          {items.map((item, i) => (
+            <FadeIn key={i} delay={i * 0.05}>
+              <div className={`border-t border-gray-200 ${i === items.length - 1 ? 'border-b' : ''}`}>
+                <button onClick={() => setOpenIdx(openIdx === i ? -1 : i)} className="w-full flex justify-between items-center py-5 text-left text-[15px] font-medium hover:text-coral transition-colors">
+                  <span>{item.q}</span>
+                  <Mdiv animate={{ rotate: openIdx === i ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-400"><polyline points="6 9 12 15 18 9"/></svg>
+                  </Mdiv>
+                </button>
+                <AnimatePresence>
+                  {openIdx === i && (
+                    <Mdiv initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
+                      <p className="text-sm text-gray-500 leading-relaxed pb-5">{item.a}</p>
+                    </Mdiv>
+                  )}
+                </AnimatePresence>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ---- CTA ----
+function CTA() {
+  const icons = [{e:'🔗',t:'15%',l:'25%'},{e:'✧',t:'10%',r:'20%'},{e:'🍎',t:'30%',r:'15%'},{e:'⚡',t:'20%',l:'40%'},{e:'📧',b:'30%',l:'15%'},{e:'⊛',b:'20%',r:'30%'}];
+  return (
+    <section className="py-20 bg-gray-50 text-center relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        {icons.map((ic, i) => (
+          <div key={i} className={`absolute w-11 h-11 bg-white rounded-xl shadow-md flex items-center justify-center text-lg float-anim${i > 0 ? ` float-anim-delay-${i}` : ''}`}
+            style={{ top: ic.t, left: ic.l, right: ic.r, bottom: ic.b }}>{ic.e}</div>
+        ))}
+      </div>
+      <FadeIn>
+        <h2 className="text-3xl md:text-5xl font-bold max-w-[600px] mx-auto mb-7 relative z-10 leading-tight">Connect your Current Stack and Start Automating</h2>
+        <Mbutton whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-gray-900 text-white px-9 py-3.5 rounded-full text-[15px] font-medium relative z-10 hover:bg-black transition-colors">Start Building for Free</Mbutton>
+      </FadeIn>
+    </section>
+  );
+}
+
+// ---- FOOTER ----
+function Footer() {
+  return (
+    <footer className="pt-16 pb-8 border-t border-gray-200">
+      <div className="max-w-[1100px] mx-auto px-6">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
+          <div className="col-span-2 md:col-span-1">
+            <div className="flex items-center gap-2 font-bold text-lg mb-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2zm1 4v4l3-2-3-2zm5 0v4l3-2-3-2z"/></svg>Notus
+            </div>
+            <p className="text-sm text-gray-500 mb-4 leading-relaxed">Manage and simulate agentic workflows</p>
+            <Mbutton whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="bg-gray-900 text-white px-5 py-2.5 rounded-full text-sm font-medium">Start building</Mbutton>
+          </div>
+          {[
+            { title: 'Product', links: ['Agent Builder','Simulation','Integrations','Multi Agent','Workflow API'] },
+            { title: 'Company', links: ['Sign In','About','Contact','Pricing','Careers','Docs','Changelog','Glossary'] },
+            { title: 'Legal', links: ['Privacy Policy','Terms of Service','Cookie Policy'] }
+          ].map(col => (
+            <div key={col.title}>
+              <h4 className="text-sm font-semibold text-gray-500 mb-4">{col.title}</h4>
+              {col.links.map(l => <a key={l} href="#" className="block text-sm text-gray-500 py-1 hover:text-gray-900 transition-colors">{l}</a>)}
+            </div>
+          ))}
+          <div>
+            <h4 className="text-sm font-semibold text-gray-500 mb-4">Newsletter</h4>
+            <div className="flex border border-gray-200 rounded-full overflow-hidden">
+              <input type="email" placeholder="Your email" className="flex-1 px-4 py-2.5 text-sm outline-none" />
+              <button className="px-3 text-gray-500 hover:text-gray-900 transition-colors">➤</button>
+            </div>
+            <p className="text-xs text-gray-500 mt-3 leading-relaxed">Get the latest product news and behind the scenes updates.</p>
+          </div>
+        </div>
+        <div className="mt-10 pt-6 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+          <span>&copy; 2024 Notus Aceternity Fight Club. All rights reserved.</span>
+          <div className="flex gap-4">
+            {['M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5','M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z'].map((p, i) => (
+              <a key={i} href="#" className="hover:text-gray-900 transition-colors"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d={p}/></svg></a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+// ---- APP ----
+function App() {
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      <Dashboard />
+      <section className="py-16 bg-gray-50">
+        <p className="text-center text-xs uppercase tracking-[3px] text-gray-500 font-medium mb-8">Trusted by Fast Growing Startups</p>
+        <LogosGrid className="px-6" />
+      </section>
+      <HowItWorks />
+      <Features />
+      <UseCases />
+      <Benefits />
+      <Testimonials />
+      <Pricing />
+      <Security />
+      <FAQ />
+      <CTA />
+      <Footer />
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+</script>
+</body>
+</html>
