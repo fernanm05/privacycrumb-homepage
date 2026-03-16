@@ -22,8 +22,8 @@ export default function FAQ() {
         <div className="flex justify-center gap-3 mb-10">
           <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
             className="bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 px-7 py-3 rounded-xl text-sm font-medium hover:bg-black dark:hover:bg-neutral-100 transition-colors">Read Docs</motion.button>
-          <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
-            className="border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 px-7 py-3 rounded-xl text-sm font-medium hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">Contact Us</motion.button>
+          <motion.a href="/index-23/contact" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
+            className="border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 px-7 py-3 rounded-xl text-sm font-medium hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">Contact Us</motion.a>
         </div>
         <div className="divide-y divide-neutral-100 dark:divide-neutral-800 border-t border-neutral-100 dark:border-neutral-800">
           {faqs.map((f, i) => (

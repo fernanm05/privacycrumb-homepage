@@ -79,9 +79,9 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-neutral-900 dark:text-white mb-4">Resources</h4>
             {[
-              { label: "Knowledge Base", href: "/knowledge-base.html" },
-              { label: "Infographics", href: "/infographics.html" },
-              { label: "Newsletter", href: "/newsletter.html" },
+              { label: "Knowledge Base", href: "/index-23/knowledge-base" },
+              { label: "Infographics", href: "/index-23/infographics" },
+              { label: "Newsletter", href: "/index-23/newsletter" },
               { label: "About", href: "/index-23/about" },
             ].map((l) => (
               <a key={l.label} href={l.href} className="block text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white mb-2 transition-colors">{l.label}</a>

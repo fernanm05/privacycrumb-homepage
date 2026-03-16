@@ -305,10 +305,10 @@ export default function HelpCenterPage() {
                     <span className="text-sm font-medium text-neutral-900 dark:text-white">Email Us</span>
                     <span className="text-[11px] text-neutral-400">support@privacycrumb.com</span>
                   </a>
-                  <a href="/contact.html" className="flex flex-col items-center gap-2 p-5 rounded-2xl border border-neutral-100 dark:border-neutral-800 hover:border-coral/30 hover:shadow-sm transition-all">
+                  <a href="/index-23/contact" className="flex flex-col items-center gap-2 p-5 rounded-2xl border border-neutral-100 dark:border-neutral-800 hover:border-coral/30 hover:shadow-sm transition-all">
                     <MessageCircle size={20} className="text-coral" />
-                    <span className="text-sm font-medium text-neutral-900 dark:text-white">Live Chat</span>
-                    <span className="text-[11px] text-neutral-400">Mon–Fri, 9am–5pm</span>
+                    <span className="text-sm font-medium text-neutral-900 dark:text-white">Contact Us</span>
+                    <span className="text-[11px] text-neutral-400">Send us a message</span>
                   </a>
                   <a href="/faq.html" className="flex flex-col items-center gap-2 p-5 rounded-2xl border border-neutral-100 dark:border-neutral-800 hover:border-coral/30 hover:shadow-sm transition-all">
                     <HelpCircle size={20} className="text-coral" />
