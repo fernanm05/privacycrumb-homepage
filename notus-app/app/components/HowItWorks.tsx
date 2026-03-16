@@ -83,30 +83,29 @@ function PreviewDesign() {
       {/* Model cards row */}
       <div className="grid grid-cols-3 gap-3">
         {[
-          { brand: "Analytics", model: "Google, Meta", label: "18 cookies", labelColor: "bg-orange-50 text-orange-500 border-orange-200", icon: "📊" },
-          { brand: "Marketing", model: "HubSpot, Mailchimp", label: "12 cookies", labelColor: "bg-blue-50 text-blue-500 border-blue-200", icon: "📢" },
-          { brand: "Functional", model: "", label: "6 cookies", labelColor: "bg-green-50 text-green-500 border-green-200", icon: "⚙️" },
+          { brand: "Analytics", model: "Google, Meta", label: "18 cookies", labelColor: "bg-orange-50 text-orange-500 border-orange-200 dark:bg-orange-900/20 dark:text-orange-400 dark:border-orange-800", iconType: "analytics" as const },
+          { brand: "Marketing", model: "HubSpot, Mailchimp", label: "12 cookies", labelColor: "bg-blue-50 text-blue-500 border-blue-200 dark:bg-blue-900/20 dark:text-blue-400 dark:border-blue-800", iconType: "marketing" as const },
+          { brand: "Functional", model: "Session, Auth", label: "6 cookies", labelColor: "bg-green-50 text-green-500 border-green-200 dark:bg-green-900/20 dark:text-green-400 dark:border-green-800", iconType: "functional" as const },
         ].map((m, i) => (
           <motion.div
             key={m.brand}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 + i * 0.15 }}
-            className="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-3 shadow-sm"
+            className="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-3 shadow-sm overflow-hidden"
           >
-            <div className="flex items-center justify-between mb-1">
-              <div className="flex items-center gap-1.5">
-                <span className="text-[11px] text-neutral-400">{m.icon}</span>
-                <span className="text-[12px] font-semibold text-neutral-700 dark:text-neutral-200">{m.brand}</span>
-              </div>
-              {m.model && <span className="text-[11px] text-neutral-400">{m.model}</span>}
+            <div className="flex items-center gap-1.5 mb-1">
+              {m.iconType === "analytics" && <BarChart3 size={12} className="text-orange-500 shrink-0" />}
+              {m.iconType === "marketing" && <Cookie size={12} className="text-blue-500 shrink-0" />}
+              {m.iconType === "functional" && <Shield size={12} className="text-green-500 shrink-0" />}
+              <span className="text-[12px] font-semibold text-neutral-700 dark:text-neutral-200 truncate">{m.brand}</span>
             </div>
-            {!m.model && <div className="h-3" />}
+            <p className="text-[10px] text-neutral-400 truncate mb-1">{m.model}</p>
             <motion.span
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: 0.8 + i * 0.15 }}
-              className={`inline-block text-[10px] px-2 py-0.5 rounded-md border font-medium mt-1 ${m.labelColor}`}
+              className={`inline-block text-[10px] px-2 py-0.5 rounded-md border font-medium ${m.labelColor}`}
             >
               {m.label}
             </motion.span>

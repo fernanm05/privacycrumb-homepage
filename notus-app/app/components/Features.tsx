@@ -60,42 +60,48 @@ export default function Features() {
               </div>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-6">Automatically detect and categorize every cookie and tracker on your website with detailed classification reports.</p>
               <div className="bg-neutral-50 dark:bg-neutral-800 rounded-2xl p-5">
-                <div className="bg-white dark:bg-neutral-900 rounded-xl p-4 shadow-sm border border-neutral-100 dark:border-neutral-700">
+                <div className="bg-white dark:bg-neutral-900 rounded-xl p-4 shadow-sm border border-neutral-100 dark:border-neutral-700 relative overflow-hidden">
+                  {/* Scanning line that sweeps down */}
+                  <motion.div
+                    animate={{ top: ["-5%", "105%"] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", repeatDelay: 1 }}
+                    className="absolute left-0 right-0 h-8 pointer-events-none z-10"
+                    style={{ background: "linear-gradient(to bottom, transparent, rgba(34,197,94,0.12), transparent)" }}
+                  />
+
                   <div className="flex gap-1.5 mb-4">
                     <motion.span animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity, delay: 0 }} className="w-2.5 h-2.5 rounded-full bg-red-400" />
                     <motion.span animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity, delay: 0.3 }} className="w-2.5 h-2.5 rounded-full bg-amber-400" />
                     <motion.span animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity, delay: 0.6 }} className="w-2.5 h-2.5 rounded-full bg-green-400" />
                   </div>
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4 }}
-                    className="flex justify-between text-xs text-neutral-500 dark:text-neutral-400 pb-2.5 border-b border-neutral-100 dark:border-neutral-700 mb-3"
-                  >
+                  <div className="flex justify-between text-xs text-neutral-500 dark:text-neutral-400 pb-2.5 border-b border-neutral-100 dark:border-neutral-700 mb-3">
                     <span className="flex items-center gap-1.5"><Layout size={12} /> All Cookies</span>
-                    <span className="font-semibold text-neutral-700 dark:text-neutral-200">2,847</span>
-                  </motion.div>
+                    <motion.span
+                      className="font-semibold text-neutral-700 dark:text-neutral-200 tabular-nums"
+                      animate={{ opacity: [0.5, 1, 0.5] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      2,847
+                    </motion.span>
+                  </div>
                   {[
-                    { n: "Analytics", Icon: Sparkles, ic: "text-orange-500", s: "18 found", c: "bg-orange-50 text-orange-600 border border-orange-200" },
-                    { n: "Marketing", Icon: Globe, ic: "text-blue-500", s: "12 found", c: "bg-blue-50 text-blue-600 border border-blue-200" },
-                    { n: "Functional", Icon: Cookie, ic: "text-green-600", s: "6 found", c: "bg-green-50 text-green-600 border border-green-200" },
-                    { n: "Essential", Icon: Lock, ic: "text-purple-500", s: "3 found", c: "bg-purple-50 text-purple-600 border border-purple-200" },
-                  ].map((m, i) => (
+                    { n: "Analytics", Icon: Sparkles, ic: "text-orange-500", s: "18 found", c: "bg-orange-50 text-orange-600 border border-orange-200 dark:bg-orange-900/20 dark:text-orange-400 dark:border-orange-800", delay: 0 },
+                    { n: "Marketing", Icon: Globe, ic: "text-blue-500", s: "12 found", c: "bg-blue-50 text-blue-600 border border-blue-200 dark:bg-blue-900/20 dark:text-blue-400 dark:border-blue-800", delay: 0.75 },
+                    { n: "Functional", Icon: Cookie, ic: "text-green-600", s: "6 found", c: "bg-green-50 text-green-600 border border-green-200 dark:bg-green-900/20 dark:text-green-400 dark:border-green-800", delay: 1.5 },
+                    { n: "Essential", Icon: Lock, ic: "text-purple-500", s: "3 found", c: "bg-purple-50 text-purple-600 border border-purple-200 dark:bg-purple-900/20 dark:text-purple-400 dark:border-purple-800", delay: 2.25 },
+                  ].map((m) => (
                     <motion.div
                       key={m.n}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: 0.15 + i * 0.12 }}
-                      className="flex justify-between items-center py-2.5 text-[13px] border-b border-neutral-50 dark:border-neutral-800 last:border-0"
+                      animate={{
+                        backgroundColor: ["rgba(0,0,0,0)", "rgba(34,197,94,0.06)", "rgba(0,0,0,0)"],
+                      }}
+                      transition={{ duration: 4, repeat: Infinity, delay: m.delay, ease: "easeInOut" }}
+                      className="flex justify-between items-center py-2.5 px-1 -mx-1 rounded-lg text-[13px] border-b border-neutral-50 dark:border-neutral-800 last:border-0"
                     >
                       <span className="font-medium text-neutral-700 dark:text-neutral-200 flex items-center gap-1.5"><m.Icon size={14} className={m.ic} />{m.n}</span>
                       <motion.span
-                        initial={{ opacity: 0, scale: 0.6 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.3, delay: 0.4 + i * 0.12 }}
+                        animate={{ scale: [1, 1.1, 1] }}
+                        transition={{ duration: 4, repeat: Infinity, delay: m.delay, ease: "easeInOut" }}
                         className={`text-[11px] px-2 py-0.5 rounded ${m.c}`}
                       >
                         {m.s}
@@ -106,88 +112,85 @@ export default function Features() {
               </div>
             </div>
           </FadeIn>
-          {/* Text to Workflow */}
+          {/* Consent Banner Builder */}
           <FadeIn delay={0.1}>
             <div className="border border-neutral-200/80 dark:border-neutral-800 rounded-3xl p-8 bg-white dark:bg-neutral-900 h-full">
               <div className="flex items-center gap-2 mb-2">
-                <Shield size={18} className="text-neutral-700 dark:text-neutral-300" />
-                <h3 className="text-base font-semibold dark:text-white">AI Privacy Assistant</h3>
+                <Layout size={18} className="text-neutral-700 dark:text-neutral-300" />
+                <h3 className="text-base font-semibold dark:text-white">Consent Banner Builder</h3>
               </div>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-6">Ask questions about cookie compliance, generate privacy policies, and get regulation guidance instantly.</p>
-              <div className="bg-neutral-50 dark:bg-neutral-800 rounded-2xl p-5 flex flex-col gap-3">
-                {/* Bot greeting */}
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="flex items-start gap-2"
-                >
-                  <div className="w-7 h-7 rounded-md bg-neutral-200 dark:bg-neutral-700 flex-shrink-0 mt-0.5 flex items-center justify-center">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="8" r="4" /><path d="M20 21a8 8 0 10-16 0" /></svg>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-6">Design beautiful, compliant cookie consent banners that match your brand. Customize colors, layout, and text with a live preview.</p>
+              <div className="bg-neutral-50 dark:bg-neutral-800 rounded-2xl p-4">
+                {/* Mini website mockup */}
+                <div className="bg-white dark:bg-neutral-900 rounded-xl border border-neutral-100 dark:border-neutral-700 shadow-sm overflow-hidden relative">
+                  {/* Fake browser bar */}
+                  <div className="flex items-center gap-1.5 px-3 py-1.5 border-b border-neutral-100 dark:border-neutral-700">
+                    <span className="w-2 h-2 rounded-full bg-red-400" />
+                    <span className="w-2 h-2 rounded-full bg-amber-400" />
+                    <span className="w-2 h-2 rounded-full bg-green-400" />
+                    <div className="ml-2 flex-1 h-3.5 bg-neutral-100 dark:bg-neutral-700 rounded-md flex items-center px-2">
+                      <span className="text-[8px] text-neutral-400">yourwebsite.com</span>
+                    </div>
                   </div>
-                  <div className="bg-white dark:bg-neutral-900 text-neutral-400 text-sm px-4 py-2.5 rounded-2xl rounded-tl-sm border border-neutral-100 dark:border-neutral-700 max-w-[85%]">
-                    Hi! I can help you with cookie compliance. What do you need?
+                  {/* Fake page content */}
+                  <div className="px-3 py-2 space-y-1.5">
+                    <div className="h-1.5 bg-neutral-100 dark:bg-neutral-800 rounded-full w-3/4" />
+                    <div className="h-1.5 bg-neutral-100 dark:bg-neutral-800 rounded-full w-1/2" />
+                    <div className="h-1.5 bg-neutral-100 dark:bg-neutral-800 rounded-full w-5/6" />
                   </div>
-                </motion.div>
-                {/* User message */}
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                  className="flex items-start gap-2 self-end flex-row-reverse"
-                >
-                  <div className="w-7 h-7 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex-shrink-0 mt-0.5 flex items-center justify-center">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round"><circle cx="12" cy="8" r="4" /><path d="M20 21a8 8 0 10-16 0" /></svg>
-                  </div>
-                  <div className="bg-blue-500 text-white text-sm px-4 py-2.5 rounded-2xl rounded-tr-sm max-w-[85%]">
-                    Is my website GDPR compliant? I have analytics cookies.
-                  </div>
-                </motion.div>
-                {/* Bot response */}
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 1.0 }}
-                  className="flex items-start gap-2"
-                >
-                  <div className="w-7 h-7 rounded-md bg-neutral-200 dark:bg-neutral-700 flex-shrink-0 mt-0.5 flex items-center justify-center">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="8" r="4" /><path d="M20 21a8 8 0 10-16 0" /></svg>
-                  </div>
-                  <div className="text-sm text-neutral-500 dark:text-neutral-400 bg-white dark:bg-neutral-900 px-4 py-2.5 rounded-2xl rounded-tl-sm border border-neutral-100 dark:border-neutral-700">
-                    <motion.span
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: 1.2 }}
-                    >
-                      You need a consent banner that blocks analytics cookies until the user opts in. I can generate one for you!
-                    </motion.span>
-                  </div>
-                </motion.div>
-                {/* Input bar */}
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 1.4 }}
-                  className="flex items-center border border-neutral-200 dark:border-neutral-700 rounded-xl bg-white dark:bg-neutral-900 px-4 py-2.5 mt-2"
-                >
-                  <span className="text-sm text-neutral-400 flex-1 flex items-center gap-1">
-                    Ask PrivacyCrumb AI
-                    <motion.span
-                      animate={{ opacity: [1, 0] }}
-                      transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
-                      className="inline-block w-0.5 h-4 bg-blue-400 ml-0.5"
-                    />
-                  </span>
-                  <div className="flex gap-2 text-neutral-400">
-                    <Paperclip size={16} />
-                    <SendHorizontal size={16} />
-                  </div>
-                </motion.div>
+
+                  {/* Consent banner overlay */}
+                  <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="mx-2 mb-2 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-3 shadow-lg"
+                  >
+                    <div className="flex items-center gap-1.5 mb-2">
+                      <Cookie size={12} className="text-amber-500" />
+                      <span className="text-[11px] font-semibold text-neutral-700 dark:text-neutral-200">Cookie Preferences</span>
+                    </div>
+                    <p className="text-[9px] text-neutral-400 mb-2.5 leading-relaxed">We use cookies to enhance your experience. Choose which cookies you allow.</p>
+
+                    {/* Cookie toggles */}
+                    {[
+                      { name: "Essential", on: true, locked: true },
+                      { name: "Analytics", on: false, locked: false },
+                      { name: "Marketing", on: false, locked: false },
+                    ].map((c, i) => (
+                      <div key={c.name} className="flex items-center justify-between py-1">
+                        <span className="text-[10px] text-neutral-600 dark:text-neutral-300">{c.name}</span>
+                        <motion.div
+                          animate={c.locked ? {} : { backgroundColor: ["#e5e7eb", "#22c55e", "#22c55e", "#e5e7eb"] }}
+                          transition={{ duration: 4, repeat: Infinity, delay: i * 1.2, ease: "easeInOut" }}
+                          className="w-7 h-4 rounded-full relative"
+                          style={{ backgroundColor: c.locked ? "#22c55e" : "#e5e7eb" }}
+                        >
+                          <motion.div
+                            animate={c.locked ? {} : { x: [0, 13, 13, 0] }}
+                            transition={{ duration: 4, repeat: Infinity, delay: i * 1.2, ease: "easeInOut" }}
+                            className="absolute top-0.5 left-0.5 w-3 h-3 rounded-full bg-white shadow-sm"
+                          />
+                        </motion.div>
+                      </div>
+                    ))}
+
+                    {/* Buttons */}
+                    <div className="flex gap-1.5 mt-2">
+                      <motion.button
+                        animate={{ scale: [1, 1.03, 1] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        className="flex-1 text-[9px] font-medium py-1.5 rounded-lg bg-neutral-900 dark:bg-white text-white dark:text-neutral-900"
+                      >
+                        Accept All
+                      </motion.button>
+                      <button className="flex-1 text-[9px] font-medium py-1.5 rounded-lg border border-neutral-200 dark:border-neutral-600 text-neutral-600 dark:text-neutral-300">
+                        Save Preferences
+                      </button>
+                    </div>
+                  </motion.div>
+                </div>
               </div>
             </div>
           </FadeIn>
