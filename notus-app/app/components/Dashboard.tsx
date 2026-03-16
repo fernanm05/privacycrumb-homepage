@@ -53,8 +53,8 @@ export default function Dashboard() {
                 <Search size={14} />
                 Search for anything... <span className="ml-auto text-neutral-300">⌘K</span>
               </div>
-              <div className="w-8 h-8 rounded-full bg-neutral-200 dark:bg-neutral-700 overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-neutral-300 to-neutral-400 dark:from-neutral-600 dark:to-neutral-500" />
+              <div className="w-8 h-8 rounded-full bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-neutral-500 dark:text-neutral-400"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
               </div>
             </div>
             {/* Stats cards with colored icon backgrounds */}

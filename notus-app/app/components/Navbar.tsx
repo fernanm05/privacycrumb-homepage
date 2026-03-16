@@ -40,12 +40,12 @@ export default function Navbar() {
   const navLinks = [
     { label: "Features", href: "/index-23/features" },
     { label: "Pricing", href: "/index-23/pricing" },
-    { label: "About", href: "/about.html" },
+    { label: "About", href: "/index-23/about" },
   ];
 
   const supportLinks = [
-    { label: "Help Center", href: "/help-center.html" },
-    { label: "Contact Us", href: "/contact.html" },
+    { label: "Help Center", href: "/index-23/help-center" },
+    { label: "Contact Us", href: "/index-23/contact" },
     { label: "FAQ", href: "/faq.html" },
   ];
 
@@ -116,10 +116,14 @@ export default function Navbar() {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
               )}
             </button>
-            <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
+            <a href="https://app.privacycrumb.com/signin"
+              className="hidden md:block border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 px-5 py-2 rounded-xl text-sm font-medium hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+              Log in
+            </a>
+            <motion.a href="https://app.privacycrumb.com/signup" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
               className="hidden md:block bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 px-6 py-2 rounded-xl text-sm font-medium hover:bg-black dark:hover:bg-neutral-100 transition-colors">
               Get started
-            </motion.button>
+            </motion.a>
 
             {/* Mobile hamburger */}
             <button

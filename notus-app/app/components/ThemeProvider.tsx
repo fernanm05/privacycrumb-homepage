@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useState, useEffect, useCallback } from "react";
+import { createContext, useContext, useState, useEffect, useCallback, useMemo } from "react";
 
 type Theme = "light" | "dark";
 interface ThemeCtx { theme: Theme; toggle: () => void; }
@@ -10,6 +10,7 @@ export function useTheme() { return useContext(ThemeContext); }
 
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("light");
+  const [mounted, setMounted] = useState(false);
 
   // On mount, read from localStorage
   useEffect(() => {
@@ -18,6 +19,7 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
       setTheme("dark");
       document.documentElement.classList.add("dark");
     }
+    setMounted(true);
   }, []);
 
   const toggle = useCallback(() => {
@@ -35,7 +37,9 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
 
   return (
     <ThemeContext.Provider value={{ theme, toggle }}>
-      {children}
+      <div style={{ visibility: mounted ? "visible" : "hidden" }}>
+        {children}
+      </div>
     </ThemeContext.Provider>
   );
 }

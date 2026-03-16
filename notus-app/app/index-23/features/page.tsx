@@ -210,13 +210,17 @@ function GeoTargetingGraphic() {
     <div className="bg-neutral-50 dark:bg-neutral-800/50 rounded-xl p-3 h-[180px] relative overflow-hidden">
       {/* Simplified world map dots */}
       <div className="absolute inset-3 opacity-20">
-        {Array.from({ length: 40 }).map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 rounded-full bg-neutral-400 dark:bg-neutral-500"
-            style={{ left: `${8 + Math.random() * 84}%`, top: `${10 + Math.random() * 80}%` }}
-          />
-        ))}
+        {Array.from({ length: 40 }).map((_, i) => {
+          const left = 8 + ((i * 37 + 13) % 84);
+          const top = 10 + ((i * 53 + 7) % 80);
+          return (
+            <div
+              key={i}
+              className="absolute w-1 h-1 rounded-full bg-neutral-400 dark:bg-neutral-500"
+              style={{ left: `${left}%`, top: `${top}%` }}
+            />
+          );
+        })}
       </div>
       {/* Region pins */}
       {regions.map((r) => (
@@ -472,7 +476,7 @@ export default function FeaturesPage() {
                 {/* Wix */}
                 <motion.div initial={{ opacity: 0, scale: 0.5, y: 20 }} whileInView={{ opacity: 1, scale: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.46, type: "spring", stiffness: 200 }} whileHover={{ y: -4, scale: 1.05 }}
                   className="flex flex-col items-center gap-2.5 p-4 rounded-2xl border border-neutral-200/80 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:shadow-md hover:border-coral/30 transition-all cursor-default">
-                  <svg width="40" height="28" viewBox="0 0 200 80" fill="none"><text x="50%" y="55" textAnchor="middle" fontFamily="Arial" fontWeight="900" fontSize="60" fill="#0C6EFC">Wix</text></svg>
+                  <span className="text-[#0C6EFC] text-2xl font-black leading-none">Wix</span>
                   <span className="text-xs font-medium text-neutral-700 dark:text-neutral-300">Wix</span>
                 </motion.div>
                 {/* Squarespace */}

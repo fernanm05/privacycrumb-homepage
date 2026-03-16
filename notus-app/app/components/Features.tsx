@@ -55,7 +55,7 @@ export default function Features() {
           <FadeIn>
             <div className="border border-neutral-200/80 dark:border-neutral-800 rounded-3xl p-8 bg-white dark:bg-neutral-900 h-full">
               <div className="flex items-center gap-2 mb-2">
-                <Cookie size={18} className="text-neutral-700 dark:text-neutral-300" />
+                <Cookie size={18} className="text-coral" />
                 <h3 className="text-base font-semibold dark:text-white">Cookie Scanner</h3>
               </div>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-6">Automatically detect and categorize every cookie and tracker on your website with detailed classification reports.</p>
@@ -116,7 +116,7 @@ export default function Features() {
           <FadeIn delay={0.1}>
             <div className="border border-neutral-200/80 dark:border-neutral-800 rounded-3xl p-8 bg-white dark:bg-neutral-900 h-full">
               <div className="flex items-center gap-2 mb-2">
-                <Layout size={18} className="text-neutral-700 dark:text-neutral-300" />
+                <Layout size={18} className="text-coral" />
                 <h3 className="text-base font-semibold dark:text-white">Consent Banner Builder</h3>
               </div>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-6">Design beautiful, compliant cookie consent banners that match your brand. Customize colors, layout, and text with a live preview.</p>
@@ -200,7 +200,7 @@ export default function Features() {
         <FadeIn className="mt-4">
           <div className="border border-neutral-200/80 dark:border-neutral-800 rounded-3xl p-8 bg-white dark:bg-neutral-900">
             <div className="flex items-center gap-2 mb-2">
-              <Wrench size={18} className="text-neutral-700 dark:text-neutral-300" />
+              <Wrench size={18} className="text-coral" />
               <h3 className="text-base font-semibold dark:text-white">Platform Integrations</h3>
             </div>
             <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-6">Connect PrivacyCrumb with your favorite tools — CMS platforms, analytics, and marketing services.</p>

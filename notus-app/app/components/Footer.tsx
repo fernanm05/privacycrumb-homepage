@@ -33,8 +33,8 @@ export default function Footer() {
               PrivacyCrumb
             </div>
             {[
-              { label: "Pricing", href: "/pricing.html" },
-              { label: "Features", href: "/features.html" },
+              { label: "Pricing", href: "/index-23/pricing" },
+              { label: "Features", href: "/index-23/features" },
             ].map((l) => (
               <a key={l.label} href={l.href} className="block text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white mb-2 transition-colors">{l.label}</a>
             ))}
@@ -82,15 +82,15 @@ export default function Footer() {
               { label: "Knowledge Base", href: "/knowledge-base.html" },
               { label: "Infographics", href: "/infographics.html" },
               { label: "Newsletter", href: "/newsletter.html" },
-              { label: "About", href: "/about.html" },
+              { label: "About", href: "/index-23/about" },
             ].map((l) => (
               <a key={l.label} href={l.href} className="block text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white mb-2 transition-colors">{l.label}</a>
             ))}
 
             <h4 className="text-sm font-semibold text-neutral-900 dark:text-white mt-6 mb-3">Support</h4>
             {[
-              { label: "Help Center", href: "/help-center.html" },
-              { label: "Contact Us", href: "/contact.html" },
+              { label: "Help Center", href: "/index-23/help-center" },
+              { label: "Contact Us", href: "/index-23/contact" },
               { label: "FAQ", href: "/faq.html" },
             ].map((l) => (
               <a key={l.label} href={l.href} className="block text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white mb-2 transition-colors">{l.label}</a>
