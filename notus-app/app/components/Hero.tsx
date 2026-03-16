@@ -33,6 +33,8 @@ export default function Hero() {
         {/* Vertical border lines */}
         <div className="absolute left-[calc(50%-37rem)] top-0 bottom-0 w-px bg-neutral-200/60 dark:bg-neutral-700/40 hidden lg:block" />
         <div className="absolute right-[calc(50%-37rem)] top-0 bottom-0 w-px bg-neutral-200/60 dark:bg-neutral-700/40 hidden lg:block" />
+        {/* Bottom fade overlay */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white dark:from-neutral-950 to-transparent pointer-events-none z-[1]" />
 
         <div className="relative z-10 max-w-4xl mx-auto">
           <FadeIn>

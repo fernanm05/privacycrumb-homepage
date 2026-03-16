@@ -7,20 +7,29 @@ export default function Footer() {
         {/* Newsletter */}
         <div className="pb-10 mb-10 border-b border-neutral-100 dark:border-neutral-800 flex flex-col md:flex-row items-start md:items-center gap-4">
           <div className="flex-1">
-            <h4 className="text-sm font-semibold text-neutral-900 dark:text-white mb-1">Stay up to date</h4>
-            <p className="text-xs text-neutral-400">Get the latest privacy news and compliance updates delivered to your inbox.</p>
+            <div className="flex items-center gap-1.5 mb-3">
+              <img src="/Privacy-new-logo.png" alt="PrivacyCrumb" className="h-6" />
+              <img src="/PrivacyCrumbText.svg" alt="PrivacyCrumb" className="h-4 dark:brightness-0 dark:invert" />
+            </div>
+            <h4 className="text-sm font-semibold text-neutral-900 dark:text-white mb-1" style={{ marginLeft: 35 }}>Stay up to date</h4>
+            <p className="text-xs text-neutral-400" style={{ marginLeft: 35 }}>Get the latest privacy news and compliance updates delivered to your inbox.</p>
           </div>
-          <div className="flex items-center border border-neutral-200 dark:border-neutral-700 rounded-xl bg-white dark:bg-neutral-800 px-4 py-2.5 w-full md:w-auto md:min-w-[320px]">
-            <input type="email" placeholder="Your email address" className="text-sm flex-1 outline-none bg-transparent text-neutral-700 dark:text-neutral-200 placeholder:text-neutral-400" />
-            <button className="bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-xs px-4 py-1.5 rounded-lg font-medium hover:bg-black dark:hover:bg-neutral-100 transition-colors ml-2">Subscribe</button>
+          <div>
+            <div className="flex items-center border border-neutral-200 dark:border-neutral-700 rounded-xl bg-white dark:bg-neutral-800 px-4 py-2.5 w-full md:w-auto md:min-w-[320px]">
+              <input type="email" placeholder="Your email address" className="text-sm flex-1 outline-none bg-transparent text-neutral-700 dark:text-neutral-200 placeholder:text-neutral-400" />
+              <button className="bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-xs px-4 py-1.5 rounded-lg font-medium hover:bg-black dark:hover:bg-neutral-100 transition-colors ml-2">Subscribe</button>
+            </div>
+            <label className="flex items-start gap-2 mt-2.5 cursor-pointer">
+              <input type="checkbox" className="mt-0.5 accent-coral shrink-0" />
+              <span className="text-[11px] text-neutral-400 leading-relaxed">I agree to receive newsletters from PrivacyCrumb and accept the <a href="/privacy-policy.html" className="underline hover:text-neutral-600 dark:hover:text-neutral-200 transition-colors">privacy policy</a>.</span>
+            </label>
           </div>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
           {/* Column 1: PrivacyCrumb + Use Cases */}
           <div>
-            <div className="flex items-center gap-2 font-bold text-base mb-4 dark:text-white">
-              <img src="/Privacy-new-logo.png" alt="" className="w-5 h-5" />
+            <div className="font-bold text-base mb-4 dark:text-white">
               PrivacyCrumb
             </div>
             {[
@@ -112,7 +121,7 @@ export default function Footer() {
 
             <h4 className="text-sm font-semibold text-neutral-900 dark:text-white mt-6 mb-3 flex items-center gap-2">
               Partners
-              <span className="text-[10px] font-semibold uppercase tracking-wider text-white bg-indigo-500 px-2 py-0.5 rounded-full">Join us!</span>
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-white bg-coral px-2 py-0.5 rounded-full">Join us!</span>
             </h4>
             {[
               { label: "Agency Partner", href: "/agency-partner.html" },

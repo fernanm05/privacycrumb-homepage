@@ -1,7 +1,18 @@
 "use client";
 import { motion } from "framer-motion";
 import FadeIn from "./FadeIn";
-import { Shield, Globe, Cookie, FileCheck, Scale, Scan } from "lucide-react";
+import { Shield, Globe, Cookie, FileCheck, Scale, Scan, Lock, Eye } from "lucide-react";
+
+const floatingIcons = [
+  { Icon: Shield, color: "text-green-500", size: 22, x: "12%", y: "12%", dx: 30, dy: -25, dur: 6, delay: 0 },
+  { Icon: Globe, color: "text-blue-500", size: 22, x: "78%", y: "15%", dx: -25, dy: 20, dur: 7, delay: 0.5 },
+  { Icon: Cookie, color: "text-amber-500", size: 22, x: "85%", y: "55%", dx: -20, dy: -30, dur: 5.5, delay: 1 },
+  { Icon: Scan, color: "text-neutral-400", size: 18, x: "18%", y: "65%", dx: 25, dy: -15, dur: 8, delay: 0.3 },
+  { Icon: Scale, color: "text-indigo-400", size: 18, x: "25%", y: "35%", dx: -15, dy: 25, dur: 6.5, delay: 0.8 },
+  { Icon: FileCheck, color: "text-neutral-500", size: 18, x: "72%", y: "70%", dx: 20, dy: -20, dur: 7.5, delay: 1.2 },
+  { Icon: Lock, color: "text-rose-400", size: 16, x: "8%", y: "40%", dx: 20, dy: 15, dur: 9, delay: 0.6 },
+  { Icon: Eye, color: "text-cyan-400", size: 16, x: "90%", y: "30%", dx: -30, dy: 10, dur: 6, delay: 1.5 },
+];
 
 export default function CTA() {
   return (
@@ -13,36 +24,56 @@ export default function CTA() {
         <div className="w-[750px] h-[750px] rounded-full border border-neutral-100/25 dark:border-neutral-700/15 absolute" />
       </div>
 
-      {/* Floating privacy-related icons */}
+      {/* Floating privacy-related icons that fly everywhere */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Shield */}
-        <div className="absolute top-[10%] right-[28%] w-12 h-12 bg-white dark:bg-neutral-800 rounded-xl shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center float-anim">
-          <Shield size={22} className="text-green-500" />
-        </div>
-        {/* Globe */}
-        <div className="absolute top-[10%] right-[20%] w-12 h-12 bg-white dark:bg-neutral-800 rounded-xl shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center float-anim-1">
-          <Globe size={22} className="text-blue-500" />
-        </div>
-        {/* Cookie */}
-        <div className="absolute top-[20%] right-[38%] w-12 h-12 bg-white dark:bg-neutral-800 rounded-xl shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center float-anim-2">
-          <Cookie size={22} className="text-amber-500" />
-        </div>
-        {/* Scan */}
-        <div className="absolute top-[30%] left-[30%] w-10 h-10 bg-white/80 dark:bg-neutral-800/80 rounded-xl shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center float-anim-3">
-          <Scan size={18} className="text-neutral-400" />
-        </div>
-        {/* Scale/Compliance */}
-        <div className="absolute top-[45%] left-[28%] w-10 h-10 bg-white/80 dark:bg-neutral-800/80 rounded-xl shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center float-anim-4">
-          <Scale size={18} className="text-indigo-400" />
-        </div>
-        {/* FileCheck */}
-        <div className="absolute top-[8%] left-[28%] w-10 h-10 bg-white/80 dark:bg-neutral-800/80 rounded-xl shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center float-anim-1">
-          <FileCheck size={18} className="text-neutral-500" />
-        </div>
+        {floatingIcons.map((item, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: item.delay, duration: 0.6 }}
+            className="absolute"
+            style={{ left: item.x, top: item.y }}
+          >
+            <motion.div
+              animate={{
+                x: [0, item.dx, -item.dx * 0.6, item.dx * 0.4, 0],
+                y: [0, item.dy, -item.dy * 0.8, item.dy * 0.3, 0],
+                rotate: [0, 8, -5, 3, 0],
+              }}
+              transition={{
+                duration: item.dur,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="w-11 h-11 bg-white/90 dark:bg-neutral-800/90 rounded-xl shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center backdrop-blur-sm"
+            >
+              <item.Icon size={item.size} className={item.color} />
+            </motion.div>
+          </motion.div>
+        ))}
         {/* PrivacyCrumb logo */}
-        <div className="absolute bottom-[25%] right-[30%] w-10 h-10 bg-white/80 dark:bg-neutral-800/80 rounded-xl shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center float-anim-2">
-          <img src="/Privacy-new-logo.png" alt="PrivacyCrumb" className="w-5 h-5" />
-        </div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="absolute"
+          style={{ left: "50%", top: "75%" }}
+        >
+          <motion.div
+            animate={{
+              x: [0, 15, -10, 5, 0],
+              y: [0, -20, 10, -8, 0],
+              rotate: [0, -5, 8, -3, 0],
+            }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            className="w-11 h-11 bg-white/90 dark:bg-neutral-800/90 rounded-xl shadow-sm border border-neutral-100 dark:border-neutral-700 flex items-center justify-center backdrop-blur-sm"
+          >
+            <img src="/Privacy-new-logo.png" alt="PrivacyCrumb" className="w-5 h-5" />
+          </motion.div>
+        </motion.div>
       </div>
 
       <FadeIn>

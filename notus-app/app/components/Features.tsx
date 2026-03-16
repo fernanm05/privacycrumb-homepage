@@ -206,7 +206,8 @@ export default function Features() {
             <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-6">Connect PrivacyCrumb with your favorite tools — CMS platforms, analytics, and marketing services.</p>
 
             {/* Node diagram - positions matched to original screenshot */}
-            <div className="bg-neutral-50 dark:bg-neutral-800 rounded-2xl relative overflow-hidden [--dot-color:#d4d4d4] dark:[--dot-color:#404040]" style={{ backgroundImage: 'radial-gradient(circle, var(--dot-color) 1px, transparent 1px)', backgroundSize: '20px 20px', height: '380px' }}>
+            <div className="overflow-x-auto -mx-2 px-2">
+            <div className="bg-neutral-50 dark:bg-neutral-800 rounded-2xl relative overflow-hidden [--dot-color:#d4d4d4] dark:[--dot-color:#404040] min-w-[640px]" style={{ backgroundImage: 'radial-gradient(circle, var(--dot-color) 1px, transparent 1px)', backgroundSize: '20px 20px', height: '380px' }}>
 
               {/* === LEFT: Scanner labels === */}
               <div className="absolute left-[3%] top-[17%] flex items-center gap-2 z-10">
@@ -411,6 +412,7 @@ export default function Features() {
                   </animateMotion>
                 </circle>
               </svg>
+            </div>
             </div>
           </div>
         </FadeIn>

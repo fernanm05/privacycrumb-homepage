@@ -95,7 +95,7 @@ export default function LogosGrid() {
               {brands.slice(0, 4).map((brand, idx) => (
                 <div
                   key={`r1-${idx}`}
-                  className="border-b border-r border-neutral-100 dark:border-neutral-800 last:border-r-0 flex items-center justify-center h-[100px] text-neutral-800 dark:text-neutral-200 font-bold text-lg tracking-tight cursor-default transition-colors duration-300 hover:bg-[#faf8f5] dark:hover:bg-neutral-800"
+                  className="border-b border-r border-neutral-100 dark:border-neutral-800 last:border-r-0 flex items-center justify-center h-[100px] text-neutral-800 dark:text-neutral-200 font-bold text-lg tracking-tight cursor-default transition-colors duration-300 hover:bg-[#fef0f0] dark:hover:bg-neutral-800"
                 >
                   <motion.div
                     animate={{ 
@@ -114,7 +114,7 @@ export default function LogosGrid() {
               {brands.slice(4, 8).map((brand, idx) => (
                 <div
                   key={`r2-${idx}`}
-                  className="border-r border-neutral-100 dark:border-neutral-800 last:border-r-0 flex items-center justify-center h-[100px] text-neutral-800 dark:text-neutral-200 font-bold text-lg tracking-tight cursor-default transition-colors duration-300 hover:bg-[#faf8f5] dark:hover:bg-neutral-800"
+                  className="border-r border-neutral-100 dark:border-neutral-800 last:border-r-0 flex items-center justify-center h-[100px] text-neutral-800 dark:text-neutral-200 font-bold text-lg tracking-tight cursor-default transition-colors duration-300 hover:bg-[#fef0f0] dark:hover:bg-neutral-800"
                 >
                   <motion.div
                     animate={{ 

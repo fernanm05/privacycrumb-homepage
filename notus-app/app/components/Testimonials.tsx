@@ -110,9 +110,9 @@ export default function Testimonials() {
       <FadeIn>
         <div className="max-w-5xl mx-auto px-6">
           <div className="border border-neutral-200/80 dark:border-neutral-800 rounded-3xl bg-white dark:bg-neutral-900 overflow-hidden">
-            <div className="grid md:grid-cols-[1fr_1.5fr_auto]" style={{ minHeight: '420px', height: '420px' }}>
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr_auto] md:min-h-[420px] md:h-[420px]">
               {/* Photo */}
-              <div className="bg-neutral-100 dark:bg-neutral-800 h-full relative overflow-hidden">
+              <div className="bg-neutral-100 dark:bg-neutral-800 h-48 md:h-full relative overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={active.image}
@@ -153,7 +153,7 @@ export default function Testimonials() {
                 </AnimatePresence>
               </div>
               {/* Stats */}
-              <div className="border-l border-neutral-100 dark:border-neutral-800 flex flex-col justify-center p-8 min-w-[160px]">
+              <div className="border-t md:border-t-0 md:border-l border-neutral-100 dark:border-neutral-800 flex flex-row md:flex-col justify-center gap-6 md:gap-0 p-6 md:p-8 md:min-w-[160px]">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={active.brand + "-stats"}
@@ -180,7 +180,7 @@ export default function Testimonials() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="border border-neutral-200/80 dark:border-neutral-800 rounded-3xl overflow-hidden bg-white dark:bg-neutral-900">
             {allBrands.map((row, ri) => (
-              <div key={ri} className="grid grid-cols-4">
+              <div key={ri} className="grid grid-cols-2 md:grid-cols-4">
                 {row.map((n) => {
                   const idx = testimonials.findIndex(t => t.brand === n);
                   const isActive = idx === activeIdx;

@@ -137,10 +137,10 @@ export default function Pricing() {
             </span>
           </div>
         </div>
-        <div className="grid md:grid-cols-4 gap-0 border border-neutral-200/80 dark:border-neutral-800 rounded-3xl overflow-hidden bg-white dark:bg-neutral-900">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-0 border border-neutral-200/80 dark:border-neutral-800 rounded-3xl overflow-hidden bg-white dark:bg-neutral-900">
           {plans.map((p, i) => (
             <FadeIn key={p.name} delay={i * 0.1}>
-              <div className={`p-8 h-full relative ${i < 3 ? "border-r border-neutral-100 dark:border-neutral-800" : ""} ${p.featured ? "border-2 border-neutral-900 dark:border-white rounded-3xl -m-px z-10 bg-white dark:bg-neutral-900" : ""}`}>
+              <div className={`p-8 h-full relative ${i < 3 ? "md:border-r border-b md:border-b-0 border-neutral-100 dark:border-neutral-800" : ""} ${p.featured ? "border-2 border-neutral-900 dark:border-white rounded-3xl -m-px z-10 bg-white dark:bg-neutral-900" : ""}`}>
                 <h3 className="text-lg font-bold mb-0.5 dark:text-white">{p.name}</h3>
                 <p className="text-xs text-neutral-500 dark:text-neutral-400 mb-5">{p.sub}</p>
                 <div className="mb-5">
