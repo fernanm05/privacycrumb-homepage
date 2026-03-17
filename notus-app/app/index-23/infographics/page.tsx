@@ -22,6 +22,7 @@ interface Infographic {
   gradient: string;
   category: string;
   stats: string;
+  slug: string;
 }
 
 const filters = ["All", "Regulations", "Technical", "Business", "Best Practices"];
@@ -31,73 +32,73 @@ const infographics: Infographic[] = [
     title: "GDPR Cookie Consent — The Complete Visual Guide",
     desc: "Everything you need to know about GDPR cookie consent requirements, lawful basis, and penalties in one visual guide.",
     icon: Shield, color: "text-blue-500", gradient: "from-blue-500/20 to-blue-600/5",
-    category: "Regulations", stats: "12.4k views",
+    category: "Regulations", stats: "12.4k views", slug: "/index-23/infographics/gdpr-guide",
   },
   {
     title: "Cookie Types & Categories Explained",
     desc: "Visual breakdown of Necessary, Functional, Analytics, and Marketing cookies — what they do and why they matter.",
     icon: Cookie, color: "text-amber-500", gradient: "from-amber-500/20 to-amber-600/5",
-    category: "Technical", stats: "9.8k views",
+    category: "Technical", stats: "9.8k views", slug: "/index-23/infographics/cookie-types",
   },
   {
     title: "CCPA vs GDPR — Key Differences",
     desc: "Side-by-side comparison of the two major privacy regulations and what each requires for cookie consent.",
     icon: Scale, color: "text-green-500", gradient: "from-green-500/20 to-green-600/5",
-    category: "Regulations", stats: "11.2k views",
+    category: "Regulations", stats: "11.2k views", slug: "/index-23/infographics/ccpa-vs-gdpr",
   },
   {
     title: "The Cookie Consent Flow",
     desc: "Step-by-step visual walkthrough of how cookie consent works — from first visit to preference management.",
     icon: BarChart3, color: "text-purple-500", gradient: "from-purple-500/20 to-purple-600/5",
-    category: "Technical", stats: "7.6k views",
+    category: "Technical", stats: "7.6k views", slug: "/index-23/infographics/consent-flow",
   },
   {
     title: "Global Privacy Regulations Map",
     desc: "Interactive world map showing privacy regulations by country — GDPR, CCPA, LGPD, PIPEDA, POPIA, and more.",
     icon: Globe, color: "text-teal-500", gradient: "from-teal-500/20 to-teal-600/5",
-    category: "Regulations", stats: "15.1k views",
+    category: "Regulations", stats: "15.1k views", slug: "/index-23/infographics/privacy-map",
   },
   {
     title: "Cookie Banner Best Practices",
     desc: "Design dos and don'ts for consent banners — layout, copy, colors, and accessibility guidelines.",
     icon: Palette, color: "text-pink-500", gradient: "from-pink-500/20 to-pink-600/5",
-    category: "Best Practices", stats: "8.3k views",
+    category: "Best Practices", stats: "8.3k views", slug: "/index-23/infographics/banner-best-practices",
   },
   {
     title: "Third-Party Cookie Sunset Timeline",
     desc: "Visual timeline of the deprecation of third-party cookies and what it means for your website.",
     icon: MonitorSmartphone, color: "text-orange-500", gradient: "from-orange-500/20 to-orange-600/5",
-    category: "Technical", stats: "6.9k views",
+    category: "Technical", stats: "6.9k views", slug: "/index-23/infographics/third-party-sunset",
   },
   {
     title: "ROI of Cookie Compliance",
     desc: "How investing in proper cookie consent can save you from fines, build trust, and improve conversion rates.",
     icon: Zap, color: "text-coral", gradient: "from-coral/20 to-coral/5",
-    category: "Business", stats: "5.4k views",
+    category: "Business", stats: "5.4k views", slug: "/index-23/infographics/roi-compliance",
   },
   {
     title: "Google Consent Mode v2 Explained",
     desc: "Visual guide to implementing Google Consent Mode v2 — consent signals, tag behavior, and data modeling.",
     icon: Code, color: "text-indigo-500", gradient: "from-indigo-500/20 to-indigo-600/5",
-    category: "Technical", stats: "10.7k views",
+    category: "Technical", stats: "10.7k views", slug: "/index-23/infographics/consent-mode-v2",
   },
   {
     title: "Anatomy of a Compliant Cookie Banner",
     desc: "Dissecting every element of a legally compliant cookie banner — required buttons, text, and disclosures.",
     icon: FileText, color: "text-cyan-500", gradient: "from-cyan-500/20 to-cyan-600/5",
-    category: "Best Practices", stats: "8.9k views",
+    category: "Best Practices", stats: "8.9k views", slug: "/index-23/infographics/compliant-banner-anatomy",
   },
   {
     title: "GDPR Fines & Enforcement — By the Numbers",
     desc: "Infographic showing the largest GDPR fines to date, enforcement trends, and what triggers investigations.",
     icon: Lock, color: "text-red-500", gradient: "from-red-500/20 to-red-600/5",
-    category: "Regulations", stats: "13.5k views",
+    category: "Regulations", stats: "13.5k views", slug: "/index-23/infographics/gdpr-fines",
   },
   {
     title: "Cookie Compliance Checklist for Startups",
     desc: "A visual step-by-step checklist to get your startup compliant with global cookie regulations.",
     icon: BookOpen, color: "text-emerald-500", gradient: "from-emerald-500/20 to-emerald-600/5",
-    category: "Business", stats: "7.1k views",
+    category: "Business", stats: "7.1k views", slug: "/index-23/infographics/startup-checklist",
   },
 ];
 
@@ -189,6 +190,7 @@ export default function InfographicsPage() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {filtered.map((ig, i) => (
                   <FadeIn key={ig.title} delay={i * 0.05}>
+                    <a href={ig.slug}>
                     <motion.div
                       whileHover={{ y: -3 }}
                       className="rounded-2xl border border-neutral-200/80 dark:border-neutral-800 bg-white dark:bg-neutral-900 overflow-hidden cursor-pointer hover:border-coral/30 hover:shadow-md transition-all group h-full flex flex-col"
@@ -203,14 +205,7 @@ export default function InfographicsPage() {
                           })}
                         </div>
                         <ig.icon size={48} className={`${ig.color} opacity-40 group-hover:opacity-60 transition-opacity`} />
-                        <div className="absolute top-3 right-3 flex gap-1.5">
-                          <div className="w-7 h-7 rounded-lg bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                            <Eye size={12} className="text-neutral-600 dark:text-neutral-300" />
-                          </div>
-                          <div className="w-7 h-7 rounded-lg bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                            <Share2 size={12} className="text-neutral-600 dark:text-neutral-300" />
-                          </div>
-                        </div>
+
                         <div className="absolute bottom-3 left-3">
                           <span className="text-[10px] font-medium px-2 py-1 rounded-md bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm text-neutral-600 dark:text-neutral-300">
                             {ig.category}
@@ -237,6 +232,7 @@ export default function InfographicsPage() {
                         </div>
                       </div>
                     </motion.div>
+                    </a>
                   </FadeIn>
                 ))}
               </div>

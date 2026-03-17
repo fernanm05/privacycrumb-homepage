@@ -91,7 +91,7 @@ export default function Footer() {
             {[
               { label: "Help Center", href: "/index-23/help-center" },
               { label: "Contact Us", href: "/index-23/contact" },
-              { label: "FAQ", href: "/faq.html" },
+              { label: "FAQ", href: "/index-23/faq" },
             ].map((l) => (
               <a key={l.label} href={l.href} className="block text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white mb-2 transition-colors">{l.label}</a>
             ))}
