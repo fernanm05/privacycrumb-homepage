@@ -18,21 +18,22 @@ type Partner = {
   location: string;
   specialties: string[];
   website: string;
+  slug: string;
 };
 
 const partners: Partner[] = [
-  { name: "BrightWeb Agency", type: "agency", tier: "Platinum", desc: "Full-service digital agency specializing in privacy-first web development for enterprise clients across Europe.", location: "London, UK", specialties: ["GDPR", "WordPress", "Enterprise"], website: "#" },
-  { name: "CloudHost Pro", type: "technology", tier: "Platinum", desc: "Leading managed WordPress hosting provider with native PrivacyCrumb integration for 50,000+ hosted sites.", location: "Berlin, Germany", specialties: ["Hosting", "WordPress", "API Integration"], website: "#" },
-  { name: "DataGuard Legal", type: "compliance", tier: "Platinum", desc: "Privacy law firm and DPO-as-a-service provider. Bundles PrivacyCrumb with compliance advisory packages.", location: "Munich, Germany", specialties: ["GDPR", "CCPA", "DPO Services"], website: "#" },
-  { name: "DigitalFirst Studio", type: "agency", tier: "Gold", desc: "Creative web studio building Shopify and custom e-commerce experiences with built-in privacy compliance.", location: "Amsterdam, Netherlands", specialties: ["E-commerce", "Shopify", "Branding"], website: "#" },
-  { name: "SiteBuilder.io", type: "technology", tier: "Gold", desc: "No-code website builder with white-label PrivacyCrumb consent management built into every template.", location: "San Francisco, US", specialties: ["No-code", "White-label", "SaaS"], website: "#" },
-  { name: "GrowthLab Digital", type: "agency", tier: "Gold", desc: "Performance marketing agency helping SaaS companies scale while maintaining full privacy compliance.", location: "Toronto, Canada", specialties: ["SaaS", "Marketing", "Analytics"], website: "#" },
-  { name: "ComplianceHub", type: "compliance", tier: "Gold", desc: "GRC platform integrating PrivacyCrumb consent data into broader compliance management workflows.", location: "Dublin, Ireland", specialties: ["GRC", "Risk Management", "GDPR"], website: "#" },
-  { name: "WebCraft Agency", type: "agency", tier: "Silver", desc: "Boutique web development agency serving SMBs across Scandinavia with accessible, compliant websites.", location: "Stockholm, Sweden", specialties: ["SMB", "Accessibility", "Nordic Markets"], website: "#" },
-  { name: "HostEasy", type: "reseller", tier: "Silver", desc: "Shared hosting provider reselling PrivacyCrumb as an add-on service for small business website packages.", location: "Warsaw, Poland", specialties: ["Shared Hosting", "SMB", "Reseller"], website: "#" },
-  { name: "PrivacyFirst Consulting", type: "compliance", tier: "Silver", desc: "Independent privacy consultancy helping startups and mid-market companies navigate EU and UK data protection.", location: "Paris, France", specialties: ["Startups", "UK GDPR", "CNIL"], website: "#" },
-  { name: "Starter Digital", type: "agency", tier: "Silver", desc: "Freelance-friendly agency building fast, compliant WordPress and Webflow sites for creative professionals.", location: "Lisbon, Portugal", specialties: ["Webflow", "WordPress", "Freelance"], website: "#" },
-  { name: "NetScale Solutions", type: "reseller", tier: "Gold", desc: "Managed IT services provider offering PrivacyCrumb as part of their enterprise website compliance suite.", location: "Chicago, US", specialties: ["Managed IT", "Enterprise", "Compliance Suite"], website: "#" },
+  { name: "BrightWeb Agency", type: "agency", tier: "Platinum", desc: "Full-service digital agency specializing in privacy-first web development for enterprise clients across Europe.", location: "London, UK", specialties: ["GDPR", "WordPress", "Enterprise"], website: "#", slug: "/index-23/partner-directory/brightweb" },
+  { name: "CloudHost Pro", type: "technology", tier: "Platinum", desc: "Leading managed WordPress hosting provider with native PrivacyCrumb integration for 50,000+ hosted sites.", location: "Berlin, Germany", specialties: ["Hosting", "WordPress", "API Integration"], website: "#", slug: "/index-23/partner-directory/cloudhost-pro" },
+  { name: "DataGuard Legal", type: "compliance", tier: "Platinum", desc: "Privacy law firm and DPO-as-a-service provider. Bundles PrivacyCrumb with compliance advisory packages.", location: "Munich, Germany", specialties: ["GDPR", "CCPA", "DPO Services"], website: "#", slug: "/index-23/partner-directory/dataguard" },
+  { name: "DigitalFirst Studio", type: "agency", tier: "Gold", desc: "Creative web studio building Shopify and custom e-commerce experiences with built-in privacy compliance.", location: "Amsterdam, Netherlands", specialties: ["E-commerce", "Shopify", "Branding"], website: "#", slug: "/index-23/partner-directory/digitalfirst" },
+  { name: "SiteBuilder.io", type: "technology", tier: "Gold", desc: "No-code website builder with white-label PrivacyCrumb consent management built into every template.", location: "San Francisco, US", specialties: ["No-code", "White-label", "SaaS"], website: "#", slug: "/index-23/partner-directory/sitebuilder" },
+  { name: "GrowthLab Digital", type: "agency", tier: "Gold", desc: "Performance marketing agency helping SaaS companies scale while maintaining full privacy compliance.", location: "Toronto, Canada", specialties: ["SaaS", "Marketing", "Analytics"], website: "#", slug: "/index-23/partner-directory/growthlab" },
+  { name: "ComplianceHub", type: "compliance", tier: "Gold", desc: "GRC platform integrating PrivacyCrumb consent data into broader compliance management workflows.", location: "Dublin, Ireland", specialties: ["GRC", "Risk Management", "GDPR"], website: "#", slug: "/index-23/partner-directory/compliancehub" },
+  { name: "WebCraft Agency", type: "agency", tier: "Silver", desc: "Boutique web development agency serving SMBs across Scandinavia with accessible, compliant websites.", location: "Stockholm, Sweden", specialties: ["SMB", "Accessibility", "Nordic Markets"], website: "#", slug: "/index-23/partner-directory/webcraft" },
+  { name: "HostEasy", type: "reseller", tier: "Silver", desc: "Shared hosting provider reselling PrivacyCrumb as an add-on service for small business website packages.", location: "Warsaw, Poland", specialties: ["Shared Hosting", "SMB", "Reseller"], website: "#", slug: "/index-23/partner-directory/hosteasy" },
+  { name: "PrivacyFirst Consulting", type: "compliance", tier: "Silver", desc: "Independent privacy consultancy helping startups and mid-market companies navigate EU and UK data protection.", location: "Paris, France", specialties: ["Startups", "UK GDPR", "CNIL"], website: "#", slug: "/index-23/partner-directory/privacyfirst" },
+  { name: "Starter Digital", type: "agency", tier: "Silver", desc: "Freelance-friendly agency building fast, compliant WordPress and Webflow sites for creative professionals.", location: "Lisbon, Portugal", specialties: ["Webflow", "WordPress", "Freelance"], website: "#", slug: "/index-23/partner-directory/starter-digital" },
+  { name: "NetScale Solutions", type: "reseller", tier: "Gold", desc: "Managed IT services provider offering PrivacyCrumb as part of their enterprise website compliance suite.", location: "Chicago, US", specialties: ["Managed IT", "Enterprise", "Compliance Suite"], website: "#", slug: "/index-23/partner-directory/netscale" },
 ];
 
 const types = [
@@ -130,9 +131,10 @@ export default function PartnerDirectoryPage() {
               <div className="grid md:grid-cols-2 gap-4">
                 {filtered.map((p, i) => (
                   <FadeIn key={p.name} delay={i * 0.04}>
+                    <a href={p.slug} className="block h-full">
                     <motion.div
                       whileHover={{ y: -2 }}
-                      className="p-5 rounded-2xl border border-neutral-200/80 dark:border-neutral-800 bg-white dark:bg-neutral-900 h-full flex flex-col transition-shadow hover:shadow-md"
+                      className="p-5 rounded-2xl border border-neutral-200/80 dark:border-neutral-800 bg-white dark:bg-neutral-900 h-full flex flex-col transition-shadow hover:shadow-md hover:border-coral/30"
                     >
                       <div className="flex items-start justify-between gap-3 mb-3">
                         <div>
@@ -142,9 +144,6 @@ export default function PartnerDirectoryPage() {
                             <span className="text-[11px] text-neutral-400 dark:text-neutral-500 capitalize">{p.type}</span>
                           </div>
                         </div>
-                        <a href={p.website} className="text-neutral-400 hover:text-coral transition-colors flex-shrink-0 mt-1">
-                          <ExternalLink size={16} />
-                        </a>
                       </div>
                       <p className="text-[13px] text-neutral-500 dark:text-neutral-400 leading-relaxed flex-1 mb-3">{p.desc}</p>
                       <div className="flex items-center gap-1.5 text-[11px] text-neutral-400 dark:text-neutral-500 mb-3">
@@ -156,6 +155,7 @@ export default function PartnerDirectoryPage() {
                         ))}
                       </div>
                     </motion.div>
+                    </a>
                   </FadeIn>
                 ))}
               </div>
