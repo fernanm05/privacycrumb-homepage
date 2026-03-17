@@ -9,7 +9,6 @@ const sections = [
     id: "your-privacy",
     title: "Your Privacy",
     content: [
-      "Last updated: 06 November 2025",
       "At PrivacyCrumb, we are committed to protecting your privacy as a customer and an online visitor to our website. We use the information we collect about you to maximize the cookie consent management services that we provide to you. We respect the privacy and confidentiality of the information provided by you and adhere to international privacy standards. Please read our privacy policy below carefully.",
     ],
   },
@@ -115,6 +114,9 @@ export default function PrivacyPolicyPage() {
         {/* Content */}
         <section className="py-12 px-6">
           <div className="max-w-5xl mx-auto">
+            <FadeIn>
+              <p className="text-coral text-sm font-medium mb-8">Last updated: 06 November 2025</p>
+            </FadeIn>
             <div className="grid md:grid-cols-[220px_1fr] gap-10 md:gap-16">
               {/* Sidebar TOC */}
               <FadeIn>
@@ -143,7 +145,7 @@ export default function PrivacyPolicyPage() {
                       <h2 className="text-lg font-semibold text-neutral-900 dark:text-white mb-4">{s.title}</h2>
                       <div className="space-y-3">
                         {s.content.map((p, pi) => (
-                          <p key={pi} className={`text-sm leading-relaxed ${pi === 0 && s.id === "your-privacy" ? "text-coral font-medium" : "text-neutral-600 dark:text-neutral-400"}`}>
+                          <p key={pi} className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
                             {p}
                           </p>
                         ))}

@@ -54,15 +54,15 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-neutral-900 dark:text-white mb-4">Solutions</h4>
             {[
-              { label: "GDPR EU & UK", href: "/gdpr.html" },
-              { label: "CCPA California", href: "/ccpa.html" },
-              { label: "CPRA California", href: "/cpra.html" },
-              { label: "IAB TCF v2.2", href: "/iab-tcf.html" },
-              { label: "Google Consent Mode", href: "/google-consent-mode.html" },
+              { label: "GDPR EU & UK", href: "/index-23/gdpr" },
+              { label: "CCPA California", href: "/index-23/ccpa" },
+              { label: "CPRA California", href: "/index-23/cpra" },
+              { label: "IAB TCF v2.2", href: "/index-23/iab-tcf" },
+              { label: "Google Consent Mode", href: "/index-23/google-consent-mode" },
             ].map((l) => (
               <a key={l.label} href={l.href} className="block text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white mb-2 transition-colors">{l.label}</a>
             ))}
-            <a href="/regulations.html" className="inline-block text-sm text-neutral-700 dark:text-neutral-300 font-medium mt-1 hover:text-neutral-900 dark:hover:text-white transition-colors">All regulations →</a>
+            <a href="/index-23/all-regulations" className="inline-block text-sm text-neutral-700 dark:text-neutral-300 font-medium mt-1 hover:text-neutral-900 dark:hover:text-white transition-colors">All regulations →</a>
 
             <h4 className="text-sm font-semibold text-neutral-900 dark:text-white mt-6 mb-3">Compare</h4>
             {[
