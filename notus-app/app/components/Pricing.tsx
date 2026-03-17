@@ -137,10 +137,10 @@ export default function Pricing() {
             </span>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-0 border border-neutral-200/80 dark:border-neutral-800 rounded-3xl overflow-hidden bg-white dark:bg-neutral-900">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-0 border border-neutral-200/80 dark:border-neutral-800 rounded-3xl bg-white dark:bg-neutral-900">
           {plans.map((p, i) => (
-            <FadeIn key={p.name} delay={i * 0.1}>
-              <div className={`p-8 h-full relative ${i < 3 ? "md:border-r border-b md:border-b-0 border-neutral-100 dark:border-neutral-800" : ""} ${p.featured ? "border-2 border-neutral-900 dark:border-white rounded-3xl -m-px z-10 bg-white dark:bg-neutral-900" : ""}`}>
+            <FadeIn key={p.name} delay={i * 0.1} className="h-full">
+              <div className={`p-8 h-full relative flex flex-col ${i < 3 ? "md:border-r border-b md:border-b-0 border-neutral-100 dark:border-neutral-800" : ""} ${p.featured ? "rounded-3xl z-10 bg-white dark:bg-neutral-900 shadow-[0_0_0_2px_rgb(23,23,23)] dark:shadow-[0_0_0_2px_white]" : ""}`}>
                 <h3 className="text-lg font-bold mb-0.5 dark:text-white">{p.name}</h3>
                 <p className="text-xs text-neutral-500 dark:text-neutral-400 mb-5">{p.sub}</p>
                 <div className="mb-5">
@@ -150,7 +150,7 @@ export default function Pricing() {
                 {p.featured && (
                   <span className="inline-block text-[10px] font-semibold uppercase tracking-wider text-coral bg-coral/10 px-2.5 py-1 rounded-full mb-5">Most Popular</span>
                 )}
-                <div className="flex flex-col gap-3.5 mb-8">
+                <div className="flex flex-col gap-3.5 mb-6">
                   {p.features.map((f) => (
                     <div key={f.text} className={`flex items-start gap-2.5 text-sm ${f.included ? "text-neutral-600 dark:text-neutral-400" : "text-neutral-400 dark:text-neutral-600 line-through"}`}>
                       {f.included ? (
@@ -163,7 +163,7 @@ export default function Pricing() {
                   ))}
                 </div>
                 <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
-                  className={`w-full py-3 rounded-xl text-sm font-medium transition-colors flex items-center justify-center gap-2 ${p.btnCls}`}>
+                  className={`w-full py-3 rounded-xl text-sm font-medium transition-colors flex items-center justify-center gap-2 mt-auto ${p.btnCls}`}>
                   {p.btn} {p.btnIcon}
                 </motion.button>
               </div>

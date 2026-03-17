@@ -21,7 +21,7 @@ export default function Footer() {
             </div>
             <label className="flex items-start gap-2 mt-2.5 cursor-pointer">
               <input type="checkbox" className="mt-0.5 accent-coral shrink-0" />
-              <span className="text-[11px] text-neutral-400 leading-relaxed">I agree to receive newsletters from PrivacyCrumb and accept the <a href="/privacy-policy.html" className="underline hover:text-neutral-600 dark:hover:text-neutral-200 transition-colors">privacy policy</a>.</span>
+              <span className="text-[11px] text-neutral-400 leading-relaxed">I agree to receive newsletters from PrivacyCrumb and accept the <a href="/index-23/privacy-policy" className="underline hover:text-neutral-600 dark:hover:text-neutral-200 transition-colors">privacy policy</a>.</span>
             </label>
           </div>
         </div>
@@ -41,10 +41,10 @@ export default function Footer() {
 
             <h4 className="text-sm font-semibold text-neutral-900 dark:text-white mt-6 mb-3">Use Cases</h4>
             {[
-              { label: "Founder", href: "/founder-use-caces.html" },
-              { label: "Developer", href: "/developer-use-caces.html" },
-              { label: "Marketer", href: "/marketer-use-caces.html" },
-              { label: "Agency", href: "/agency-use-caces.html" },
+              { label: "Founder", href: "/index-23/founder" },
+              { label: "Developer", href: "/index-23/developer" },
+              { label: "Marketer", href: "/index-23/marketer" },
+              { label: "Agency", href: "/index-23/agency" },
             ].map((l) => (
               <a key={l.label} href={l.href} className="block text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white mb-2 transition-colors">{l.label}</a>
             ))}
@@ -66,13 +66,13 @@ export default function Footer() {
 
             <h4 className="text-sm font-semibold text-neutral-900 dark:text-white mt-6 mb-3">Compare</h4>
             {[
-              { label: "Cookiebot", href: "/cookiebot.html" },
-              { label: "Iubenda", href: "/compare.html" },
-              { label: "Complianz", href: "/complianz.html" },
+              { label: "Cookiebot", href: "/index-23/cookiebot" },
+              { label: "Iubenda", href: "/index-23/lubenda" },
+              { label: "Complianz", href: "/index-23/complianz" },
             ].map((l) => (
               <a key={l.label} href={l.href} className="block text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white mb-2 transition-colors">{l.label}</a>
             ))}
-            <a href="/compare.html" className="inline-block text-sm text-neutral-700 dark:text-neutral-300 font-medium mt-1 hover:text-neutral-900 dark:hover:text-white transition-colors">All comparisons →</a>
+            <a href="/index-23/all-comparisons" className="inline-block text-sm text-neutral-700 dark:text-neutral-300 font-medium mt-1 hover:text-neutral-900 dark:hover:text-white transition-colors">All comparisons →</a>
           </div>
 
           {/* Column 3: Resources + Support */}
@@ -110,11 +110,11 @@ export default function Footer() {
 
             <h4 className="text-sm font-semibold text-neutral-900 dark:text-white mt-6 mb-3">Legal</h4>
             {[
-              { label: "Privacy Policy", href: "/privacy-policy.html" },
-              { label: "Cookie Policy", href: "/cookies-policy.html" },
-              { label: "Terms and Conditions", href: "/terms-conditions.html" },
-              { label: "Data Processing Agreement", href: "/dpa.html" },
-              { label: "Accessibility Statement", href: "/accessibility-statement.html" },
+              { label: "Privacy Policy", href: "/index-23/privacy-policy" },
+              { label: "Cookie Policy", href: "/index-23/cookies-policy" },
+              { label: "Terms and Conditions", href: "/index-23/terms-conditions" },
+              { label: "Data Processing Agreement", href: "/index-23/dpa" },
+              { label: "Accessibility Statement", href: "/index-23/accessibility-statement" },
             ].map((l) => (
               <a key={l.label} href={l.href} className="block text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white mb-2 transition-colors">{l.label}</a>
             ))}
@@ -124,10 +124,10 @@ export default function Footer() {
               <span className="text-[10px] font-semibold uppercase tracking-wider text-white bg-coral px-2 py-0.5 rounded-full">Join us!</span>
             </h4>
             {[
-              { label: "Agency Partner", href: "/agency-partner.html" },
-              { label: "Affiliate Partner", href: "/affiliate-partner.html" },
-              { label: "Strategic Partner", href: "/strategic-partner.html" },
-              { label: "Partner Directory", href: "/partner-directory.html" },
+              { label: "Agency Partner", href: "/index-23/agency-partner" },
+              { label: "Affiliate Partner", href: "/index-23/affiliate-partner" },
+              { label: "Strategic Partner", href: "/index-23/strategic-partner" },
+              { label: "Partner Directory", href: "/index-23/partner-directory" },
             ].map((l) => (
               <a key={l.label} href={l.href} className="block text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white mb-2 transition-colors">{l.label}</a>
             ))}
